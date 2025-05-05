@@ -206,12 +206,12 @@ body {
 }
 
 .text-slide .content {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 800px;
 }
 
 .text-slide p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.125rem;
 }
 
 /* Two-column layout for introduction */

@@ -404,7 +404,33 @@ function SlideView() {
   const [currentSection, setCurrentSection] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [globalSlideInfo, setGlobalSlideInfo] = useState({ current: 0, total: 0 });
   const navigate = useNavigate();
+  
+  // Calculate total slides and current global slide index
+  useEffect(() => {
+    // Calculate total slides
+    const totalSlides = presentationData.sections.reduce(
+      (acc, section) => acc + section.slides.length, 0
+    );
+    
+    // Calculate current global slide index
+    let currentGlobalIndex = 0;
+    for (let i = 0; i < presentationData.sections.length; i++) {
+      const section = presentationData.sections[i];
+      if (section.id === sectionId) {
+        currentGlobalIndex += parseInt(slideIndex, 10);
+        break;
+      } else {
+        currentGlobalIndex += section.slides.length;
+      }
+    }
+    
+    setGlobalSlideInfo({
+      current: currentGlobalIndex + 1, // +1 for 1-based indexing
+      total: totalSlides
+    });
+  }, [sectionId, slideIndex]);
   
   useEffect(() => {
     // Find the section and slide
@@ -520,7 +546,7 @@ function SlideView() {
       <div className="slide-controls">
         <button className="prev-slide" onClick={goToPrevSlide}>←</button>
         <div className="slide-progress">
-          Slide {parseInt(slideIndex, 10) + 1} of {currentSection.slides.length}
+          Slide {globalSlideInfo.current} of {globalSlideInfo.total}
         </div>
         <button className="next-slide" onClick={goToNextSlide}>→</button>
       </div>
