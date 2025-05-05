@@ -132,7 +132,7 @@ const presentationData = {
         },
         {
           type: "finding",
-          title: "Several people felt that AI's personality and tone were important and spoke to it as if it were a person, though many also found it far too confident.",
+          title: "Several treated AI like a person, valuing its tone—though many found it overly confident.",
           points: [
             "Several commented on how the agents mirrors the tone you approach your prompts with, and this led them to engage more deeply and frequently.",
             "Many commented on how confident AI are in their solution whether they are right or wrong",
