@@ -63,20 +63,23 @@ body {
 .menu-toggle {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
 }
 
 /* Navigation Styles */
 .navigation {
   position: fixed;
   top: var(--header-height);
-  left: 0;
+  right: 0;
+  left: auto;
   width: 300px;
   height: calc(100vh - var(--header-height));
   background-color: white;
-  border-right: 1px solid var(--light-gray);
+  border-left: 1px solid var(--light-gray);
   padding: 1rem;
   overflow-y: auto;
   z-index: 99;
@@ -174,6 +177,19 @@ body {
   align-items: center;
   text-align: center;
   min-height: calc(100vh - var(--header-height) - 5rem);
+}
+
+/* Inverted style for first slide */
+.cover-slide.inverted {
+  background-color: var(--primary-color);
+  color: white;
+  margin: -2rem;
+  padding: 2rem;
+  width: calc(100% + 4rem);
+}
+
+.cover-slide.inverted h1 {
+  color: white;
 }
 
 .cover-slide h1,

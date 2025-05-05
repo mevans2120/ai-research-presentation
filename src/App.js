@@ -561,10 +561,16 @@ function SlideView() {
 function renderSlide(slide) {
   switch (slide.type) {
     case 'cover':
+      // Check if this is the first slide (title slide)
+      const isFirstSlide = 
+        presentationData.sections[0] && 
+        presentationData.sections[0].slides && 
+        presentationData.sections[0].slides[0] === slide;
+      
       return (
-        <div className="cover-slide">
+        <div className={`cover-slide ${isFirstSlide ? 'inverted' : ''}`}>
           <h1>{slide.title}</h1>
-          <h2>{slide.subtitle}</h2>
+          {slide.subtitle && <h2>{slide.subtitle}</h2>}
         </div>
       );
     
