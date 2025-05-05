@@ -4,7 +4,7 @@ import './App.css';
 
 // Main presentation data structure
 const presentationData = {
-  title: "AI Workbook",
+  title: "MEvans AI Workbook",
   sections: [
     {
       id: "intro",
@@ -12,7 +12,7 @@ const presentationData = {
       slides: [
         {
           type: "cover",
-          title: "AI",
+          title: "MEvans AI Workbook",
           subtitle: "Michael's Workspace"
         },
         {
@@ -507,7 +507,7 @@ function SlideView() {
     <div className="slide-view">
       <header className="header">
         <div className="logo" onClick={() => navigate('/')}>
-          AI Workbook
+          MEvans AI Workbook
         </div>
         <button className="menu-toggle" onClick={toggleMenu}>
           {menuOpen ? 'Close' : 'Menu'}
