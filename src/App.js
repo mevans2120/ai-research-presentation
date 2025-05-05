@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 import './App.css';
 
@@ -422,7 +422,7 @@ function SlideView() {
     }
   }, [sectionId, slideIndex, navigate]);
   
-  const goToNextSlide = () => {
+  const goToNextSlide = useCallback(() => {
     const currentSlideIdx = parseInt(slideIndex, 10);
     if (currentSection && currentSlideIdx < currentSection.slides.length - 1) {
       // Go to next slide in current section
@@ -435,9 +435,9 @@ function SlideView() {
         navigate(`/section/${nextSection.id}/0`);
       }
     }
-  };
+  }, [currentSection, sectionId, slideIndex, navigate]);
   
-  const goToPrevSlide = () => {
+  const goToPrevSlide = useCallback(() => {
     const currentSlideIdx = parseInt(slideIndex, 10);
     if (currentSlideIdx > 0) {
       // Go to previous slide in current section
@@ -450,13 +450,13 @@ function SlideView() {
         navigate(`/section/${prevSection.id}/${prevSection.slides.length - 1}`);
       }
     }
-  };
+  }, [sectionId, slideIndex, navigate]);
   
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
   
-  const handleKeyDown = (e) => {
+  const handleKeyDown = useCallback((e) => {
     if (e.key === 'ArrowRight' || e.key === ' ') {
       goToNextSlide();
     } else if (e.key === 'ArrowLeft') {
@@ -464,14 +464,14 @@ function SlideView() {
     } else if (e.key === 'Escape') {
       setMenuOpen(false);
     }
-  };
+  }, [goToNextSlide, goToPrevSlide, setMenuOpen]);
   
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [currentSection, slideIndex, handleKeyDown]);
+  }, [handleKeyDown]);
   
   if (!currentSection || !currentSlide) {
     return <div className="loading">Loading...</div>;
@@ -548,8 +548,10 @@ function renderSlide(slide) {
       );
     
     case 'text':
+      // Check if this is the introduction slide
+      const isIntroduction = slide.title === "Introduction";
       return (
-        <div className="text-slide">
+        <div className={`text-slide ${isIntroduction ? 'introduction' : ''}`}>
           <h1>{slide.title}</h1>
           <div className="content">
             {slide.content.split('\n').map((paragraph, idx) => (

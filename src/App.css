@@ -214,6 +214,19 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Two-column layout for introduction */
+.text-slide.introduction .content {
+  column-count: 2;
+  column-gap: 2rem;
+  max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+  .text-slide.introduction .content {
+    column-count: 1;
+  }
+}
+
 /* TOC Slide */
 .toc-slide h1 {
   font-size: 2.5rem;
