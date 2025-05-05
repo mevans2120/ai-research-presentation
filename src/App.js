@@ -175,7 +175,7 @@ const presentationData = {
         },
         {
           type: "finding",
-          title: "Most were concerned about the world their children, or their friends' and family's children, will grow up in, though a few felt those worries were overblown.",
+          title: "Most worried about AI's impact on the world kids today will grow up in, though a few felt it was overblown.",
           points: [
             "Several wondered what their kids would do if AI does all this work goes away",
             "One person had a teenager who felt AI was ruining their ability to learn.",
