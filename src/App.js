@@ -72,7 +72,7 @@ const presentationData = {
         },
         {
           type: "finding",
-          title: "AI is deeply embedded into the way most work, and has enabled new capabilities. AI's capabilities often left folks with a moment of awe when they realized its existing and likely future power.",
+          title: "AI is now central to how many work, often sparking moments of awe as people grasp its current and future power.",
           points: [
             "Most use AI everyday, over half use (and pay for) multiple chatbots, several have already built useful products primarily with AI, or because AI made it easier to build the product and start the company.",
             "Many had moments of awe where they realized AI's power was going to change so much about their world",
