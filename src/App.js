@@ -13,7 +13,7 @@ const presentationData = {
         {
           type: "cover",
           title: "MEvans AI Workbook",
-          subtitle: "Michael's Workspace"
+          subtitle: ""
         },
         {
           type: "text",
