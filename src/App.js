@@ -18,7 +18,7 @@ const presentationData = {
         {
           type: "text",
           title: "Introduction",
-          content: "I've long been someone who tracks and adopts new technology as quickly as I can. And while I certainly got excited when ChatGPT launched, I started using it as a spelling / grammar checker, when I remembered to use it, but I never got that deep or tested it... That's because I spent the past year and a half doing joyful but hard work for a restaurant / theme park: Casa Bonita. After the hard work for Casa Bonita was completed, and I got laid off by the agency I was working for… I knew I had catch up to do. As part of a mini-sabbatical, I wanted to answer a question: utilizing AI, could I design and develop and ship something useful all by myself? It didn't take me long to learn that the answer was: \"Yes. You can actually build something useful that would typically take days… in hours.\""
+          content: "I've long been someone who tracks and adopts new technology as quickly as I can. And while I certainly got excited when ChatGPT launched. I started using it as a spelling / grammar checker, when I remembered to use it, but I never got that deep or tested it… \n\nThat's because I spent the past year and a half doing joyful but hard work for a restaurant / theme park: Casa Bonita. And while Casa Bonita is a complicated beast… cliff divers and Mexican food and all… Their digital products don't really need AI. Anybody who knows me, knows that I get pretty focused and single minded when presented with a set of challenging problems. AI would have to wait. \n\nAfter the hard work for Casa Bonita was completed, and I got laid off by the agency I was working for… I knew I had catch up to do. As an aside, if you are in Denver, go to Casa Bonita. It's wonderful there. \n\nAs part of a mini-sabbatical, I wanted to answer a question: utilizing AI, could I design and develop and ship something useful all by myself? It didn't take me long to learn that the answer was: \n\n\"Yes. You can actually build something useful that would typically take days… in hours.\" \n\nI freaked out. It was a \"holy shit\" moment. In the next 5 years will I be able to ask Claude to \"build me an airline website\" and have it get a majority of the work done? Will AI unlock massive amounts of new products that weren't feasible or cost effective? Or should I get out of the industry and try to open a yoga studio? I didn't have a good sense about what the answer would be. I was also thinking about my children, would their creativity and intellect be useful in the future. Deep breaths…\n\nI knew I'd been living under a rock… But most of my colleagues and peers have not… What did they think? How were they using it? How were they building with it? Is it hard to build a custom agent (spoiler: it's not that hard)?\n\nSimilar to when I was going through a divorce, I decided to conduct some personal research with a set of smart colleagues and friends who I figure would have thought about this and have some expertise. The divorce research was incredibly useful. Hopefully this would be as well, and at least I could offer the participants the results of the research."
         },
         {
           type: "toc",
@@ -471,7 +471,7 @@ function SlideView() {
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [currentSection, slideIndex]);
+  }, [currentSection, slideIndex, handleKeyDown]);
   
   if (!currentSection || !currentSlide) {
     return <div className="loading">Loading...</div>;
