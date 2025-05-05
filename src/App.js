@@ -8,7 +8,7 @@ const presentationData = {
   sections: [
     {
       id: "intro",
-      title: "Introduction",
+      title: "Welcome",
       slides: [
         {
           type: "cover",
@@ -17,7 +17,7 @@ const presentationData = {
         },
         {
           type: "text",
-          title: "",
+          title: "About",
           content: "I've long been someone who tracks and adopts new technology as quickly as I can. And while I certainly got excited when ChatGPT launched. I started using itfor spelling / grammar checker, when I remembered, but I never got that deep…\n\nThat's because I spent the past 1.5 years doing joyful hard work for opening up Casa Bonita to the general public. And while Casa Bonita is a complicated beast… Cliff divers, thousands of covers,  Mexican food and all… Their digital products don't need AI. And, anybody who knows me, knows that I get single minded when presented with a set of challenging problems. AI would have to wait. Also, go to Casa Bonita, it's wonderful there. \n\nAfter Casa Bonita I transitioned the digital products to Casa Bonita, I got laid off by my agency. The one blessing was that I could catch up on AI. \n\nAs part of a mini-sabbatical, I wanted to answer a question: utilizing AI, could I design and develop and ship something useful all by myself? It didn't take me long to learn that the answer was: \n\n\"Yes. You can actually build something useful that would typically take days… in hours.\" \n\nHoly shit. In the next 5 years, will I be able to ask Claude to \"build me an airline website\" and have it get a majority of the work done? Will AI unlock massive amounts of new products that weren't feasible or cost effective? Or should I get out of the industry and try to open a yoga studio? I didn't have a good sense about what the answer would be. I was also thinking about my children, would their creativity and intellect be useful in the future. Deep breaths…\n\nWhile I'd been living under a rock, most of my colleagues and peers had not. How were they using AI? How were they working with it? Is it hard to build a custom agent (spoiler: it's not that hard)?\n\nSimilar to when I was going through a divorce, I decided to conduct some personal research with a set of smart colleagues and friends who I figure would have thought about this and have some expertise. The divorce research was incredibly useful. Hopefully this would be as well."
         },
         {
@@ -510,7 +510,7 @@ function SlideView() {
           AI Workbook
         </div>
         <button className="menu-toggle" onClick={toggleMenu}>
-          {menuOpen ? '✕' : '☰'}
+          {menuOpen ? 'Close' : 'Menu'}
         </button>
       </header>
       
@@ -525,11 +525,14 @@ function SlideView() {
                 {section.id === sectionId && (
                   <ul className="section-slides">
                     {section.slides.map((slide, slideIdx) => (
-                      <li key={slideIdx} className={slideIdx === parseInt(slideIndex, 10) ? 'active' : ''}>
-                        <Link to={`/section/${section.id}/${slideIdx}`}>
-                          {slide.title || `Slide ${slideIdx + 1}`}
-                        </Link>
-                      </li>
+                      // Skip the first slide (cover) in the navigation
+                      slideIdx !== 0 ? (
+                        <li key={slideIdx} className={slideIdx === parseInt(slideIndex, 10) ? 'active' : ''}>
+                          <Link to={`/section/${section.id}/${slideIdx}`}>
+                            {slide.title || `Slide ${slideIdx + 1}`}
+                          </Link>
+                        </li>
+                      ) : null
                     ))}
                   </ul>
                 )}
