@@ -159,7 +159,7 @@ const presentationData = {
         },
         {
           type: "finding",
-          title: "Most think AI will be a boon and then a bust for folks who work in tech… but no one knows when the bust will come.",
+          title: "Most expect AI to boom, then bust, in tech—but no one knows when.",
           points: [
             "Everyone believed that AI would unlock a bunch of innovation by being part of new products, and also enabling other digital products to be developed more cheaply",
             "Everyone also believed that the teams needed to build these products would be significantly smaller.",
