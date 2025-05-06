@@ -236,29 +236,6 @@ const presentationData = {
               url: "https://www.youtube.com/watch?v=gI0ZNhA0rvE&list=PL2fLjt2dG0N6unOOF3nHWYGcJJIQR1NKm"
             }
           ]
-        },
-        {
-          type: "links",
-          title: "The AI Future",
-          content: "Interesting thought pieces about the AI Future",
-          links: [
-            {
-              text: "Dario Modei CEO of Anthropic argues why understanding AI is important",
-              url: "https://www.darioamodei.com/post/the-urgency-ofinterpretability"
-            },
-            {
-              text: "A frightening but compelling vision of the AI in the future through the lens of economics",
-              url: "https://lukedrago.substack.com/p/the-intelligencecurse#ftnt_ref6"
-            },
-            {
-              text: "Ezra Klein's podcast on AI with Biden's AI head",
-              url: "https://www.youtube.com/watch?v=Btos-LEYQ30"
-            },
-            {
-              text: "A realistic view of AI and its impact timeline",
-              url: "https://epochai.substack.com/p/thecase-for-multi-decade-ai-timelines"
-            }
-          ]
         }
       ]
     },
@@ -266,11 +243,6 @@ const presentationData = {
       id: "vibe-coder",
       title: "Vibe Coder",
       slides: [
-        {
-          type: "section-cover",
-          title: "Vibe Coder",
-          subtitle: ""
-        },
         {
           type: "vibe-coder",
           title: "Me, The vibe coder",
@@ -571,9 +543,12 @@ function SlideView() {
       
       <div className="slide-controls">
         <button className="prev-slide" onClick={goToPrevSlide}>←</button>
-        <div className="slide-progress">
-          Slide {globalSlideInfo.current} of {globalSlideInfo.total}
-        </div>
+        {globalSlideInfo.current > 3 && (
+          <div className="slide-progress">
+            Slide {globalSlideInfo.current - 3} of {globalSlideInfo.total - 3}
+          </div>
+        )}
+        {globalSlideInfo.current <= 3 && <div className="slide-progress-placeholder"></div>}
         <button className="next-slide" onClick={goToNextSlide}>→</button>
       </div>
     </div>

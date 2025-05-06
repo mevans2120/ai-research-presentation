@@ -183,11 +183,16 @@ body {
   cursor: pointer;
   color: var(--primary-color);
   padding: 0.5rem 1rem;
+  width: 60px; /* Fixed width for consistent layout */
+  text-align: center;
 }
 
-.slide-progress {
+.slide-progress, 
+.slide-progress-placeholder {
   font-size: 0.9rem;
   color: var(--secondary-color);
+  flex: 1;
+  text-align: center;
 }
 
 /* Loading State */
@@ -258,7 +263,7 @@ body {
 
 /* Inverted style for first slide */
 .cover-slide.inverted {
-  background-color: var(--nav-color);
+  background-color: #DC9659;
   color: white;
   margin: 0;
   padding: 0;
@@ -281,7 +286,7 @@ body {
 
 /* Keep the white text on inverted slides */
 .cover-slide.inverted h1 {
-  color: #DC9659;
+  color: var(--blue-color);
 }
 
 .cover-slide h1,
@@ -653,18 +658,12 @@ body {
 }
 
 /* Specific styling for controls on first slide */
-.cover-slide.inverted + .slide-controls button,
-.cover-slide.inverted ~ .slide-controls .slide-progress {
-  color: white;
-}
-
-/* Specific styling for controls on first slide */
 .first-slide-active .slide-controls button {
-  color: white;
+  color: var(--blue-color);
 }
 
 .first-slide-active .slide-progress {
-  color: white;
+  color: var(--blue-color);
 }
 
 /* Side click areas for navigation */
@@ -729,4 +728,12 @@ body {
   opacity: 0;
   cursor: default;
   pointer-events: none;
+}
+
+.prev-slide {
+  text-align: left;
+}
+
+.next-slide {
+  text-align: right;
 } 
