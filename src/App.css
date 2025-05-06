@@ -281,7 +281,7 @@ body {
 
 /* Keep the white text on inverted slides */
 .cover-slide.inverted h1 {
-  color: white;
+  color: #DC9659;
 }
 
 .cover-slide h1,
@@ -345,6 +345,10 @@ body {
 }
 
 /* TOC Slide */
+.toc-slide {
+  text-align: center;
+}
+
 .toc-slide h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -356,17 +360,22 @@ body {
   font-size: 1.4rem;
   line-height: 2;
   max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .toc-slide .toc-list li {
-  padding: 0.5rem 0;
+  padding: 0;
   border-bottom: 1px solid var(--light-gray);
+  text-align: left;
 }
 
 .toc-slide .toc-link {
   color: var(--primary-color);
   text-decoration: none;
   display: block;
+  width: 100%;
+  padding: 0.5rem 0;
   transition: color 0.2s;
 }
 
@@ -704,4 +713,20 @@ body {
 
 .next-slide::after {
   content: none;
+}
+
+/* Hide prev button on first slide */
+.first-slide-active .prev-slide,
+.first-slide-active .left-click {
+  opacity: 0;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Hide next button on last slide */
+.last-slide-active .next-slide,
+.last-slide-active .right-click {
+  opacity: 0;
+  cursor: default;
+  pointer-events: none;
 } 

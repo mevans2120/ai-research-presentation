@@ -509,8 +509,16 @@ function SlideView() {
     presentationData.sections[0].slides && 
     presentationData.sections[0].slides[0] === currentSlide;
   
+  // Check if this is the last slide of the last section
+  const isLastSlide = 
+    presentationData.sections[presentationData.sections.length - 1] &&
+    presentationData.sections[presentationData.sections.length - 1].slides &&
+    presentationData.sections[presentationData.sections.length - 1].slides[
+      presentationData.sections[presentationData.sections.length - 1].slides.length - 1
+    ] === currentSlide;
+  
   return (
-    <div className={`slide-view ${isFirstSlide ? 'first-slide-active' : ''}`}>
+    <div className={`slide-view ${isFirstSlide ? 'first-slide-active' : ''} ${isLastSlide ? 'last-slide-active' : ''}`}>
       <header className="header">
         <div className="logo" onClick={() => navigate('/')}>
           MEvans AI Workbook
