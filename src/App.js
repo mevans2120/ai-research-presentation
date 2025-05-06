@@ -57,8 +57,7 @@ const presentationData = {
           type: "methodology",
           title: "Audience & Methodology",
           content: "I spoke with 13 colleagues. The conversations ranged from 15 to 60 minutes, with follow-ups in several cases. They were a mix of designers, developers, product managers, and other business folks. Over half were executives at their companies, and the rest were relatively senior. These conversations took place over the span of a month (these folks are hard to schedule), and it took me a couple of weeks to write these findings down.",
-          additionalContent: "I didn't record the interviews, but I took notes during and after each conversation. As a result, the snippets often approximate quotes but aren't word for word.",
-          tableFootnote: "In order to ensure anonymity, below are the gender, the company type and the roles for the folks I talked to…",
+          footnote: "In order to ensure anonymity and encourage frank conversations, I didn't record the interviews that took place, but took notes instead. This means that some of the quotes may be slightly abridged or have slightly different wording.",
           tableData: {
             headers: ["Gender", "Company Type", "Role"],
             rows: [
@@ -684,8 +683,12 @@ function renderSlide(slide) {
           <h1>{slide.title}</h1>
           <div className="methodology-content">
             <div className="text-column">
-              <p>{slide.content}</p>
-              <p className="additional-content">{slide.additionalContent}</p>
+              <p>
+                {slide.content}
+                {slide.footnote && (
+                  <a href="#footnote-1" className="footnote-marker">¹</a>
+                )}
+              </p>
             </div>
             
             {slide.tableData && (
@@ -710,12 +713,18 @@ function renderSlide(slide) {
                     </tbody>
                   </table>
                 </div>
-                {slide.tableFootnote && (
-                  <p className="table-footnote">{slide.tableFootnote}</p>
-                )}
               </div>
             )}
           </div>
+          
+          {/* Footnote container */}
+          {slide.footnote && (
+            <div className="footnotes">
+              <p id="footnote-1" className="footnote">
+                <sup>1</sup> {slide.footnote}
+              </p>
+            </div>
+          )}
         </div>
       );
     

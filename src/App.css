@@ -431,6 +431,11 @@ body {
 }
 
 /* Methodology Slide */
+.methodology-slide {
+  position: relative;
+  min-height: calc(100vh - var(--header-height) - 60px);
+}
+
 .methodology-slide h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -811,4 +816,65 @@ body {
 
 .next-slide {
   text-align: right;
+}
+
+/* Footnotes - Mobile first approach */
+.footnote-marker {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 2px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footnotes {
+  /* Position relative for mobile */
+  position: relative;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  margin: 1.5rem 0 2rem;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  color: var(--dark-gray);
+  line-height: 1.4;
+}
+
+.footnote {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footnote sup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.75em;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Desktop positioning */
+@media (min-width: 992px) {
+  .methodology-slide .footnotes {
+    /* Absolute positioning for desktop */
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0 2rem;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+  }
+  
+  .methodology-slide .footnote {
+    width: 48%;
+  }
 } 
