@@ -4,6 +4,7 @@
   --primary-color: #12265F;
   --secondary-color: #4b5563;
   --accent-color: #8b5cf6;
+  --purple-color: #473399;
   --background-color: #f8fafc;
   --text-color: #1e293b;
   --light-gray: #e2e8f0;
@@ -71,7 +72,7 @@ body {
   font-weight: 700;
   font-size: 1.2rem;
   cursor: pointer;
-  color: var(--primary-color);
+  color: var(--purple-color);
 }
 
 .menu-toggle {
@@ -80,7 +81,7 @@ body {
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  color: var(--primary-color);
+  color: var(--purple-color);
   padding: 0.5rem 1rem;
 }
 
@@ -111,7 +112,7 @@ body {
 }
 
 .navigation li.active > .section-title {
-  color: var(--primary-color);
+  color: var(--purple-color);
 }
 
 .navigation .section-slides {
@@ -131,7 +132,7 @@ body {
 }
 
 .navigation .section-slides li.active a {
-  color: var(--primary-color);
+  color: var(--purple-color);
   font-weight: 500;
 }
 
@@ -255,7 +256,7 @@ body {
 
 /* Inverted style for first slide */
 .cover-slide.inverted {
-  background-color: var(--primary-color);
+  background-color: var(--purple-color);
   color: white;
   margin: 0;
   padding: 0;
