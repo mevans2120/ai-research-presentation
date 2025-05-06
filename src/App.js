@@ -618,12 +618,20 @@ function renderSlide(slide) {
       );
     
     case 'toc':
+      // Create clickable TOC that matches navigation
       return (
         <div className="toc-slide">
           <h1>{slide.title}</h1>
           <ul className="toc-list">
-            {slide.items.map((item, idx) => (
-              <li key={idx}>{item}</li>
+            {presentationData.sections.slice(1).map((section) => (
+              <li key={section.id}>
+                <Link 
+                  to={`/section/${section.id}/0`} 
+                  className="toc-link"
+                >
+                  {section.title}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

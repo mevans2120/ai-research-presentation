@@ -363,6 +363,17 @@ body {
   border-bottom: 1px solid var(--light-gray);
 }
 
+.toc-slide .toc-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s;
+}
+
+.toc-slide .toc-link:hover {
+  color: var(--nav-color);
+}
+
 /* Hypothesis Slide */
 .hypothesis-slide h1 {
   font-size: 2.5rem;
