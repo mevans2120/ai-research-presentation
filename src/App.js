@@ -56,8 +56,18 @@ const presentationData = {
         {
           type: "methodology",
           title: "Audience & Methodology",
-          content: "I spoke with 11 colleagues. The conversations ranged from 15 to 60 minutes, with follow-ups in several cases. They were a mix of designers, developers, product managers, and other business folks. Over half were executives at their companies, and the rest were relatively senior. These conversations took place over the span of a month (these folks are hard to schedule), and it took me a couple of weeks to write these findings down.",
-          additionalContent: "I didn't record the interviews, but I took notes during and after each conversation. As a result, the snippets often approximate quotes but aren't word for word."
+          content: "I spoke with 13 colleagues. The conversations ranged from 15 to 60 minutes, with follow-ups in several cases. They were a mix of designers, developers, product managers, and other business folks. Over half were executives at their companies, and the rest were relatively senior. These conversations took place over the span of a month (these folks are hard to schedule), and it took me a couple of weeks to write these findings down.",
+          additionalContent: "I didn't record the interviews, but I took notes during and after each conversation. As a result, the snippets often approximate quotes but aren't word for word.",
+          tableFootnote: "In order to ensure anonymity, below are the gender, the company type and the roles for the folks I talked to…",
+          tableData: {
+            headers: ["Gender", "Company Type", "Role"],
+            rows: [
+              ["9 Male", "5 Consultancy", "4 C Suite"],
+              ["4 Female", "3 Big Tech", "3 VP"],
+              ["", "4 Start Up", "4 Director"],
+              ["", "1 Freelance", "2 Senior"]
+            ]
+          }
         }
       ]
     },
@@ -376,8 +386,14 @@ function SlideView() {
   const [currentSection, setCurrentSection] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [expandedSection, setExpandedSection] = useState(null);
   const [globalSlideInfo, setGlobalSlideInfo] = useState({ current: 0, total: 0 });
   const navigate = useNavigate();
+  
+  // Set expanded section when sectionId changes
+  useEffect(() => {
+    setExpandedSection(sectionId);
+  }, [sectionId]);
   
   // Calculate total slides and current global slide index
   useEffect(() => {
@@ -505,21 +521,36 @@ function SlideView() {
           <ul>
             {presentationData.sections.map((section, idx) => (
               <li key={section.id} className={section.id === sectionId ? 'active' : ''}>
-                <div className="section-title" onClick={() => {
-                  navigate(`/section/${section.id}/0`);
-                  setMenuOpen(false);
-                }}>
+                <div 
+                  className="section-title" 
+                  onClick={() => {
+                    // Toggle expanded section state
+                    if (expandedSection === section.id) {
+                      // If this section is already expanded, navigate to it
+                      navigate(`/section/${section.id}/0`);
+                    } else {
+                      // Otherwise, expand this section without navigating
+                      setExpandedSection(section.id);
+                    }
+                  }}
+                >
                   {section.title}
                 </div>
-                {section.id === sectionId && (
+                {expandedSection === section.id && (
                   <ul className="section-slides">
                     {section.slides.map((slide, slideIdx) => (
                       // Skip the first slide (cover) in the navigation
                       slideIdx !== 0 ? (
-                        <li key={slideIdx} className={slideIdx === parseInt(slideIndex, 10) ? 'active' : ''}>
-                          <Link to={`/section/${section.id}/${slideIdx}`} onClick={() => setMenuOpen(false)}>
+                        <li key={slideIdx} className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) ? 'active' : ''}>
+                          <div 
+                            className="slide-link"
+                            onClick={() => {
+                              navigate(`/section/${section.id}/${slideIdx}`);
+                              setMenuOpen(false); // Always close menu when clicking on a slide
+                            }}
+                          >
                             {slide.title || `Slide ${slideIdx + 1}`}
-                          </Link>
+                          </div>
                         </li>
                       ) : null
                     ))}
@@ -531,11 +562,16 @@ function SlideView() {
         </nav>
       )}
       
-      {/* Left side click area */}
-      <div className="side-click-area left-click" onClick={goToPrevSlide}></div>
-      
-      {/* Right side click area */}
-      <div className="side-click-area right-click" onClick={goToNextSlide}></div>
+      {/* Only render side click areas when menu is closed */}
+      {!menuOpen && (
+        <>
+          {/* Left side click area */}
+          <div className="side-click-area left-click" onClick={goToPrevSlide}></div>
+          
+          {/* Right side click area */}
+          <div className="side-click-area right-click" onClick={goToNextSlide}></div>
+        </>
+      )}
       
       <main className={`slide-content ${currentSlide.type}-slide`}>
         {renderSlide(currentSlide)}
@@ -646,9 +682,39 @@ function renderSlide(slide) {
       return (
         <div className="methodology-slide">
           <h1>{slide.title}</h1>
-          <div className="content">
-            <p>{slide.content}</p>
-            <p className="additional-content">{slide.additionalContent}</p>
+          <div className="methodology-content">
+            <div className="text-column">
+              <p>{slide.content}</p>
+              <p className="additional-content">{slide.additionalContent}</p>
+            </div>
+            
+            {slide.tableData && (
+              <div className="table-column">
+                <div className="table-container">
+                  <table className="methodology-table">
+                    <thead>
+                      <tr>
+                        {slide.tableData.headers.map((header, idx) => (
+                          <th key={idx}>{header}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {slide.tableData.rows.map((row, rowIdx) => (
+                        <tr key={rowIdx}>
+                          {row.map((cell, cellIdx) => (
+                            <td key={cellIdx}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {slide.tableFootnote && (
+                  <p className="table-footnote">{slide.tableFootnote}</p>
+                )}
+              </div>
+            )}
           </div>
         </div>
       );

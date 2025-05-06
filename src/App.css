@@ -4,7 +4,7 @@
   --blue-color: #12265F;
   --purple-color: #473399;
   --primary-color: var(--blue-color);
-  --nav-color: var(--purple-color);
+  --nav-color: var(--blue-color);
   --secondary-color: #4b5563;
   --accent-color: #8b5cf6;
   --background-color: #f8fafc;
@@ -127,13 +127,16 @@ body {
   padding: 0.5rem 0;
 }
 
-.navigation .section-slides li a {
+.navigation .section-slides li a,
+.navigation .section-slides li .slide-link {
   color: var(--blue-color);
   text-decoration: none;
   display: block;
+  cursor: pointer;
 }
 
-.navigation .section-slides li.active a {
+.navigation .section-slides li.active a,
+.navigation .section-slides li.active .slide-link {
   color: var(--nav-color);
   font-weight: 500;
 }
@@ -263,7 +266,7 @@ body {
 
 /* Inverted style for first slide */
 .cover-slide.inverted {
-  background-color: #DC9659;
+  background-color: var(--purple-color);
   color: white;
   margin: 0;
   padding: 0;
@@ -278,15 +281,15 @@ body {
   z-index: 1;
 }
 
+/* Keep the white text on inverted slides */
+.cover-slide.inverted h1 {
+  color: white;
+}
+
 /* Adjust content padding inside full-width slides */
 .section-cover-slide h1,
 .cover-slide.inverted h1 {
   padding: 0 2rem;
-}
-
-/* Keep the white text on inverted slides */
-.cover-slide.inverted h1 {
-  color: var(--blue-color);
 }
 
 .cover-slide h1,
@@ -439,6 +442,33 @@ body {
   max-width: 800px;
 }
 
+/* Two-column layout for methodology slide */
+.methodology-slide .methodology-content {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* For desktop screens, use two columns */
+@media (min-width: 992px) {
+  .methodology-slide .methodology-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .methodology-slide .text-column {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  .methodology-slide .table-column {
+    flex: 1;
+  }
+}
+
 .methodology-slide p {
   margin-bottom: 1.5rem;
 }
@@ -446,6 +476,51 @@ body {
 .methodology-slide .additional-content {
   font-style: italic;
   color: var(--dark-gray);
+}
+
+/* Methodology Table Styles */
+.methodology-slide .table-footnote {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--dark-gray);
+  line-height: 1.4;
+}
+
+.methodology-slide .table-container {
+  margin: 1rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.methodology-slide .methodology-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 992px) {
+  .methodology-slide .methodology-table {
+    min-width: 450px;
+  }
+}
+
+.methodology-slide .methodology-table th {
+  background-color: #0F1E45;
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.methodology-slide .methodology-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.methodology-slide .methodology-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
 /* Finding Slide */
