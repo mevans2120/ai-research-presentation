@@ -21,6 +21,16 @@
   padding: 0;
 }
 
+/* Reset and base styles */
+html, body {
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -29,12 +39,16 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: auto;
 }
 
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  width: 100vw;
 }
 
 /* Header Styles */
@@ -125,9 +139,22 @@ body {
 .slide-content {
   padding: calc(var(--header-height) + 2rem) 2rem 5rem;
   flex: 1;
-  max-width: var(--max-content-width);
   margin: 0 auto;
   width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Specific styling for full-screen slides to prevent scrolling */
+.slide-content.section-cover-slide,
+.slide-content.cover-slide {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--header-height) - 60px); /* Account for header and controls */
 }
 
 /* Slide Controls */
@@ -140,8 +167,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: white;
-  border-top: 1px solid var(--light-gray);
+  background-color: transparent;
+  z-index: 10;
+  height: 60px; /* Fixed height to prevent layout shifts */
 }
 
 .slide-controls button {
@@ -179,15 +207,51 @@ body {
   min-height: calc(100vh - var(--header-height) - 5rem);
 }
 
+/* Add light gray background to section cover slides */
+.section-cover-slide {
+  background-color: var(--light-gray);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--header-height);
+  bottom: 0;
+  max-width: none;
+  overflow: hidden;
+}
+
 /* Inverted style for first slide */
 .cover-slide.inverted {
   background-color: var(--primary-color);
   color: white;
-  margin: -2rem;
-  padding: 2rem;
-  width: calc(100% + 4rem);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: calc(100vh - var(--header-height));
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--header-height);
+  bottom: 0;
+  max-width: none;
+  overflow: hidden;
 }
 
+/* Adjust content padding inside full-width slides */
+.section-cover-slide h1,
+.cover-slide.inverted h1 {
+  padding: 0 2rem;
+}
+
+/* Keep the white text on inverted slides */
 .cover-slide.inverted h1 {
   color: white;
 }
@@ -207,11 +271,15 @@ body {
 }
 
 .section-cover-slide h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
 }
 
 .section-cover-slide h2 {
   font-size: 1.6rem;
+  text-align: center;
 }
 
 /* Text Slide */
@@ -501,4 +569,21 @@ body {
   .vibe-coder-slide .workflow {
     grid-template-columns: 1fr;
   }
+}
+
+/* When a section-cover slide or the first slide is active, prevent scrolling */
+.slide-view {
+  position: relative;
+  overflow: auto;
+}
+
+.section-cover-slide,
+.cover-slide.inverted {
+  overflow: hidden;
+}
+
+/* For pages with divider slides, prevent the slide-content from scrolling */
+.slide-content.section-cover-slide,
+.slide-content.cover-slide {
+  overflow: hidden;
 } 
