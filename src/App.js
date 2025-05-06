@@ -551,6 +551,12 @@ function SlideView() {
         </nav>
       )}
       
+      {/* Left side click area */}
+      <div className="side-click-area left-click" onClick={goToPrevSlide}></div>
+      
+      {/* Right side click area */}
+      <div className="side-click-area right-click" onClick={goToNextSlide}></div>
+      
       <main className={`slide-content ${currentSlide.type}-slide`}>
         {renderSlide(currentSlide)}
       </main>
