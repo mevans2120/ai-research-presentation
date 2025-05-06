@@ -64,7 +64,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .logo {
@@ -167,8 +167,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: transparent;
-  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 1001; /* Higher than section-cover-slide */
   height: 60px; /* Fixed height to prevent layout shifts */
 }
 
@@ -207,25 +208,49 @@ body {
   min-height: calc(100vh - var(--header-height) - 5rem);
 }
 
-/* Add light gray background to section cover slides */
+/* Section cover content wrapper to ensure visibility */
+.section-cover-content {
+  position: relative;
+  z-index: 999; /* Very high z-index to ensure visibility */
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Reset section cover slide for simpler styling */
 .section-cover-slide {
   background-color: var(--light-gray);
   margin: 0;
   padding: 0;
   width: 100vw;
   height: calc(100vh - var(--header-height));
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: var(--header-height);
-  bottom: 0;
-  max-width: none;
-  overflow: hidden;
+  z-index: 1;
+}
+
+/* Headings in section cover slides */
+.section-cover-slide h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  position: relative;
+}
+
+/* Ensure all elements in section-cover-slide are visible */
+.section-cover-slide * {
+  position: relative;
+  z-index: 5;
 }
 
 /* Inverted style for first slide */
@@ -236,13 +261,13 @@ body {
   padding: 0;
   width: 100vw;
   height: calc(100vh - var(--header-height));
-  position: absolute;
-  left: 0;
-  right: 0;
+  position: fixed;
   top: var(--header-height);
-  bottom: 0;
-  max-width: none;
-  overflow: hidden;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 /* Adjust content padding inside full-width slides */
@@ -270,11 +295,16 @@ body {
   color: var(--secondary-color);
 }
 
+/* Section Cover Slide Heading Fixes */
 .section-cover-slide h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
   text-align: center;
+  position: relative;
+  z-index: 5;
+  display: block;
+  padding: 0 2rem;
 }
 
 .section-cover-slide h2 {
@@ -586,4 +616,25 @@ body {
 .slide-content.section-cover-slide,
 .slide-content.cover-slide {
   overflow: hidden;
+}
+
+/* Regular slide content should be above divider slides */
+.slide-content:not(.section-cover-slide):not(.cover-slide) {
+  position: relative;
+  z-index: 5;
+}
+
+/* Specific styling for controls on first slide */
+.cover-slide.inverted + .slide-controls button,
+.cover-slide.inverted ~ .slide-controls .slide-progress {
+  color: white;
+}
+
+/* Specific styling for controls on first slide */
+.first-slide-active .slide-controls button {
+  color: white;
+}
+
+.first-slide-active .slide-progress {
+  color: white;
 } 

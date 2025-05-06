@@ -44,7 +44,7 @@ const presentationData = {
         {
           type: "section-cover",
           title: "Research Findings",
-          subtitle: "Michael's Workspace"
+          subtitle: ""
         },
         {
           type: "hypothesis",
@@ -67,8 +67,8 @@ const presentationData = {
       slides: [
         {
           type: "section-cover",
-          title: "AI Research",
-          subtitle: "Findings - Present"
+          title: "Findings - Present",
+          subtitle: ""
         },
         {
           type: "finding",
@@ -154,8 +154,8 @@ const presentationData = {
       slides: [
         {
           type: "section-cover",
-          title: "AI Research",
-          subtitle: "Findings - Future (5 - 10 years out)"
+          title: "Findings - Future",
+          subtitle: ""
         },
         {
           type: "finding",
@@ -195,8 +195,8 @@ const presentationData = {
       slides: [
         {
           type: "section-cover",
-          title: "AI Research",
-          subtitle: "Chatphone"
+          title: "Chatphone",
+          subtitle: ""
         },
         {
           type: "thought-experiment",
@@ -211,8 +211,8 @@ const presentationData = {
       slides: [
         {
           type: "section-cover",
-          title: "AI Research",
-          subtitle: "Interesting Reads"
+          title: "Interesting Reads",
+          subtitle: ""
         },
         {
           type: "links",
@@ -268,8 +268,8 @@ const presentationData = {
       slides: [
         {
           type: "section-cover",
-          title: "AI Research",
-          subtitle: "Me, the vibe coder and what I've built"
+          title: "Vibe Coder",
+          subtitle: ""
         },
         {
           type: "vibe-coder",
@@ -338,8 +338,8 @@ const presentationData = {
       slides: [
         {
           type: "section-cover",
-          title: "AI Research",
-          subtitle: "What I'm thinking about next"
+          title: "Next Steps",
+          subtitle: ""
         },
         {
           type: "thought-experiment",
@@ -503,8 +503,14 @@ function SlideView() {
     return <div className="loading">Loading...</div>;
   }
   
+  // Check if this is the first slide (title slide)
+  const isFirstSlide = 
+    presentationData.sections[0] && 
+    presentationData.sections[0].slides && 
+    presentationData.sections[0].slides[0] === currentSlide;
+  
   return (
-    <div className="slide-view">
+    <div className={`slide-view ${isFirstSlide ? 'first-slide-active' : ''}`}>
       <header className="header">
         <div className="logo" onClick={() => navigate('/')}>
           MEvans AI Workbook
@@ -519,7 +525,10 @@ function SlideView() {
           <ul>
             {presentationData.sections.map((section, idx) => (
               <li key={section.id} className={section.id === sectionId ? 'active' : ''}>
-                <div className="section-title" onClick={() => navigate(`/section/${section.id}/0`)}>
+                <div className="section-title" onClick={() => {
+                  navigate(`/section/${section.id}/0`);
+                  setMenuOpen(false);
+                }}>
                   {section.title}
                 </div>
                 {section.id === sectionId && (
@@ -528,7 +537,7 @@ function SlideView() {
                       // Skip the first slide (cover) in the navigation
                       slideIdx !== 0 ? (
                         <li key={slideIdx} className={slideIdx === parseInt(slideIndex, 10) ? 'active' : ''}>
-                          <Link to={`/section/${section.id}/${slideIdx}`}>
+                          <Link to={`/section/${section.id}/${slideIdx}`} onClick={() => setMenuOpen(false)}>
                             {slide.title || `Slide ${slideIdx + 1}`}
                           </Link>
                         </li>
@@ -577,8 +586,10 @@ function renderSlide(slide) {
     case 'section-cover':
       return (
         <div className="section-cover-slide">
-          <h1>{slide.title}</h1>
-          <h2>{slide.subtitle}</h2>
+          <div className="section-cover-content">
+            <h1>{slide.title}</h1>
+            {slide.subtitle && <h2>{slide.subtitle}</h2>}
+          </div>
         </div>
       );
     
