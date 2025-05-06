@@ -110,7 +110,7 @@ body {
   font-weight: 600;
   padding: 0.75rem 0;
   cursor: pointer;
-  color: var(--secondary-color);
+  color: var(--blue-color);
 }
 
 .navigation li.active > .section-title {
@@ -128,7 +128,7 @@ body {
 }
 
 .navigation .section-slides li a {
-  color: var(--dark-gray);
+  color: var(--blue-color);
   text-decoration: none;
   display: block;
 }
