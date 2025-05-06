@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 import './App.css';
 
@@ -210,7 +210,129 @@ const presentationData = {
         {
           type: "thought-experiment",
           title: "Chatphone Thought Experiment",
-          content: "In a Buddhist monastery, everyone learns to use breath as a tool to stop mental dispersion and to build up concentration power."
+          content: "",
+          svgContent: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680">
+  <!-- Background - changed to match presentation background -->
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  
+  <!-- Phone Frames - adjusted positioning to reduce padding -->
+  <g transform="translate(120, 50)">
+    <!-- Work Mode Phone -->
+    <rect x="0" y="0" width="250" height="500" rx="20" ry="20" fill="white" stroke="#333" stroke-width="2"/>
+    <text x="125" y="-20" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Work Mode</text>
+    
+    <!-- Work Mode Tools -->
+    <rect x="20" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="50" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Auth</text>
+    <text x="50" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">○</text>
+    
+    <rect x="95" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="125" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Food</text>
+    <text x="125" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">□</text>
+    
+    <rect x="170" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="200" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
+    <text x="200" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
+    
+    <rect x="20" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="50" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Inbox</text>
+    <text x="50" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">▼</text>
+    
+    <rect x="95" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="125" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">To Dos</text>
+    <text x="125" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">✓</text>
+    
+    <rect x="170" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="200" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
+    <text x="200" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
+    
+    <!-- Chat Interface -->
+    <rect x="20" y="200" width="210" height="240" rx="5" ry="5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
+    <text x="125" y="320" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Messages appear here</text>
+    
+    <!-- Input Box -->
+    <rect x="20" y="450" width="210" height="35" rx="17.5" ry="17.5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="125" y="473" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
+  </g>
+  
+  <g transform="translate(445, 50)">
+    <!-- Play Mode Phone -->
+    <rect x="0" y="0" width="250" height="500" rx="20" ry="20" fill="white" stroke="#333" stroke-width="2"/>
+    <text x="125" y="-20" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Play Mode</text>
+    
+    <!-- Play Mode Tools -->
+    <rect x="20" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="50" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Socials</text>
+    <text x="50" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">☺</text>
+    
+    <rect x="95" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="125" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Listen</text>
+    <text x="125" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">♪</text>
+    
+    <rect x="170" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="200" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Watch</text>
+    <text x="200" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">▶</text>
+    
+    <rect x="20" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="50" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
+    <text x="50" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
+    
+    <rect x="95" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="125" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Order</text>
+    <text x="125" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">□</text>
+    
+    <rect x="170" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="200" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
+    <text x="200" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
+    
+    <!-- Chat Interface -->
+    <rect x="20" y="200" width="210" height="240" rx="5" ry="5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
+    <text x="125" y="320" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Messages appear here</text>
+    
+    <!-- Input Box -->
+    <rect x="20" y="450" width="210" height="35" rx="17.5" ry="17.5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="125" y="473" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
+  </g>
+  
+  <g transform="translate(770, 50)">
+    <!-- Travel Mode Phone -->
+    <rect x="0" y="0" width="250" height="500" rx="20" ry="20" fill="white" stroke="#333" stroke-width="2"/>
+    <text x="125" y="-20" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Travel Mode</text>
+    
+    <!-- Travel Mode Tools -->
+    <rect x="20" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="50" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Directions</text>
+    <text x="50" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">↗</text>
+    
+    <rect x="95" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="125" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Nearby</text>
+    <text x="125" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◉</text>
+    
+    <rect x="170" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="200" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Translate</text>
+    <text x="200" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">⟲</text>
+    
+    <rect x="20" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="50" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Itinerary</text>
+    <text x="50" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">☰</text>
+    
+    <rect x="95" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="125" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
+    <text x="125" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
+    
+    <rect x="170" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="200" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
+    <text x="200" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
+    
+    <!-- Chat Interface -->
+    <rect x="20" y="200" width="210" height="240" rx="5" ry="5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
+    <text x="125" y="320" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Messages appear here</text>
+    
+    <!-- Input Box -->
+    <rect x="20" y="450" width="210" height="35" rx="17.5" ry="17.5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="125" y="473" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
+  </g>
+</svg>`
         }
       ]
     },
@@ -388,6 +510,29 @@ function SlideView() {
   const [expandedSection, setExpandedSection] = useState(null);
   const [globalSlideInfo, setGlobalSlideInfo] = useState({ current: 0, total: 0 });
   const navigate = useNavigate();
+  const menuRef = useRef(null);
+  
+  // Handle clicks outside the menu
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuOpen && menuRef.current && !menuRef.current.contains(event.target) && 
+          event.target.className !== 'menu-toggle') {
+        setMenuOpen(false);
+      }
+    }
+    
+    // Add event listener when menu is open
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+    
+    // Clean up the event listener
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [menuOpen]);
   
   // Set expanded section when sectionId changes
   useEffect(() => {
@@ -516,7 +661,7 @@ function SlideView() {
       </header>
       
       {menuOpen && (
-        <nav className="navigation">
+        <nav className="navigation" ref={menuRef}>
           <ul>
             {presentationData.sections.map((section, idx) => (
               <li key={section.id} className={section.id === sectionId ? 'active' : ''}>
@@ -753,9 +898,13 @@ function renderSlide(slide) {
       return (
         <div className="thought-experiment-slide">
           <h1>{slide.title}</h1>
-          <div className="quote-box">
-            <p>{slide.content}</p>
-          </div>
+          {slide.content ? (
+            <div className="quote-box">
+              <p>{slide.content}</p>
+            </div>
+          ) : slide.svgContent ? (
+            <div className="svg-container" dangerouslySetInnerHTML={{ __html: slide.svgContent }} />
+          ) : null}
         </div>
       );
     
