@@ -91,8 +91,8 @@ const presentationData = {
             "I use it everyday. It is embedded in every project I work on. I insist on it",
             "I'm at the same level of \"holy shit\" that you were when you dove in deep",
             "It's fundamental to our company now. Every developer has copilot, every department uses it for something",
-            "I pay for Claude, ChatGPT and Gemini… It's ridiculous, but they all have there strengths. But it feels important to keep track",
-            "It's kind of a bunch of hype. I think it dies down, or is underwhelming, like self driving cars"
+            "I pay for Claude, ChatGPT and Gemini… It's ridiculous, but they all have their strengths. But it feels important to keep track",
+            "It's a bunch of hype. I think it dies down, or is underwhelming, like self driving cars"
           ]
         },
         {

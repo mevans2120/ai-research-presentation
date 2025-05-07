@@ -422,8 +422,12 @@ body {
 }
 
 .hypothesis-slide .future {
-  background-color: #eff6ff;
-  border-left: 4px solid var(--primary-color);
+  background-color: #f0ecff;
+  border-left: 4px solid var(--purple-color);
+}
+
+.hypothesis-slide .future p {
+  color: var(--purple-color);
 }
 
 .hypothesis-slide p {
