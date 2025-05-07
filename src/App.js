@@ -62,8 +62,8 @@ const presentationData = {
             headers: ["Gender", "Company Type", "Role"],
             rows: [
               ["9 Male", "5 Consultancy", "4 C Suite"],
-              ["4 Female", "3 Big Tech", "3 VP"],
-              ["", "4 Start Up", "4 Director"],
+              ["4 Female", "4 Start Up", "4 Director"],
+              ["", "3 Big Tech", "3 VP"],
               ["", "1 Freelance", "2 Senior"]
             ]
           }
@@ -882,7 +882,7 @@ function renderSlide(slide) {
                 <div className="table-container">
                   <table className="methodology-table">
                     <thead>
-                      <tr>
+                      <tr className="purple-header">
                         {slide.tableData.headers.map((header, idx) => (
                           <th key={idx}>{header}</th>
                         ))}
