@@ -500,6 +500,37 @@ Curious to hear what you think about the idea.`,
               description: "I've gotten stuck a few times. A quick DM to a proper engineer has saved me hours."
             }
           ]
+        },
+        {
+          type: "projects",
+          title: "Current Projects",
+          content: "Here are some of the projects I've created:",
+          projects: [
+            {
+              title: "D&D Initiative Tracker",
+              description: "I wrote the D&D initiative tracker with my now 11-year-old son, for the campaigns I DM with his friends. This app lets me keep track of who goes next during battles and their health points. It also sorts player characters and non-player characters for easy review. The insanely fast way this app came together inspired this whole project.",
+              url: "https://dungeon-tracker-mevans212.replit.app/",
+              imageUrl: "/dnd-tracker.png"
+            },
+            {
+              title: "Mom's Website",
+              description: "After building the Initiative Tracker and the POC for the voice-activated kitchen timer, I turned to my mom's website. She's a shaman who offers spiritual healing, as you can see from the site. One note: the site currently has some technical issues due to how I used the agentic tools. I passed the code from one tool to another and ended up with three global CSS files—not ideal. I'm hoping to refactor this once the vibe coding tools (and my patience with refactoring them) improve.",
+              url: "https://karuna-chi.vercel.app/",
+              imageUrl: "/karuna.png"
+            },
+            {
+              title: "Voice Activated Kitchen Timer POC",
+              description: "As someone who loves to cook and loves using Alexa's kitchen timer… but doesn't love having an Amazon listening device in the house. I wanted to build a voice-activated kitchen timer that doesn't connect to the internet. This is a proof of concept and the first vibe coding project I worked on. If you haven't used Alexa or Google Home in the kitchen, voice is really the best way for me to interact with a timer. My hands are often busy, dirty, or full, and I'll be running around the kitchen yelling, \"Alexa, set a timer for five minutes, please!\"",
+              url: "https://voice-timer-2-mevans212.replit.app/",
+              imageUrl: "/voice-timer.png"
+            },
+            {
+              title: "This Presentation",
+              description: "I created this presentation using Claude Sonnet 3.7 to help with the design, then brought it into Cursor with Claude Sonnet 3.7 to build it out. It's been the most straightforward project I've completed—and the codebase reflects that. While I still had to give a lot of direction on micro-interactions and padding, the agent got most of the big things right.",
+              url: "https://ai-research-presentation.vercel.app/section/intro/0",
+              imageUrl: "/presentation.png"
+            }
+          ]
         }
       ]
     },
@@ -700,6 +731,17 @@ function SlideView() {
   }, [handleKeyDown]);
   
   if (!currentSection || !currentSlide) {
+    // Backup approach to find the slide if state isn't working properly
+    const section = presentationData.sections.find(s => s.id === sectionId);
+    if (section) {
+      const slideIdx = parseInt(slideIndex, 10);
+      if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < section.slides.length) {
+        const slide = section.slides[slideIdx];
+        return <main className={`slide-content ${slide.type}-slide`}>
+          {renderSlide(slide)}
+        </main>;
+      }
+    }
     return <div className="loading">Loading...</div>;
   }
   
@@ -1030,6 +1072,43 @@ function renderSlide(slide) {
                 <span className="icon">{item.icon}</span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    
+    case 'projects':
+      return (
+        <div className="projects-slide">
+          <h1>{slide.title}</h1>
+          {slide.content && <p className="intro">{slide.content}</p>}
+          <div className="projects-grid">
+            {slide.projects.map((project, idx) => (
+              <div key={idx} className="project-card">
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-image-link">
+                  {/* This empty link covers the entire card and makes it all clickable */}
+                </a>
+                <div className="project-image-container">
+                  <div 
+                    className="project-image" 
+                    style={{
+                      backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'top center',
+                      width: '100%',
+                      height: '100%'
+                    }}
+                  ></div>
+                </div>
+                <div className="project-content">
+                  <h3 className="project-title">
+                    {project.title}
+                  </h3>
+                  <div className="project-details">
+                    <p className="project-description">{project.description}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
