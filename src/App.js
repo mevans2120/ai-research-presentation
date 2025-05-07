@@ -39,11 +39,11 @@ const presentationData = {
     },
     {
       id: "research-findings",
-      title: "Research Findings",
+      title: "Research Approach",
       slides: [
         {
           type: "section-cover",
-          title: "Research Findings",
+          title: "Research Approach",
           subtitle: ""
         },
         {
@@ -209,8 +209,32 @@ const presentationData = {
         },
         {
           type: "thought-experiment",
-          title: "Chatphone Thought Experiment",
-          content: "",
+          title: "Chatphone Concept",
+          content: `While talking with one of the participants, we got onto the topic of agentic chat becoming a contextual layer between the tools your phone provides and how you access and use those tools.
+
+As someone who designed and built the Before Launcher, finding better ways to use our smartphones is a catnip-like obsession for me.
+
+The participant and I, exchanging texts, landed on the idea of a conceptually aware phone—one whose interface changes based on your "mode." While not a new idea by any means, AI seems uniquely suited to help make this a reality.
+
+Diagram 1, at the top of this page, illustrates how this might work. After the ChatPhone onboards onto your primary usage contexts (a fascinating and likely ongoing process in itself), the phone's homescreen would display:
+<ul>
+<li>The primary tools you're likely to use in that mode</li>
+<li>A digest of potentially relevant messages</li>
+<li>Quick access to agentic chat</li>
+</ul>
+
+This type of phone could offer several benefits:
+<ul>
+<li>Speed up how quickly you find things on your phone</li>
+<li>Reduce the need for repetitive decision-making (e.g., which delivery app or pizza place to choose)</li>
+<li>Minimize distractions from content or tools best reserved for other contexts</li>
+</ul>
+
+Of course, using an agent as an intermediary introduces the risk of it missing key or critical content. That's why this concept feels better suited for a time when AI has matured to the point of being more reliable than you are at completing certain tasks.
+
+Also, I doubt toolmakers like DoorDash, Lyft, Google, Apple, and others would appreciate being further commoditized—since their apps would no longer be the primary way users access the services they offer.
+
+Curious to hear what you think about the idea.`,
           svgContent: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680">
   <!-- Background - changed to match presentation background -->
   <rect width="1200" height="680" fill="#f8fafc"/>
@@ -332,6 +356,9 @@ const presentationData = {
     <rect x="20" y="450" width="210" height="35" rx="17.5" ry="17.5" fill="white" stroke="#333" stroke-width="1"/>
     <text x="125" y="473" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
   </g>
+
+  <!-- Caption for the diagram -->
+  <text x="600" y="580" font-family="Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#333">Diagram 1: Initial visualization of the Chatphone concept</text>
 </svg>`
         }
       ]
@@ -422,7 +449,7 @@ const presentationData = {
         },
         {
           type: "vibe-coder",
-          title: "Me, The vibe coder",
+          title: "My Vibe Coding Workflow",
           content: "As I've been digging deeper into my \"learning how to vibe code\" side project, I wanted to share a few learnings and a quick look at my current setup. Some of this comes from advice I've picked up from others, some is just from trial and error. I'm a fairly technical non-coder, who has deep software design & dev experience. So this is what worked for me. Thanks to everyone who helped along the way!",
           keyLearnings: [
             {
@@ -487,7 +514,7 @@ const presentationData = {
         },
         {
           type: "thought-experiment",
-          title: "Chatphone Thought Experiment",
+          title: "Chatphone Concept",
           content: "In a Buddhist monastery, everyone learns to use breath as a tool to stop mental dispersion and to build up concentration power."
         }
       ]
@@ -939,13 +966,12 @@ function renderSlide(slide) {
       return (
         <div className="thought-experiment-slide">
           <h1>{slide.title}</h1>
-          {slide.content ? (
-            <div className="quote-box">
-              <p>{slide.content}</p>
-            </div>
-          ) : slide.svgContent ? (
+          {slide.svgContent && (
             <div className="svg-container" dangerouslySetInnerHTML={{ __html: slide.svgContent }} />
-          ) : null}
+          )}
+          {slide.content && (
+            <div className="content blog-format" dangerouslySetInnerHTML={{ __html: slide.content }} />
+          )}
         </div>
       );
     

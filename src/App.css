@@ -143,7 +143,7 @@ body {
 
 /* Slide Content Styles */
 .slide-content {
-  padding: calc(var(--header-height) + 2rem) 2rem 5rem;
+  padding: calc(var(--header-height) + 2rem) 2rem 160px;
   flex: 1;
   margin: 0 auto;
   width: 100%;
@@ -576,6 +576,7 @@ body {
   flex-direction: column;
   min-height: calc(100vh - var(--header-height) - 80px);
   padding-bottom: 0;
+  margin-bottom: 80px;
 }
 
 .thought-experiment-slide h1 {
@@ -976,7 +977,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 650px;
+  max-height: 580px;
 }
 
 .thought-experiment-slide .svg-container {
@@ -984,6 +985,39 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0;
+  max-height: 580px;
+  overflow: visible;
+}
+
+.svg-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 580px;
+  transform: none;
+  transform-origin: center top;
+}
+
+/* Blog format styles for the chatphone content */
+.blog-format {
+  max-width: 800px;
+  margin: -50px auto 2rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.blog-format p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-format ul {
+  margin: 1.5rem 0 1.5rem 1.5rem;
+  padding: 0;
+}
+
+.blog-format li {
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -992,4 +1026,13 @@ body {
     transform-origin: top center;
     margin-top: -20px;
   }
+  
+  .slide-content {
+    padding-bottom: 150px; /* Extra padding on mobile */
+  }
+}
+
+.thought-experiment-slide .content.blog-format {
+  margin-bottom: 100px;
+  padding-bottom: 30px;
 } 
