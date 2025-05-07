@@ -618,6 +618,27 @@ body {
   border-bottom: 1px solid var(--light-gray);
 }
 
+.links-slide .link-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.links-slide .link-image-container {
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+}
+
+.links-slide .link-content {
+  flex-grow: 1;
+}
+
+.links-slide .link-image {
+  width: 120px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
 .links-slide .link-header {
   display: flex;
   align-items: center;
@@ -629,6 +650,7 @@ body {
   margin-right: 0.75rem;
   display: flex;
   align-items: center;
+  min-width: 30px;
 }
 
 .links-slide .link-header a {
@@ -646,7 +668,6 @@ body {
   font-size: 0.9rem;
   color: var(--dark-gray);
   margin-bottom: 0.5rem;
-  margin-left: 2.25rem;
   font-style: italic;
 }
 
@@ -654,6 +675,12 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   color: var(--text-color);
+  margin-bottom: 0;
+}
+
+/* Add indentation for icon-based links */
+.links-slide .link-item:not(.has-image) .link-source,
+.links-slide .link-item:not(.has-image) .link-description {
   margin-left: 2.25rem;
 }
 
@@ -741,6 +768,29 @@ body {
   /* Increase tap area size on mobile */
   .side-click-area {
     width: 12.5%; /* Reduced from 25% to 12.5% (50% reduction) */
+  }
+  
+  /* Stack image and content on mobile */
+  .links-slide .link-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .links-slide .link-image-container {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .links-slide .link-image {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+  }
+  
+  /* Ensure all text is properly aligned on mobile */
+  .links-slide .link-item:not(.has-image) .link-source,
+  .links-slide .link-item:not(.has-image) .link-description {
+    margin-left: 0;
   }
 }
 

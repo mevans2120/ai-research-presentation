@@ -130,7 +130,7 @@ const presentationData = {
           points: [
             "Several thought the researcher lives under a rock, and AI's impact was self-evident.",
             "Four people in the audience were tired of talking about AI, and had said it's been talked about non-stop since ChatGPT launched.",
-            "Even the audience members who felt that AI was going to be the most transformative technology in their lifetime, thought the hype machine was a bit out of control"
+            "Even the audience members who felt that AI was going to be the most transformational technology in their lifetime, thought the hype machine was a bit out of control"
           ],
           quotes: [
             "I'm tired of talking about AI. It's just a technology. Sure its useful, but AI doesn't need to be in your bananas",
@@ -351,25 +351,61 @@ const presentationData = {
           content: "Vibe coding is where you ask an agent to build you what you want instead of asking a developer… At least that is what it is for me.",
           links: [
             {
-              text: "An excellent how to Vibe Code workflow from an engineer",
+              text: "My LLM Codegen Workflow (ATM)",
               url: "https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/",
               icon: "📝",
               source: "Harper's Blog",
-              description: "A detailed walkthrough of how an experienced engineer uses LLMs for code generation, with practical tips and best practices."
+              description: "A detailed walkthrough of how an experienced engineer uses LLMs for code generation, with practical tips and best practices.",
+              imageUrl: "https://harper.blog/images/social_card_bg_harper_hu_cbdc79f03ddda4b5.png"
             },
             {
-              text: "An excellent how to vibe code from a designer",
-              url: "https://medium.com/@bertelli/prompt-to-product-how-i-build-with-aiassistants-6055da62c9bb",
-              icon: "🎨",
+              text: "Prompt to Product: How I Build with AI Assistants",
+              url: "https://medium.com/@bertelli/prompt-to-product-how-i-build-with-ai-assistants-6055da62c9bb",
               source: "Medium",
-              description: "A designer's perspective on using AI assistants to go from initial idea to finished product without traditional coding knowledge."
+              description: "A designer's perspective on using AI assistants to go from initial idea to finished product without traditional coding knowledge.",
+              imageUrl: "https://miro.medium.com/v2/resize:fit:1200/1*c8TxZkxoYbRv4AEVE9QCgQ.png"
             },
             {
-              text: "Lenny's podcast with the CEO of Cognition (who make Devin the autonomous AI Engineer)",
-              url: "https://www.youtube.com/watch?v=gI0ZNhA0rvE&list=PL2fLjt2dG0N6unOOF3nHWYGcJJIQR1NKm",
-              icon: "🎧",
+              text: "Inside Devin: Scott Wu",
+              url: "https://www.lennysnewsletter.com/p/inside-devin-scott-wu",
+              source: "Lenny's Newsletter",
+              description: "An in-depth conversation about the future of AI engineering tools and how autonomous agents like Devin are changing software development.",
+              imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Flenny.substack.com%2Fapi%2Fv1%2Fpost_preview%2F162381125%2Ftwitter.jpg%3Fversion%3D4"
+            }
+          ]
+        },
+        {
+          type: "links",
+          title: "The AI Future",
+          content: "One of the least discussed things about AI is about how no one knows how it works (on a case by case basis). If you ask AI for the best roast chicken recipe, we don't know why it would choose one recipe over another.",
+          links: [
+            {
+              text: "Dario Amodei on The Urgency of Interpretability",
+              url: "https://www.darioamodei.com/post/the-urgency-of-interpretability",
+              source: "Dario Amodei (CEO of Anthropic)",
+              description: "Anthropic's CEO argues why understanding AI is important for safety and development.",
+              imageUrl: "https://cdn.prod.website-files.com/67ecbba31246a69e485fdd4b/6814ea84b106e48f4269e93b_og_the-urgency-of-interpretability%20(1).jpg"
+            },
+            {
+              text: "The Intelligence Curse",
+              url: "https://lukedrago.substack.com/p/the-intelligence-curse#ftnt_ref6",
+              source: "Luke Drago's Substack",
+              description: "A frightening but compelling vision of AI in the future through the lens of economics.",
+              imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Flukedrago.substack.com%2Fapi%2Fv1%2Fpost_preview%2F153997408%2Ftwitter.jpg%3Fversion%3D4"
+            },
+            {
+              text: "Ezra Klein's podcast with Biden's AI head",
+              url: "https://www.youtube.com/watch?v=Btos-LEYQ30",
               source: "YouTube",
-              description: "An in-depth conversation about the future of AI engineering tools and how autonomous agents like Devin are changing software development."
+              description: "A discussion with the Biden administration's AI leadership about policy and the future.",
+              imageUrl: "https://static01.nyt.com/images/2025/03/04/opinion/04eks-buchanan/04eks-buchanan-videoSixteenByNine3000.jpg"
+            },
+            {
+              text: "The Case for Multi-Decade AI Timelines",
+              url: "https://epochai.substack.com/p/the-case-for-multi-decade-ai-timelines",
+              source: "Epoch AI Substack",
+              description: "A realistic view of AI and its impact timeline, arguing against how quickly full automation will take place. Partial automation will be just as impactful.",
+              imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fepochai.substack.com%2Fapi%2Fv1%2Fpost_preview%2F162161015%2Ftwitter.jpg%3Fversion%3D4"
             }
           ]
         }
@@ -379,6 +415,11 @@ const presentationData = {
       id: "vibe-coder",
       title: "Vibe Coding",
       slides: [
+        {
+          type: "section-cover",
+          title: "Vibe Coding",
+          subtitle: ""
+        },
         {
           type: "vibe-coder",
           title: "Me, The vibe coder",
@@ -915,15 +956,24 @@ function renderSlide(slide) {
           <p className="description">{slide.content}</p>
           <ul className="link-list">
             {slide.links.map((link, idx) => (
-              <li key={idx} className="link-item">
-                <div className="link-header">
-                  {link.icon && <span className="link-icon">{link.icon}</span>}
-                  <a href={link.url} target="_blank" rel="noopener noreferrer">
-                    {link.text}
-                  </a>
+              <li key={idx} className={`link-item ${link.imageUrl ? 'has-image' : ''}`}>
+                <div className="link-wrapper">
+                  {link.imageUrl && (
+                    <div className="link-image-container">
+                      <img src={link.imageUrl} alt={link.text} className="link-image" />
+                    </div>
+                  )}
+                  <div className="link-content">
+                    <div className="link-header">
+                      {!link.imageUrl && link.icon && <span className="link-icon">{link.icon}</span>}
+                      <a href={link.url} target="_blank" rel="noopener noreferrer">
+                        {link.text}
+                      </a>
+                    </div>
+                    {link.source && <div className="link-source">{link.source}</div>}
+                    {link.description && <p className="link-description">{link.description}</p>}
+                  </div>
                 </div>
-                {link.source && <div className="link-source">{link.source}</div>}
-                {link.description && <p className="link-description">{link.description}</p>}
               </li>
             ))}
           </ul>
@@ -970,4 +1020,4 @@ function renderSlide(slide) {
   }
 }
 
-export default App; 
+export default App;
