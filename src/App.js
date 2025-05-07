@@ -31,8 +31,8 @@ const presentationData = {
             "Summary",
             "The chatphone",
             "A collection of reading on the subject",
-            "Me, the vibe coder and what I've build",
-            "Big open questions"
+            "Vibe Coding",
+            "On My Mind"
           ]
         }
       ]
@@ -352,19 +352,24 @@ const presentationData = {
           links: [
             {
               text: "An excellent how to Vibe Code workflow from an engineer",
-              url: "https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/"
+              url: "https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/",
+              icon: "📝",
+              source: "Harper's Blog",
+              description: "A detailed walkthrough of how an experienced engineer uses LLMs for code generation, with practical tips and best practices."
             },
             {
               text: "An excellent how to vibe code from a designer",
-              url: "https://medium.com/@bertelli/prompt-to-product-how-i-build-with-aiassistants-6055da62c9bb"
-            },
-            {
-              text: "Some notes on working with AI on a development project",
-              url: "https://www.linkedin.com/pulse/teaching-claude-better-engineer-jonpolikowski-bjrxc/?trackingId=r9Oh%2B8dDhxQtElPtr6SVmg%3D%3D"
+              url: "https://medium.com/@bertelli/prompt-to-product-how-i-build-with-aiassistants-6055da62c9bb",
+              icon: "🎨",
+              source: "Medium",
+              description: "A designer's perspective on using AI assistants to go from initial idea to finished product without traditional coding knowledge."
             },
             {
               text: "Lenny's podcast with the CEO of Cognition (who make Devin the autonomous AI Engineer)",
-              url: "https://www.youtube.com/watch?v=gI0ZNhA0rvE&list=PL2fLjt2dG0N6unOOF3nHWYGcJJIQR1NKm"
+              url: "https://www.youtube.com/watch?v=gI0ZNhA0rvE&list=PL2fLjt2dG0N6unOOF3nHWYGcJJIQR1NKm",
+              icon: "🎧",
+              source: "YouTube",
+              description: "An in-depth conversation about the future of AI engineering tools and how autonomous agents like Devin are changing software development."
             }
           ]
         }
@@ -372,7 +377,7 @@ const presentationData = {
     },
     {
       id: "vibe-coder",
-      title: "Vibe Coder",
+      title: "Vibe Coding",
       slides: [
         {
           type: "vibe-coder",
@@ -427,21 +432,16 @@ const presentationData = {
               description: "I've gotten stuck a few times. A quick DM to a proper engineer has saved me hours."
             }
           ]
-        },
-        {
-          type: "text",
-          title: "Working together",
-          content: "One goal\nEveryone aligned to the same purpose\nSmall, senior, hybrid teams\nReady to seriously engage, no mid-project rotation\nNo handoffs\nConstant iterations, not throwing designs over a wall\nPrototypes, not presentations\nClose integration and sharing of in-progress work"
         }
       ]
     },
     {
       id: "next-steps",
-      title: "Next Steps",
+      title: "On My Mind",
       slides: [
         {
           type: "section-cover",
-          title: "Next Steps",
+          title: "On My Mind",
           subtitle: ""
         },
         {
@@ -915,10 +915,15 @@ function renderSlide(slide) {
           <p className="description">{slide.content}</p>
           <ul className="link-list">
             {slide.links.map((link, idx) => (
-              <li key={idx}>
-                <a href={link.url} target="_blank" rel="noopener noreferrer">
-                  {link.text}
-                </a>
+              <li key={idx} className="link-item">
+                <div className="link-header">
+                  {link.icon && <span className="link-icon">{link.icon}</span>}
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    {link.text}
+                  </a>
+                </div>
+                {link.source && <div className="link-source">{link.source}</div>}
+                {link.description && <p className="link-description">{link.description}</p>}
               </li>
             ))}
           </ul>

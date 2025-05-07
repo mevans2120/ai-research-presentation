@@ -609,22 +609,52 @@ body {
 
 .links-slide .link-list {
   list-style: none;
+  max-width: 800px;
 }
 
-.links-slide .link-list li {
-  margin-bottom: 1rem;
+.links-slide .link-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--light-gray);
 }
 
-.links-slide .link-list a {
+.links-slide .link-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.links-slide .link-icon {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.links-slide .link-header a {
   color: var(--primary-color);
   text-decoration: none;
-  display: inline-block;
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
-.links-slide .link-list a:hover {
+.links-slide .link-header a:hover {
   text-decoration: underline;
+}
+
+.links-slide .link-source {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+  margin-left: 2.25rem;
+  font-style: italic;
+}
+
+.links-slide .link-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-left: 2.25rem;
 }
 
 /* Vibe Coder Slide */
@@ -710,7 +740,7 @@ body {
   
   /* Increase tap area size on mobile */
   .side-click-area {
-    width: 25%;
+    width: 12.5%; /* Reduced from 25% to 12.5% (50% reduction) */
   }
 }
 
@@ -751,7 +781,7 @@ body {
   position: fixed;
   top: var(--header-height);
   bottom: 60px; /* Height of slide controls */
-  width: 15%;
+  width: 7.5%; /* Reduced from 15% to 7.5% (50% reduction) */
   z-index: 995; /* Above content but below navigation */
   cursor: pointer;
   background-color: transparent;
