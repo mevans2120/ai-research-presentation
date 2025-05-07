@@ -894,6 +894,120 @@ body {
   color: var(--text-color);
 }
 
+/* Vibe Coder Slide Styles */
+.vibe-coder-slide .hero-image-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vibe-coder-slide .hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+  display: block;
+}
+
+.vibe-coder-slide .image-caption {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin: 0.5rem auto 1.5rem;
+  font-style: italic;
+  max-width: 900px;
+  padding: 0 1rem;
+  display: block;
+}
+
+.vibe-coder-slide .intro,
+.vibe-coder-slide .sections,
+.vibe-coder-slide h2,
+.vibe-coder-slide .learnings,
+.vibe-coder-slide .workflow {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vibe-coder-slide h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.vibe-coder-slide .intro {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.vibe-coder-slide .section {
+  margin-bottom: 2.5rem;
+}
+
+.vibe-coder-slide .section h2 {
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.vibe-coder-slide .section .content {
+  margin-left: 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.vibe-coder-slide .section p {
+  margin-bottom: 1rem;
+}
+
+.vibe-coder-slide .collapsible {
+  margin: 1rem 0;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+.vibe-coder-slide .collapsible-header {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.vibe-coder-slide .collapsible-content {
+  padding: 0 1rem 1rem;
+  overflow: hidden;
+}
+
+.vibe-coder-slide .collapsible-content p {
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+}
+
+.vibe-coder-slide .bullet-points {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style-type: disc;
+}
+
+.vibe-coder-slide .bullet-points li {
+  margin-bottom: 0.5rem;
+}
+
+.vibe-coder-slide h2.section-header {
+  text-align: center;
+  margin: 3rem 0 1.5rem;
+  font-size: 2rem;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .header {
@@ -926,6 +1040,16 @@ body {
   .vibe-coder-slide .learnings,
   .vibe-coder-slide .workflow {
     grid-template-columns: 1fr;
+  }
+  
+  .vibe-coder-slide .hero-image-container {
+    max-width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .vibe-coder-slide .hero-image {
+    max-width: 100%;
   }
   
   /* Increase tap area size on mobile */

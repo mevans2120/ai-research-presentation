@@ -359,82 +359,7 @@ Curious to hear what you think about the idea.`,
 
   <!-- Caption for the diagram -->
   <text x="600" y="580" font-family="Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#333">Diagram 1: Initial visualization of the Chatphone concept</text>
-</svg>`
-        }
-      ]
-    },
-    {
-      id: "interesting-reads",
-      title: "Interesting Reads",
-      slides: [
-        {
-          type: "section-cover",
-          title: "Interesting Reads",
-          subtitle: ""
-        },
-        {
-          type: "links",
-          title: "Vibe Coding",
-          content: "Vibe coding is where you ask an agent to build you what you want instead of asking a developer… At least that is what it is for me.",
-          links: [
-            {
-              text: "My LLM Codegen Workflow (ATM)",
-              url: "https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/",
-              icon: "📝",
-              source: "Harper's Blog",
-              description: "A detailed walkthrough of how an experienced engineer uses LLMs for code generation, with practical tips and best practices.",
-              imageUrl: "https://harper.blog/images/social_card_bg_harper_hu_cbdc79f03ddda4b5.png"
-            },
-            {
-              text: "Prompt to Product: How I Build with AI Assistants",
-              url: "https://medium.com/@bertelli/prompt-to-product-how-i-build-with-ai-assistants-6055da62c9bb",
-              source: "Medium",
-              description: "A designer's perspective on using AI assistants to go from initial idea to finished product without traditional coding knowledge.",
-              imageUrl: "https://miro.medium.com/v2/resize:fit:1200/1*c8TxZkxoYbRv4AEVE9QCgQ.png"
-            },
-            {
-              text: "Inside Devin: Scott Wu",
-              url: "https://www.lennysnewsletter.com/p/inside-devin-scott-wu",
-              source: "Lenny's Newsletter",
-              description: "An in-depth conversation about the future of AI engineering tools and how autonomous agents like Devin are changing software development.",
-              imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Flenny.substack.com%2Fapi%2Fv1%2Fpost_preview%2F162381125%2Ftwitter.jpg%3Fversion%3D4"
-            }
-          ]
-        },
-        {
-          type: "links",
-          title: "The AI Future",
-          content: "One of the least discussed things about AI is about how no one knows how it works (on a case by case basis). If you ask AI for the best roast chicken recipe, we don't know why it would choose one recipe over another.",
-          links: [
-            {
-              text: "Dario Amodei on The Urgency of Interpretability",
-              url: "https://www.darioamodei.com/post/the-urgency-of-interpretability",
-              source: "Dario Amodei (CEO of Anthropic)",
-              description: "Anthropic's CEO argues why understanding AI is important for safety and development.",
-              imageUrl: "https://cdn.prod.website-files.com/67ecbba31246a69e485fdd4b/6814ea84b106e48f4269e93b_og_the-urgency-of-interpretability%20(1).jpg"
-            },
-            {
-              text: "The Intelligence Curse",
-              url: "https://lukedrago.substack.com/p/the-intelligence-curse#ftnt_ref6",
-              source: "Luke Drago's Substack",
-              description: "A frightening but compelling vision of AI in the future through the lens of economics.",
-              imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Flukedrago.substack.com%2Fapi%2Fv1%2Fpost_preview%2F153997408%2Ftwitter.jpg%3Fversion%3D4"
-            },
-            {
-              text: "Ezra Klein's podcast with Biden's AI head",
-              url: "https://www.youtube.com/watch?v=Btos-LEYQ30",
-              source: "YouTube",
-              description: "A discussion with the Biden administration's AI leadership about policy and the future.",
-              imageUrl: "https://static01.nyt.com/images/2025/03/04/opinion/04eks-buchanan/04eks-buchanan-videoSixteenByNine3000.jpg"
-            },
-            {
-              text: "The Case for Multi-Decade AI Timelines",
-              url: "https://epochai.substack.com/p/the-case-for-multi-decade-ai-timelines",
-              source: "Epoch AI Substack",
-              description: "A realistic view of AI and its impact timeline, arguing against how quickly full automation will take place. Partial automation will be just as impactful.",
-              imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fepochai.substack.com%2Fapi%2Fv1%2Fpost_preview%2F162161015%2Ftwitter.jpg%3Fversion%3D4"
-            }
-          ]
+```
         }
       ]
     },
@@ -485,43 +410,61 @@ Curious to hear what you think about the idea.`,
               title: "Summary",
               content: "While an AI agent is nowhere near the developer that many of my colleagues are… With proper planning, and if you pay close attention to the build. You can build out something excellent."
             }
-          ]
-        },
-        {
-          type: "projects",
-          title: "Current Projects",
-          content: "Here are some of the projects I've created:",
-          projects: [
+          ],
+          keyLearnings: [
             {
-              title: "D&D Initiative Tracker",
-              description: "I wrote the D&D initiative tracker with my now 11-year-old son, for the campaigns I DM with his friends. This app lets me keep track of who goes next during battles and their health points. It also sorts player characters and non-player characters for easy review. The insanely fast way this app came together inspired this whole project.",
-              url: "https://dungeon-tracker-mevans212.replit.app/",
-              imageUrl: "/dnd-tracker.png"
+              icon: "🛠️",
+              title: "You can build real stuff now",
+              description: "Designing and shipping, great-feeling bespoke sites and apps is totally feasible with AI — even in its current \"worst it'll ever be\" form."
             },
             {
-              title: "Mom's Website",
-              description: "After building the Initiative Tracker and the POC for the voice-activated kitchen timer, I turned to my mom's website. She's a shaman who offers spiritual healing, as you can see from the site. One note: the site currently has some technical issues due to how I used the agentic tools. I passed the code from one tool to another and ended up with three global CSS files—not ideal. I'm hoping to refactor this once the vibe coding tools (and my patience with refactoring them) improve.",
-              url: "https://karuna-chi.vercel.app/",
-              imageUrl: "/karuna.png"
+              icon: "📝",
+              title: "Document first",
+              description: "Upfront planning helps a lot. Write down your goals and strategy, create a PRD, sketch some wireframes, define your tech architecture, write a branding brief. More clarity upfront = better results."
             },
             {
-              title: "Voice Activated Kitchen Timer POC",
-              description: "As someone who loves to cook and loves using Alexa's kitchen timer… but doesn't love having an Amazon listening device in the house. I wanted to build a voice-activated kitchen timer that doesn't connect to the internet. This is a proof of concept and the first vibe coding project I worked on. If you haven't used Alexa or Google Home in the kitchen, voice is really the best way for me to interact with a timer. My hands are often busy, dirty, or full, and I'll be running around the kitchen yelling, \"Alexa, set a timer for five minutes, please!\"",
-              url: "https://voice-timer-2-mevans212.replit.app/",
-              imageUrl: "/voice-timer.png"
+              icon: "⚙️",
+              title: "Make AI part of the upfront",
+              description: "Let AI wear multiple hats. Use it to help you write your docs. Ask it what questions it needs answered to help. Treat it like a fast collaborator, who needs explicit direction."
             },
             {
-              title: "This Presentation",
-              description: "I created this presentation using Claude Sonnet 3.7 to help with the design, then brought it into Cursor with Claude Sonnet 3.7 to build it out. It's been the most straightforward project I've completed—and the codebase reflects that. While I still had to give a lot of direction on micro-interactions and padding, the agent got most of the big things right.",
-              url: "https://ai-research-presentation.vercel.app/section/intro/0",
-              imageUrl: "/presentation.png"
+              icon: "🔧",
+              title: "AI is better at creation than optimization",
+              description: "Make sure you have something you like before you start optimizing... The later-stage tweaking has been the hardest part for me."
+            },
+            {
+              icon: "🏗️",
+              title: "Be firm about architecture",
+              description: "AI will try to cut corners. Push it to find root causes, explain tradeoffs, and outline potential risks before it runs wild with implementation."
+            },
+            {
+              icon: "✅",
+              title: "Make it ask for approval",
+              description: "Agents move fast and assume a lot. Before they act, prompt them to check in."
+            }
+          ],
+          workflow: [
+            {
+              icon: "💻",
+              title: "Cursor > Replit (for me)",
+              description: "Cursor gives me more visibility and flexibility. Replit is great but feels more abstracted. Cursor also helped me learn faster."
+            },
+            {
+              icon: "🔄",
+              title: "Iterate on your workflow",
+              description: "I've been able to refine my process from project to project. I jot down improvements as I go."
+            },
+            {
+              icon: "📞",
+              title: "Phone a friend",
+              description: "I've gotten stuck a few times. A quick DM to a proper engineer has saved me hours."
             }
           ]
         }
       ]
     },
     {
-      id: "next-steps",
+      id: "on-my-mind",
       title: "On My Mind",
       slides: [
         {
@@ -530,520 +473,60 @@ Curious to hear what you think about the idea.`,
           subtitle: ""
         },
         {
-          type: "thought-experiment",
-          title: "Chatphone Concept",
-          content: "In a Buddhist monastery, everyone learns to use breath as a tool to stop mental dispersion and to build up concentration power."
+          type: "text",
+          title: "On My Mind",
+          content: "I'm still thinking about the research findings and how they relate to the future of the software industry. I'm also considering how AI might impact my own career and the careers of my children. I'm curious to hear your thoughts on these topics."
         }
       ]
     }
   ]
 };
 
-// Main App Component
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/section/:sectionId" element={<Section />} />
-          <Route path="/section/:sectionId/:slideIndex" element={<SlideView />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}
+// ... rest of the code ...
 
-// Home Component
-function Home() {
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    // Redirect to the first section
-    if (presentationData.sections.length > 0) {
-      navigate(`/section/${presentationData.sections[0].id}/0`);
-    }
-  }, [navigate]);
-  
-  return <div className="loading">Loading presentation...</div>;
-}
-
-// Section Component
-function Section() {
-  const { sectionId } = useParams();
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    // Find the section
-    const sectionIndex = presentationData.sections.findIndex(section => section.id === sectionId);
-    if (sectionIndex !== -1) {
-      navigate(`/section/${sectionId}/0`);
-    } else {
-      navigate('/');
-    }
-  }, [sectionId, navigate]);
-  
-  return <div className="loading">Loading section...</div>;
-}
-
-// Slide View Component
-function SlideView() {
-  const { sectionId, slideIndex } = useParams();
-  const [currentSection, setCurrentSection] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(null);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [expandedSection, setExpandedSection] = useState(null);
-  const [globalSlideInfo, setGlobalSlideInfo] = useState({ current: 0, total: 0 });
-  const navigate = useNavigate();
-  const menuRef = useRef(null);
-  
-  // Handle clicks outside the menu
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (menuOpen && menuRef.current && !menuRef.current.contains(event.target) && 
-          event.target.className !== 'menu-toggle') {
-        setMenuOpen(false);
-      }
-    }
-    
-    // Add event listener when menu is open
-    if (menuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('touchstart', handleClickOutside);
-    }
-    
-    // Clean up the event listener
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-    };
-  }, [menuOpen]);
-  
-  // Set expanded section when sectionId changes
-  useEffect(() => {
-    setExpandedSection(sectionId);
-  }, [sectionId]);
-  
-  // Calculate total slides and current global slide index
-  useEffect(() => {
-    // Calculate total slides
-    const totalSlides = presentationData.sections.reduce(
-      (acc, section) => acc + section.slides.length, 0
-    );
-    
-    // Calculate current global slide index
-    let currentGlobalIndex = 0;
-    for (let i = 0; i < presentationData.sections.length; i++) {
-      const section = presentationData.sections[i];
-      if (section.id === sectionId) {
-        currentGlobalIndex += parseInt(slideIndex, 10);
-        break;
-      } else {
-        currentGlobalIndex += section.slides.length;
-      }
-    }
-    
-    setGlobalSlideInfo({
-      current: currentGlobalIndex + 1, // +1 for 1-based indexing
-      total: totalSlides
-    });
-  }, [sectionId, slideIndex]);
-  
-  useEffect(() => {
-    // Find the section and slide
-    const section = presentationData.sections.find(s => s.id === sectionId);
-    if (section) {
-      setCurrentSection(section);
-      const slideIdx = parseInt(slideIndex, 10);
-      if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < section.slides.length) {
-        setCurrentSlide(section.slides[slideIdx]);
-      } else {
-        navigate(`/section/${sectionId}/0`);
-      }
-    } else {
-      navigate('/');
-    }
-  }, [sectionId, slideIndex, navigate]);
-  
-  const goToNextSlide = useCallback(() => {
-    const currentSlideIdx = parseInt(slideIndex, 10);
-    if (currentSection && currentSlideIdx < currentSection.slides.length - 1) {
-      // Go to next slide in current section
-      navigate(`/section/${sectionId}/${currentSlideIdx + 1}`);
-    } else {
-      // Go to first slide of next section
-      const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
-      if (currentSectionIdx < presentationData.sections.length - 1) {
-        const nextSection = presentationData.sections[currentSectionIdx + 1];
-        navigate(`/section/${nextSection.id}/0`);
-      }
-    }
-  }, [currentSection, sectionId, slideIndex, navigate]);
-  
-  const goToPrevSlide = useCallback(() => {
-    const currentSlideIdx = parseInt(slideIndex, 10);
-    if (currentSlideIdx > 0) {
-      // Go to previous slide in current section
-      navigate(`/section/${sectionId}/${currentSlideIdx - 1}`);
-    } else {
-      // Go to last slide of previous section
-      const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
-      if (currentSectionIdx > 0) {
-        const prevSection = presentationData.sections[currentSectionIdx - 1];
-        navigate(`/section/${prevSection.id}/${prevSection.slides.length - 1}`);
-      }
-    }
-  }, [sectionId, slideIndex, navigate]);
-  
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-  
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === 'ArrowRight' || e.key === ' ') {
-      goToNextSlide();
-    } else if (e.key === 'ArrowLeft') {
-      goToPrevSlide();
-    } else if (e.key === 'Escape') {
-      setMenuOpen(false);
-    }
-  }, [goToNextSlide, goToPrevSlide, setMenuOpen]);
-  
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [handleKeyDown]);
-  
-  if (!currentSection || !currentSlide) {
-    // Backup approach to find the slide if state isn't working properly
-    const section = presentationData.sections.find(s => s.id === sectionId);
-    if (section) {
-      const slideIdx = parseInt(slideIndex, 10);
-      if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < section.slides.length) {
-        const slide = section.slides[slideIdx];
-        return <main className={`slide-content ${slide.type}-slide`}>
-          {renderSlide(slide)}
-        </main>;
-      }
-    }
-    return <div className="loading">Loading...</div>;
-  }
-  
-  // Check if this is the first slide (title slide)
-  const isFirstSlide = 
-    presentationData.sections[0] && 
-    presentationData.sections[0].slides && 
-    presentationData.sections[0].slides[0] === currentSlide;
-  
-  // Check if this is the last slide of the last section
-  const isLastSlide = 
-    presentationData.sections[presentationData.sections.length - 1] &&
-    presentationData.sections[presentationData.sections.length - 1].slides &&
-    presentationData.sections[presentationData.sections.length - 1].slides[
-      presentationData.sections[presentationData.sections.length - 1].slides.length - 1
-    ] === currentSlide;
-  
-  return (
-    <div className={`slide-view ${isFirstSlide ? 'first-slide-active' : ''} ${isLastSlide ? 'last-slide-active' : ''}`}>
-      <header className="header">
-        <div className="logo" onClick={() => navigate('/')}>
-          MEvans AI Workbook
-        </div>
-        <button className="menu-toggle" onClick={toggleMenu}>
-          {menuOpen ? 'Close' : 'Menu'}
-        </button>
-      </header>
-      
-      {menuOpen && (
-        <nav className="navigation" ref={menuRef}>
-          <ul>
-            {presentationData.sections.map((section, idx) => (
-              <li key={section.id} className={section.id === sectionId ? 'active' : ''}>
-                <div 
-                  className="section-title" 
-                  onClick={() => {
-                    // Toggle expanded section state
-                    if (expandedSection === section.id) {
-                      // If this section is already expanded, navigate to it
-                      navigate(`/section/${section.id}/0`);
-                    } else {
-                      // Otherwise, expand this section without navigating
-                      setExpandedSection(section.id);
-                    }
-                  }}
-                >
-                  {section.title}
-                </div>
-                {expandedSection === section.id && (
-                  <ul className="section-slides">
-                    {section.slides.map((slide, slideIdx) => (
-                      // Skip the first slide (cover) in the navigation
-                      slideIdx !== 0 ? (
-                        <li key={slideIdx} className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) ? 'active' : ''}>
-                          <div 
-                            className="slide-link"
-                            onClick={() => {
-                              navigate(`/section/${section.id}/${slideIdx}`);
-                              setMenuOpen(false); // Always close menu when clicking on a slide
-                            }}
-                          >
-                            {slide.title || `Slide ${slideIdx + 1}`}
-                          </div>
-                        </li>
-                      ) : null
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
-      
-      {/* Only render side click areas when menu is closed */}
-      {!menuOpen && (
-        <>
-          {/* Left side click area */}
-          <div className="side-click-area left-click" onClick={goToPrevSlide}></div>
-          
-          {/* Right side click area */}
-          <div className="side-click-area right-click" onClick={goToNextSlide}></div>
-        </>
-      )}
-      
-      <main className={`slide-content ${currentSlide.type}-slide`}>
-        {renderSlide(currentSlide)}
-      </main>
-      
-      <div className="slide-controls">
-        <button className="prev-slide" onClick={goToPrevSlide}>←</button>
-        {globalSlideInfo.current > 3 && (
-          <div className="slide-progress">
-            Slide {globalSlideInfo.current - 3} of {globalSlideInfo.total - 3}
-          </div>
-        )}
-        {globalSlideInfo.current <= 3 && <div className="slide-progress-placeholder"></div>}
-        <button className="next-slide" onClick={goToNextSlide}>→</button>
-      </div>
-    </div>
-  );
-}
-
-// Helper function to render different slide types
 function renderSlide(slide) {
   switch (slide.type) {
     case 'cover':
-      // Check if this is the first slide (title slide)
-      const isFirstSlide = 
-        presentationData.sections[0] && 
-        presentationData.sections[0].slides && 
-        presentationData.sections[0].slides[0] === slide;
-      
       return (
-        <div className={`cover-slide ${isFirstSlide ? 'inverted' : ''}`}>
+        <div className="cover-slide">
           <h1>{slide.title}</h1>
-          {slide.subtitle && <h2>{slide.subtitle}</h2>}
+          <p className="intro">{slide.subtitle}</p>
         </div>
       );
-    
-    case 'section-cover':
-      return (
-        <div className="section-cover-slide">
-          <div className="section-cover-content">
-            <h1>{slide.title}</h1>
-            {slide.subtitle && <h2>{slide.subtitle}</h2>}
-          </div>
-        </div>
-      );
-    
     case 'text':
-      // Check if this is the introduction slide (first text slide in the first section)
-      const isIntroduction = 
-        presentationData.sections[0] && 
-        presentationData.sections[0].slides && 
-        presentationData.sections[0].slides.some((s, idx) => s.type === 'text' && idx === 1 && s === slide);
-      
       return (
-        <div className={`text-slide ${isIntroduction ? 'introduction' : ''}`}>
-          {slide.title && <h1>{slide.title}</h1>}
-          <div className="content">
-            {slide.content.split('\n').map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
-            ))}
-          </div>
+        <div className="text-slide">
+          <h1>{slide.title}</h1>
+          <p className="intro">{slide.content}</p>
         </div>
       );
-    
     case 'toc':
-      // Create clickable TOC that matches navigation
       return (
         <div className="toc-slide">
           <h1>{slide.title}</h1>
-          <ul className="toc-list">
-            {presentationData.sections.slice(1).map((section) => (
-              <li key={section.id}>
-                <Link 
-                  to={`/section/${section.id}/0`} 
-                  className="toc-link"
-                >
-                  {section.title}
-                </Link>
-              </li>
+          <ul className="toc-items">
+            {slide.items.map((item, idx) => (
+              <li key={idx}>{item}</li>
             ))}
           </ul>
         </div>
       );
-    
-    case 'hypothesis':
-      return (
-        <div className="hypothesis-slide">
-          <h1>{slide.title}</h1>
-          <div className="hypothesis-statement">
-            <p>{slide.hypothesis}</p>
-          </div>
-          <div className="hypothesis-columns">
-            <div className="present">
-              {slide.presentHypothesis.split('\n').map((paragraph, idx) => (
-                <p key={`present-${idx}`}>{paragraph}</p>
-              ))}
-            </div>
-            <div className="future">
-              {slide.futureHypothesis.split('\n').map((paragraph, idx) => (
-                <p key={`future-${idx}`}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-        </div>
-      );
-    
-    case 'methodology':
-      return (
-        <div className="methodology-slide">
-          <h1>{slide.title}</h1>
-          <div className="methodology-content">
-            <div className="text-column">
-              <p>
-                {slide.content}
-                {slide.footnote && (
-                  <a href="#footnote-1" className="footnote-marker">¹</a>
-                )}
-              </p>
-            </div>
-            
-            {slide.tableData && (
-              <div className="table-column">
-                <div className="table-container">
-                  <table className="methodology-table">
-                    <thead>
-                      <tr className="purple-header">
-                        {slide.tableData.headers.map((header, idx) => (
-                          <th key={idx}>{header}</th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {slide.tableData.rows.map((row, rowIdx) => (
-                        <tr key={rowIdx}>
-                          {row.map((cell, cellIdx) => (
-                            <td key={cellIdx}>{cell}</td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            )}
-          </div>
-          
-          {/* Footnote container */}
-          {slide.footnote && (
-            <div className="footnotes">
-              <p id="footnote-1" className="footnote">
-                <sup>1</sup> {slide.footnote}
-              </p>
-            </div>
-          )}
-        </div>
-      );
-    
     case 'finding':
       return (
         <div className="finding-slide">
           <h1>{slide.title}</h1>
-          <div className="finding-content">
-            <div className="points">
-              <ul>
-                {slide.points.map((point, idx) => (
-                  <li key={idx}>{point}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="quotes">
-              {slide.quotes.map((quote, idx) => (
-                <blockquote key={idx}>"{quote}"</blockquote>
-              ))}
-            </div>
+          <p className="intro">{slide.points.join('\n')}</p>
+          <div className="quotes">
+            {slide.quotes.map((quote, idx) => (
+              <p key={idx}>{quote}</p>
+            ))}
           </div>
         </div>
       );
-    
-    case 'thought-experiment':
-      return (
-        <div className="thought-experiment-slide">
-          <h1>{slide.title}</h1>
-          {slide.svgContent && (
-            <div className="svg-container" dangerouslySetInnerHTML={{ __html: slide.svgContent }} />
-          )}
-          {slide.content && (
-            <div className="content blog-format" dangerouslySetInnerHTML={{ __html: slide.content }} />
-          )}
-        </div>
-      );
-    
-    case 'links':
-      return (
-        <div className="links-slide">
-          <h1>{slide.title}</h1>
-          <p className="description">{slide.content}</p>
-          <ul className="link-list">
-            {slide.links.map((link, idx) => (
-              <li key={idx} className={`link-item ${link.imageUrl ? 'has-image' : ''}`}>
-                <div className="link-wrapper">
-                  {link.imageUrl && (
-                    <div className="link-image-container">
-                      <img src={link.imageUrl} alt={link.text} className="link-image" />
-                    </div>
-                  )}
-                  <div className="link-content">
-                    <div className="link-header">
-                      {!link.imageUrl && link.icon && <span className="link-icon">{link.icon}</span>}
-                      <a href={link.url} target="_blank" rel="noopener noreferrer">
-                        {link.text}
-                      </a>
-                    </div>
-                    {link.source && <div className="link-source">{link.source}</div>}
-                    {link.description && <p className="link-description">{link.description}</p>}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      );
-    
     case 'vibe-coder':
       return (
         <div className="vibe-coder-slide">
           <h1>{slide.title}</h1>
-          
-          <div className="hero-image-container">
-            <img src="/cursor-screenshot.png" alt="Screenshot of Cursor IDE" className="hero-image" />
-          </div>
-          <div className="image-caption">Me asking cursor to add this image as a hero image to this page</div>
-          
           <p className="intro">{slide.content}</p>
           
           {slide.sections && (
@@ -1079,54 +562,49 @@ function renderSlide(slide) {
               ))}
             </div>
           )}
-        </div>
-      );
-    
-    case 'projects':
-      return (
-        <div className="projects-slide">
-          <h1>{slide.title}</h1>
-          {slide.content && <p className="intro">{slide.content}</p>}
-          <div className="projects-grid">
-            {slide.projects.map((project, idx) => (
-              <div key={idx} className="project-card">
-                <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-image-link">
-                  {/* This empty link covers the entire card and makes it all clickable */}
-                </a>
-                <div className="project-image-container">
-                  <div 
-                    className="project-image" 
-                    style={{
-                      backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'top center',
-                      width: '100%',
-                      height: '100%'
-                    }}
-                  ></div>
-                </div>
-                <div className="project-content">
-                  <h3 className="project-title">
-                    {project.title}
-                  </h3>
-                  <div className="project-details">
-                    <p className="project-description">{project.description}</p>
-                  </div>
-                </div>
+          
+          <h2>Key Learnings</h2>
+          <div className="learnings">
+            {slide.keyLearnings.map((learning, idx) => (
+              <div key={idx} className="learning-item">
+                <span className="icon">{learning.icon}</span>
+                <h3>{learning.title}</h3>
+                <p>{learning.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <h2>Workflow Stuff</h2>
+          <div className="workflow">
+            {slide.workflow.map((item, idx) => (
+              <div key={idx} className="workflow-item">
+                <span className="icon">{item.icon}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       );
-    
-    default:
+    case 'thought-experiment':
       return (
-        <div className="default-slide">
-          <h1>{slide.title || 'Slide'}</h1>
-          <p>{slide.content || 'No content available'}</p>
+        <div className="thought-experiment-slide">
+          <h1>{slide.title}</h1>
+          <p className="intro">{slide.content}</p>
+          {slide.svgContent && (
+            <div className="svg-content">
+              {slide.svgContent}
+            </div>
+          )}
         </div>
       );
+    default:
+      return null;
   }
+}
+
+function App() {
+  // ... rest of the component code ...
 }
 
 export default App;
