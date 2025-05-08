@@ -16,7 +16,7 @@
   --danger-color: #ef4444;
   --header-height: 60px;
   --max-content-width: 1200px;
-  --nav-bg-color: white; /* Define navigation background color variable */
+  --nav-bg-color: white;
 }
 
 * {
@@ -307,25 +307,31 @@ body {
   font-weight: 500;
 }
 
-/* Subsection Cover Slide - Dark blue background with light blue text */
+/* Subsection Cover Slide - Light blue background with blue text */
 .section-cover-slide.subsection-cover {
-  background-color: #020746; /* Dark blue background */
+  background-color: var(--background-color);
   position: fixed;
   top: var(--header-height);
   left: 0;
   right: 0;
-  bottom: 60px; /* Account for slide controls */
-  z-index: 1000; /* Ensure it's above the navigation (z-index: 99) */
+  bottom: 60px;
+  z-index: 1000;
 }
 
 .section-cover-slide.subsection-cover h1,
 .section-cover-slide.subsection-cover h2 {
-  color: #e3e8ef; /* Light blue text */
+  color: var(--blue-color);
 }
 
-/* Make sure the subsection cover content is properly centered and visible */
-.section-cover-slide.subsection-cover .section-cover-content {
-  z-index: 1001; /* Above the background */
+.section-cover-slide.subsection-cover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(18, 38, 95, 0.05) 0%, rgba(18, 38, 95, 0) 70%);
+  z-index: 2;
 }
 
 /* Slide Content Styles */
@@ -350,7 +356,7 @@ body {
   height: calc(100vh - var(--header-height) - 60px); /* Account for header and controls */
 }
 
-/* Slide Controls */
+/* Slide Controls - transparent on all pages */
 .slide-controls {
   position: fixed;
   bottom: 0;
@@ -362,10 +368,13 @@ body {
   padding: 1rem 2rem;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
-  z-index: 1001; /* Higher than section-cover-slide */
-  height: 60px; /* Fixed height to prevent layout shifts */
+  z-index: 1001;
+  height: 60px;
+  border-top: none;
+  box-shadow: none;
 }
 
+/* Unified button styling with blue color */
 .slide-controls button {
   background: none;
   border: none;
@@ -373,7 +382,7 @@ body {
   cursor: pointer;
   color: var(--primary-color);
   padding: 0.5rem 1rem;
-  width: 60px; /* Fixed width for consistent layout */
+  width: 60px;
   text-align: center;
 }
 
@@ -626,6 +635,7 @@ body {
   position: relative;
   min-height: calc(100vh - var(--header-height) - 60px);
   padding-bottom: 60px;
+  background-color: var(--background-color);
 }
 
 .methodology-slide h1 {
@@ -765,6 +775,7 @@ body {
   min-height: calc(100vh - var(--header-height) - 80px);
   padding-bottom: 0;
   margin-bottom: 80px;
+  background-color: var(--background-color);
 }
 
 .thought-experiment-slide h1 {
@@ -785,6 +796,13 @@ body {
   border-radius: 8px;
   font-style: italic;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.thought-experiment-slide .svg-container {
+  background-color: var(--background-color);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 /* Links Slide */
@@ -1441,6 +1459,7 @@ body {
   margin: 0 auto;
   overflow-x: auto;
   padding: 0;
+  background-color: var(--background-color);
 }
 
 .svg-container svg {
@@ -1458,6 +1477,7 @@ body {
   margin-bottom: 0;
   max-height: 580px;
   overflow: visible;
+  background-color: var(--background-color);
 }
 
 .svg-container svg {
@@ -1644,8 +1664,8 @@ body {
 /* Slide control buttons for the transparent background */
 .slide-view.first-slide-active .slide-controls button,
 .slide-view.first-slide-active .slide-progress {
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: var(--blue-color);
+  text-shadow: none;
 }
 
 /* Subsection Navigation Styles */
@@ -1716,29 +1736,18 @@ body {
 
 /* Subsection Cover Slide - Dark blue background with light blue text */
 .section-cover-slide.subsection-cover {
-  background-color: #020746; /* Dark blue background */
+  background-color: var(--background-color);
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  z-index: 1000;
 }
 
 .section-cover-slide.subsection-cover h1,
 .section-cover-slide.subsection-cover h2 {
-  color: #e3e8ef; /* Light blue text */
-}
-
-/* Adjust methodology to prevent side effect, since they have footnotes at the bottom */
-.methodology-slide {
-  padding-bottom: 60px;
-}
-
-.subsection-slide-item.subsection-cover-item .slide-link {
-  font-weight: 500;
-  color: #020746;
-  font-style: italic;
-}
-
-/* Make the subsection cover more visually distinct */
-.section-cover-slide.subsection-cover {
-  background-color: #020746; /* Dark blue background */
-  position: relative;
+  color: var(--blue-color);
 }
 
 .section-cover-slide.subsection-cover:before {
@@ -1748,7 +1757,7 @@ body {
   left: 0;
   right: 0;
   height: 100%;
-  background: linear-gradient(45deg, rgba(227, 232, 239, 0.15) 0%, rgba(227, 232, 239, 0) 70%);
+  background: linear-gradient(45deg, rgba(18, 38, 95, 0.05) 0%, rgba(18, 38, 95, 0) 70%);
   z-index: 2;
 }
 
@@ -1904,4 +1913,28 @@ body, html, .navigation {
 .navigation *::before,
 .navigation *::after {
   background-color: var(--nav-bg-color) !important;
+}
+
+/* Apply to specific slide types that had light blue backgrounds */
+.thought-experiment-slide,
+.links-slide,
+.finding-slide,
+.methodology-slide {
+  background-color: var(--background-color);
+}
+
+/* Ensure SVG backgrounds match exactly */
+.svg-container svg rect[fill="#f8fafc"],
+.svg-container svg rect[fill="rgb(248, 250, 252)"] {
+  fill: var(--background-color);
+}
+
+/* Add specific style for the chatphone diagram */
+.thought-experiment-slide svg {
+  background-color: var(--background-color);
+}
+
+/* Make sure all backgrounds use the variable */
+.App, body, html {
+  background-color: var(--background-color);
 } 
