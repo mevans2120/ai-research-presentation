@@ -869,17 +869,18 @@ function SlideView() {
                 </div>
                 {expandedSection === section.id && (
                   <>
-                    <ul className="section-slides">
+                    <ul className="section-slides" style={{margin: 0, padding: '0 0 0 1rem', backgroundColor: 'white'}}>
                       {section.slides.map((slide, slideIdx) => (
                         // Skip the first slide (cover) in the navigation
                         slideIdx !== 0 ? (
-                          <li key={slideIdx} className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) ? 'active' : ''}>
+                          <li key={slideIdx} className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) ? 'active' : ''} style={{margin: 0, padding: '0.5rem 0', backgroundColor: 'white'}}>
                             <div 
                               className="slide-link"
                               onClick={() => {
                                 navigate(`/section/${section.id}/${slideIdx}`);
                                 setMenuOpen(false); // Always close menu when clicking on a slide
                               }}
+                              style={{backgroundColor: 'white'}}
                             >
                               {slide.title || `Slide ${slideIdx + 1}`}
                             </div>
@@ -888,17 +889,18 @@ function SlideView() {
                       ))}
                     </ul>
                     
-                    {/* Display subsections if any */}
+                    {/* Display subsections with zero-gap styles */}
                     {section.subsections && section.subsections.length > 0 && (
-                      <div className="subsections">
+                      <div className="subsections" style={{margin: 0, padding: '0 0 0 0.5rem', backgroundColor: 'white'}}>
                         {section.subsections.map((subsection) => (
-                          <div key={subsection.id} className="subsection">
+                          <div key={subsection.id} className="subsection" style={{margin: 0, padding: 0, backgroundColor: 'white'}}>
                             <div 
                               className={`subsection-title ${isSubsectionExpanded(section.id, subsection.id) ? 'expanded' : 'collapsed'}`}
                               onClick={(e) => {
                                 e.stopPropagation();
                                 toggleSubsection(section.id, subsection.id);
                               }}
+                              style={{margin: 0, padding: '0.5rem 0', backgroundColor: 'white'}}
                             >
                               {subsection.title}
                             </div>

@@ -16,6 +16,7 @@
   --danger-color: #ef4444;
   --header-height: 60px;
   --max-content-width: 1200px;
+  --nav-bg-color: white; /* Define navigation background color variable */
 }
 
 * {
@@ -95,11 +96,41 @@ body {
   left: auto;
   width: 300px;
   height: calc(100vh - var(--header-height));
-  background-color: white;
+  background-color: var(--nav-bg-color);
   border-left: 1px solid var(--light-gray);
   padding: 1rem;
   overflow-y: auto;
   z-index: 99;
+}
+
+/* Use a pseudo-element to create a continuous white background */
+.navigation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: -1;
+}
+
+/* Eliminate any borders/margins/padding between elements that might create lines */
+.navigation .section-slides,
+.navigation .subsections,
+.navigation .section-title,
+.navigation li {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  background-color: white;
+}
+
+/* Ensure no margin between section-slides and subsections */
+.navigation .section-slides + .subsections {
+  margin-top: 0;
+  padding-top: 0.5rem;
+  border-top: none !important;
 }
 
 .navigation ul {
@@ -279,6 +310,12 @@ body {
 /* Subsection Cover Slide - Dark blue background with light blue text */
 .section-cover-slide.subsection-cover {
   background-color: #020746; /* Dark blue background */
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 60px; /* Account for slide controls */
+  z-index: 1000; /* Ensure it's above the navigation (z-index: 99) */
 }
 
 .section-cover-slide.subsection-cover h1,
@@ -286,11 +323,9 @@ body {
   color: #e3e8ef; /* Light blue text */
 }
 
-/* DARK BLUE HORIZONTAL SEPARATOR - THIS IS THE IMPORTANT PART */
-.navigation .section-slides + .subsections {
-  border-top: 1px solid #020746 !important;
-  margin-top: 0.5rem !important;
-  padding-top: 0.5rem !important;
+/* Make sure the subsection cover content is properly centered and visible */
+.section-cover-slide.subsection-cover .section-cover-content {
+  z-index: 1001; /* Above the background */
 }
 
 /* Slide Content Styles */
@@ -1767,4 +1802,106 @@ body {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
   border-bottom: none !important;
+}
+
+.navigation .section-slides,
+.navigation .subsections,
+.navigation li {
+  border: none;
+  border-top: none;
+  border-bottom: none;
+  box-shadow: none;
+  background: white;
+  margin-bottom: 0.5rem;
+}
+
+/* Clear any padding/margin between the section-slides and subsections */
+.navigation .section-slides + .subsections {
+  margin-top: 0;
+  padding-top: 0.5rem;
+  border-top: none;
+}
+
+/* Explicit background coloring to ensure no visual gaps */
+.navigation, 
+.navigation ul,
+.navigation li,
+.navigation div {
+  background-color: white;
+}
+
+/* Debug - use a strongly contrasting background color to identify the source of the line */
+.navigation, 
+.navigation ul, 
+.navigation li, 
+.navigation .section-slides, 
+.navigation .subsections {
+  background-color: #ffffff !important;
+}
+
+/* Completely disable borders */
+.navigation *, 
+.navigation *::before, 
+.navigation *::after {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Try to make section-slides element background 100% width */
+.navigation .section-slides {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.5rem 0;
+  padding: 0 0 0 1rem;
+}
+
+/* Make subsections background 100% width too */
+.navigation .subsections {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.5rem 0;
+  padding: 0 0 0 0.5rem;
+}
+
+/* Fill the navigation perfectly */
+body, html, .navigation {
+  background-color: white;
+}
+
+/* Fix for issue #2 - eliminate gaps between elements */
+.navigation * {
+  margin: 0 !important;
+}
+
+.navigation .section-slides {
+  padding: 0 0 0 1rem !important;
+  margin: 0 !important;
+}
+
+.navigation .section-slides li {
+  padding: 0.5rem 0 !important;
+  margin: 0 !important;
+}
+
+.navigation .subsections {
+  padding: 0 0 0 0.5rem !important;
+  margin: 0 !important;
+}
+
+.navigation .subsection {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.navigation .subsection-title {
+  padding: 0.5rem 0 !important;
+  margin: 0 !important;
+}
+
+/* Force all navigation elements to have consistent background */
+.navigation,
+.navigation *,
+.navigation *::before,
+.navigation *::after {
+  background-color: var(--nav-bg-color) !important;
 } 
