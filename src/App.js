@@ -80,132 +80,136 @@ const presentationData = {
             ]
           }
         }
-      ]
-    },
-    {
-      id: "present-findings",
-      title: "Findings - Present",
-      slides: [
+      ],
+      subsections: [
         {
-          type: "section-cover",
+          id: "present-findings",
           title: "Findings - Present",
-          subtitle: ""
-        },
-        {
-          type: "finding",
-          title: "AI is now central to how many work, often sparking moments of awe as people grasp its current and future power.",
-          points: [
-            "Most use AI everyday, over half use (and pay for) multiple chatbots, several have already built useful products primarily with AI, or because AI made it easier to build the product and start the company.",
-            "Many had moments of awe where they realized AI's power was going to change so much about their world",
-            "The couple folks who didn't really use AI, were unsurprisingly the most skeptical of it."
-          ],
-          quotes: [
-            "I use it everyday. It is embedded in every project I work on. I insist on it",
-            "I'm at the same level of \"holy shit\" that you were when you dove in deep",
-            "It's fundamental to our company now. Every developer has copilot, every department uses it for something",
-            "I pay for Claude, ChatGPT and Gemini… It's ridiculous, but they all have their strengths. But it feels important to keep track",
-            "It's a bunch of hype. I think it dies down, or is underwhelming, like self driving cars"
+          slides: [
+            {
+              type: "section-cover",
+              title: "Findings - Present",
+              subtitle: "",
+              isSubsectionCover: true
+            },
+            {
+              type: "finding",
+              title: "AI is now central to how many work, often sparking moments of awe as people grasp its current and future power.",
+              points: [
+                "Most use AI everyday, over half use (and pay for) multiple chatbots, several have already built useful products primarily with AI, or because AI made it easier to build the product and start the company.",
+                "Many had moments of awe where they realized AI's power was going to change so much about their world",
+                "The couple folks who didn't really use AI, were unsurprisingly the most skeptical of it."
+              ],
+              quotes: [
+                "I use it everyday. It is embedded in every project I work on. I insist on it",
+                "I'm at the same level of \"holy shit\" that you were when you dove in deep",
+                "It's fundamental to our company now. Every developer has copilot, every department uses it for something",
+                "I pay for Claude, ChatGPT and Gemini… It's ridiculous, but they all have their strengths. But it feels important to keep track",
+                "It's a bunch of hype. I think it dies down, or is underwhelming, like self driving cars"
+              ]
+            },
+            {
+              type: "finding",
+              title: "This is one of the most exciting / terrifying times in technology",
+              points: [
+                "With a few exceptions, everyone thought AI was the most transformational technology that has been introduced in their careers. It was compared to the introduction of social media, but many thought it was much bigger and much more transformational. Even one of the skeptics thought AI could take down Google Search.",
+                "Several had never been more excited about working in technology",
+                "Most thought the technology industry workforce would be much smaller in the future, the question is how long it would take."
+              ],
+              quotes: [
+                "I've been doing this for 20 years, and I've never been more excited about the the work",
+                "If AI ceased to get any better than it is now, there is at least half a decade of work creating new products and improving existing ones. I think I read that somewhere",
+                "This is the app that is going to eat the world. Maybe in a good way. Maybe not. I don't know",
+                "Social media fundamentally changed the way we communicate, upended how we market, and sucked up hours of our time. Somehow this feels bigger"
+              ]
+            },
+            {
+              type: "finding",
+              title: "Rise of the single use case / individual applications",
+              points: [
+                "Several non-developers in the audience had built single use case applications for personal and business reasons.",
+                "These applications would not have been worth the effort without AI, and solved very specific, often personal, use cases.",
+                "These applications are still in use by their makers."
+              ],
+              quotes: [
+                "I partnered with Claude to build two apps for personal projects. And while it took a couple months, and Claude's rate limits were annoying, I wouldn't have been able to do it otherwise",
+                "I made an app with Replit. In a day, I have working code that integrates with Github and SendGrid… We'll use this to manage deployments of the \"starter pack\" of utilities that we end up dropping into every customer environment. We'll also use it to give away code to prospects and generate leads.",
+                "While this wasn't a full on app, I had this technical debt that had been on my plate for over a year. It was shameful. I finally gave it to ChatGPT and it knocked it out in a hour"
+              ]
+            },
+            {
+              type: "finding",
+              title: "AI does feel overhyped, or at least over-marketed",
+              points: [
+                "Several thought the researcher lives under a rock, and AI's impact was self-evident.",
+                "Four people in the audience were tired of talking about AI, and had said it's been talked about non-stop since ChatGPT launched.",
+                "Even the audience members who felt that AI was going to be the most transformational technology in their lifetime, thought the hype machine was a bit out of control"
+              ],
+              quotes: [
+                "I'm tired of talking about AI. It's just a technology. Sure its useful, but AI doesn't need to be in your bananas",
+                "It reminds me of when everyone thinks they need to have an app… And in hindsight, 90% of them did not. How many apps do you use in a week?",
+                "Seems like everyone on LinkedIn went from being a Social Media expert to becoming an AI expert... Overnight.",
+                "It's funny while it has the same feeling that AI is overhyped, sometimes I feel like we don't talk about it enough"
+              ]
+            },
+            {
+              type: "finding",
+              title: "Several treated AI like a person, valuing its tone—though many found it overly confident.",
+              points: [
+                "Several commented on how the agents mirrors the tone you approach your prompts with, and this led them to engage more deeply and frequently.",
+                "Many commented on how confident AI are in their solution whether they are right or wrong",
+                "AI cheered up a couple of the participants, and they used AI to help calm them down.",
+                "AI felt hyperbolic to some, it quickly praised some of the audience members ideas as being excellent or amazing"
+              ],
+              quotes: [
+                "I've had conversations with Claude about a family member's health issues, and those conversations honestly cheered me up and reduced my anxiety. Claude seemed to really understand where I was coming from. So much better than the Google Search holes I used to go into",
+                "AI is so dang confident. When really it has no business doing so. I'll get into a loop on something, say \"I fixed your problem\" and then nope… not fixed.",
+                "I laugh when an agent says \"What an amazing idea\" when I ask it to do something mundane like put some data into a spreadsheet.",
+                "It's funny while it has the same feeling that AI is overhyped, sometimes I feel like we don't talk about it enough"
+              ]
+            }
           ]
         },
         {
-          type: "finding",
-          title: "This is one of the most exciting / terrifying times in technology",
-          points: [
-            "With a few exceptions, everyone thought AI was the most transformational technology that has been introduced in their careers. It was compared to the introduction of social media, but many thought it was much bigger and much more transformational. Even one of the skeptics thought AI could take down Google Search.",
-            "Several had never been more excited about working in technology",
-            "Most thought the technology industry workforce would be much smaller in the future, the question is how long it would take."
-          ],
-          quotes: [
-            "I've been doing this for 20 years, and I've never been more excited about the the work",
-            "If AI ceased to get any better than it is now, there is at least half a decade of work creating new products and improving existing ones. I think I read that somewhere",
-            "This is the app that is going to eat the world. Maybe in a good way. Maybe not. I don't know",
-            "Social media fundamentally changed the way we communicate, upended how we market, and sucked up hours of our time. Somehow this feels bigger"
-          ]
-        },
-        {
-          type: "finding",
-          title: "Rise of the single use case / individual applications",
-          points: [
-            "Several non-developers in the audience had built single use case applications for personal and business reasons.",
-            "These applications would not have been worth the effort without AI, and solved very specific, often personal, use cases.",
-            "These applications are still in use by their makers."
-          ],
-          quotes: [
-            "I partnered with Claude to build two apps for personal projects. And while it took a couple months, and Claude's rate limits were annoying, I wouldn't have been able to do it otherwise",
-            "I made an app with Replit. In a day, I have working code that integrates with Github and SendGrid… We'll use this to manage deployments of the \"starter pack\" of utilities that we end up dropping into every customer environment. We'll also use it to give away code to prospects and generate leads.",
-            "While this wasn't a full on app, I had this technical debt that had been on my plate for over a year. It was shameful. I finally gave it to ChatGPT and it knocked it out in a hour"
-          ]
-        },
-        {
-          type: "finding",
-          title: "AI does feel overhyped, or at least over-marketed",
-          points: [
-            "Several thought the researcher lives under a rock, and AI's impact was self-evident.",
-            "Four people in the audience were tired of talking about AI, and had said it's been talked about non-stop since ChatGPT launched.",
-            "Even the audience members who felt that AI was going to be the most transformational technology in their lifetime, thought the hype machine was a bit out of control"
-          ],
-          quotes: [
-            "I'm tired of talking about AI. It's just a technology. Sure its useful, but AI doesn't need to be in your bananas",
-            "It reminds me of when everyone thinks they need to have an app… And in hindsight, 90% of them did not. How many apps do you use in a week?",
-            "Seems like everyone on LinkedIn went from being a Social Media expert to becoming an AI expert... Overnight.",
-            "It's funny while it has the same feeling that AI is overhyped, sometimes I feel like we don't talk about it enough"
-          ]
-        },
-        {
-          type: "finding",
-          title: "Several treated AI like a person, valuing its tone—though many found it overly confident.",
-          points: [
-            "Several commented on how the agents mirrors the tone you approach your prompts with, and this led them to engage more deeply and frequently.",
-            "Many commented on how confident AI are in their solution whether they are right or wrong",
-            "AI cheered up a couple of the participants, and they used AI to help calm them down.",
-            "AI felt hyperbolic to some, it quickly praised some of the audience members ideas as being excellent or amazing"
-          ],
-          quotes: [
-            "I've had conversations with Claude about a family member's health issues, and those conversations honestly cheered me up and reduced my anxiety. Claude seemed to really understand where I was coming from. So much better than the Google Search holes I used to go into",
-            "AI is so dang confident. When really it has no business doing so. I'll get into a loop on something, say \"I fixed your problem\" and then nope… not fixed.",
-            "I laugh when an agent says \"What an amazing idea\" when I ask it to do something mundane like put some data into a spreadsheet.",
-            "It's funny while it has the same feeling that AI is overhyped, sometimes I feel like we don't talk about it enough"
-          ]
-        }
-      ]
-    },
-    {
-      id: "future-findings",
-      title: "Findings - Future",
-      slides: [
-        {
-          type: "section-cover",
+          id: "future-findings",
           title: "Findings - Future",
-          subtitle: ""
-        },
-        {
-          type: "finding",
-          title: "Most expect AI to boom, then bust, in tech—but no one knows when.",
-          points: [
-            "Everyone believed that AI would unlock a bunch of innovation by being part of new products, and also enabling other digital products to be developed more cheaply",
-            "Everyone also believed that the teams needed to build these products would be significantly smaller.",
-            "A couple thought that the backlog of potential innovation was vast or innovative, and that the technology industry would by and large support the same number of employees."
-          ],
-          quotes: [
-            "Will there be more work because more projects are feasible? I don't know.\"",
-            "Teams are already smaller. What we can do with one or two developers is what we could have done with 5 or 6",
-            "Some of these product ideas I think about in the past… The ones that were too hard to build, relied on too many people creating content… Those are becoming so much more feasible. Its mind blowing",
-            "I think the backlog for innovation and efficiency improvements is infinite",
-            "Increasingly I worry that I will have to find a new career. There are already too many people in the industry"
-          ]
-        },
-        {
-          type: "finding",
-          title: "Most worried about AI's impact on the world kids today will grow up in, though a few felt it was overblown.",
-          points: [
-            "Several wondered what their kids would do if AI does all this work goes away",
-            "One person had a teenager who felt AI was ruining their ability to learn.",
-            "A couple thought that it was overblown, AI would be like other much hyped tech and merely be a tool in the toolbox."
-          ],
-          quotes: [
-            "I really do worry about my children. In a way that I haven't with smartphones or social media. This could really affect their ability to make a living, not just affect their attention span",
-            "My 16 year old daughter recently came up to me and said she deleted ChatGPT from her phone. She said everyone at her school is using it all the time and no one is really learning. She wanted to learn",
-            "This is like self-driving cars. Lets see where it's at in 20 years"
+          slides: [
+            {
+              type: "section-cover",
+              title: "Findings - Future",
+              subtitle: "",
+              isSubsectionCover: true
+            },
+            {
+              type: "finding",
+              title: "Most expect AI to boom, then bust, in tech—but no one knows when.",
+              points: [
+                "Everyone believed that AI would unlock a bunch of innovation by being part of new products, and also enabling other digital products to be developed more cheaply",
+                "Everyone also believed that the teams needed to build these products would be significantly smaller.",
+                "A couple thought that the backlog of potential innovation was vast or innovative, and that the technology industry would by and large support the same number of employees."
+              ],
+              quotes: [
+                "Will there be more work because more projects are feasible? I don't know.\"",
+                "Teams are already smaller. What we can do with one or two developers is what we could have done with 5 or 6",
+                "Some of these product ideas I think about in the past… The ones that were too hard to build, relied on too many people creating content… Those are becoming so much more feasible. Its mind blowing",
+                "I think the backlog for innovation and efficiency improvements is infinite",
+                "Increasingly I worry that I will have to find a new career. There are already too many people in the industry"
+              ]
+            },
+            {
+              type: "finding",
+              title: "Most worried about AI's impact on the world kids today will grow up in, though a few felt it was overblown.",
+              points: [
+                "Several wondered what their kids would do if AI does all this work goes away",
+                "One person had a teenager who felt AI was ruining their ability to learn.",
+                "A couple thought that it was overblown, AI would be like other much hyped tech and merely be a tool in the toolbox."
+              ],
+              quotes: [
+                "I really do worry about my children. In a way that I haven't with smartphones or social media. This could really affect their ability to make a living, not just affect their attention span",
+                "My 16 year old daughter recently came up to me and said she deleted ChatGPT from her phone. She said everyone at her school is using it all the time and no one is really learning. She wanted to learn",
+                "This is like self-driving cars. Lets see where it's at in 20 years"
+              ]
+            }
           ]
         }
       ]
@@ -594,9 +598,49 @@ function SlideView() {
   const [currentSlide, setCurrentSlide] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState(null);
+  const [expandedSubsections, setExpandedSubsections] = useState({});
   const [globalSlideInfo, setGlobalSlideInfo] = useState({ current: 0, total: 0 });
   const navigate = useNavigate();
   const menuRef = useRef(null);
+  
+  // Function to toggle subsection expansion
+  const toggleSubsection = (sectionId, subsectionId) => {
+    setExpandedSubsections(prev => {
+      const key = `${sectionId}-${subsectionId}`;
+      return {
+        ...prev,
+        [key]: !prev[key]
+      };
+    });
+  };
+  
+  // Check if a subsection is expanded
+  const isSubsectionExpanded = (sectionId, subsectionId) => {
+    const key = `${sectionId}-${subsectionId}`;
+    return !!expandedSubsections[key];
+  };
+  
+  // Function to find subsection slide based on subsection id and slide index
+  const findSubsectionSlideIndex = useCallback((section, subsectionId, slideIdx) => {
+    // First, count the main section slides (these come before subsection slides)
+    let totalIndex = section.slides.length;
+    
+    // Then iterate through subsections to find the right one
+    if (section.subsections) {
+      for (let i = 0; i < section.subsections.length; i++) {
+        const subsection = section.subsections[i];
+        if (subsection.id === subsectionId) {
+          // Found the right subsection, add the slide index
+          return totalIndex + slideIdx;
+        }
+        // This is not the subsection we're looking for, add its slides to the total
+        totalIndex += subsection.slides.length;
+      }
+    }
+    
+    // If no matching subsection found, return the original slide index
+    return slideIdx;
+  }, []);
   
   // Handle clicks outside the menu
   useEffect(() => {
@@ -628,9 +672,18 @@ function SlideView() {
   // Calculate total slides and current global slide index
   useEffect(() => {
     // Calculate total slides
-    const totalSlides = presentationData.sections.reduce(
-      (acc, section) => acc + section.slides.length, 0
-    );
+    const totalSlides = presentationData.sections.reduce((acc, section) => {
+      let sectionSlides = section.slides.length;
+      
+      // Add slides from subsections if any
+      if (section.subsections) {
+        section.subsections.forEach(subsection => {
+          sectionSlides += subsection.slides.length;
+        });
+      }
+      
+      return acc + sectionSlides;
+    }, 0);
     
     // Calculate current global slide index
     let currentGlobalIndex = 0;
@@ -640,7 +693,16 @@ function SlideView() {
         currentGlobalIndex += parseInt(slideIndex, 10);
         break;
       } else {
-        currentGlobalIndex += section.slides.length;
+        let sectionSlides = section.slides.length;
+        
+        // Add slides from subsections if any
+        if (section.subsections) {
+          section.subsections.forEach(subsection => {
+            sectionSlides += subsection.slides.length;
+          });
+        }
+        
+        currentGlobalIndex += sectionSlides;
       }
     }
     
@@ -656,8 +718,17 @@ function SlideView() {
     if (section) {
       setCurrentSection(section);
       const slideIdx = parseInt(slideIndex, 10);
-      if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < section.slides.length) {
-        setCurrentSlide(section.slides[slideIdx]);
+      
+      // Create a flattened array of all slides including subsections
+      let allSlides = [...section.slides];
+      if (section.subsections) {
+        section.subsections.forEach(subsection => {
+          allSlides = allSlides.concat(subsection.slides);
+        });
+      }
+      
+      if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < allSlides.length) {
+        setCurrentSlide(allSlides[slideIdx]);
       } else {
         navigate(`/section/${sectionId}/0`);
       }
@@ -668,15 +739,25 @@ function SlideView() {
   
   const goToNextSlide = useCallback(() => {
     const currentSlideIdx = parseInt(slideIndex, 10);
-    if (currentSection && currentSlideIdx < currentSection.slides.length - 1) {
-      // Go to next slide in current section
-      navigate(`/section/${sectionId}/${currentSlideIdx + 1}`);
-    } else {
-      // Go to first slide of next section
-      const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
-      if (currentSectionIdx < presentationData.sections.length - 1) {
-        const nextSection = presentationData.sections[currentSectionIdx + 1];
-        navigate(`/section/${nextSection.id}/0`);
+    if (currentSection) {
+      // Create a flattened array of all slides including subsections
+      let allSlides = [...currentSection.slides];
+      if (currentSection.subsections) {
+        currentSection.subsections.forEach(subsection => {
+          allSlides = allSlides.concat(subsection.slides);
+        });
+      }
+      
+      if (currentSlideIdx < allSlides.length - 1) {
+        // Go to next slide in current section
+        navigate(`/section/${sectionId}/${currentSlideIdx + 1}`);
+      } else {
+        // Go to first slide of next section
+        const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
+        if (currentSectionIdx < presentationData.sections.length - 1) {
+          const nextSection = presentationData.sections[currentSectionIdx + 1];
+          navigate(`/section/${nextSection.id}/0`);
+        }
       }
     }
   }, [currentSection, sectionId, slideIndex, navigate]);
@@ -691,7 +772,16 @@ function SlideView() {
       const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
       if (currentSectionIdx > 0) {
         const prevSection = presentationData.sections[currentSectionIdx - 1];
-        navigate(`/section/${prevSection.id}/${prevSection.slides.length - 1}`);
+        
+        // Create a flattened array of all slides including subsections
+        let allSlides = [...prevSection.slides];
+        if (prevSection.subsections) {
+          prevSection.subsections.forEach(subsection => {
+            allSlides = allSlides.concat(subsection.slides);
+          });
+        }
+        
+        navigate(`/section/${prevSection.id}/${allSlides.length - 1}`);
       }
     }
   }, [sectionId, slideIndex, navigate]);
@@ -778,24 +868,72 @@ function SlideView() {
                   {section.title}
                 </div>
                 {expandedSection === section.id && (
-                  <ul className="section-slides">
-                    {section.slides.map((slide, slideIdx) => (
-                      // Skip the first slide (cover) in the navigation
-                      slideIdx !== 0 ? (
-                        <li key={slideIdx} className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) ? 'active' : ''}>
-                          <div 
-                            className="slide-link"
-                            onClick={() => {
-                              navigate(`/section/${section.id}/${slideIdx}`);
-                              setMenuOpen(false); // Always close menu when clicking on a slide
-                            }}
-                          >
-                            {slide.title || `Slide ${slideIdx + 1}`}
+                  <>
+                    <ul className="section-slides">
+                      {section.slides.map((slide, slideIdx) => (
+                        // Skip the first slide (cover) in the navigation
+                        slideIdx !== 0 ? (
+                          <li key={slideIdx} className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) ? 'active' : ''}>
+                            <div 
+                              className="slide-link"
+                              onClick={() => {
+                                navigate(`/section/${section.id}/${slideIdx}`);
+                                setMenuOpen(false); // Always close menu when clicking on a slide
+                              }}
+                            >
+                              {slide.title || `Slide ${slideIdx + 1}`}
+                            </div>
+                          </li>
+                        ) : null
+                      ))}
+                    </ul>
+                    
+                    {/* Display subsections if any */}
+                    {section.subsections && section.subsections.length > 0 && (
+                      <div className="subsections">
+                        {section.subsections.map((subsection) => (
+                          <div key={subsection.id} className="subsection">
+                            <div 
+                              className={`subsection-title ${isSubsectionExpanded(section.id, subsection.id) ? 'expanded' : 'collapsed'}`}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleSubsection(section.id, subsection.id);
+                              }}
+                            >
+                              {subsection.title}
+                            </div>
+                            {isSubsectionExpanded(section.id, subsection.id) && (
+                              <ul className="subsection-slides">
+                                {subsection.slides.map((slide, slideIdx) => (
+                                  // Skip the subsection cover slide in the navigation
+                                  !slide.isSubsectionCover ? (
+                                    <li 
+                                      key={slideIdx} 
+                                      className={
+                                        `subsection-slide-item
+                                        ${currentSlide && currentSlide === subsection.slides[slideIdx] ? 'active' : ''}`
+                                      }
+                                    >
+                                      <div 
+                                        className="slide-link"
+                                        onClick={() => {
+                                          const actualIndex = findSubsectionSlideIndex(section, subsection.id, slideIdx);
+                                          navigate(`/section/${section.id}/${actualIndex}`);
+                                          setMenuOpen(false);
+                                        }}
+                                      >
+                                        {slide.title || `Slide ${slideIdx + 1}`}
+                                      </div>
+                                    </li>
+                                  ) : null
+                                ))}
+                              </ul>
+                            )}
                           </div>
-                        </li>
-                      ) : null
-                    ))}
-                  </ul>
+                        ))}
+                      </div>
+                    )}
+                  </>
                 )}
               </li>
             ))}
@@ -851,7 +989,7 @@ function renderSlide(slide) {
     
     case 'section-cover':
       return (
-        <div className="section-cover-slide">
+        <div className={`section-cover-slide ${slide.isSubsectionCover ? 'subsection-cover' : ''}`}>
           <div className="section-cover-content">
             <h1>{slide.title}</h1>
             {slide.subtitle && <h2>{slide.subtitle}</h2>}

@@ -141,6 +141,158 @@ body {
   font-weight: 500;
 }
 
+/* Scrollbar styling */
+.navigation::-webkit-scrollbar {
+  width: 8px;
+}
+
+.navigation::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.navigation::-webkit-scrollbar-thumb {
+  background-color: var(--light-gray);
+  border-radius: 4px;
+}
+
+.navigation::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-gray);
+}
+
+/* Reset all navigation elements but allow specific border styling */
+.navigation * {
+  background-image: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Basic list styling */
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section title styling */
+.navigation .section-title {
+  font-weight: 600;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  color: var(--blue-color);
+}
+
+.navigation li.active > .section-title {
+  color: var(--nav-color);
+}
+
+/* Section slides styling */
+.navigation .section-slides {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.navigation .section-slides li {
+  padding: 0.5rem 0;
+}
+
+.navigation .section-slides li a,
+.navigation .section-slides li .slide-link {
+  color: var(--blue-color);
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.navigation .section-slides li.active a,
+.navigation .section-slides li.active .slide-link {
+  color: var(--nav-color);
+  font-weight: 500;
+}
+
+/* Subsection Navigation Styles */
+.subsections {
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+
+.subsection {
+  margin-bottom: 0.5rem;
+}
+
+.subsection-title {
+  font-weight: 600;
+  color: #020746;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.subsection-title:before {
+  content: "›";
+  margin-right: 0.5rem;
+  color: #020746;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.subsection-title.expanded:before {
+  transform: rotate(90deg);
+}
+
+.subsection-slides {
+  margin-left: 1.2rem;
+  list-style: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.subsection-slide-item {
+  padding: 0.25rem 0;
+  margin: 0;
+}
+
+.subsection-slide-item .slide-link {
+  color: var(--dark-gray);
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+}
+
+.subsection-slide-item .slide-link:hover {
+  color: var(--nav-color);
+}
+
+.subsection-slide-item.active .slide-link {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Subsection Cover Slide - Dark blue background with light blue text */
+.section-cover-slide.subsection-cover {
+  background-color: #020746; /* Dark blue background */
+}
+
+.section-cover-slide.subsection-cover h1,
+.section-cover-slide.subsection-cover h2 {
+  color: #e3e8ef; /* Light blue text */
+}
+
+/* DARK BLUE HORIZONTAL SEPARATOR - THIS IS THE IMPORTANT PART */
+.navigation .section-slides + .subsections {
+  border-top: 1px solid #020746 !important;
+  margin-top: 0.5rem !important;
+  padding-top: 0.5rem !important;
+}
+
 /* Slide Content Styles */
 .slide-content {
   padding: calc(var(--header-height) + 2rem) 2rem 160px;
@@ -438,6 +590,7 @@ body {
 .methodology-slide {
   position: relative;
   min-height: calc(100vh - var(--header-height) - 60px);
+  padding-bottom: 60px;
 }
 
 .methodology-slide h1 {
@@ -1458,4 +1611,160 @@ body {
 .slide-view.first-slide-active .slide-progress {
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Subsection Navigation Styles */
+.subsections {
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+
+.subsection {
+  margin-bottom: 0.5rem;
+}
+
+.subsection-title {
+  font-weight: 600;
+  color: #020746;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.subsection-title:before {
+  content: "›";
+  margin-right: 0.5rem;
+  color: #020746;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.subsection-title.expanded:before {
+  transform: rotate(90deg);
+}
+
+.subsection-slides {
+  margin-left: 1.2rem;
+  list-style: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.subsection-slide-item {
+  padding: 0.25rem 0;
+  margin: 0;
+}
+
+.subsection-slide-item .slide-link {
+  color: var(--dark-gray);
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+}
+
+.subsection-slide-item .slide-link:hover {
+  color: var(--nav-color);
+}
+
+.subsection-slide-item.active .slide-link {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Subsection Cover Slide - Dark blue background with light blue text */
+.section-cover-slide.subsection-cover {
+  background-color: #020746; /* Dark blue background */
+}
+
+.section-cover-slide.subsection-cover h1,
+.section-cover-slide.subsection-cover h2 {
+  color: #e3e8ef; /* Light blue text */
+}
+
+/* Adjust methodology to prevent side effect, since they have footnotes at the bottom */
+.methodology-slide {
+  padding-bottom: 60px;
+}
+
+.subsection-slide-item.subsection-cover-item .slide-link {
+  font-weight: 500;
+  color: #020746;
+  font-style: italic;
+}
+
+/* Make the subsection cover more visually distinct */
+.section-cover-slide.subsection-cover {
+  background-color: #020746; /* Dark blue background */
+  position: relative;
+}
+
+.section-cover-slide.subsection-cover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(227, 232, 239, 0.15) 0%, rgba(227, 232, 239, 0) 70%);
+  z-index: 2;
+}
+
+/* More thorough fixes for horizontal lines in navigation */
+.navigation hr {
+  display: none !important;
+}
+
+/* Ensure continuous background in the navigation menu */
+.navigation {
+  background-color: white;
+}
+
+/* Remove any potential margin/padding causing space between elements */
+.navigation li,
+.navigation ul,
+.navigation .section-title,
+.navigation .section-slides,
+.navigation .slide-link,
+.navigation .subsections,
+.navigation .subsection-title {
+  margin-top: 0 !important;
+  border-top-width: 0 !important;
+  border-top-style: none !important;
+  border-top-color: transparent !important;
+  background: none !important;
+}
+
+/* Target any horizontal separators in the navigation */
+.navigation li,
+.navigation li.active,
+.navigation .section-slides,
+.navigation .section-slides li,
+.navigation .subsections {
+  box-shadow: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  position: static !important;
+}
+
+/* Remove margin specifically between section slides and subsections */
+.navigation .section-slides + .subsections,
+.navigation .section-slides:last-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+/* Ensure no horizontal lines are formed by padding or margin differences */
+.navigation .section-slides li:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
 } 
