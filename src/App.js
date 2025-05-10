@@ -30,7 +30,7 @@ const presentationData = {
             },
             {
               title: "Vibe Coding",
-              description: "I describe my current AI coding workflow and share some of the projects that I've created solely using AI tools.",
+              description: "I describe my current AI coding workflow and I share some of the projects that I've created solely using AI tools.",
               url: "/section/vibe-coder/0",
               imageUrl: "/vibe-coding.png"
             },
@@ -56,7 +56,17 @@ const presentationData = {
         {
           type: "section-cover",
           title: "User Research",
-          subtitle: ""
+          subtitle: "",
+          cards: [
+            {
+              title: "Research Methodology",
+              content: "I interviewed 13 colleagues across various roles including designers, developers, product managers, and executives to understand how they use AI in their work and personal lives. These conversations helped uncover both current usage patterns and expectations for AI's future."
+            },
+            {
+              title: "Key Findings",
+              content: "My research revealed that AI has become central to many professionals' workflows, with most participants experiencing moments of awe about its capabilities. The findings are divided into present observations and future predictions about AI's impact on work and society."
+            }
+          ]
         },
         {
           type: "hypothesis",
@@ -90,7 +100,17 @@ const presentationData = {
               type: "section-cover",
               title: "Findings - Present",
               subtitle: "",
-              isSubsectionCover: true
+              isSubsectionCover: true,
+              cards: [
+                {
+                  title: "Current Usage Patterns",
+                  content: "Most participants use AI daily, with over half paying for multiple tools like ChatGPT, Claude, and Gemini. Many have already built products primarily with AI assistance."
+                },
+                {
+                  title: "Industry Impact",
+                  content: "AI is perceived as the most transformational technology in many participants' careers, enabling previously infeasible projects and changing how they approach their work."
+                }
+              ]
             },
             {
               type: "finding",
@@ -178,7 +198,17 @@ const presentationData = {
               type: "section-cover",
               title: "Findings - Future",
               subtitle: "",
-              isSubsectionCover: true
+              isSubsectionCover: true,
+              cards: [
+                {
+                  title: "Work Transformation",
+                  content: "Participants anticipate AI enabling faster innovation but with smaller teams, creating uncertainty about the tech industry's future workforce size."
+                },
+                {
+                  title: "Generational Concerns",
+                  content: "Many worry about how AI will impact future generations, with concerns about learning, employment opportunities, and skill development in an AI-augmented world."
+                }
+              ]
             },
             {
               type: "finding",
@@ -221,7 +251,17 @@ const presentationData = {
         {
           type: "section-cover",
           title: "Concepts & Content",
-          subtitle: ""
+          subtitle: "",
+          cards: [
+            {
+              title: "Chatphone",
+              content: "A thought experiment exploring how AI could serve as a contextual layer between you and your phone's tools, adapting the interface based on your current mode or context to improve usability."
+            },
+            {
+              title: "Articles & Podcasts",
+              content: "A curated collection of the most thought-provoking resources about AI's current capabilities and future potential, including perspectives from industry leaders and researchers."
+            }
+          ]
         },
         {
           type: "thought-experiment",
@@ -450,7 +490,17 @@ Curious to hear what you think about the idea.`,
         {
           type: "section-cover",
           title: "Vibe Coding",
-          subtitle: ""
+          subtitle: "",
+          cards: [
+            {
+              title: "AI-Assisted Development",
+              content: "My approach to building applications using AI tools, from requirement gathering and design to implementation and refinement, with tips for effective collaboration with AI assistants."
+            },
+            {
+              title: "Project Showcase",
+              content: "A collection of applications I've built primarily using AI assistance, including a D&D initiative tracker, voice-activated kitchen timer, and a website for my mom's shamanic healing practice."
+            }
+          ]
         },
         {
           type: "vibe-coder",
@@ -532,7 +582,17 @@ Curious to hear what you think about the idea.`,
         {
           type: "section-cover",
           title: "Summary and What's Next",
-          subtitle: ""
+          subtitle: "",
+          cards: [
+            {
+              title: "Key Insights",
+              content: "A synthesis of the major takeaways from my research conversations, concept explorations, and hands-on AI product development experiences."
+            },
+            {
+              title: "Future Directions",
+              content: "My thoughts on where AI technology is headed next, how it might change the industry, and what I'm personally excited to explore and build in the near future."
+            }
+          ]
         },
         {
           type: "thought-experiment",
@@ -995,6 +1055,16 @@ function renderSlide(slide) {
           <div className="section-cover-content">
             <h1>{slide.title}</h1>
             {slide.subtitle && <h2>{slide.subtitle}</h2>}
+            {slide.cards && (
+              <div className="section-cover-cards">
+                {slide.cards.map((card, index) => (
+                  <div className="section-card" key={index}>
+                    <h3>{card.title}</h3>
+                    <p>{card.content}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       );
