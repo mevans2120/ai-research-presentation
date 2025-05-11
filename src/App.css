@@ -623,58 +623,45 @@ body {
 
 /* Methodology Slide */
 .methodology-slide {
-  position: relative;
-  min-height: auto; /* Remove fixed height calculation */
-  height: auto; /* Let content determine height */
-  padding-bottom: 80px; /* Space for the footnote and nav */
-  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .methodology-slide h1 {
-  font-size: 2.5rem;
+  text-align: center;
   margin-bottom: 2rem;
-  color: var(--primary-color);
 }
 
-.methodology-slide .content {
-  font-size: 1.2rem;
-  max-width: 800px;
-}
-
-/* Two-column layout for methodology slide */
-.methodology-slide .methodology-content {
-  font-size: 1.2rem;
+.methodology-content {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
+  gap: 2rem;
 }
 
-/* For desktop screens, use two columns */
-@media (min-width: 992px) {
-  .methodology-slide .methodology-content {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  
-  .methodology-slide .text-column {
-    flex: 1;
-    padding-right: 2rem;
-  }
-  
-  .methodology-slide .table-column {
-    flex: 1;
-  }
+.methodology-slide .text-column {
+  text-align: left;
+  flex: 1;
 }
 
-.methodology-slide p {
-  margin-bottom: 1.5rem;
+.methodology-slide .table-column {
+  flex: 1;
 }
 
-.methodology-slide .additional-content {
-  font-style: italic;
-  color: var(--dark-gray);
+.methodology-slide .table-container {
+  width: 100%;
+}
+
+.methodology-slide .footnotes {
+  text-align: left;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 2rem;
 }
 
 /* Methodology Table Styles */
@@ -684,12 +671,6 @@ body {
   font-style: italic;
   color: var(--dark-gray);
   line-height: 1.4;
-}
-
-.methodology-slide .table-container {
-  margin: 1rem 0;
-  max-width: 100%;
-  overflow-x: auto;
 }
 
 .methodology-slide .methodology-table {
@@ -2222,4 +2203,10 @@ body .slide-controls .slide-progress-placeholder,
 /* Ensure proper spacing in methodology slide */
 .methodology-slide {
   padding-bottom: 0 !important; /* No extra padding needed with fixed footnotes */
+}
+
+@media (max-width: 768px) {
+  .methodology-content {
+    flex-direction: column;
+  }
 } 

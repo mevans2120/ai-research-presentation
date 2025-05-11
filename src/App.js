@@ -79,7 +79,7 @@ const presentationData = {
         {
           type: "methodology",
           title: "Audience & Methodology",
-          content: "I spoke with 13 colleagues. The conversations ranged from 15 to 60 minutes, with follow-ups in several cases. They were a mix of designers, developers, product managers, and other business folks. Over half were executives at their companies, and the rest were relatively senior. These conversations took place over the span of a month (these folks are hard to schedule), and it took me a couple of weeks to write these findings down.",
+          content: "I spoke with 11 colleagues, including designers, developers, product managers, and other business professionals. Over half were executives, and the rest were relatively senior. Two of the engineers had direct experience working with AI, and one specialized in developing new AI models. The conversations lasted between 15 and 60 minutes, with several follow-ups. They took place over the span of a month",
           footnote: "In order to ensure anonymity and encourage frank conversations, I didn't record the interviews that took place, but took notes instead. This means that some of the quotes may be slightly abridged or have slightly different wording.",
           tableData: {
             headers: ["Gender", "Company Type", "Role"],
