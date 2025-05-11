@@ -1055,7 +1055,12 @@ function SlideView() {
         {renderSlide(currentSlide)}
       </main>
       
-      <div className="slide-controls">
+      <div className="slide-controls" style={{
+        backgroundColor: 'rgba(255, 255, 255, 0.25)',
+        backdropFilter: 'blur(3px)',
+        boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.07)',
+        zIndex: 9999
+      }}>
         <button className="prev-slide" onClick={goToPrevSlide}>←</button>
         {globalSlideInfo.current > 3 && (
           <div className="slide-progress">

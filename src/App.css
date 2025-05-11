@@ -31,6 +31,7 @@ html, body {
   padding: 0;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
@@ -338,108 +339,39 @@ body {
 
 /* Slide Content Styles - fix for proper overflow behavior */
 .slide-content {
-  /* Use padding only for top to account for header */
   padding-top: calc(var(--header-height) + 1rem);
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-bottom: 0;
-  /* Auto height for most slides */
+  padding-bottom: 80px; /* Space for the navigation */
+  margin: 0 auto;
+  width: 100%;
   height: auto;
-  min-height: calc(100vh - var(--header-height) - 60px);
+  min-height: 0;
   position: relative;
-  /* Critical overflow setting - only show scrollbar when needed */
-  overflow-y: auto;
+  overflow-y: auto; /* Show scrollbar only when needed */
   overflow-x: hidden;
   box-sizing: border-box;
 }
 
-/* Specific styling for full-screen slides to prevent scrolling */
-.slide-content.section-cover-slide,
-.slide-content.cover-slide {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - var(--header-height) - 60px); /* Account for header and controls */
+/* Specific handling for blog-style pages */
+.vibe-coder-slide, 
+.thought-experiment-slide,
+.links-slide,
+.text-slide.introduction {
+  overflow-y: auto !important;
+  height: auto !important;
+  max-height: none !important;
+  padding-bottom: 80px !important;
 }
 
-/* Slide Controls - ensure they're positioned correctly */
-.slide-controls {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
-  z-index: 1001;
-  height: 60px;
-  border-top: none;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+/* Fix content container for these pages */
+.vibe-coder-slide .content,
+.thought-experiment-slide .content,
+.blog-format {
+  overflow: visible !important;
 }
 
-/* Unified button styling with blue color */
-.slide-controls button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--primary-color);
-  padding: 0.5rem 1rem;
-  width: 60px;
-  text-align: center;
-}
-
-.slide-progress, 
-.slide-progress-placeholder {
-  font-size: 0.9rem;
-  color: var(--secondary-color);
-  flex: 1;
-  text-align: center;
-}
-
-/* Loading State */
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 1.2rem;
-  color: var(--primary-color);
-}
-
-/* Slide Type Specific Styles */
-.cover-slide,
-.section-cover-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: calc(100vh - var(--header-height) - 5rem);
-}
-
-/* Section cover content wrapper to ensure visibility */
-.section-cover-content {
-  position: relative;
-  z-index: 999; /* Very high z-index to ensure visibility */
-  text-align: center;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-/* Reset section cover slide for simpler styling */
+/* Allow section covers to maintain full-height appearance */
 .section-cover-slide {
   background-color: var(--light-gray);
   margin: 0;
@@ -692,8 +624,9 @@ body {
 /* Methodology Slide */
 .methodology-slide {
   position: relative;
-  min-height: calc(100vh - var(--header-height) - 60px);
-  padding-bottom: 60px;
+  min-height: auto; /* Remove fixed height calculation */
+  height: auto; /* Let content determine height */
+  padding-bottom: 80px; /* Space for the footnote and nav */
   background-color: var(--background-color);
 }
 
@@ -1348,20 +1281,29 @@ body {
 
 /* When a section-cover slide or the first slide is active, prevent scrolling */
 .slide-view {
-  height: calc(100vh - var(--header-height) - 60px);
-  position: relative;
-  overflow: hidden;
+  overflow-y: auto; /* Show scrollbar only when needed */
+  height: auto; /* Allow natural height */
 }
 
 .section-cover-slide,
 .cover-slide.inverted {
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: calc(100vh - var(--header-height) - 5rem);
 }
 
 /* For pages with divider slides, prevent the slide-content from scrolling */
 .slide-content.section-cover-slide,
 .slide-content.cover-slide {
-  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--header-height) - 60px); /* Account for header and controls */
 }
 
 /* Regular slide content should be above divider slides */
@@ -1451,64 +1393,41 @@ body {
   text-align: right;
 }
 
-/* Footnotes - Mobile first approach */
-.footnote-marker {
-  font-size: 0.75em;
-  vertical-align: super;
-  line-height: 0;
-  margin-left: 2px;
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: bold;
-}
-
+/* Footnotes - positioned fixed directly above navigation */
 .footnotes {
-  /* Position relative for mobile */
-  position: relative;
-  bottom: auto;
+  position: fixed;
+  bottom: 60px;
+  right: 0;
   left: auto;
-  right: auto;
-  margin: 1.5rem 0 2rem;
-  padding: 0 1rem;
+  width: 50%;
+  max-width: 500px;
+  padding: 0.5rem 2rem;
   font-size: 0.75rem;
   color: var(--dark-gray);
   line-height: 1.4;
+  background-color: var(--background-color);
+  z-index: 1000;
+  text-align: right;
 }
 
 .footnote {
   position: relative;
   padding-left: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
-.footnote sup {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 0.75em;
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-/* Desktop positioning */
+/* Desktop positioning - maintain the fixed position */
 @media (min-width: 992px) {
   .methodology-slide .footnotes {
-    /* Absolute positioning for desktop */
-    position: absolute;
-    bottom: 30px;
-    left: 0;
+    position: fixed;
+    bottom: 60px;
     right: 0;
-    margin: 0;
-    padding: 0 2rem;
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 auto;
-  }
-  
-  .methodology-slide .footnote {
-    width: 48%;
+    left: auto;
+    width: 50%;
+    max-width: 500px;
+    padding: 0.5rem 2rem;
+    display: block;
+    text-align: right;
   }
 }
 
@@ -2138,4 +2057,169 @@ main.slide-content.comparison-slide {
 .comparison-subpoints li:before {
   content: "◦";
   color: #777;
+}
+
+/* Completely override any existing styles for slide controls with highest specificity */
+html body div.App div.slide-view .slide-controls,
+html body div.App div.slide-view[class*="finding"] .slide-controls,
+html body div.App div.slide-view[class*="research"] .slide-controls,
+div[class*="slide-view"] .slide-controls,
+.slide-view .slide-controls,
+body .slide-controls,
+.slide-controls {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1rem 2rem !important;
+  background-color: rgba(255, 255, 255, 0.25) !important; /* Consistent 25% opacity */
+  backdrop-filter: blur(3px) !important;
+  z-index: 9999 !important; /* Extremely high z-index */
+  height: 60px !important;
+  border-top: none !important;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07) !important; /* Subtle drop shadow */
+}
+
+/* Make sure no other styles can override this */
+html body .slide-controls::before,
+html body .slide-controls::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Add inline style override through JavaScript */
+
+/* Ensure buttons are consistent across all slides with highest specificity */
+html body div.App div.slide-view .slide-controls button,
+html body div.App div.slide-view[class*="finding"] .slide-controls button,
+html body div.App div.slide-view[class*="research"] .slide-controls button,
+div[class*="slide-view"] .slide-controls button,
+.slide-view .slide-controls button,
+body .slide-controls button,
+.slide-controls button {
+  background: none !important;
+  border: none !important;
+  font-size: 1.5rem !important;
+  cursor: pointer !important;
+  color: var(--primary-color) !important;
+  padding: 0.5rem 1rem !important;
+  width: 60px !important;
+  text-align: center !important;
+  text-shadow: none !important;
+}
+
+/* Ensure slide progress is consistent with highest specificity */
+html body div.App div.slide-view .slide-controls .slide-progress,
+html body div.App div.slide-view[class*="finding"] .slide-controls .slide-progress,
+html body div.App div.slide-view[class*="research"] .slide-controls .slide-progress,
+div[class*="slide-view"] .slide-controls .slide-progress,
+.slide-view .slide-controls .slide-progress,
+body .slide-controls .slide-progress,
+.slide-controls .slide-progress,
+html body div.App div.slide-view .slide-controls .slide-progress-placeholder,
+html body div.App div.slide-view[class*="finding"] .slide-controls .slide-progress-placeholder,
+html body div.App div.slide-view[class*="research"] .slide-controls .slide-progress-placeholder,
+div[class*="slide-view"] .slide-controls .slide-progress-placeholder,
+.slide-view .slide-controls .slide-progress-placeholder,
+body .slide-controls .slide-progress-placeholder,
+.slide-controls .slide-progress-placeholder {
+  font-size: 0.9rem !important;
+  color: var(--secondary-color) !important;
+  flex: 1 !important;
+  text-align: center !important;
+  text-shadow: none !important;
+}
+
+/* Slide Controls - ensure they're positioned correctly */
+.slide-controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent; /* Completely transparent */
+  backdrop-filter: blur(2px); /* Very minimal blur */
+  z-index: 1001;
+  height: 60px;
+  border-top: none;
+  box-shadow: none;
+}
+
+/* Ensure control buttons are visible */
+.slide-controls button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  width: 60px;
+  text-align: center;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.5); /* Subtle text shadow for visibility */
+}
+
+/* Ensure slide progress is visible */
+.slide-progress, 
+.slide-progress-placeholder {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  flex: 1;
+  text-align: center;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.5); /* Subtle text shadow for visibility */
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/* Section cover content wrapper to ensure visibility */
+.section-cover-content {
+  position: relative;
+  z-index: 999; /* Very high z-index to ensure visibility */
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Footnote marker styles */
+.footnote-marker {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 2px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footnote sup {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  font-size: 0.75em !important;
+  color: var(--primary-color) !important;
+  font-weight: bold !important;
+}
+
+/* Ensure proper spacing in methodology slide */
+.methodology-slide {
+  padding-bottom: 0 !important; /* No extra padding needed with fixed footnotes */
 } 
