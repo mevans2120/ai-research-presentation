@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 import './App.css';
+import './slide-controls.css'; // Import the slide controls CSS
 
 // Main presentation data structure
 const presentationData = {
@@ -118,13 +119,14 @@ const presentationData = {
               points: [
                 "Most use AI everyday, over half use (and pay for) multiple chatbots, several have already built useful products primarily with AI, or because AI made it easier to build the product and start the company.",
                 "Many had moments of awe where they realized AI's power was going to change so much about their world",
+                "AI has already made surprising inroads at doing things like moderating user interviews (see Genway)",
                 "The couple folks who didn't really use AI, were unsurprisingly the most skeptical of it."
               ],
               quotes: [
-                "I use it everyday. It is embedded in every project I work on. I insist on it",
                 "I'm at the same level of \"holy shit\" that you were when you dove in deep",
+                "One of the reasons we started this company was because by using AI (and other technological improvements) we could do it with a smaller team",
                 "It's fundamental to our company now. Every developer has copilot, every department uses it for something",
-                "I pay for Claude, ChatGPT and Gemini… It's ridiculous, but they all have their strengths. But it feels important to keep track",
+                "“The quality of the AI moderation was very good. Wild to think AI can do it so well",
                 "It's a bunch of hype. I think it dies down, or is underwhelming, like self driving cars"
               ]
             },
@@ -1055,12 +1057,7 @@ function SlideView() {
         {renderSlide(currentSlide)}
       </main>
       
-      <div className="slide-controls" style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.25)',
-        backdropFilter: 'blur(3px)',
-        boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.07)',
-        zIndex: 9999
-      }}>
+      <div className="slide-controls">
         <button className="prev-slide" onClick={goToPrevSlide}>←</button>
         {globalSlideInfo.current > 3 && (
           <div className="slide-progress">

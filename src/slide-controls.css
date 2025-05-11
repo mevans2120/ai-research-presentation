@@ -1,0 +1,39 @@
+/* Slide controls styling - high specificity */
+.slide-controls {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(3px) !important;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07) !important;
+  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 60px;
+  border-top: none;
+  z-index: 9999;
+}
+
+/* Ensure control buttons are visible */
+.slide-controls button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  width: 60px;
+  text-align: center;
+}
+
+/* Ensure slide progress is visible */
+.slide-progress, 
+.slide-progress-placeholder {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  flex: 1;
+  text-align: center;
+} 
