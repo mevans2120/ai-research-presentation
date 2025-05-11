@@ -60,12 +60,12 @@ const presentationData = {
           subtitle: "",
           cards: [
             {
-              title: "Research Methodology",
-              content: "I interviewed 13 colleagues across various roles including designers, developers, product managers, and executives to understand how they use AI in their work and personal lives. These conversations helped uncover both current usage patterns and expectations for AI's future."
+              title: "Hypothesis",
+              content: "AI is a productivity super power for this audience, but they aren't sure where it will be in 5 years."
             },
             {
               title: "Key Findings",
-              content: "My research revealed that AI has become central to many professionals' workflows, with most participants experiencing moments of awe about its capabilities. The findings are divided into present observations and future predictions about AI's impact on work and society."
+              content: "My research revealed that AI has become central to many professionals' workflows, with most participants experiencing moments of awe about its capabilities."
             }
           ]
         },
