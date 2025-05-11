@@ -598,6 +598,43 @@ Curious to hear what you think about the idea.`,
           type: "thought-experiment",
           title: "Chatphone Concept",
           content: "In a Buddhist monastery, everyone learns to use breath as a tool to stop mental dispersion and to build up concentration power."
+        },
+        {
+          type: "comparison",
+          title: "Summary",
+          columns: [
+            {
+              title: "User & 3rd party research takeaways",
+              points: [
+                "I'm genuinely excited about the problems we'll be able to solve in both the short and long term.",
+                {
+                  text: "There will be continued disruption, likely slow and steady, to how organizations staff companies and projects:",
+                  subpoints: [
+                    "More products & companies with smaller roles that primarily perform work one abstraction layer above where will typically see it.",
+                    "Roles with lots of rote work, starting in software and digital businesses but branching out to digitally powered work."
+                  ]
+                },
+                "If AI continues advancing at its current pace, the tools will arrive faster than society can fully adapt. Still, they'll be adopted quickly enough that we'll feel the repercussions.",
+                "While all AI usage must become increasingly efficient, training new models remains extremely costly."
+              ]
+            },
+            {
+              title: "What I learned while Vibe Coding:",
+              points: [
+                "It's pretty fun and magical:",
+                {
+                  text: "Watching Claude code incredibly fast",
+                  subpoints: [
+                    "Playing with a friend's portfolio site you described to Claude just minutes earlier",
+                    "Seeing ChatGPT create great custom icons from your photos"
+                  ]
+                },
+                "That said, taking a product past 80% with just an AI agent gets tough—AI doesn't retain context like you do, even if it rereads the docs.",
+                "Autonomous agents already have the capabilities to integrate into an organization's workflow, but they need to be paired with a developer.",
+                "The tools have improved a lot since I first tried them in spring 2024. I'm curious if they'll continue advancing at the same pace."
+              ]
+            }
+          ]
         }
       ]
     }
@@ -1330,6 +1367,39 @@ function renderSlide(slide) {
                     <p className="project-description">{project.description}</p>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    
+    case 'comparison':
+      return (
+        <div className="comparison-slide">
+          <h1>{slide.title}</h1>
+          {slide.description && <p className="description">{slide.description}</p>}
+          <div className="comparison-container">
+            {slide.columns.map((column, index) => (
+              <div className="comparison-column" key={index}>
+                <h2>{column.title}</h2>
+                <ul className="comparison-points">
+                  {column.points.map((point, pointIndex) => (
+                    <li key={pointIndex}>
+                      {point.subpoints ? (
+                        <>
+                          {point.text}
+                          <ul className="comparison-subpoints">
+                            {point.subpoints.map((subpoint, subpointIndex) => (
+                              <li key={subpointIndex}>{subpoint}</li>
+                            ))}
+                          </ul>
+                        </>
+                      ) : (
+                        point
+                      )}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
