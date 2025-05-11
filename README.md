@@ -61,4 +61,4 @@ https://ai-research-presentation.vercel.app/section/intro/0
 
 ## License
 
-MIT 
+MIT
