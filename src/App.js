@@ -187,8 +187,22 @@ const presentationData = {
               quotes: [
                 "I've had conversations with Claude about a family member's health issues, and those conversations honestly cheered me up and reduced my anxiety. Claude seemed to really understand where I was coming from. So much better than the Google Search holes I used to go into",
                 "AI is so dang confident. When really it has no business doing so. I'll get into a loop on something, say \"I fixed your problem\" and then nope… not fixed.",
-                "I laugh when an agent says \"What an amazing idea\" when I ask it to do something mundane like put some data into a spreadsheet.",
-                "It's funny while it has the same feeling that AI is overhyped, sometimes I feel like we don't talk about it enough"
+                "I laugh when an agent says \"What an amazing idea\" when I ask it to do something mundane like put some data into a spreadsheet."
+          
+              ]
+            },
+            {
+              type: "finding",
+              title: "AI products are typically inexpensive and simple to develop, as AI itself assists in their creation. However, training new AI models is extremely costly.",
+              points: [
+                "Developing a user agent that can perform a relatively complex but single use case (moderating a user interview) is only a couple weeks worth of work.",
+                "Training new models is exorbitantly expensive and resource.",
+                "In software AI can do it all: make the spec, write the code, and measure for success against the spec."
+              ],
+              quotes: [
+                "You'd be amazed by how close you can get to setting up an AI agent engine to moderate a user interview in a single day. You'd spend the next couple weeks on the edge cases, but connecting with the AI with voice is more tricky. You should definitely just pay ElevenLabs to do it for you ",
+                "We spent 12.5m in AWS resources in 3 weeks, training our new model. Well, AWS gave us a sweet deal, but that is what it would have cost retail.",
+                "I had the AI do all of the work, based on this five bullet prompt. It created the templates, the evaluation framework, and then it measured how well it did… You can also have it re-run itself to try and improve its scores."
               ]
             }
           ]
