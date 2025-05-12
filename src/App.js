@@ -318,21 +318,21 @@ Curious to hear what you think about the idea.`,
     <rect x="0" y="0" width="297" height="550" rx="22" ry="22" fill="white" stroke="#333" stroke-width="2"/>
     <text x="148.5" y="-22" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Work Mode</text>
     
-    <!-- Work Mode Tools (aligned and grouped) -->
+    <!-- Work Mode Tools (even horizontal spacing, right-aligned) -->
     <g>
       <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
       <text x="52" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">○</text>
       <text x="52" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Auth</text>
     </g>
     <g>
-      <rect x="104.33" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="134.33" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">□</text>
-      <text x="134.33" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Food</text>
+      <rect x="118.5" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="148.5" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">□</text>
+      <text x="148.5" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Food</text>
     </g>
     <g>
-      <rect x="186.66" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="216.66" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◊</text>
-      <text x="216.66" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Message</text>
+      <rect x="215" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="245" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◊</text>
+      <text x="245" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Message</text>
     </g>
     <g>
       <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
@@ -340,14 +340,14 @@ Curious to hear what you think about the idea.`,
       <text x="52" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Inbox</text>
     </g>
     <g>
-      <rect x="104.33" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="134.33" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">✓</text>
-      <text x="134.33" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">To Dos</text>
+      <rect x="118.5" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="148.5" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">✓</text>
+      <text x="148.5" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">To Dos</text>
     </g>
     <g>
-      <rect x="186.66" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="216.66" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◎</text>
-      <text x="216.66" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Internet</text>
+      <rect x="215" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="245" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◎</text>
+      <text x="245" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Internet</text>
     </g>
     <!-- Chat Interface -->
     <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
@@ -376,21 +376,21 @@ Curious to hear what you think about the idea.`,
     <!-- Play Mode Phone -->
     <rect x="0" y="0" width="297" height="550" rx="22" ry="22" fill="white" stroke="#333" stroke-width="2"/>
     <text x="148.5" y="-22" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Play Mode</text>
-    <!-- Play Mode Tools (aligned and grouped) -->
+    <!-- Play Mode Tools (even horizontal spacing, right-aligned) -->
     <g>
       <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
       <text x="52" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">☺</text>
       <text x="52" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Socials</text>
     </g>
     <g>
-      <rect x="104.33" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="134.33" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">♪</text>
-      <text x="134.33" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Listen</text>
+      <rect x="118.5" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="148.5" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">♪</text>
+      <text x="148.5" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Listen</text>
     </g>
     <g>
-      <rect x="186.66" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="216.66" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">▶</text>
-      <text x="216.66" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Watch</text>
+      <rect x="215" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="245" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">▶</text>
+      <text x="245" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Watch</text>
     </g>
     <g>
       <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
@@ -398,14 +398,14 @@ Curious to hear what you think about the idea.`,
       <text x="52" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Message</text>
     </g>
     <g>
-      <rect x="104.33" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="134.33" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">□</text>
-      <text x="134.33" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Order</text>
+      <rect x="118.5" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="148.5" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">□</text>
+      <text x="148.5" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Order</text>
     </g>
     <g>
-      <rect x="186.66" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="216.66" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◎</text>
-      <text x="216.66" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Internet</text>
+      <rect x="215" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="245" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◎</text>
+      <text x="245" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Internet</text>
     </g>
     <!-- Chat Interface -->
     <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
@@ -422,10 +422,9 @@ Curious to hear what you think about the idea.`,
     </text>
     <text x="42" y="395" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       Continue on techno song "Nuclear"
-      <tspan x="42" dy="15">You've got a drum, bass and 303 part.</tspan>
       <tspan x="42" dy="15" style="text-decoration: underline;">Open Ableton Note</tspan>
     </text>
-    <text x="42" y="460" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+    <text x="42" y="445" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       You usually go to bed in about an hour.
       <tspan x="42" dy="15" style="text-decoration: underline;">Start getting ready</tspan>
     </text>
@@ -438,21 +437,21 @@ Curious to hear what you think about the idea.`,
     <!-- Travel Mode Phone -->
     <rect x="0" y="0" width="297" height="550" rx="22" ry="22" fill="white" stroke="#333" stroke-width="2"/>
     <text x="148.5" y="-22" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Travel Mode</text>
-    <!-- Travel Mode Tools (aligned and grouped) -->
+    <!-- Travel Mode Tools (even horizontal spacing, right-aligned) -->
     <g>
       <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
       <text x="52" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">↗</text>
       <text x="52" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Directions</text>
     </g>
     <g>
-      <rect x="104.33" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="134.33" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◉</text>
-      <text x="134.33" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Nearby</text>
+      <rect x="118.5" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="148.5" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◉</text>
+      <text x="148.5" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Nearby</text>
     </g>
     <g>
-      <rect x="186.66" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="216.66" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">⟲</text>
-      <text x="216.66" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Translate</text>
+      <rect x="215" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="245" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">⟲</text>
+      <text x="245" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Translate</text>
     </g>
     <g>
       <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
@@ -460,14 +459,14 @@ Curious to hear what you think about the idea.`,
       <text x="52" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Itinerary</text>
     </g>
     <g>
-      <rect x="104.33" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="134.33" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◊</text>
-      <text x="134.33" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Message</text>
+      <rect x="118.5" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="148.5" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◊</text>
+      <text x="148.5" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Message</text>
     </g>
     <g>
-      <rect x="186.66" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-      <text x="216.66" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◎</text>
-      <text x="216.66" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Internet</text>
+      <rect x="215" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="245" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◎</text>
+      <text x="245" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Internet</text>
     </g>
     <!-- Chat Interface (fixed width and only one container) -->
     <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
@@ -476,7 +475,7 @@ Curious to hear what you think about the idea.`,
       <tspan x="42" dy="15">It's now a 2.5 hours drive</tspan>
       <tspan x="42" dy="15" style="text-decoration: underline;">Get directions</tspan>
     </text>
-    <text x="42" y="310" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+    <text x="42" y="300" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       You took 97 photos yesterday
       <tspan x="42" dy="15" style="text-decoration: underline;">Get help with selects</tspan>
     </text>
