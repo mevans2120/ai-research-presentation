@@ -353,17 +353,21 @@ const presentationData = {
       1pm: Meet Eglantine McDermott
       <tspan x="42" dy="15" style="text-decoration: underline;">Check LinkedIn</tspan>
     </text>
-    <text x="42" y="290" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+    <text x="42" y="295" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       Alice: We won Widget Corp!
       <tspan x="42" dy="15" style="text-decoration: underline;">Congratulate in Slack</tspan>
     </text>
-    <text x="42" y="330" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+    <text x="42" y="340" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       15 PRs shipped to prod yesterday.
       <tspan x="42" dy="15" style="text-decoration: underline;">Check Vercel for status</tspan>
     </text>
-    <text x="42" y="370" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+    <text x="42" y="385" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       Joe's soccer is on, despite rain.
       <tspan x="42" dy="15" style="text-decoration: underline;">Open GameChanger</tspan>
+    </text>
+     <text x="42" y="425" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      Email to Holly is still in drafts.
+      <tspan x="42" dy="15" style="text-decoration: underline;">Open Drafts</tspan>
     </text>
     <!-- Input Box -->
     <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
@@ -473,14 +477,14 @@ const presentationData = {
       <tspan x="42" dy="15">It's now a 2.5 hours drive</tspan>
       <tspan x="42" dy="15" style="text-decoration: underline;">Get directions</tspan>
     </text>
-    <text x="42" y="300" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+    <text x="42" y="310" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       You took 97 photos yesterday
       <tspan x="42" dy="15" style="text-decoration: underline;">Get help with selects</tspan>
     </text>
-    <text x="42" y="350" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
-      Mom sent you a message,
+    <text x="42" y="355" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      Mom left you a voicemail yesterday,
       <tspan x="42" dy="15">yesterday morning.</tspan>
-      <tspan x="42" dy="15" style="text-decoration: underline;">Respond to her</tspan>
+      <tspan x="42" dy="15" style="text-decoration: underline;">Call your mom</tspan>
     </text>
     <!-- Input Box (fixed width) -->
     <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
@@ -668,11 +672,6 @@ const presentationData = {
           ]
         },
         {
-          type: "thought-experiment",
-          title: "Chatphone Concept",
-          content: "In a Buddhist monastery, everyone learns to use breath as a tool to stop mental dispersion and to build up concentration power."
-        },
-        {
           type: "comparison",
           title: "Summary - Research & Vibe Coding",
           columns: [
@@ -688,7 +687,8 @@ const presentationData = {
                   ]
                 },
                 "If AI continues advancing at its current pace, the tools will arrive faster than society can fully adapt. Still, they'll be adopted quickly enough that we'll feel the repercussions.",
-                "While all AI usage must become increasingly efficient, training new models remains extremely costly."
+                "While all AI usage must become increasingly efficient, training new models remains extremely costly.",
+                "I don't think a team of vibe coders will be developing new production apps in at least the next year or two. Engineering expertise in the front-end, back-end and dev ops is still needed to ensure quality across the stack. But AI will be a fast growing contributor to the stack."
               ]
             },
             {
@@ -706,6 +706,40 @@ const presentationData = {
                 "Autonomous agents already have the capabilities to integrate into an organization's workflow, but they need to be paired with a developer.",
                 "I don't think a team of vibe coders will be developing new production apps from 0-1 or 1 -> in at least the next year or two. Engineering expertise in the front-end, back-end and dev ops is still needed to ensure quality across the stack. ",
                 "The tools have improved a lot since I first tried them in spring 2024. I'm curious if they'll continue advancing at the same pace."
+              ]
+            }
+          ]
+        },
+        {
+          type: "comparison",
+          title: "Summary - The Future & How I Built this App",
+          columns: [
+            {
+              title: "How I'm feeling about the future",
+              points: [
+                "I do believe that amazing advances in science, technology and other disciplines will be accomplished by teams using AI.",
+                "I do believe AI is already hurting many kids ability to learn, although this can be mitigated but there is work at a local, state and federal level. Without taking the appropriate steps, this will get worse and will continue.",
+                {
+                  text: "I do believe Automated General Intelligence (AI that can make decisions and perform tasks better than a human) is both closer and further away than we think.",
+                  subpoints: [
+                    "<strong>Close:</strong> AIs ability to go very deep in certain subjects, while making and recommending decisions better decisions into certain areas (like coding) seems relatively close (1-2 years).",
+                    "<strong>Far:</strong> But, AIs ability to think cross functionally while making decisions based on logic, emotional intelligence, and lived experience seems further out."
+                  ]
+                },
+                "I do think that the industry will shrink in size, as a percentage of the workforce, slowly as the industry's output quickly grows.",
+                "I hope we have the leadership at the local, state and federal level that can help us prioritize and make the changes to how we learn, work and play"
+              ]
+            },
+            {
+              title: "How I built this app, would I do it again?",
+              points: [
+                "I started with a keynote outline for a majority of the slides.",
+                "I shared a PDF of the slides with Claude, and asked it to use this content to write a presentation webapp. I also asked for a consistent bottom navigation, and a top navigation.",
+                "I finished building out the content in a google doc and started working it into the web app.",
+                "AI didn't generate any of the written content, but did copy edit much of it.",
+                "I asked for new slide types as needed, and generally updated the copy in the app myself.",
+                "Everything went smoothly until I hit some complexity wall and optimizing and making changes became harder for Claude to get right. The final optimizations to the design of this app had too much back and forth.",
+                "If I did it again, I'd wait till the very end to add the CSS."
               ]
             }
           ]
@@ -1260,7 +1294,7 @@ function renderSlide(slide) {
           <div className="section-cover-content">
             <h1>{slide.title}</h1>
             {slide.subtitle && <h2>{slide.subtitle}</h2>}
-            {slide.cards && (
+            {slide.cards && !slide.isSubsectionCover && (
               <div className="section-cover-cards">
                 {slide.cards.map((card, index) => (
                   <div className="section-card" key={index}>
@@ -1558,7 +1592,7 @@ function renderSlide(slide) {
                           {point.text}
                           <ul className="comparison-subpoints">
                             {point.subpoints.map((subpoint, subpointIndex) => (
-                              <li key={subpointIndex}>{subpoint}</li>
+                              <li key={subpointIndex} dangerouslySetInnerHTML={{ __html: subpoint }} />
                             ))}
                           </ul>
                         </>
