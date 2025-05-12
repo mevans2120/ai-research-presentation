@@ -308,130 +308,177 @@ Of course, using an agent as an intermediary introduces the risk of it missing k
 Also, I doubt toolmakers like DoorDash, Lyft, Google, Apple, and others would appreciate being further commoditized—since their apps would no longer be the primary way users access the services they offer.
 
 Curious to hear what you think about the idea.`,
-          svgContent: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680">
+          svgContent: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 748">
   <!-- Background - changed to match presentation background -->
-  <rect width="1200" height="680" fill="#f8fafc"/>
+  <rect width="1320" height="748" fill="#f8fafc"/>
   
   <!-- Phone Frames - adjusted positioning to reduce padding -->
-  <g transform="translate(120, 50)">
+  <g transform="translate(132, 55)">
     <!-- Work Mode Phone -->
-    <rect x="0" y="0" width="250" height="500" rx="20" ry="20" fill="white" stroke="#333" stroke-width="2"/>
-    <text x="125" y="-20" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Work Mode</text>
+    <rect x="0" y="0" width="297" height="550" rx="22" ry="22" fill="white" stroke="#333" stroke-width="2"/>
+    <text x="148.5" y="-22" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Work Mode</text>
     
     <!-- Work Mode Tools -->
-    <rect x="20" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="50" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Auth</text>
-    <text x="50" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">○</text>
+    <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="52" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Auth</text>
+    <text x="52" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">○</text>
     
-    <rect x="95" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="125" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Food</text>
-    <text x="125" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">□</text>
+    <rect x="97" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="127" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Food</text>
+    <text x="127" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">□</text>
     
-    <rect x="170" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="200" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
-    <text x="200" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
+    <rect x="172" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="202" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
+    <text x="202" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
     
-    <rect x="20" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="50" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Inbox</text>
-    <text x="50" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">▼</text>
+    <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="52" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Inbox</text>
+    <text x="52" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">▼</text>
     
-    <rect x="95" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="125" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">To Dos</text>
-    <text x="125" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">✓</text>
+    <rect x="97" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="127" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">To Dos</text>
+    <text x="127" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">✓</text>
     
-    <rect x="170" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="200" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
-    <text x="200" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
+    <rect x="172" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="202" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
+    <text x="202" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
     
     <!-- Chat Interface -->
-    <rect x="20" y="200" width="210" height="240" rx="5" ry="5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
-    <text x="125" y="320" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Messages appear here</text>
+    <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
+    <text x="42" y="250" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      1pm: Meet Eglantine McDermott
+      <tspan x="42" dy="15" style="text-decoration: underline;">Check LinkedIn</tspan>
+    </text>
+    <text x="42" y="290" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      Alice: We won Widget Corp!
+      <tspan x="42" dy="15" style="text-decoration: underline;">Congratulate in Slack</tspan>
+    </text>
+    <text x="42" y="330" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      15 PRs shipped to prod yesterday.
+      <tspan x="42" dy="15" style="text-decoration: underline;">Check Vercel for status</tspan>
+    </text>
+    <text x="42" y="370" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      Joe's soccer is on, despite rain.
+      <tspan x="42" dy="15" style="text-decoration: underline;">Open GameChanger</tspan>
+    </text>
     
     <!-- Input Box -->
-    <rect x="20" y="450" width="210" height="35" rx="17.5" ry="17.5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="125" y="473" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
+    <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="127" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
   </g>
   
-  <g transform="translate(445, 50)">
+  <g transform="translate(489.5, 55)">
     <!-- Play Mode Phone -->
-    <rect x="0" y="0" width="250" height="500" rx="20" ry="20" fill="white" stroke="#333" stroke-width="2"/>
-    <text x="125" y="-20" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Play Mode</text>
+    <rect x="0" y="0" width="297" height="550" rx="22" ry="22" fill="white" stroke="#333" stroke-width="2"/>
+    <text x="148.5" y="-22" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Play Mode</text>
     
     <!-- Play Mode Tools -->
-    <rect x="20" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="50" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Socials</text>
-    <text x="50" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">☺</text>
+    <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="52" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Socials</text>
+    <text x="52" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">☺</text>
     
-    <rect x="95" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="125" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Listen</text>
-    <text x="125" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">♪</text>
+    <rect x="97" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="127" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Listen</text>
+    <text x="127" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">♪</text>
     
-    <rect x="170" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="200" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Watch</text>
-    <text x="200" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">▶</text>
+    <rect x="172" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="202" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Watch</text>
+    <text x="202" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">▶</text>
     
-    <rect x="20" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="50" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
-    <text x="50" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
+    <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="52" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
+    <text x="52" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
     
-    <rect x="95" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="125" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Order</text>
-    <text x="125" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">□</text>
+    <rect x="97" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="127" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Order</text>
+    <text x="127" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">□</text>
     
-    <rect x="170" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="200" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
-    <text x="200" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
+    <rect x="172" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="202" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
+    <text x="202" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
     
     <!-- Chat Interface -->
-    <rect x="20" y="200" width="210" height="240" rx="5" ry="5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
-    <text x="125" y="320" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Messages appear here</text>
+    <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
+    <text x="42" y="250" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      Panda Bear "Ends Meet" is on Spotify
+      <tspan x="42" dy="15">for the 31st time this week.</tspan>
+      <tspan x="42" dy="15">He plays at the Wonder May 21st.</tspan>
+      <tspan x="42" dy="15" style="text-decoration: underline;">Get tickets</tspan>
+    </text>
+    <text x="42" y="330" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      100s of views on Costa Rica IG story
+      <tspan x="42" dy="15">including a message from Brook.</tspan>
+      <tspan x="42" dy="15" style="text-decoration: underline;">Respond</tspan>
+    </text>
+    <text x="42" y="395" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      Continue on techno song "Nuclear"
+      <tspan x="42" dy="15">You've got a drum, bass and 303 part.</tspan>
+      <tspan x="42" dy="15" style="text-decoration: underline;">Open Ableton Note</tspan>
+    </text>
+    <text x="42" y="460" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      You usually go to bed in about an hour.
+      <tspan x="42" dy="15" style="text-decoration: underline;">Start getting ready</tspan>
+    </text>
     
     <!-- Input Box -->
-    <rect x="20" y="450" width="210" height="35" rx="17.5" ry="17.5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="125" y="473" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
+    <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="127" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
   </g>
   
-  <g transform="translate(770, 50)">
+  <g transform="translate(836.5, 55)">
     <!-- Travel Mode Phone -->
-    <rect x="0" y="0" width="250" height="500" rx="20" ry="20" fill="white" stroke="#333" stroke-width="2"/>
-    <text x="125" y="-20" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Travel Mode</text>
+    <rect x="0" y="0" width="297" height="550" rx="22" ry="22" fill="white" stroke="#333" stroke-width="2"/>
+    <text x="148.5" y="-22" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Travel Mode</text>
     
     <!-- Travel Mode Tools -->
-    <rect x="20" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="50" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Directions</text>
-    <text x="50" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">↗</text>
+    <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="52" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Directions</text>
+    <text x="52" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">↗</text>
     
-    <rect x="95" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="125" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Nearby</text>
-    <text x="125" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◉</text>
+    <rect x="97" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="127" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Nearby</text>
+    <text x="127" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◉</text>
     
-    <rect x="170" y="50" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="200" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Translate</text>
-    <text x="200" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">⟲</text>
+    <rect x="172" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="202" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Translate</text>
+    <text x="202" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">⟲</text>
     
-    <rect x="20" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="50" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Itinerary</text>
-    <text x="50" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">☰</text>
+    <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="52" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Itinerary</text>
+    <text x="52" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">☰</text>
     
-    <rect x="95" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="125" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
-    <text x="125" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
+    <rect x="97" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="127" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
+    <text x="127" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
     
-    <rect x="170" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="200" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
-    <text x="200" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
+    <rect x="172" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="202" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
+    <text x="202" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
     
-    <!-- Chat Interface -->
-    <rect x="20" y="200" width="210" height="240" rx="5" ry="5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
-    <text x="125" y="320" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Messages appear here</text>
+    <!-- Chat Interface (fixed width and only one container) -->
+    <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
+    <text x="42" y="250" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      96k from your hotel in Drake Bay
+      <tspan x="42" dy="15">It's now a 2.5 hours drive</tspan>
+      <tspan x="42" dy="15" style="text-decoration: underline;">Get directions</tspan>
+    </text>
+    <text x="42" y="310" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      You took 97 photos yesterday
+      <tspan x="42" dy="15" style="text-decoration: underline;">Get help with selects</tspan>
+    </text>
+    <text x="42" y="350" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
+      Mom sent you a message,
+      <tspan x="42" dy="15">yesterday morning.</tspan>
+      <tspan x="42" dy="15" style="text-decoration: underline;">Respond to her</tspan>
+    </text>
     
-    <!-- Input Box -->
-    <rect x="20" y="450" width="210" height="35" rx="17.5" ry="17.5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="125" y="473" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
+    <!-- Input Box (fixed width) -->
+    <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
+    <text x="127" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
   </g>
 
   <!-- Caption for the diagram -->
-  <text x="600" y="580" font-family="Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#333">Diagram 1: Initial visualization of the Chatphone concept</text>
+  <text x="660" y="655" font-family="Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#333">Diagram 1: Initial visualization of the Chatphone concept</text>
 </svg>`
         },
         {
