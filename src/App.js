@@ -123,10 +123,11 @@ const presentationData = {
                 "The couple folks who didn't really use AI, were unsurprisingly the most skeptical of it."
               ],
               quotes: [
+                "I use it everyday. It is embedded in every project I work on. I insist on it",
                 "I'm at the same level of \"holy shit\" that you were when you dove in deep",
                 "One of the reasons we started this company was because by using AI (and other technological improvements) we could do it with a smaller team",
                 "It's fundamental to our company now. Every developer has copilot, every department uses it for something",
-                "“The quality of the AI moderation was very good. Wild to think AI can do it so well",
+                "The quality of the AI moderation was very good. Wild to think AI can do it so well",
                 "It's a bunch of hype. I think it dies down, or is underwhelming, like self driving cars"
               ]
             },
@@ -176,7 +177,7 @@ const presentationData = {
             },
             {
               type: "finding",
-              title: "Several treated AI like a person, valuing its tone—though many found it overly confident.",
+              title: "Several felt a connection with AI, valuing its manner, though most found AI over-confident.",
               points: [
                 "Several commented on how the agents mirrors the tone you approach your prompts with, and this led them to engage more deeply and frequently.",
                 "Many commented on how confident AI are in their solution whether they are right or wrong",
@@ -230,7 +231,7 @@ const presentationData = {
             },
             {
               type: "finding",
-              title: "Most worried about AI's impact on the world kids today will grow up in, though a few felt it was overblown.",
+              title: "Most worried about AI's impact on the world in the future, though a few felt it was overblown.",
               points: [
                 "Several wondered what their kids would do if AI does all this work goes away",
                 "One person had a teenager who felt AI was ruining their ability to learn.",
@@ -239,7 +240,7 @@ const presentationData = {
               quotes: [
                 "I really do worry about my children. In a way that I haven't with smartphones or social media. This could really affect their ability to make a living, not just affect their attention span",
                 "My 16 year old daughter recently came up to me and said she deleted ChatGPT from her phone. She said everyone at her school is using it all the time and no one is really learning. She wanted to learn",
-                "This is like self-driving cars. Lets see where it's at in 20 years"
+                "This is like self-driving cars. Lets see where it's at in 10 years"
               ]
             }
           ]
@@ -623,16 +624,17 @@ Curious to hear what you think about the idea.`,
             {
               title: "What I learned while Vibe Coding:",
               points: [
-                "It's pretty fun and magical:",
                 {
-                  text: "Watching Claude code incredibly fast",
+                  text: "It's pretty fun and magical:",
                   subpoints: [
                     "Playing with a friend's portfolio site you described to Claude just minutes earlier",
+                    "Watching Claude code incredibly fast",
                     "Seeing ChatGPT create great custom icons from your photos"
                   ]
                 },
                 "That said, taking a product past 80% with just an AI agent gets tough—AI doesn't retain context like you do, even if it rereads the docs.",
                 "Autonomous agents already have the capabilities to integrate into an organization's workflow, but they need to be paired with a developer.",
+                "I don't think a team of vibe coders will be developing new production apps from 0-1 or 1 -> in at least the next year or two. Engineering expertise in the front-end, back-end and dev ops is still needed to ensure quality across the stack. ",
                 "The tools have improved a lot since I first tried them in spring 2024. I'm curious if they'll continue advancing at the same pace."
               ]
             }
@@ -652,6 +654,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/section/:sectionId" element={<Section />} />
           <Route path="/section/:sectionId/:slideIndex" element={<SlideView />} />
+          <Route path="/section/:sectionId/subsection/:subsectionId/:slideIndex" element={<SlideView />} />
         </Routes>
       </div>
     </Router>
@@ -692,9 +695,10 @@ function Section() {
 
 // Slide View Component
 function SlideView() {
-  const { sectionId, slideIndex } = useParams();
+  const { sectionId, slideIndex, subsectionId } = useParams();
   const [currentSection, setCurrentSection] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(null);
+  const [currentSubsection, setCurrentSubsection] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState(null);
   const [expandedSubsections, setExpandedSubsections] = useState({});
@@ -788,20 +792,39 @@ function SlideView() {
     let currentGlobalIndex = 0;
     for (let i = 0; i < presentationData.sections.length; i++) {
       const section = presentationData.sections[i];
+      
       if (section.id === sectionId) {
-        currentGlobalIndex += parseInt(slideIndex, 10);
+        // If we're in a subsection
+        if (subsectionId) {
+          // Add all main section slides
+          currentGlobalIndex += section.slides.length;
+          
+          // Add slides from subsections before this one
+          for (let j = 0; j < section.subsections.length; j++) {
+            const subsection = section.subsections[j];
+            if (subsection.id === subsectionId) {
+              // We found our subsection - add the current slide index
+              currentGlobalIndex += parseInt(slideIndex, 10);
+              break;
+            } else {
+              // Add all slides from previous subsections
+              currentGlobalIndex += subsection.slides.length;
+            }
+          }
+        } else {
+          // We're in the main section - just add the slide index
+          currentGlobalIndex += parseInt(slideIndex, 10);
+        }
         break;
       } else {
-        let sectionSlides = section.slides.length;
+        // Add all slides from previous sections and their subsections
+        currentGlobalIndex += section.slides.length;
         
-        // Add slides from subsections if any
         if (section.subsections) {
           section.subsections.forEach(subsection => {
-            sectionSlides += subsection.slides.length;
+            currentGlobalIndex += subsection.slides.length;
           });
         }
-        
-        currentGlobalIndex += sectionSlides;
       }
     }
     
@@ -809,47 +832,92 @@ function SlideView() {
       current: currentGlobalIndex + 1, // +1 for 1-based indexing
       total: totalSlides
     });
-  }, [sectionId, slideIndex]);
+  }, [sectionId, subsectionId, slideIndex]);
   
-  useEffect(() => {
-    // Find the section and slide
+  // Function to find a slide based on params
+  const findSlideFromParams = useCallback(() => {
+    // Find the section
     const section = presentationData.sections.find(s => s.id === sectionId);
-    if (section) {
-      setCurrentSection(section);
+    if (!section) return { section: null, slide: null, subsection: null };
+    
+    // If we have a subsection ID, look in that subsection
+    if (subsectionId) {
+      const subsection = section.subsections?.find(sub => sub.id === subsectionId);
+      if (subsection) {
+        const slideIdx = parseInt(slideIndex, 10);
+        if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < subsection.slides.length) {
+          return { 
+            section, 
+            subsection, 
+            slide: subsection.slides[slideIdx] 
+          };
+        }
+      }
+    } else {
+      // No subsection, look in main section slides
       const slideIdx = parseInt(slideIndex, 10);
-      
-      // Create a flattened array of all slides including subsections
-      let allSlides = [...section.slides];
-      if (section.subsections) {
-        section.subsections.forEach(subsection => {
-          allSlides = allSlides.concat(subsection.slides);
-        });
+      if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < section.slides.length) {
+        return { 
+          section, 
+          subsection: null, 
+          slide: section.slides[slideIdx] 
+        };
       }
-      
-      if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < allSlides.length) {
-        setCurrentSlide(allSlides[slideIdx]);
-      } else {
-        navigate(`/section/${sectionId}/0`);
-      }
+    }
+    return { section: null, slide: null, subsection: null };
+  }, [sectionId, slideIndex, subsectionId]);
+
+  // Update the effect to use our new finder function
+  useEffect(() => {
+    const { section, subsection, slide } = findSlideFromParams();
+    
+    if (section && slide) {
+      setCurrentSection(section);
+      setCurrentSubsection(subsection);
+      setCurrentSlide(slide);
     } else {
       navigate('/');
     }
-  }, [sectionId, slideIndex, navigate]);
+  }, [sectionId, subsectionId, slideIndex, navigate, findSlideFromParams]);
   
+  // Update navigation functions
   const goToNextSlide = useCallback(() => {
-    const currentSlideIdx = parseInt(slideIndex, 10);
-    if (currentSection) {
-      // Create a flattened array of all slides including subsections
-      let allSlides = [...currentSection.slides];
-      if (currentSection.subsections) {
-        currentSection.subsections.forEach(subsection => {
-          allSlides = allSlides.concat(subsection.slides);
-        });
-      }
+    if (!currentSection) return;
+    
+    if (currentSubsection) {
+      // We're in a subsection
+      const currentSlideIdx = parseInt(slideIndex, 10);
       
-      if (currentSlideIdx < allSlides.length - 1) {
+      if (currentSlideIdx < currentSubsection.slides.length - 1) {
+        // Go to next slide in current subsection
+        navigate(`/section/${sectionId}/subsection/${currentSubsection.id}/${currentSlideIdx + 1}`);
+      } else {
+        // Find the next subsection or move to the next section
+        const subsectionIndex = currentSection.subsections.findIndex(sub => sub.id === currentSubsection.id);
+        
+        if (subsectionIndex < currentSection.subsections.length - 1) {
+          // Go to the first slide of the next subsection
+          const nextSubsection = currentSection.subsections[subsectionIndex + 1];
+          navigate(`/section/${sectionId}/subsection/${nextSubsection.id}/0`);
+        } else {
+          // Go to first slide of the next section
+          const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
+          if (currentSectionIdx < presentationData.sections.length - 1) {
+            const nextSection = presentationData.sections[currentSectionIdx + 1];
+            navigate(`/section/${nextSection.id}/0`);
+          }
+        }
+      }
+    } else {
+      // We're in a main section
+      const currentSlideIdx = parseInt(slideIndex, 10);
+      
+      if (currentSlideIdx < currentSection.slides.length - 1) {
         // Go to next slide in current section
         navigate(`/section/${sectionId}/${currentSlideIdx + 1}`);
+      } else if (currentSection.subsections && currentSection.subsections.length > 0) {
+        // Go to first slide of the first subsection
+        navigate(`/section/${sectionId}/subsection/${currentSection.subsections[0].id}/0`);
       } else {
         // Go to first slide of next section
         const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
@@ -859,31 +927,60 @@ function SlideView() {
         }
       }
     }
-  }, [currentSection, sectionId, slideIndex, navigate]);
-  
+  }, [currentSection, currentSubsection, sectionId, slideIndex, navigate]);
+
   const goToPrevSlide = useCallback(() => {
-    const currentSlideIdx = parseInt(slideIndex, 10);
-    if (currentSlideIdx > 0) {
-      // Go to previous slide in current section
-      navigate(`/section/${sectionId}/${currentSlideIdx - 1}`);
-    } else {
-      // Go to last slide of previous section
-      const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
-      if (currentSectionIdx > 0) {
-        const prevSection = presentationData.sections[currentSectionIdx - 1];
+    if (!currentSection) return;
+    
+    if (currentSubsection) {
+      // We're in a subsection
+      const currentSlideIdx = parseInt(slideIndex, 10);
+      
+      if (currentSlideIdx > 0) {
+        // Go to previous slide in current subsection
+        navigate(`/section/${sectionId}/subsection/${currentSubsection.id}/${currentSlideIdx - 1}`);
+      } else {
+        // Find the previous subsection or move to the main section slides
+        const subsectionIndex = currentSection.subsections.findIndex(sub => sub.id === currentSubsection.id);
         
-        // Create a flattened array of all slides including subsections
-        let allSlides = [...prevSection.slides];
-        if (prevSection.subsections) {
-          prevSection.subsections.forEach(subsection => {
-            allSlides = allSlides.concat(subsection.slides);
-          });
+        if (subsectionIndex > 0) {
+          // Go to the last slide of the previous subsection
+          const prevSubsection = currentSection.subsections[subsectionIndex - 1];
+          const lastSlideIndex = prevSubsection.slides.length - 1;
+          navigate(`/section/${sectionId}/subsection/${prevSubsection.id}/${lastSlideIndex}`);
+        } else {
+          // Go to the last slide of the main section
+          const lastMainSlideIndex = currentSection.slides.length - 1;
+          navigate(`/section/${sectionId}/${lastMainSlideIndex}`);
         }
-        
-        navigate(`/section/${prevSection.id}/${allSlides.length - 1}`);
+      }
+    } else {
+      // We're in a main section
+      const currentSlideIdx = parseInt(slideIndex, 10);
+      
+      if (currentSlideIdx > 0) {
+        // Go to previous slide in current section
+        navigate(`/section/${sectionId}/${currentSlideIdx - 1}`);
+      } else {
+        // Go to last slide of previous section or its last subsection
+        const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
+        if (currentSectionIdx > 0) {
+          const prevSection = presentationData.sections[currentSectionIdx - 1];
+          
+          if (prevSection.subsections && prevSection.subsections.length > 0) {
+            // Go to the last slide of the last subsection
+            const lastSubsection = prevSection.subsections[prevSection.subsections.length - 1];
+            const lastSlideIndex = lastSubsection.slides.length - 1;
+            navigate(`/section/${prevSection.id}/subsection/${lastSubsection.id}/${lastSlideIndex}`);
+          } else {
+            // Go to the last slide of the previous section
+            const lastSlideIndex = prevSection.slides.length - 1;
+            navigate(`/section/${prevSection.id}/${lastSlideIndex}`);
+          }
+        }
       }
     }
-  }, [sectionId, slideIndex, navigate]);
+  }, [currentSection, currentSubsection, sectionId, slideIndex, navigate]);
   
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -972,7 +1069,7 @@ function SlideView() {
                       {section.slides.map((slide, slideIdx) => (
                         // Skip the first slide (cover) in the navigation
                         slideIdx !== 0 ? (
-                          <li key={slideIdx} className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) ? 'active' : ''} style={{margin: 0, padding: '0.5rem 0', backgroundColor: 'white'}}>
+                          <li key={slideIdx} className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) && !subsectionId ? 'active' : ''} style={{margin: 0, padding: '0.5rem 0', backgroundColor: 'white'}}>
                             <div 
                               className="slide-link"
                               onClick={() => {
@@ -1012,14 +1109,13 @@ function SlideView() {
                                       key={slideIdx} 
                                       className={
                                         `subsection-slide-item
-                                        ${currentSlide && currentSlide === subsection.slides[slideIdx] ? 'active' : ''}`
+                                        ${subsectionId === subsection.id && parseInt(slideIndex, 10) === slideIdx ? 'active' : ''}`
                                       }
                                     >
                                       <div 
                                         className="slide-link"
                                         onClick={() => {
-                                          const actualIndex = findSubsectionSlideIndex(section, subsection.id, slideIdx);
-                                          navigate(`/section/${section.id}/${actualIndex}`);
+                                          navigate(`/section/${section.id}/subsection/${subsection.id}/${slideIdx}`);
                                           setMenuOpen(false);
                                         }}
                                       >

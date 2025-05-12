@@ -1964,20 +1964,38 @@ main.slide-content.comparison-slide {
 }
 
 .comparison-slide h1 {
+  color: #000844;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #333;
-  font-size: clamp(1.8rem, 4vw, 3rem);
 }
 
-.comparison-slide .description {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
-  color: #555;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+.comparison-column h2 {
+  color: #000844;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.comparison-points li:before {
+  content: "•";
+  color: #DD4747;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.comparison-subpoints li:before {
+  content: "◦";
+  color: #DD4747;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 .comparison-container {
@@ -1998,13 +2016,6 @@ main.slide-content.comparison-slide {
   margin-bottom: 1rem;
 }
 
-.comparison-column h2 {
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid #f0f0f0;
-  color: #333;
-}
-
 .comparison-points {
   list-style-type: none;
   padding-left: 0;
@@ -2014,14 +2025,6 @@ main.slide-content.comparison-slide {
   margin-bottom: 0.95rem;
   position: relative;
   padding-left: 1.5rem;
-}
-
-.comparison-points li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #4a90e2;
-  font-weight: bold;
 }
 
 .comparison-subpoints {
@@ -2035,15 +2038,10 @@ main.slide-content.comparison-slide {
   padding-left: 1.5rem;
 }
 
-.comparison-subpoints li:before {
-  content: "◦";
-  color: #777;
-}
-
-/* Completely override any existing styles for slide controls with highest specificity */
+/* Replace URL-based specific targeting with class-based targeting */
 html body div.App div.slide-view .slide-controls,
-html body div.App div.slide-view[class*="finding"] .slide-controls,
-html body div.App div.slide-view[class*="research"] .slide-controls,
+html body div.App div.slide-view.finding-slide .slide-controls,
+html body div.App div.slide-view.research-slide .slide-controls,
 div[class*="slide-view"] .slide-controls,
 .slide-view .slide-controls,
 body .slide-controls,
@@ -2064,19 +2062,10 @@ body .slide-controls,
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07) !important; /* Subtle drop shadow */
 }
 
-/* Make sure no other styles can override this */
-html body .slide-controls::before,
-html body .slide-controls::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* Add inline style override through JavaScript */
-
 /* Ensure buttons are consistent across all slides with highest specificity */
 html body div.App div.slide-view .slide-controls button,
-html body div.App div.slide-view[class*="finding"] .slide-controls button,
-html body div.App div.slide-view[class*="research"] .slide-controls button,
+html body div.App div.slide-view.finding-slide .slide-controls button,
+html body div.App div.slide-view.research-slide .slide-controls button,
 div[class*="slide-view"] .slide-controls button,
 .slide-view .slide-controls button,
 body .slide-controls button,
@@ -2094,15 +2083,15 @@ body .slide-controls button,
 
 /* Ensure slide progress is consistent with highest specificity */
 html body div.App div.slide-view .slide-controls .slide-progress,
-html body div.App div.slide-view[class*="finding"] .slide-controls .slide-progress,
-html body div.App div.slide-view[class*="research"] .slide-controls .slide-progress,
+html body div.App div.slide-view.finding-slide .slide-controls .slide-progress,
+html body div.App div.slide-view.research-slide .slide-controls .slide-progress,
 div[class*="slide-view"] .slide-controls .slide-progress,
 .slide-view .slide-controls .slide-progress,
 body .slide-controls .slide-progress,
 .slide-controls .slide-progress,
 html body div.App div.slide-view .slide-controls .slide-progress-placeholder,
-html body div.App div.slide-view[class*="finding"] .slide-controls .slide-progress-placeholder,
-html body div.App div.slide-view[class*="research"] .slide-controls .slide-progress-placeholder,
+html body div.App div.slide-view.finding-slide .slide-controls .slide-progress-placeholder,
+html body div.App div.slide-view.research-slide .slide-controls .slide-progress-placeholder,
 div[class*="slide-view"] .slide-controls .slide-progress-placeholder,
 .slide-view .slide-controls .slide-progress-placeholder,
 body .slide-controls .slide-progress-placeholder,
