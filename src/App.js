@@ -318,31 +318,37 @@ Curious to hear what you think about the idea.`,
     <rect x="0" y="0" width="297" height="550" rx="22" ry="22" fill="white" stroke="#333" stroke-width="2"/>
     <text x="148.5" y="-22" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Work Mode</text>
     
-    <!-- Work Mode Tools -->
-    <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="52" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Auth</text>
-    <text x="52" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">○</text>
-    
-    <rect x="97" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="127" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Food</text>
-    <text x="127" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">□</text>
-    
-    <rect x="172" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="202" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
-    <text x="202" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
-    
-    <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="52" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Inbox</text>
-    <text x="52" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">▼</text>
-    
-    <rect x="97" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="127" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">To Dos</text>
-    <text x="127" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">✓</text>
-    
-    <rect x="172" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="202" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
-    <text x="202" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
-    
+    <!-- Work Mode Tools (aligned and grouped) -->
+    <g>
+      <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="52" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">○</text>
+      <text x="52" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Auth</text>
+    </g>
+    <g>
+      <rect x="104.33" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="134.33" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">□</text>
+      <text x="134.33" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Food</text>
+    </g>
+    <g>
+      <rect x="186.66" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="216.66" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◊</text>
+      <text x="216.66" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Message</text>
+    </g>
+    <g>
+      <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="52" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">▼</text>
+      <text x="52" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Inbox</text>
+    </g>
+    <g>
+      <rect x="104.33" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="134.33" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">✓</text>
+      <text x="134.33" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">To Dos</text>
+    </g>
+    <g>
+      <rect x="186.66" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="216.66" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◎</text>
+      <text x="216.66" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Internet</text>
+    </g>
     <!-- Chat Interface -->
     <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
     <text x="42" y="250" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
@@ -361,7 +367,6 @@ Curious to hear what you think about the idea.`,
       Joe's soccer is on, despite rain.
       <tspan x="42" dy="15" style="text-decoration: underline;">Open GameChanger</tspan>
     </text>
-    
     <!-- Input Box -->
     <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
     <text x="127" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
@@ -371,32 +376,37 @@ Curious to hear what you think about the idea.`,
     <!-- Play Mode Phone -->
     <rect x="0" y="0" width="297" height="550" rx="22" ry="22" fill="white" stroke="#333" stroke-width="2"/>
     <text x="148.5" y="-22" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Play Mode</text>
-    
-    <!-- Play Mode Tools -->
-    <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="52" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Socials</text>
-    <text x="52" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">☺</text>
-    
-    <rect x="97" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="127" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Listen</text>
-    <text x="127" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">♪</text>
-    
-    <rect x="172" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="202" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Watch</text>
-    <text x="202" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">▶</text>
-    
-    <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="52" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
-    <text x="52" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
-    
-    <rect x="97" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="127" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Order</text>
-    <text x="127" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">□</text>
-    
-    <rect x="172" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="202" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
-    <text x="202" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
-    
+    <!-- Play Mode Tools (aligned and grouped) -->
+    <g>
+      <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="52" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">☺</text>
+      <text x="52" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Socials</text>
+    </g>
+    <g>
+      <rect x="104.33" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="134.33" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">♪</text>
+      <text x="134.33" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Listen</text>
+    </g>
+    <g>
+      <rect x="186.66" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="216.66" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">▶</text>
+      <text x="216.66" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Watch</text>
+    </g>
+    <g>
+      <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="52" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◊</text>
+      <text x="52" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Message</text>
+    </g>
+    <g>
+      <rect x="104.33" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="134.33" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">□</text>
+      <text x="134.33" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Order</text>
+    </g>
+    <g>
+      <rect x="186.66" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="216.66" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◎</text>
+      <text x="216.66" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Internet</text>
+    </g>
     <!-- Chat Interface -->
     <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
     <text x="42" y="250" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
@@ -419,7 +429,6 @@ Curious to hear what you think about the idea.`,
       You usually go to bed in about an hour.
       <tspan x="42" dy="15" style="text-decoration: underline;">Start getting ready</tspan>
     </text>
-    
     <!-- Input Box -->
     <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
     <text x="127" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
@@ -429,32 +438,37 @@ Curious to hear what you think about the idea.`,
     <!-- Travel Mode Phone -->
     <rect x="0" y="0" width="297" height="550" rx="22" ry="22" fill="white" stroke="#333" stroke-width="2"/>
     <text x="148.5" y="-22" font-family="Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#333">Travel Mode</text>
-    
-    <!-- Travel Mode Tools -->
-    <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="52" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Directions</text>
-    <text x="52" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">↗</text>
-    
-    <rect x="97" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="127" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Nearby</text>
-    <text x="127" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◉</text>
-    
-    <rect x="172" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="202" y="95" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Translate</text>
-    <text x="202" y="75" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">⟲</text>
-    
-    <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="52" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Itinerary</text>
-    <text x="52" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">☰</text>
-    
-    <rect x="97" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="127" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Message</text>
-    <text x="127" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◊</text>
-    
-    <rect x="172" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="202" y="170" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333">Internet</text>
-    <text x="202" y="150" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000">◎</text>
-    
+    <!-- Travel Mode Tools (aligned and grouped) -->
+    <g>
+      <rect x="22" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="52" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">↗</text>
+      <text x="52" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Directions</text>
+    </g>
+    <g>
+      <rect x="104.33" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="134.33" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◉</text>
+      <text x="134.33" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Nearby</text>
+    </g>
+    <g>
+      <rect x="186.66" y="22" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="216.66" y="48" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">⟲</text>
+      <text x="216.66" y="72" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Translate</text>
+    </g>
+    <g>
+      <rect x="22" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="52" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">☰</text>
+      <text x="52" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Itinerary</text>
+    </g>
+    <g>
+      <rect x="104.33" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="134.33" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◊</text>
+      <text x="134.33" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Message</text>
+    </g>
+    <g>
+      <rect x="186.66" y="125" width="60" height="60" rx="5" ry="5" fill="white" stroke="#333" stroke-width="1"/>
+      <text x="216.66" y="151" font-family="Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#000" dominant-baseline="middle">◎</text>
+      <text x="216.66" y="175" font-family="Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#333" dominant-baseline="middle">Internet</text>
+    </g>
     <!-- Chat Interface (fixed width and only one container) -->
     <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
     <text x="42" y="250" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
@@ -471,12 +485,10 @@ Curious to hear what you think about the idea.`,
       <tspan x="42" dy="15">yesterday morning.</tspan>
       <tspan x="42" dy="15" style="text-decoration: underline;">Respond to her</tspan>
     </text>
-    
     <!-- Input Box (fixed width) -->
     <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
     <text x="127" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
   </g>
-
   <!-- Caption for the diagram -->
   <text x="660" y="655" font-family="Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#333">Diagram 1: Initial visualization of the Chatphone concept</text>
 </svg>`
