@@ -283,31 +283,29 @@ const presentationData = {
         {
           type: "thought-experiment",
           title: "Chatphone Concept",
-          content: `While talking with one of the participants, we got onto the topic of agentic chat becoming a contextual layer between the tools your phone provides and how you access and use those tools.
+          content: `<p>While talking with one of the research participants, we got onto the topic of agentic chat becoming a contextual layer between the tools your phone provides and how you access and use those tools.</p>
 
-As someone who designed and built the Before Launcher, finding better ways to use our smartphones is a catnip-like obsession for me.
+<p>As someone who designed and built the Before Launcher, finding better ways to use our smartphones is a catnip-like obsession for me.</p>
 
-The participant and I, exchanging texts, landed on the idea of a conceptually aware phone—one whose interface changes based on your "mode." While not a new idea by any means, AI seems uniquely suited to help make this a reality.
+<p>The participant and I, exchanging texts, landed on the idea of a conceptually aware phone… one whose interface changes based on your "mode." While not a new idea by any means, AI seems uniquely suited to help make this a reality.</p>
 
-Diagram 1, at the top of this page, illustrates how this might work. After the ChatPhone onboards onto your primary usage contexts (a fascinating and likely ongoing process in itself), the phone's homescreen would display:
+<p>Diagram 1, at the top of this page, illustrates how this might work. After the ChatPhone onboards onto your primary usage contexts (a fascinating and likely ongoing process in itself), the phone's homescreen would display:</p>
 <ul>
 <li>The primary tools you're likely to use in that mode</li>
-<li>A digest of potentially relevant messages</li>
+<li>A digest of prioritized information and action based on your behavior and preferences.</li>
 <li>Quick access to agentic chat</li>
 </ul>
-
-This type of phone could offer several benefits:
+<p>This type of phone could offer several benefits:</p>
 <ul>
 <li>Speed up how quickly you find things on your phone</li>
 <li>Reduce the need for repetitive decision-making (e.g., which delivery app or pizza place to choose)</li>
 <li>Minimize distractions from content or tools best reserved for other contexts</li>
 </ul>
+<p>Of course, using an agent as an intermediary introduces the risk of it missing key or critical content. That's why this concept feels better suited for a time when AI has matured to the point of being more reliable than you are at completing certain tasks.</p>
 
-Of course, using an agent as an intermediary introduces the risk of it missing key or critical content. That's why this concept feels better suited for a time when AI has matured to the point of being more reliable than you are at completing certain tasks.
+<p>Also, while I doubt toolmakers like DoorDash, Lyft, Google, Apple, and others would appreciate being further commoditized—since their apps would no longer be the primary way users access the services they offer, they may have less of a choice when they can't distinguish between an AI accessing their app versus a person. It will be interesting to see how this plays out.</p>
 
-Also, I doubt toolmakers like DoorDash, Lyft, Google, Apple, and others would appreciate being further commoditized—since their apps would no longer be the primary way users access the services they offer.
-
-Curious to hear what you think about the idea.`,
+<p>I've been using though experiments like this one to get excited about possible innovations in the future, validate how I think and feel about AIs current and future usage. If AI could execute something like the Chatphone Concept, while maintaining my privacy and agency, count me in as a user.</p>`,
           svgContent: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 748">
   <!-- Background - changed to match presentation background -->
   <rect width="1320" height="748" fill="#f8fafc"/>
@@ -369,7 +367,7 @@ Curious to hear what you think about the idea.`,
     </text>
     <!-- Input Box -->
     <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="127" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
+    <text x="148.5" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask anything...</text>
   </g>
   
   <g transform="translate(489.5, 55)">
@@ -430,7 +428,7 @@ Curious to hear what you think about the idea.`,
     </text>
     <!-- Input Box -->
     <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="127" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
+    <text x="148.5" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask anything...</text>
   </g>
   
   <g transform="translate(836.5, 55)">
@@ -486,10 +484,10 @@ Curious to hear what you think about the idea.`,
     </text>
     <!-- Input Box (fixed width) -->
     <rect x="22" y="495" width="253" height="38.5" rx="19.25" ry="19.25" fill="white" stroke="#333" stroke-width="1"/>
-    <text x="127" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask me anything...</text>
+    <text x="148.5" y="518" font-family="Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#888">Ask anything...</text>
   </g>
   <!-- Caption for the diagram -->
-  <text x="660" y="655" font-family="Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#333">Diagram 1: Initial visualization of the Chatphone concept</text>
+  <text x="660" y="655" font-family="Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#333">Diagram 1: Rough sketch of the Chatphone concept, and three potential modes.</text>
 </svg>`
         },
         {
@@ -676,7 +674,7 @@ Curious to hear what you think about the idea.`,
         },
         {
           type: "comparison",
-          title: "Summary",
+          title: "Summary - Research & Vibe Coding",
           columns: [
             {
               title: "User & 3rd party research takeaways",
