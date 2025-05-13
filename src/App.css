@@ -375,7 +375,7 @@ body {
 
 /* Allow section covers to maintain full-height appearance */
 .section-cover-slide {
-  background-color: var(--light-gray);
+  background-color: rgba(226, 232, 240, 0.1); /* 10% opaque light gray */
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -1615,15 +1615,6 @@ body {
   overflow: visible !important;
 }
 
-/* Restore the slide controls on homepage */
-.slide-view.first-slide-active .slide-controls {
-  display: flex;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-}
-
 /* Slide control buttons for the transparent background */
 .slide-view.first-slide-active .slide-controls button,
 .slide-view.first-slide-active .slide-progress {
@@ -2210,4 +2201,8 @@ main.slide-content.comparison-slide {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.slide-view.first-slide-active .slide-controls {
+  background-color: rgba(255, 255, 255, 0.25) !important;
 } 
