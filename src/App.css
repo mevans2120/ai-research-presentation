@@ -17,7 +17,7 @@
   --header-height: 60px;
   --max-content-width: 1200px;
   --nav-bg-color: white;
-  --slide-controls-bg: rgba(255, 255, 255, 0.25);
+  --slide-controls-bg: rgba(255, 255, 255, 0.60);
   --slide-controls-blur: 3px;
   --slide-controls-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07);
   --slide-controls-padding: 1rem 2rem;
@@ -965,6 +965,9 @@ body {
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Desktop styles */
@@ -1024,7 +1027,6 @@ body {
 
 .project-image-container {
   width: 100%;
-  height: 100%; /* Full height of card */
   overflow: hidden;
   background-color: #f5f5f5;
   position: relative;
@@ -1043,10 +1045,11 @@ body {
 
 .project-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  display: block;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 8px;
+  margin-bottom: 8px;
 }
 
 .project-image:hover {
@@ -1266,7 +1269,7 @@ body {
 }
 
 .vibe-coder-slide .collapsible-content {
-  padding: 0 1rem 1rem;
+  padding: 0 40px 1.5rem 40px;
   overflow: hidden;
 }
 
@@ -2449,5 +2452,41 @@ main.slide-content.comparison-slide {
     width: 100%;
     margin: 0 auto 1.2rem auto;
     box-sizing: border-box;
+  }
+}
+
+.concept-image-container {
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.concept-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: top center;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.concept-caption {
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 4px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .develop-concept-section {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .concept-image-container {
+    margin-top: 1.2rem;
+    max-width: 100vw;
   }
 } 

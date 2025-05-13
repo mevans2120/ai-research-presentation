@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 import './App.css';
+import ReactMarkdown from 'react-markdown';
 
 // Main presentation data structure
 const presentationData = {
@@ -590,31 +591,35 @@ const presentationData = {
             {
               title: "High Level Requirements & AI Interview",
               content: "Once the elevator pitch is complete, then I write the top level requirements. For my mom's website, this is what I wrote:\n\n\"We are going to create the requirements and specifications for my mom's website. She is a shaman who works out of a yurt in Eugene Oregon. Her old existing website is at Karunagatton.com.  There should be a homepage, an offerings page, a get in touch page, a drum circle page and an about karuna page. You should ask me all the questions you need to create the requirements and specifications. We don't need to worry about any technical requirements right now.\"\n\nThe AI agent then wrote me the following questions:",
-              collapsible: "\"General Questions\n1. What's the primary goal of the website?\n\n   ○ Attract new clients?\n\n   ○ Provide information to existing clients?\n\n   ○ Promote events like drum circles?\n\n   ○ Something else?\n\n2. Who is the target audience?\n\n   ○ Local Eugene community?\n\n   ○ People new to shamanic work?\n\n   ○ Existing spiritual seekers?\n\n   ○ A particular age group, gender, or cultural background?\n\n3. What tone and aesthetic should the site have?\n\n   ○ Earthy and grounded?\n\n   ○ Mystical and ethereal?\n\n   ○ Minimal and modern?\n\n   ○ Vintage, nature-inspired, colorful?\n\n4. Are there any existing branding elements we need to use?\n\n   ○ Logo, color scheme, fonts, imagery?\n\n\nPage-Specific Questions\n1. Homepage\nWhat message should the homepage communicate immediately?\n\nShould it include:\n\n   ○ A photo of Karuna or the yurt?\n\n   ○ A brief welcome message?\n\n   ○ Highlights from other pages (e.g., a teaser for the offerings or drum circles)?\n\n   ○ Testimonials or quotes?\n\n   ○ Do you want a call-to-action? (e.g., \"Book a Session,\" \"Join the Circle,\" \"Learn More\")\n\n2. Offerings Page\nWhat types of offerings does Karuna provide? (e.g., one-on-one healing sessions, energy work, spiritual guidance, retreats?)\n\nFor each offering:\n\n   ○ What's it called?\n\n   ○ What does it involve?\n\n   ○ How long is a session?\n\n   ○ What's the price?\n\n   ○ Are sessions virtual, in-person, or both?\n\n   ○ Should people be able to book from this page?\n\n3. Drum Circle Page\nAre the drum circles recurring or one-off events?\n\nAre they open to the public or invite-only?\n\nWhat's the typical structure or vibe?\n\nShould there be a calendar or RSVP function?\n\nWould you want photos, recordings, or testimonials from past circles?\n\n4. Get in Touch Page\nWhat's the preferred method of contact? (Email, form, phone, social media?)\n\nShould it include a physical location (e.g., directions to the yurt)?\n\nDo you want to include a contact form with specific fields?\n\nIs there a newsletter or mailing list people can sign up for?\n\n5. About Karuna Page\nWhat should visitors know about her background, training, lineage, or philosophy?\n\nShould this be written in her voice (\"Hi, I'm Karuna…\") or in third person?\n\nDo you want to include personal photos or images from her work?\""
+              collapsible: `**General Questions About Karuna's Website**\n\n1. **What's the primary goal of the website?**\n\n   * Attract new clients?\n\n   * Provide information to existing clients?\n\n   * Promote events like drum circles?\n\n   * Something else?\n\n2. **Who is the target audience?**\n\n   * Local Eugene community?\n\n   * People new to shamanic work?\n\n   * Existing spiritual seekers?\n\n   * A particular age group, gender, or cultural background?\n\n3. **What tone and aesthetic should the site have?**\n\n   * Earthy and grounded?\n\n   * Mystical and ethereal?\n\n   * Minimal and modern?\n\n   * Vintage, nature-inspired, colorful?\n\n4. **Are there any existing branding elements we need to use?**\n\n   * Logo, color scheme, fonts, imagery?\n\n   * Or is this a fresh start?\n\n---\n\n### **Page-Specific Questions**\n\n#### **1.** \n\n#### **Homepage**\n\n* What message should the homepage communicate immediately?\n\n* Should it include:\n\n  * A photo of Karuna or the yurt?\n\n  * A brief welcome message?\n\n  * Highlights from other pages (e.g., a teaser for the offerings or drum circles)?\n\n  * Testimonials or quotes?\n\n* Do you want a call-to-action? (e.g., "Book a Session," "Join the Circle," "Learn More")\n\n#### **2.** \n\n#### **Offerings Page**\n\n* What types of offerings does Karuna provide? (e.g., one-on-one healing sessions, energy work, spiritual guidance, retreats?)\n\n* For each offering:\n\n  * What's it called?\n\n  * What does it involve?\n\n  * How long is a session?\n\n  * What's the price?\n\n  * Are sessions virtual, in-person, or both?\n\n* Should people be able to book from this page?\n\n#### **3.** \n\n#### **Drum Circle Page**\n\n* Are the drum circles recurring or one-off events?\n\n* Are they open to the public or invite-only?\n\n* What's the typical structure or vibe?\n\n* Should there be a calendar or RSVP function?\n\n* Would you want photos, recordings, or testimonials from past circles?\n\n#### **4.** \n\n#### **Get in Touch Page**\n\n* What's the preferred method of contact? (Email, form, phone, social media?)\n\n* Should it include a physical location (e.g., directions to the yurt)?\n\n* Do you want to include a contact form with specific fields?\n\n* Is there a newsletter or mailing list people can sign up for?\n\n#### **5.** \n\n#### **About Karuna Page**\n\n* What should visitors know about her background, training, lineage, or philosophy?\n\n* Should this be written in her voice ("Hi, I'm Karuna…") or in third person?\n\n* Do you want to include personal photos or images from her work?"`
             },
             {
               title: "Task breakdown",
-              content: "Once you answer the agent's questions, I ask it to develop a list of tasks needed to complete the website. This is where you can decide on the technical architecture, what to build first, and generate a task list. I've heard there are quite a few new AI products that help with this, but for now, I've been tracking my tasks in a Google Doc. For more static sites, working on the site page by page works great."
+              content: "Once you've answered the agent's questions, I ask it to generate a list of tasks needed to complete the website. This is where you can determine the technical architecture, prioritize what to build first, and outline a clear task list. I've heard there are a number of new AI tools that help with this, but for now, I've been tracking tasks in a Google Doc. For more static sites, working page by page works well. Below is an example of a more detailed task list for a research app developed with AI.",
+              collapsible: `# Prototype Implementation Plan\n\n## Week 1: Foundation Building\n\n### Days 1-2: Setup & Planning\n\n* [x] Create project repositories\n* [ ] Set up development environment\n* [ ] Configure basic Next.js/React application\n* [ ] Initialize backend structure\n* [ ] Define API contracts between components\n\n### Days 3-5: Core Components Development\n\n* [ ] Implement participant interface shell\n* [ ] Create hard-coded research configuration files\n* [ ] Develop research component with standard question types\n* [ ] Set up minimal database schema\n* [ ] Establish AI service connections\n* [ ] Build initial prompt templates\n\n**Milestone 1:** Technical foundation complete with basic UI shells and API connections\n\n## Week 2: Integration & Initial Testing\n\n### Days 6-7: Research Integration\n\n* [ ] Develop Research component UI\n* [ ] Implement logic and data collection\n* [ ] Create session management system\n* [ ] Build transition mechanism between survey and interview\n* [ ] Develop context passing between research phases\n\n### Days 8-10: AI Orchestration & Internal Testing\n\n* [ ] Finalize prompt engineering for different research phases\n* [ ] Implement context management system\n* [ ] Create basic results storage and retrieval\n* [ ] Begin internal testing with team members\n* [ ] Document and address initial issues\n\n**Milestone 2:** Working end-to-end prototype with research type transition\n\n## Week 3: Refinement & Extended Testing\n\n### Days 11-12: UX Improvements\n\n* [ ] Refine participant interface based on internal feedback\n* [ ] Improve transition mechanisms for more natural flow\n* [ ] Enhance AI prompt templates based on initial test results\n* [ ] Set up simple data export functionality for manual analysis\n\n### Days 13-15: Friends & Family Testing\n\n* [ ] Prepare test scenarios and evaluation criteria\n* [ ] Conduct 5-10 friends & family test sessions\n* [ ] Collect structured feedback on experience\n* [ ] Implement high-priority fixes and improvements\n\n**Milestone 3:** Refined prototype with validated user experience\n\n## Week 4: Real Participant Testing & Documentation\n\n### Days 16-18: Final Preparation & Testing\n\n* [ ] Make final adjustments based on F&F feedback\n* [ ] Create participant recruitment materials\n* [ ] Develop test protocols for real participant sessions\n* [ ] Conduct 10-15 sessions with real participants\n* [ ] Analyze session data and participant feedback\n\n### Days 19-20: Evaluation & Documentation\n\n* [ ] Compile testing results and findings\n* [ ] Document technical architecture\n* [ ] Create future development recommendations\n* [ ] Prepare final presentation materials\n\n**Milestone 4:** Complete prototype with validated research outputs and documentation\n\n## Key Metrics to Track\n\n### Technical Performance\n\n* AI response time (target: <1.5 seconds)\n* Session completion rate (target: >90%)\n* System errors/failures (target: <5%)\n\n### Research Quality\n\n* Survey completion accuracy\n* Qualitative insight relevance\n* Transition naturalness rating\n* Follow-up question appropriateness\n\n### User Experience\n\n* Participant satisfaction scores\n* Researcher satisfaction with outputs\n* Time to complete full session (target: 15-20 minutes)\n\n## Future Implementation Considerations\n\n### Phase 1 (Post-Prototype)\n\n* Advanced researcher configuration options\n* Multiple AI personality options\n* Enhanced results analysis and visualization\n* Basic participant management system\n\n### Phase 2\n\n* Multiple research templates\n* API for external integrations\n* Advanced participant recruitment\n* Full participant database management\n\n### Phase 3\n\n* Enterprise features\n* White-labeling options\n* Advanced analysis with sentiment modeling\n* Complete data export and integration options\n\n—`
             },
             {
               title: "Develop a Concept",
-              content: "Before getting too deep into the details, I work with the AI to develop a product concept… Usually whatever the most important element is. For my mom's website, it was the homepage. For this presentation, it was the structure, layout, and navigation. Sharing examples and other artifacts is always helpful during the concepting phase. I work with the AI on the concept until I'm happy with it. After that, we dive into the details."
+              content: "Before getting too deep into the details, I work with the AI to develop a product concept... Usually focusing on the most important element first. For my mom's website, it was the homepage. For this presentation, it was the structure, layout, and navigation. Sharing examples and other artifacts is always helpful during the concepting phase. I refine the concept with the AI until I'm happy with it, and then we dive into the details.",
+              imageUrl: "/karuna.png",
+              caption: "Karuna's concept started with the home page"
             },
             {
               title: "Building out the app",
               content: "Using the concept, functional requirements, and task list, we get to work. There's quite a bit of micro-interaction tuning required to make things look and feel right. Below are a few tips and tricks for working with AI during the build phase:",
               bulletPoints: [
-                "The longer a chat thread gets, the worse the AI tends to perform. When I notice performance degrading, I start a new chat and ask the agent to review all work to date—requirements, code, etc.",
-                "Make sure the AI shows its thinking. In Cursor, this is a setting. The agent will often over-engineer a solution. It's well intentioned, but it can make the app worse.",
+                "Ask AI for help. If you are struggling to get what you want, ask the AI for potential reasons why. Those reasons are often super helpful.",
+                "The longer a chat thread gets, the worse the AI tends to perform. When I notice performance degrading, I start a new chat and ask the agent to review all work to date: requirements, code, etc.",
+                "Make sure the AI shows its thinking. Ask it to tell you how it plans to implement larger features before you start. The agent will often over-engineer a solution. It's well intentioned, but it can make the app worse.",
                 "Versioning is critical. Commit to Git frequently, as the AI has a short memory and can struggle to revert changes it made.",
                 "Get familiar enough with the code to make copy updates and small tweaks—these are often faster to do yourself.",
                 "Treat the AI like a teammate and provide context for decisions. This tends to improve the quality of its output.",
-                "Plan to optimize micro-interactions—they often need fine-tuning to make the app feel polished."
+                "Plan to optimize micro-interactions—they often need fine-tuning to make the app feel polished, but remind the agent to code with best practices while you do those optimizations."
               ]
             },
             {
               title: "Summary",
-              content: "While an AI agent is nowhere near the developer that many of my colleagues are… With proper planning, and if you pay close attention to the build. You can build out something excellent."
+              content: "While an AI agent is nowhere near the developer that many of my colleagues are… With proper planning, close attention, patience and perserverence, you can build out something pretty cool."
             }
           ]
         },
@@ -769,16 +774,6 @@ function ProjectsSlide({ slide }) {
   const isMobile = useIsMobile();
   const [expandedCards, setExpandedCards] = useState({});
 
-  // Defensive: handle missing slide
-  if (!slide) {
-    return <div className="projects-slide-error">No slide data found.</div>;
-  }
-
-  // Defensive: handle missing or malformed projects array
-  if (!Array.isArray(slide.projects) || slide.projects.length === 0) {
-    return <div className="projects-slide-error">No projects to display.</div>;
-  }
-
   const handleCardClick = (project, idx, e) => {
     if (isMobile) {
       e.preventDefault();
@@ -838,7 +833,7 @@ function ProjectsSlide({ slide }) {
       <h1>{slide.title}</h1>
       {slide.content && <p className="intro">{slide.content}</p>}
       <div className="projects-grid">
-        {slide.projects.map((project, idx) => (
+        {Array.isArray(slide.projects) && slide.projects.map((project, idx) => (
           <div
             key={idx}
             className={`project-card ${isMobile && expandedCards[idx] ? 'expanded' : ''}`}
@@ -1693,41 +1688,62 @@ function renderSlide(slide) {
           <div className="hero-image-container">
             <img src="/cursor-screenshot.png" alt="Screenshot of Cursor IDE" className="hero-image" />
           </div>
-          <div className="image-caption">Me asking cursor to add this image as a hero image to this page</div>
+          <div className="image-caption">Image of me asking cursor to add this image, as the hero image to this page</div>
           
           <p className="intro">{slide.content}</p>
           
           {slide.sections && (
             <div className="sections">
-              {slide.sections.map((section, idx) => (
-                <div key={idx} className="section">
-                  <h2>{section.title}</h2>
-                  <div className="content">
-                    {section.content.split('\n').map((paragraph, pIdx) => (
-                      <p key={pIdx}>{paragraph}</p>
-                    ))}
-                    {section.collapsible && (
-                      <details className="collapsible">
-                        <summary className="collapsible-header">
-                          Click to see details
-                        </summary>
-                        <div className="collapsible-content">
-                          {section.collapsible.split('\n').map((line, lIdx) => (
-                            <p key={lIdx}>{line}</p>
-                          ))}
-                        </div>
-                      </details>
-                    )}
-                    {section.bulletPoints && (
-                      <ul className="bullet-points">
-                        {section.bulletPoints.map((point, pIdx) => (
-                          <li key={pIdx}>{point}</li>
+              {slide.sections.map((section, idx) => {
+                // Special handling for 'Develop a Concept' section with image
+                if (section.title === 'Develop a Concept' && section.imageUrl) {
+                  return (
+                    <div key={idx} className="section develop-concept-section" style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '2rem', flexWrap: 'wrap' }}>
+                      <div className="content" style={{ flex: 2, minWidth: 0 }}>
+                        {section.content.split('\n').map((paragraph, pIdx) => (
+                          <p key={pIdx}>{paragraph}</p>
                         ))}
-                      </ul>
-                    )}
+                      </div>
+                      <div className="concept-image-container">
+                        <div
+                          className="concept-image"
+                          style={{ backgroundImage: `url(${section.imageUrl})` }}
+                          alt="Karuna concept homepage"
+                        ></div>
+                        <div className="concept-caption">{section.caption}</div>
+                      </div>
+                    </div>
+                  );
+                }
+                // Default rendering for other sections
+                return (
+                  <div key={idx} className="section">
+                    <h2>{section.title}</h2>
+                    <div className="content">
+                      {section.content.split('\n').map((paragraph, pIdx) => (
+                        <p key={pIdx}>{paragraph}</p>
+                      ))}
+                      {section.collapsible && (
+                        <details className="collapsible">
+                          <summary className="collapsible-header">
+                            Click to see details
+                          </summary>
+                          <div className="collapsible-content">
+                            <ReactMarkdown>{section.collapsible}</ReactMarkdown>
+                          </div>
+                        </details>
+                      )}
+                      {section.bulletPoints && (
+                        <ul className="bullet-points">
+                          {section.bulletPoints.map((point, pIdx) => (
+                            <li key={pIdx}>{point}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
