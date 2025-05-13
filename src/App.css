@@ -1578,12 +1578,12 @@ body {
     max-width: 100vw !important;
     overflow-x: auto !important;
     padding: 0 !important;
-    margin: 0 auto 1.5rem auto !important;
+    margin: 0 auto 0.5rem auto !important;
     display: block !important;
     background: none !important;
   }
   .svg-container svg {
-    min-width: 600px;
+    min-width: 750px;
     width: 100vw !important;
     max-width: none !important;
     height: auto !important;
@@ -1591,7 +1591,7 @@ body {
   }
   .thought-experiment-slide .content.blog-format {
     clear: both;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     padding-top: 0;
   }
 }
