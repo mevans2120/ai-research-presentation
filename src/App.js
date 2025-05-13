@@ -8,7 +8,7 @@ const presentationData = {
   sections: [
     {
       id: "intro",
-      title: "Welcome",
+      title: "🤗 Welcome",
       slides: [
         {
           type: "projects",
@@ -36,7 +36,7 @@ const presentationData = {
             },
             {
               title: "🔍 Summary",
-              description: "What I have learned from the research, the vibing coding, and what do I think the future looks like.",
+              description: "What I have learned from the research, the vibing coding, and what I think the AI future looks like.",
               url: "/section/next-steps/0",
               imageUrl: "/whats-next.png"
             }
@@ -176,7 +176,7 @@ const presentationData = {
             },
             {
               type: "finding",
-              title: "Several felt a connection with AI, valuing its manner. Though, most found AI over-confident.",
+              title: "Several felt a connection with AI, valuing its manner. Though, most found AI over-Caconfident.",
               points: [
                 "Several commented on how the agents mirrors the tone you approach your prompts with, and this led them to engage more deeply and frequently.",
                 "Many commented on how confident AI are in their solution whether they are right or wrong",

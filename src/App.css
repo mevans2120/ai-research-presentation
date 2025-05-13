@@ -382,12 +382,15 @@ body {
     height: auto !important;
     min-height: calc(100vh - var(--header-height) - 60px);
     overflow-y: auto !important;
-    padding-bottom: 120px !important; /* Extra padding for mobile */
+    overflow-x: hidden !important;
+    padding-bottom: 120px !important;
+    box-sizing: border-box;
   }
 
   .methodology-slide .methodology-content,
   .finding-slide .finding-content,
   .hypothesis-slide .hypothesis-columns {
+    flex-direction: column !important;
     height: auto !important;
     overflow: visible !important;
   }
