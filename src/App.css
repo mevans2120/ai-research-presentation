@@ -1411,7 +1411,7 @@ body {
   top: var(--header-height);
   bottom: 60px; /* Height of slide controls */
   width: 7.5%; /* Reduced from 15% to 7.5% (50% reduction) */
-  z-index: 995; /* Above content but below navigation */
+  z-index: 2001; /* Increased to be above .section-cover-slide.subsection-cover (z-index: 1000) */
   cursor: pointer;
   background-color: transparent;
   transition: background-color 0.2s;

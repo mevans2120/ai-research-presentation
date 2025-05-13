@@ -230,8 +230,8 @@ const presentationData = {
               type: "finding",
               title: "Most expect AI to boom, then bust, in tech—but no one knows when.",
               points: [
-                "Everyone believed that AI would unlock a bunch of innovation by being part of new products, and also enabling other digital products to be developed more cheaply",
-                "Everyone also believed that the teams needed to build these products would be significantly smaller.",
+                "Most everyone believed that AI would unlock a bunch of innovation by being part of new products, and also enabling other digital products to be developed more cheaply",
+                "Most everyone also believed that the teams needed to build these products would be significantly smaller.",
                 "A couple thought that the backlog of potential innovation was vast or innovative, and that the technology industry would by and large support the same number of employees."
               ],
               quotes: [
@@ -637,7 +637,7 @@ const presentationData = {
             },
             {
               title: "Voice Activated Kitchen Timer POC",
-              description: "I love cooking and using Alexa’s kitchen timer, but I don’t want an always-on Amazon device in my home. So I built a voice-activated kitchen timer that works offline. It’s a rough proof of concept—and my first vibe coding project. If you’ve ever cooked with messy hands, you know why voice is the ideal interface.",
+              description: "I love cooking and using Alexa's kitchen timer, but I don't want an always-on Amazon device in my home. So I built a voice-activated kitchen timer that works offline. It's a rough proof of concept—and my first vibe coding project. If you've ever cooked with messy hands, you know why voice is the ideal interface.",
               url: "https://voice-timer-2-mevans212.replit.app/",
               imageUrl: "/voice-timer.png"
             },
@@ -1414,7 +1414,6 @@ function SlideView() {
         <>
           {/* Left side click area */}
           <div className="side-click-area left-click" onClick={goToPrevSlide}></div>
-          
           {/* Right side click area */}
           <div className="side-click-area right-click" onClick={goToNextSlide}></div>
         </>
