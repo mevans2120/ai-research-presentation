@@ -4,7 +4,7 @@ import './App.css';
 
 // Main presentation data structure
 const presentationData = {
-  title: "MEvans AI Workbook",
+  title: "MEvans AI Workbook - Welcome",
   sections: [
     {
       id: "intro",
@@ -12,31 +12,31 @@ const presentationData = {
       slides: [
         {
           type: "projects",
-          title: "Michael Evans AI Workbook",
-          content: "",
+          title: "Welcome",
+          content: "A collection of my thoughts on AI, my research, and my coding experiments.",
           isHomepage: true,
           projects: [
             {
-              title: "User Research",
-              description: "I interviewed 13 colleagues about how they use AI in their work and personal lives and where they think AI is going next.",
+              title: "👥 User Research",
+              description: "I interviewed 13 colleagues about how they use AI in their lives (work and personal) and where they think AI is going next.",
               url: "/section/research-findings/0",
               imageUrl: "/user-research.png"
             },
             {
-              title: "Concepts & Content",
+              title: "✍️ Concepts & Content",
               description: "A thought experiment \"What if AI was a wrapper over your phone's tools?\" and a collection of interesting articles and podcasts around AI.",
               url: "/section/chatphone/0",
               imageUrl: "/concepts-content.png"
             },
             {
-              title: "Vibe Coding",
+              title: "💻 Vibe Coding",
               description: "I describe my current AI coding workflow and I share some of the projects that I've created solely using AI tools.",
               url: "/section/vibe-coder/0",
               imageUrl: "/vibe-coding.png"
             },
             {
-              title: "Summary",
-              description: "What have I learned from the research, the vibing coding, and what do I think the future looks like?",
+              title: "🔍 Summary",
+              description: "What I have learned from the research, the vibing coding, and what do I think the future looks like.",
               url: "/section/next-steps/0",
               imageUrl: "/whats-next.png"
             }
@@ -51,11 +51,11 @@ const presentationData = {
     },
     {
       id: "research-findings",
-      title: "User Research",
+      title: "👥 User Research",
       slides: [
         {
           type: "section-cover",
-          title: "User Research",
+          title: "👥 User Research",
           subtitle: "",
           cards: [
             {
@@ -262,11 +262,11 @@ const presentationData = {
     },
     {
       id: "chatphone",
-      title: "Concepts & Content",
+      title: "✍️ Concepts & Content",
       slides: [
         {
           type: "section-cover",
-          title: "Concepts & Content",
+          title: "✍️ Concepts & Content",
           subtitle: "",
           cards: [
             {
@@ -561,11 +561,11 @@ const presentationData = {
     },
     {
       id: "vibe-coder",
-      title: "Vibe Coding",
+      title: "💻 Vibe Coding",
       slides: [
         {
           type: "section-cover",
-          title: "Vibe Coding",
+          title: "💻 Vibe Coding",
           subtitle: "",
           cards: [
             {
@@ -653,11 +653,11 @@ const presentationData = {
     },
     {
       id: "next-steps",
-      title: "Summary",
+      title: "🔍 Summary",
       slides: [
         {
           type: "section-cover",
-          title: "Summary",
+          title: "🔍 Summary",
           subtitle: "",
           cards: [
             {
