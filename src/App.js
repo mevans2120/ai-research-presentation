@@ -653,29 +653,29 @@ const presentationData = {
     },
     {
       id: "next-steps",
-      title: "Summary and What's Next",
+      title: "Summary",
       slides: [
         {
           type: "section-cover",
-          title: "Summary and What's Next",
+          title: "Summary",
           subtitle: "",
           cards: [
             {
-              title: "Key Insights",
+              title: "Research & Vibe Coding",
               content: "A synthesis of the major takeaways from my research conversations, concept explorations, and hands-on AI product development experiences."
             },
             {
-              title: "Future Directions",
+              title: "AI Future & How I Built this App",
               content: "My thoughts on where AI technology is headed next, how it might change the industry, and what I'm personally excited to explore and build in the near future."
             }
           ]
         },
         {
           type: "comparison",
-          title: "Summary - Research & Vibe Coding",
+          title: "Research & Vibe Coding",
           columns: [
             {
-              title: "User & 3rd party research takeaways",
+              title: "First & third party research takeaways",
               points: [
                 "I'm genuinely excited about the problems we'll be able to solve in both the short and long term.",
                 {
@@ -711,7 +711,7 @@ const presentationData = {
         },
         {
           type: "comparison",
-          title: "Summary - The Future & How I Built this App",
+          title: "The AI Future & How I Built This",
           columns: [
             {
               title: "How I'm feeling about the future",
@@ -730,7 +730,7 @@ const presentationData = {
               ]
             },
             {
-              title: "How I built this app, would I do it again?",
+              title: "Would I build this app again?",
               points: [
                 "I started with a keynote outline for a majority of the slides.",
                 "I shared a PDF of the slides with Claude, and asked it to use this content to write a presentation webapp. I also asked for a consistent bottom navigation, and a top navigation.",
