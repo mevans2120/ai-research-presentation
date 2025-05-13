@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 import './App.css';
-import './slide-controls.css'; // Import the slide controls CSS
 
 // Main presentation data structure
 const presentationData = {
@@ -1259,12 +1258,22 @@ function SlideView() {
       
       <div className="slide-controls">
         <button className="prev-slide" onClick={goToPrevSlide}>←</button>
-        {globalSlideInfo.current > 3 && (
-          <div className="slide-progress">
-            Slide {globalSlideInfo.current - 3} of {globalSlideInfo.total - 3}
-          </div>
-        )}
-        {globalSlideInfo.current <= 3 && <div className="slide-progress-placeholder"></div>}
+        {/* Dot markers for sections */}
+        <div className="section-dot-row">
+          {presentationData.sections.map((section, idx) => {
+            // Determine if this is the current section
+            const isCurrent = section.id === sectionId;
+            return (
+              <button
+                key={section.id}
+                className={`section-dot${isCurrent ? ' current' : ''}`}
+                aria-label={`Go to section: ${section.title}`}
+                onClick={() => navigate(`/section/${section.id}/0`)}
+                disabled={isCurrent}
+              />
+            );
+          })}
+        </div>
         <button className="next-slide" onClick={goToNextSlide}>→</button>
       </div>
     </div>
