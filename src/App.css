@@ -17,6 +17,11 @@
   --header-height: 60px;
   --max-content-width: 1200px;
   --nav-bg-color: white;
+  --slide-controls-bg: rgba(255, 255, 255, 0.25);
+  --slide-controls-blur: 3px;
+  --slide-controls-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07);
+  --slide-controls-padding: 1rem 2rem;
+  --slide-controls-height: 60px;
 }
 
 * {
@@ -1296,14 +1301,7 @@ body {
   z-index: 5;
 }
 
-/* Specific styling for controls on first slide */
-.first-slide-active .slide-controls button {
-  color: var(--blue-color);
-}
 
-.first-slide-active .slide-progress {
-  color: var(--blue-color);
-}
 
 /* Side click areas for navigation */
 .side-click-area {
@@ -1369,12 +1367,11 @@ body {
   pointer-events: none;
 }
 
-.prev-slide {
-  text-align: left;
-}
-
-.next-slide {
-  text-align: right;
+.prev-slide, .next-slide {
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* Subtler bold effect for arrows, 1px stroke */
+  text-shadow: 1px 0 0 #12265F, 0 1px 0 #12265F;
 }
 
 /* Footnotes - positioned fixed directly above navigation */
@@ -1545,10 +1542,6 @@ body {
   cursor: pointer;
 }
 
-.slide-view.first-slide-active .projects-slide .project-card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
-}
 
 /* Make sure the link covers the entire card and is clickable */
 .slide-view.first-slide-active .projects-slide .project-image-link {
@@ -1615,12 +1608,7 @@ body {
   overflow: visible !important;
 }
 
-/* Slide control buttons for the transparent background */
-.slide-view.first-slide-active .slide-controls button,
-.slide-view.first-slide-active .slide-progress {
-  color: var(--blue-color);
-  text-shadow: none;
-}
+
 
 /* Subsection Navigation Styles */
 .subsections {
@@ -2034,10 +2022,9 @@ main.slide-content.comparison-slide {
 
 /* Slide controls styling - moved from slide-controls.css */
 .slide-controls {
-  background-color: rgba(255, 255, 255, 0.25) !important;
-  backdrop-filter: blur(3px) !important;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07) !important;
-  
+  background-color: var(--slide-controls-bg) !important;
+  backdrop-filter: blur(var(--slide-controls-blur)) !important;
+  box-shadow: var(--slide-controls-shadow) !important;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -2045,8 +2032,8 @@ main.slide-content.comparison-slide {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  height: 60px;
+  padding: var(--slide-controls-padding);
+  height: var(--slide-controls-height);
   border-top: none;
   z-index: 9999;
 }
@@ -2204,5 +2191,17 @@ main.slide-content.comparison-slide {
 }
 
 .slide-view.first-slide-active .slide-controls {
-  background-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: var(--slide-controls-bg) !important;
+  backdrop-filter: blur(var(--slide-controls-blur)) !important;
+  box-shadow: var(--slide-controls-shadow) !important;
+  padding: var(--slide-controls-padding);
+  height: var(--slide-controls-height);
+}
+
+.slide-view.first-slide-active .prev-slide,
+.slide-view.first-slide-active .next-slide {
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* Subtler bold effect for arrows, 1px stroke */
+  text-shadow: 1px 0 0 #12265F, 0 1px 0 #12265F;
 } 

@@ -35,8 +35,8 @@ const presentationData = {
               imageUrl: "/vibe-coding.png"
             },
             {
-              title: "Summary & What's Next",
-              description: "After this deep dive into AI, what do I think AI's impact will be in software, and what am I currently thinking about.",
+              title: "Summary",
+              description: "What have I learned from the research, the vibing coding, and what do I think the future looks like?",
               url: "/section/next-steps/0",
               imageUrl: "/whats-next.png"
             }
