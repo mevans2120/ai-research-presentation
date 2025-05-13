@@ -46,7 +46,7 @@ const presentationData = {
         {
           type: "text",
           title: "About",
-          content: "I've long been someone who tracks and adopts new technology as quickly as I can. And while I certainly got excited when ChatGPT launched. I started using itfor spelling / grammar checker, when I remembered, but I never got that deep…\n\nThat's because I spent the past 1.5 years doing joyful hard work for opening up Casa Bonita to the general public. And while Casa Bonita is a complicated beast… Cliff divers, thousands of covers,  Mexican food and all… Their digital products don't need AI. And, anybody who knows me, knows that I get single minded when presented with a set of challenging problems. AI would have to wait. Also, go to Casa Bonita, it's wonderful there. \n\nAfter Casa Bonita I transitioned the digital products to Casa Bonita, I got laid off by my agency. The one blessing was that I could catch up on AI. \n\nAs part of a mini-sabbatical, I wanted to answer a question: utilizing AI, could I design and develop and ship something useful all by myself? It didn't take me long to learn that the answer was: \n\n\"Yes. You can actually build something useful that would typically take days… in hours.\" \n\nHoly shit. In the next 5 years, will I be able to ask Claude to \"build me an airline website\" and have it get a majority of the work done? Will AI unlock massive amounts of new products that weren't feasible or cost effective? Or should I get out of the industry and try to open a yoga studio? I didn't have a good sense about what the answer would be. I was also thinking about my children, would their creativity and intellect be useful in the future. Deep breaths…\n\nWhile I'd been living under a rock, most of my colleagues and peers had not. How were they using AI? How were they working with it? Is it hard to build a custom agent (spoiler: it's not that hard)?\n\nSimilar to when I was going through a divorce, I decided to conduct some personal research with a set of smart colleagues and friends who I figure would have thought about this and have some expertise. The divorce research was incredibly useful. Hopefully this would be as well."
+          content: `I've always been someone who tracks and adopts new technology as quickly as I can. I was certainly excited when ChatGPT launched. I used it here and there as a spelling and grammar checker—when I remembered—but I never went that deep.\n\nThat's because I spent the past 1.5 years doing joyful, hard work helping open Casa Bonita to the general public. And while Casa Bonita is a complicated beast—cliff divers, thousands of covers, Mexican food and all—their digital products didn't need AI. Anyone who knows me knows I get single-minded when presented with a set of challenging problems. AI would have to wait. (Also, go to Casa Bonita. It's wonderful.)\n\nAfter successfully transitioning the digital products to Casa Bonita, I was laid off by my agency. The silver lining? I finally had time to catch up on AI.\n\nAs part of a mini-sabbatical, I set out to answer a question: using AI, could I design, develop, and ship something useful all by myself? It didn't take long to find the answer:\n\n**"Yes. You can actually build something useful that would typically take days… in hours."**\n\nHoly shit. In the next five years, will I be able to ask Claude to "build me an airline website" and have it do most of the work? Will AI unlock a wave of new products that previously weren't feasible or cost-effective? Or should I leave the industry and open a yoga studio? I honestly didn't know. I was also thinking about my children—would their creativity and intellect still be useful in the future? Deep breaths…\n\nWhile I'd been living under a rock, most of my colleagues hadn't. How were they using AI? How were they working with it? Is it hard to build a custom agent? (Spoiler: it's not that hard.)`
         }
       ]
     },
@@ -1331,13 +1331,21 @@ function renderSlide(slide) {
         presentationData.sections[0] && 
         presentationData.sections[0].slides && 
         presentationData.sections[0].slides.some((s, idx) => s.type === 'text' && idx === 1 && s === slide);
-      
+      // Add markdown bold support (**text**)
+      function renderMarkdownBold(text) {
+        return text.split(/(\*\*[^*]+\*\*)/g).map((part, idx) => {
+          if (/^\*\*[^*]+\*\*$/.test(part)) {
+            return <strong key={idx}>{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        });
+      }
       return (
         <div className={`text-slide ${isIntroduction ? 'introduction' : ''}`}>
           {slide.title && <h1>{slide.title}</h1>}
           <div className="content">
             {slide.content.split('\n').map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
+              <p key={idx}>{renderMarkdownBold(paragraph)}</p>
             ))}
           </div>
         </div>
