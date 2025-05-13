@@ -631,19 +631,19 @@ const presentationData = {
             },
             {
               title: "Karuna's Website",
-              description: "After building the Initiative Tracker and the POC for the voice-activated kitchen timer, I turned to my mom Karuna's website. She's a shaman who offers spiritual healing, as you can see from the site. One note: the site currently has some technical issues due to how I used the agentic tools. I passed the code from one tool to another and ended up with three global CSS files—not ideal. I'm hoping to refactor this once the vibe coding tools (and my patience with refactoring them) improve. This is still a work in progress",
+              description: "My mom is a shaman who offers spiritual healing, as you can see from the site. It's been a pleasure working with her and the AI on this project. Note: the site is still a work in progress, with some css refactoring needed",
               url: "https://karuna-chi.vercel.app/",
               imageUrl: "/karuna.png"
             },
             {
               title: "Voice Activated Kitchen Timer POC",
-              description: "As someone who loves to cook and loves using Alexa's kitchen timer… but doesn't love having an Amazon listening device in the house. I wanted to build a voice-activated kitchen timer that doesn't connect to the internet. This is a proof of concept and the first vibe coding project I worked on. If you haven't used Alexa or Google Home in the kitchen, voice is really the best way for me to interact with a timer. My hands are often busy, dirty, or full, and I'll be running around the kitchen yelling, \"Alexa, set a timer for five minutes, please!\" This is a rough proof of concept",
+              description: "I love cooking and using Alexa’s kitchen timer, but I don’t want an always-on Amazon device in my home. So I built a voice-activated kitchen timer that works offline. It’s a rough proof of concept—and my first vibe coding project. If you’ve ever cooked with messy hands, you know why voice is the ideal interface.",
               url: "https://voice-timer-2-mevans212.replit.app/",
               imageUrl: "/voice-timer.png"
             },
             {
-              title: "This Workbook App",
-              description: "I created this presentation using Claude Sonnet 3.7 to help with the design, then brought it into Cursor with Claude Sonnet 3.7 to build it out. It was the most straightforward project I've completed. While I still had to give a lot of direction on micro-interactions and padding, the agent got most of the big things right at first. Optimizing at the end was painful",
+              title: "This App",
+              description: "This presentation app is meant to have many different ways to navigate, and is meant for content that works non-linearly. I'm using it to share my research on AI and vibe coding.",
               url: "https://ai-research-presentation.vercel.app/section/intro/0",
               imageUrl: "/presentation.png"
             }
@@ -730,7 +730,7 @@ const presentationData = {
               ]
             },
             {
-              title: "Would I build this app again?",
+              title: "How I built this app",
               points: [
                 "I started with a keynote outline for a majority of the slides.",
                 "I shared a PDF of the slides with Claude, and asked it to use this content to write a presentation webapp. I also asked for a consistent bottom navigation, and a top navigation.",
@@ -747,6 +747,152 @@ const presentationData = {
     }
   ]
 };
+
+// Add mobile detection hook
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return isMobile;
+}
+
+// ProjectsSlide component for the projects slide type
+function ProjectsSlide({ slide }) {
+  const isMobile = useIsMobile();
+  const [expandedCards, setExpandedCards] = useState({});
+
+  // Defensive: handle missing slide
+  if (!slide) {
+    return <div className="projects-slide-error">No slide data found.</div>;
+  }
+
+  // Defensive: handle missing or malformed projects array
+  if (!Array.isArray(slide.projects) || slide.projects.length === 0) {
+    return <div className="projects-slide-error">No projects to display.</div>;
+  }
+
+  const handleCardClick = (project, idx, e) => {
+    if (isMobile) {
+      e.preventDefault();
+      if (expandedCards[idx]) {
+        window.open(project.url, project.url.startsWith('/') ? '_self' : '_blank');
+      } else {
+        setExpandedCards(prev => ({ ...prev, [idx]: true }));
+      }
+    }
+    // On desktop, let the default link behavior handle it
+  };
+
+  // External link SVG icon
+  const ExternalLinkIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="none"
+      viewBox="0 0 20 20"
+      style={{
+        display: 'inline-block',
+        verticalAlign: 'text-bottom',
+        marginLeft: '0.4em',
+        marginBottom: '2px',
+        color: '#888'
+      }}
+      aria-label="External link"
+      role="img"
+    >
+      <path
+        d="M14.5 2.5H17.5V5.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 11L17.5 2.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17.5 10.5V15.5C17.5 16.0523 17.0523 16.5 16.5 16.5H4.5C3.94772 16.5 3.5 16.0523 3.5 15.5V4.5C3.5 3.94772 3.94772 3.5 4.5 3.5H9.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  return (
+    <div className="projects-slide">
+      <h1>{slide.title}</h1>
+      {slide.content && <p className="intro">{slide.content}</p>}
+      <div className="projects-grid">
+        {slide.projects.map((project, idx) => (
+          <div
+            key={idx}
+            className={`project-card ${isMobile && expandedCards[idx] ? 'expanded' : ''}`}
+          >
+            {project.url.startsWith('/') ? (
+              <Link
+                to={project.url}
+                className="project-image-link"
+                aria-label={`Navigate to ${project.title}`}
+                onClick={(e) => handleCardClick(project, idx, e)}
+              >
+                {/* Empty link for click handling */}
+              </Link>
+            ) : (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-image-link"
+                aria-label={`Open ${project.title}`}
+                onClick={(e) => handleCardClick(project, idx, e)}
+              >
+                {/* Empty link for click handling */}
+              </a>
+            )}
+            <div className="project-image-container">
+              <div
+                className="project-image"
+                style={{
+                  backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'top center',
+                  width: '100%',
+                  height: '100%'
+                }}
+              ></div>
+            </div>
+            <div className="project-content">
+              <h3 className="project-title">
+                {project.title}
+              </h3>
+              <div className={`project-details ${isMobile ? 'mobile' : ''}`}>
+                <p className="project-description">
+                  {project.description}
+                  {!project.url.startsWith('/') && <ExternalLinkIcon />}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 // Main App Component
 function App() {
@@ -1589,47 +1735,7 @@ function renderSlide(slide) {
       );
     
     case 'projects':
-      return (
-        <div className="projects-slide">
-          <h1>{slide.title}</h1>
-          {slide.content && <p className="intro">{slide.content}</p>}
-          <div className="projects-grid">
-            {slide.projects.map((project, idx) => (
-              <div key={idx} className="project-card">
-                {project.url.startsWith('/') ? (
-                  <Link to={project.url} className="project-image-link" aria-label={`Navigate to ${project.title}`}>
-                    {/* This empty link covers the entire card and makes it all clickable */}
-                  </Link>
-                ) : (
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-image-link" aria-label={`Open ${project.title}`}>
-                    {/* This empty link covers the entire card and makes it all clickable */}
-                  </a>
-                )}
-                <div className="project-image-container">
-                  <div 
-                    className="project-image" 
-                    style={{
-                      backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'top center',
-                      width: '100%',
-                      height: '100%'
-                    }}
-                  ></div>
-                </div>
-                <div className="project-content">
-                  <h3 className="project-title">
-                    {project.title}
-                  </h3>
-                  <div className="project-details">
-                    <p className="project-description">{project.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
+      return <ProjectsSlide slide={slide} />;
     
     case 'comparison':
       return (
