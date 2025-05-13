@@ -13,7 +13,7 @@ const presentationData = {
         {
           type: "projects",
           title: "Welcome",
-          content: "A collection of my thoughts on AI, my research, and my coding experiments.",
+          content: "An on-going collection of my thoughts on AI, my research, and my coding experiments.",
           isHomepage: true,
           projects: [
             {
@@ -775,7 +775,29 @@ function Home() {
     }
   }, [navigate]);
   
-  return <div className="loading">Loading presentation...</div>;
+  // Get the first section's first slide (homepage content)
+  const homepageSlide = presentationData.sections[0]?.slides[0];
+  
+  if (!homepageSlide) {
+    return <div className="loading">Loading presentation...</div>;
+  }
+  
+  return (
+    <div style={{ 
+      height: '100vh', 
+      display: 'flex', 
+      flexDirection: 'column',
+      overflow: 'hidden' // Prevent scrolling on the container
+    }}>
+      <div style={{ 
+        flex: 1,
+        overflowY: 'auto', // Allow scrolling only on the content
+        overflowX: 'hidden'
+      }}>
+        {renderSlide(homepageSlide)}
+      </div>
+    </div>
+  );
 }
 
 // Section Component
