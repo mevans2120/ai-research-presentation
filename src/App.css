@@ -1713,7 +1713,8 @@ body {
   color: #333;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  height: 220px;
+  height: 220px !important;
+  min-height: 220px !important;
   display: flex;
   flex-direction: column;
   position: relative;

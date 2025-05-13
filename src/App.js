@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate, useLocation } from 'react-router-dom';
 import './App.css';
 import ReactMarkdown from 'react-markdown';
+import { initializeGA, trackPageView } from './components/GoogleAnalytics';
+import GoogleAnalyticsScript from './components/GoogleAnalyticsScript';
+
+// Initialize Google Analytics with your measurement ID
+// Replace 'G-XXXXXXXXXX' with your actual measurement ID
+initializeGA('G-XXXXXXXXXX');
 
 // Main presentation data structure
 const presentationData = {
@@ -891,17 +897,23 @@ function ProjectsSlide({ slide }) {
 
 // Main App Component
 function App() {
+  const location = useLocation();
+  
+  // Track page views when location changes
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location]);
+
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/section/:sectionId" element={<Section />} />
-          <Route path="/section/:sectionId/:slideIndex" element={<SlideView />} />
-          <Route path="/section/:sectionId/subsection/:subsectionId/:slideIndex" element={<SlideView />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <GoogleAnalyticsScript />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/section/:sectionId" element={<Section />} />
+        <Route path="/section/:sectionId/:slideIndex" element={<SlideView />} />
+        <Route path="/section/:sectionId/subsection/:subsectionId/:slideIndex" element={<SlideView />} />
+      </Routes>
+    </div>
   );
 }
 
