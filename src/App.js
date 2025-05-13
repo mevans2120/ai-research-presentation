@@ -13,7 +13,7 @@ const presentationData = {
         {
           type: "projects",
           title: "Welcome",
-          content: "An on-going collection of my thoughts on AI, my research, and my coding experiments.",
+          content: "A collection of my research, my thoughts, and my coding experiments with AI.",
           isHomepage: true,
           projects: [
             {
@@ -176,7 +176,7 @@ const presentationData = {
             },
             {
               type: "finding",
-              title: "Several felt a connection with AI, valuing its manner, though most found AI over-confident.",
+              title: "Several felt a connection with AI, valuing its manner. Though, most found AI over-confident.",
               points: [
                 "Several commented on how the agents mirrors the tone you approach your prompts with, and this led them to engage more deeply and frequently.",
                 "Many commented on how confident AI are in their solution whether they are right or wrong",

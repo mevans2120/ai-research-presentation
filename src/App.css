@@ -360,15 +360,41 @@ body {
   box-sizing: border-box;
 }
 
-/* Specific handling for blog-style pages */
+/* Specific handling for blog-style pages and research/methodology slides */
 .vibe-coder-slide, 
 .thought-experiment-slide,
 .links-slide,
-.text-slide.introduction {
+.text-slide.introduction,
+.methodology-slide,
+.finding-slide,
+.hypothesis-slide {
   overflow-y: auto !important;
   height: auto !important;
   max-height: none !important;
   padding-bottom: 80px !important;
+}
+
+/* Mobile styles for research and methodology slides */
+@media (max-width: 768px) {
+  .methodology-slide,
+  .finding-slide,
+  .hypothesis-slide {
+    height: auto !important;
+    min-height: calc(100vh - var(--header-height) - 60px);
+    overflow-y: auto !important;
+    padding-bottom: 120px !important; /* Extra padding for mobile */
+  }
+
+  .methodology-slide .methodology-content,
+  .finding-slide .finding-content,
+  .hypothesis-slide .hypothesis-columns {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .slide-content {
+    padding-bottom: 120px; /* Extra padding on mobile */
+  }
 }
 
 /* Fix content container for these pages */
@@ -529,20 +555,40 @@ body {
 /* Responsive styling for mobile */
 @media (max-width: 768px) {
   .section-cover-cards {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem;
+    justify-content: center;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  
   .section-card {
     width: 100%;
-    max-width: 100%;
+    max-width: 400px;
+    margin: 0 0 1.5rem 0;
+    box-sizing: border-box;
   }
   
   .section-cover-body {
     font-size: 1.1rem;
     padding: 0 1rem;
     margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .section-cover-cards {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  .section-card {
+    max-width: 95vw;
+    width: 100%;
+    margin: 0 0 1.2rem 0;
+    box-sizing: border-box;
   }
 }
 
@@ -2376,5 +2422,17 @@ main.slide-content.comparison-slide {
 
   .slide-view.first-slide-active .project-content {
     padding: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .section-cover-cards {
+    padding: 0;
+  }
+  .section-card {
+    max-width: 95vw;
+    width: 100%;
+    margin: 0 auto 1.2rem auto;
+    box-sizing: border-box;
   }
 } 
