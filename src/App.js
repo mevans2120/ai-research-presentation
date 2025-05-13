@@ -60,8 +60,8 @@ const presentationData = {
           subtitle: "",
           cards: [
             {
-              title: "Hypothesis",
-              content: "AI is a productivity super power for this audience, but they aren't sure where it will be in 5 years."
+              title: "Hypothesis & Methodology",
+              content: "AI is a productivity super power for this audience, but they aren't sure where it will be in 5 years. I spoke with 13 colleagues, of various backgrounds & roles."
             },
             {
               title: "Key Findings",
@@ -497,7 +497,7 @@ const presentationData = {
         {
           type: "links",
           title: "Vibe Coding",
-          content: "Vibe coding is where you ask an agent to build you what you want instead of asking a developer… At least that is what it is for me.",
+          content: "Vibe coding is where you ask an agent to build you what you want instead of asking a designer and a developer…",
           links: [
             {
               text: "My LLM Codegen Workflow (ATM)",
@@ -570,7 +570,7 @@ const presentationData = {
           subtitle: "",
           cards: [
             {
-              title: "AI-Assisted Development",
+              title: "My Vibe Coding Workflow",
               content: "My approach to building applications using AI tools, from requirement gathering and design to implementation and refinement, with tips for effective collaboration with AI assistants."
             },
             {
@@ -621,8 +621,8 @@ const presentationData = {
         },
         {
           type: "projects",
-          title: "Current Projects",
-          content: "Here are some of the projects I've created:",
+          title: "My Project Showcase",
+          content: "Here are some of the projects I've created with AI:",
           projects: [
             {
               title: "D&D Initiative Tracker",
@@ -631,20 +631,20 @@ const presentationData = {
               imageUrl: "/dnd-tracker.png"
             },
             {
-              title: "Mom's Website",
-              description: "After building the Initiative Tracker and the POC for the voice-activated kitchen timer, I turned to my mom's website. She's a shaman who offers spiritual healing, as you can see from the site. One note: the site currently has some technical issues due to how I used the agentic tools. I passed the code from one tool to another and ended up with three global CSS files—not ideal. I'm hoping to refactor this once the vibe coding tools (and my patience with refactoring them) improve.",
+              title: "Karuna's Website",
+              description: "After building the Initiative Tracker and the POC for the voice-activated kitchen timer, I turned to my mom Karuna's website. She's a shaman who offers spiritual healing, as you can see from the site. One note: the site currently has some technical issues due to how I used the agentic tools. I passed the code from one tool to another and ended up with three global CSS files—not ideal. I'm hoping to refactor this once the vibe coding tools (and my patience with refactoring them) improve. This is still a work in progress",
               url: "https://karuna-chi.vercel.app/",
               imageUrl: "/karuna.png"
             },
             {
               title: "Voice Activated Kitchen Timer POC",
-              description: "As someone who loves to cook and loves using Alexa's kitchen timer… but doesn't love having an Amazon listening device in the house. I wanted to build a voice-activated kitchen timer that doesn't connect to the internet. This is a proof of concept and the first vibe coding project I worked on. If you haven't used Alexa or Google Home in the kitchen, voice is really the best way for me to interact with a timer. My hands are often busy, dirty, or full, and I'll be running around the kitchen yelling, \"Alexa, set a timer for five minutes, please!\"",
+              description: "As someone who loves to cook and loves using Alexa's kitchen timer… but doesn't love having an Amazon listening device in the house. I wanted to build a voice-activated kitchen timer that doesn't connect to the internet. This is a proof of concept and the first vibe coding project I worked on. If you haven't used Alexa or Google Home in the kitchen, voice is really the best way for me to interact with a timer. My hands are often busy, dirty, or full, and I'll be running around the kitchen yelling, \"Alexa, set a timer for five minutes, please!\" This is a rough proof of concept",
               url: "https://voice-timer-2-mevans212.replit.app/",
               imageUrl: "/voice-timer.png"
             },
             {
-              title: "This Presentation",
-              description: "I created this presentation using Claude Sonnet 3.7 to help with the design, then brought it into Cursor with Claude Sonnet 3.7 to build it out. It's been the most straightforward project I've completed—and the codebase reflects that. While I still had to give a lot of direction on micro-interactions and padding, the agent got most of the big things right.",
+              title: "This Workbook App",
+              description: "I created this presentation using Claude Sonnet 3.7 to help with the design, then brought it into Cursor with Claude Sonnet 3.7 to build it out. It was the most straightforward project I've completed. While I still had to give a lot of direction on micro-interactions and padding, the agent got most of the big things right at first. Optimizing at the end was painful",
               url: "https://ai-research-presentation.vercel.app/section/intro/0",
               imageUrl: "/presentation.png"
             }
@@ -1140,7 +1140,7 @@ function SlideView() {
     <div className={`slide-view ${isFirstSlide ? 'first-slide-active' : ''} ${isLastSlide ? 'last-slide-active' : ''}`}>
       <header className="header">
         <div className="logo" onClick={() => navigate('/')}>
-          MEvans AI Workbook
+          M<span className="strikethrough-orange">Evans</span> AI <span className="strikethrough-orange">Workboo</span>k
         </div>
         <button className="menu-toggle" onClick={toggleMenu}>
           {menuOpen ? 'Close' : 'Menu'}
@@ -1289,6 +1289,8 @@ function renderSlide(slide) {
       );
     
     case 'section-cover':
+      // Make section-cover cards clickable: card 0 -> slide 1, card 1 -> slide 2, etc.
+      // To override, add a 'linkTo' property to the card object in the data, e.g. linkTo: '/section/your-section/3'
       return (
         <div className={`section-cover-slide ${slide.isSubsectionCover ? 'subsection-cover' : ''}`}>
           <div className="section-cover-content">
@@ -1296,12 +1298,27 @@ function renderSlide(slide) {
             {slide.subtitle && <h2>{slide.subtitle}</h2>}
             {slide.cards && !slide.isSubsectionCover && (
               <div className="section-cover-cards">
-                {slide.cards.map((card, index) => (
-                  <div className="section-card" key={index}>
-                    <h3>{card.title}</h3>
-                    <p>{card.content}</p>
-                  </div>
-                ))}
+                {slide.cards.map((card, index) => {
+                  // Default mapping: card 0 -> slide 1, card 1 -> slide 2, etc.
+                  const section = presentationData.sections.find(s => s.slides && s.slides.some(sl => sl === slide));
+                  let linkTo = null;
+                  if (card.linkTo) {
+                    linkTo = card.linkTo;
+                  } else if (section && section.slides[index + 1]) {
+                    linkTo = `/section/${section.id}/${index + 1}`;
+                  }
+                  const CardContent = (
+                    <div className="section-card" key={index} style={{ cursor: linkTo ? 'pointer' : 'default' }}>
+                      <h3>{card.title}</h3>
+                      <p>{card.content}</p>
+                    </div>
+                  );
+                  return linkTo ? (
+                    <Link to={linkTo} key={index} style={{ textDecoration: 'none', color: 'inherit' }}>
+                      {CardContent}
+                    </Link>
+                  ) : CardContent;
+                })}
               </div>
             )}
           </div>

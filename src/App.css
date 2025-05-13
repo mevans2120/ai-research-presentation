@@ -607,7 +607,7 @@ body {
 
 .hypothesis-slide .present {
   background-color: #fdf6f1;
-  border-left: 4px solid #DC9659;
+  border-left: 4px solid #DD4747;
 }
 
 .hypothesis-slide .future {
@@ -2201,4 +2201,20 @@ body .slide-controls .slide-progress-placeholder,
   .methodology-content {
     flex-direction: column;
   }
+}
+
+.strikethrough-orange {
+  position: relative;
+  display: inline-block;
+}
+.strikethrough-orange::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 55%; /* Adjust as needed to match the middle of the text */
+  height: 2.67px; /* 2pt */
+  background: #DD4747;
+  z-index: 1;
+  pointer-events: none;
 } 
