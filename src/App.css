@@ -906,6 +906,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .project-card {
@@ -1544,10 +1545,33 @@ body {
   }
 
   .slide-view.first-slide-active .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1rem 0;
-    overflow-y: auto; /* Ensure scrolling on mobile */
+    display: grid !important; /* Force grid display */
+    grid-template-columns: 1fr !important; /* Force single column */
+    grid-template-rows: auto !important; /* Allow rows to size naturally */
+    gap: 1rem !important; /* Smaller gap on mobile */
+    padding: 1rem !important; /* Consistent padding */
+    margin: 20px auto !important; /* Reduced margin */
+    max-width: 100% !important; /* Full width on mobile */
+  }
+
+  .slide-view.first-slide-active .project-card {
+    height: auto !important;
+    min-height: 200px !important; /* Reduced minimum height */
+    margin-bottom: 1rem !important;
+    width: 100% !important; /* Ensure full width */
+  }
+
+  .slide-view.first-slide-active .project-content {
+    padding: 1.25rem !important; /* Slightly reduced padding */
+  }
+
+  .slide-view.first-slide-active .project-title {
+    font-size: 20px !important; /* Slightly smaller title */
+    margin-bottom: 10px !important;
+  }
+
+  .slide-view.first-slide-active .project-description {
+    font-size: 14px !important; /* Slightly smaller description */
   }
 }
 
@@ -2231,4 +2255,79 @@ main.slide-content.comparison-slide {
   font-weight: 700;
   /* Subtler bold effect for arrows, 1px stroke */
   text-shadow: 1px 0 0 #12265F, 0 1px 0 #12265F;
+}
+
+/* Mobile styles for projects grid */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .project-card {
+    height: auto;
+    min-height: 300px;
+  }
+
+  .project-content {
+    opacity: 1;
+    transform: none;
+    padding: 1rem;
+  }
+
+  .project-details {
+    opacity: 1;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* Specific styles for homepage on mobile */
+  .slide-view.first-slide-active .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .slide-view.first-slide-active .project-card {
+    height: auto;
+    min-height: 300px;
+    margin-bottom: 1rem;
+  }
+
+  .slide-view.first-slide-active .project-content {
+    opacity: 1;
+    transform: none;
+    padding: 1rem;
+  }
+
+  .slide-view.first-slide-active .project-details {
+    opacity: 1;
+  }
+
+  .slide-view.first-slide-active .project-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* Homepage specific mobile styles */
+@media (max-width: 768px) {
+  .slide-view.first-slide-active .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .slide-view.first-slide-active .project-card {
+    height: auto;
+    min-height: 180px;
+  }
+
+  .slide-view.first-slide-active .project-content {
+    padding: 1.25rem;
+  }
 } 
