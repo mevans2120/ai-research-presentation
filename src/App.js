@@ -954,17 +954,8 @@ function Home() {
   }
   
   return (
-    <div style={{ 
-      height: '100vh', 
-      display: 'flex', 
-      flexDirection: 'column',
-      overflow: 'hidden' // Prevent scrolling on the container
-    }}>
-      <div style={{ 
-        flex: 1,
-        overflowY: 'auto', // Allow scrolling only on the content
-        overflowX: 'hidden'
-      }}>
+    <div className="homepage-wrapper">
+      <div className="homepage-content">
         {renderSlide(homepageSlide)}
       </div>
     </div>
@@ -1732,8 +1723,8 @@ function renderSlide(slide, location) {
                 // Special handling for 'Develop a Concept' section with image
                 if (section.title === 'Develop a Concept' && section.imageUrl) {
                   return (
-                    <div key={idx} className="section develop-concept-section" style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '2rem', flexWrap: 'wrap' }}>
-                      <div className="content" style={{ flex: 2, minWidth: 0 }}>
+                    <div key={idx} className="section develop-concept-section">
+                      <div className="content develop-concept-content">
                         {section.content.split('\n').map((paragraph, pIdx) => (
                           <p key={pIdx}>{paragraph}</p>
                         ))}
