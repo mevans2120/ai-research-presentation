@@ -2530,4 +2530,14 @@ main.slide-content.comparison-slide {
   .text-slide.about-slide .content {
     column-count: 1;
   }
+}
+
+.minimal-link {
+  color: inherit; /* Inherits the color from its parent */
+  text-decoration: underline; /* Always underlined */
+}
+
+.minimal-link:hover {
+  /* text-decoration: underline; */ /* This is now redundant */
+  /* Optional: you could add a slightly different color or other effect on hover if you prefer */
 } 

@@ -309,7 +309,7 @@ const presentationData = {
           title: "Chatphone Concept",
           content: `<p>While talking with one of the research participants, we got onto the topic of agentic chat becoming a contextual layer between the tools your phone provides and how you access and use those tools.</p>
 
-<p>As someone who designed and built the Before Launcher, finding better ways to use our smartphones is a catnip-like obsession for me.</p>
+<p>As someone who designed and built the <a href="https://beforelabs.com/" target="_blank" rel="noopener noreferrer" class="minimal-link">Before Launcher</a>, finding better ways to use our smartphones is a catnip-like obsession for me.</p>
 
 <p>The participant and I, exchanging texts, landed on the idea of a conceptually aware phone… one whose interface changes based on your "mode." While not a new idea by any means, AI seems uniquely suited to help make this a reality.</p>
 
