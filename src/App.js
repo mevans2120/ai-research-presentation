@@ -183,7 +183,7 @@ const presentationData = {
             },
             {
               type: "finding",
-              title: "Several felt a connection with AI, valuing its manner. Though, most found AI over-Caconfident.",
+              title: "Several felt a connection with AI, valuing its manner. Though, most found AI over-confident.",
               points: [
                 "Several commented on how the agents mirrors the tone you approach your prompts with, and this led them to engage more deeply and frequently.",
                 "Many commented on how confident AI are in their solution whether they are right or wrong",
