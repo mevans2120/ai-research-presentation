@@ -4,10 +4,28 @@ import './App.css';
 import ReactMarkdown from 'react-markdown';
 import { initializeGA, trackPageView } from './components/GoogleAnalytics';
 import GoogleAnalyticsScript from './components/GoogleAnalyticsScript';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { GoogleAnalyticsProvider, useGoogleAnalytics } from './components/GoogleAnalytics'; // Assuming this is the last import before presentationData
 
 // Initialize Google Analytics with your measurement ID
 // Replace 'G-XXXXXXXXXX' with your actual measurement ID
 initializeGA('G-XXXXXXXXXX');
+
+const EVERYONE_ELSE_ABOUT_CONTENT = `Over the past few months, I've taken time to dig deeply into AI-powered coding tools. I've dug into them as a user, and as a researcher trying to understand their utility and their trajectory. My goal wasn't just to build faster, but to assess whether these tools can meaningfully shift how digital products get designed and shipped—and what that might mean for teams like mine.
+
+Until recently, I hadn't had time to explore AI development tools in depth. I'd been fully focused on launching complex digital systems for a high-profile hospitality experience. But after wrapping up that project, I had the space to experiment…
+
+I started by testing whether a technical non-engineer type person (me) could use AI to go from concept to working product without development assistance. The results were eye-opening. Tools like Claude and Cursor are already capable of accelerating workflows that used to require full teams. It raised a series of deeper questions:
+
+* What kinds of products are now possible that weren't viable before?
+
+* How are my peers—designers, engineers, PMs—actually using these tools today?
+
+* Where do they see the biggest potential? The biggest risks?
+
+* Will these tools augment teams… or replace some of them?
+
+This exploration has turned into an ongoing research effort. Through interviews, prototyping, and tool audits, I'm mapping out not just what AI coding tools can do today, and where I think they are likely headed.`;
 
 // Main presentation data structure
 const presentationData = {
@@ -983,6 +1001,8 @@ function SlideView() {
   const [globalSlideInfo, setGlobalSlideInfo] = useState({ current: 0, total: 0 });
   const navigate = useNavigate();
   const menuRef = useRef(null);
+  const location = useLocation();
+  const hash = location.hash || '';
   
   // Function to toggle subsection expansion
   const toggleSubsection = (sectionId, subsectionId) => {
@@ -1168,7 +1188,7 @@ function SlideView() {
       
       if (currentSlideIdx < currentSubsection.slides.length - 1) {
         // Go to next slide in current subsection
-        navigate(`/section/${sectionId}/subsection/${currentSubsection.id}/${currentSlideIdx + 1}`);
+        navigate(`/section/${sectionId}/subsection/${currentSubsection.id}/${currentSlideIdx + 1}${hash}`);
       } else {
         // Find the next subsection or move to the next section
         const subsectionIndex = currentSection.subsections.findIndex(sub => sub.id === currentSubsection.id);
@@ -1176,13 +1196,13 @@ function SlideView() {
         if (subsectionIndex < currentSection.subsections.length - 1) {
           // Go to the first slide of the next subsection
           const nextSubsection = currentSection.subsections[subsectionIndex + 1];
-          navigate(`/section/${sectionId}/subsection/${nextSubsection.id}/0`);
+          navigate(`/section/${sectionId}/subsection/${nextSubsection.id}/0${hash}`);
         } else {
           // Go to first slide of the next section
           const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
           if (currentSectionIdx < presentationData.sections.length - 1) {
             const nextSection = presentationData.sections[currentSectionIdx + 1];
-            navigate(`/section/${nextSection.id}/0`);
+            navigate(`/section/${nextSection.id}/0${hash}`);
           }
         }
       }
@@ -1192,16 +1212,16 @@ function SlideView() {
       
       if (currentSlideIdx < currentSection.slides.length - 1) {
         // Go to next slide in current section
-        navigate(`/section/${sectionId}/${currentSlideIdx + 1}`);
+        navigate(`/section/${sectionId}/${currentSlideIdx + 1}${hash}`);
       } else if (currentSection.subsections && currentSection.subsections.length > 0) {
         // Go to first slide of the first subsection
-        navigate(`/section/${sectionId}/subsection/${currentSection.subsections[0].id}/0`);
+        navigate(`/section/${sectionId}/subsection/${currentSection.subsections[0].id}/0${hash}`);
       } else {
         // Go to first slide of next section
         const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
         if (currentSectionIdx < presentationData.sections.length - 1) {
           const nextSection = presentationData.sections[currentSectionIdx + 1];
-          navigate(`/section/${nextSection.id}/0`);
+          navigate(`/section/${nextSection.id}/0${hash}`);
         }
       }
     }
@@ -1216,7 +1236,7 @@ function SlideView() {
       
       if (currentSlideIdx > 0) {
         // Go to previous slide in current subsection
-        navigate(`/section/${sectionId}/subsection/${currentSubsection.id}/${currentSlideIdx - 1}`);
+        navigate(`/section/${sectionId}/subsection/${currentSubsection.id}/${currentSlideIdx - 1}${hash}`);
       } else {
         // Find the previous subsection or move to the main section slides
         const subsectionIndex = currentSection.subsections.findIndex(sub => sub.id === currentSubsection.id);
@@ -1225,11 +1245,11 @@ function SlideView() {
           // Go to the last slide of the previous subsection
           const prevSubsection = currentSection.subsections[subsectionIndex - 1];
           const lastSlideIndex = prevSubsection.slides.length - 1;
-          navigate(`/section/${sectionId}/subsection/${prevSubsection.id}/${lastSlideIndex}`);
+          navigate(`/section/${sectionId}/subsection/${prevSubsection.id}/${lastSlideIndex}${hash}`);
         } else {
           // Go to the last slide of the main section
           const lastMainSlideIndex = currentSection.slides.length - 1;
-          navigate(`/section/${sectionId}/${lastMainSlideIndex}`);
+          navigate(`/section/${sectionId}/${lastMainSlideIndex}${hash}`);
         }
       }
     } else {
@@ -1238,7 +1258,7 @@ function SlideView() {
       
       if (currentSlideIdx > 0) {
         // Go to previous slide in current section
-        navigate(`/section/${sectionId}/${currentSlideIdx - 1}`);
+        navigate(`/section/${sectionId}/${currentSlideIdx - 1}${hash}`);
       } else {
         // Go to last slide of previous section or its last subsection
         const currentSectionIdx = presentationData.sections.findIndex(s => s.id === sectionId);
@@ -1249,11 +1269,11 @@ function SlideView() {
             // Go to the last slide of the last subsection
             const lastSubsection = prevSection.subsections[prevSection.subsections.length - 1];
             const lastSlideIndex = lastSubsection.slides.length - 1;
-            navigate(`/section/${prevSection.id}/subsection/${lastSubsection.id}/${lastSlideIndex}`);
+            navigate(`/section/${prevSection.id}/subsection/${lastSubsection.id}/${lastSlideIndex}${hash}`);
           } else {
             // Go to the last slide of the previous section
             const lastSlideIndex = prevSection.slides.length - 1;
-            navigate(`/section/${prevSection.id}/${lastSlideIndex}`);
+            navigate(`/section/${prevSection.id}/${lastSlideIndex}${hash}`);
           }
         }
       }
@@ -1332,7 +1352,7 @@ function SlideView() {
                     // Toggle expanded section state
                     if (expandedSection === section.id) {
                       // If this section is already expanded, navigate to it
-                      navigate(`/section/${section.id}/0`);
+                      navigate(`/section/${section.id}/0${hash}`);
                     } else {
                       // Otherwise, expand this section without navigating
                       setExpandedSection(section.id);
@@ -1351,7 +1371,7 @@ function SlideView() {
                             <div 
                               className="slide-link"
                               onClick={() => {
-                                navigate(`/section/${section.id}/${slideIdx}`);
+                                navigate(`/section/${section.id}/${slideIdx}${hash}`);
                                 setMenuOpen(false); // Always close menu when clicking on a slide
                               }}
                               style={{backgroundColor: 'white'}}
@@ -1393,7 +1413,7 @@ function SlideView() {
                                       <div 
                                         className="slide-link"
                                         onClick={() => {
-                                          navigate(`/section/${section.id}/subsection/${subsection.id}/${slideIdx}`);
+                                          navigate(`/section/${section.id}/subsection/${subsection.id}/${slideIdx}${hash}`);
                                           setMenuOpen(false);
                                         }}
                                       >
@@ -1426,9 +1446,11 @@ function SlideView() {
         </>
       )}
       
-      <main className={`slide-content ${currentSlide.type}-slide`}>
-        {renderSlide(currentSlide)}
-      </main>
+      {currentSlide && (
+        <main className={`slide-content ${currentSlide.type}-slide ${currentSlide.type === 'cover' && currentSlide.isHomepage ? 'homepage-content' : ''}`}>
+          {renderSlide(currentSlide, location)}
+        </main>
+      )}
       
       <div className="slide-controls">
         <button className="prev-slide" onClick={goToPrevSlide}>←</button>
@@ -1442,7 +1464,7 @@ function SlideView() {
                 key={section.id}
                 className={`section-dot${isCurrent ? ' current' : ''}`}
                 aria-label={`Go to section: ${section.title}`}
-                onClick={() => navigate(`/section/${section.id}/0`)}
+                onClick={() => navigate(`/section/${section.id}/0${hash}`)}
                 disabled={isCurrent}
               />
             );
@@ -1455,7 +1477,7 @@ function SlideView() {
 }
 
 // Helper function to render different slide types
-function renderSlide(slide) {
+function renderSlide(slide, location) {
   switch (slide.type) {
     case 'cover':
       // Check if this is the first slide (title slide)
@@ -1508,32 +1530,32 @@ function renderSlide(slide) {
         </div>
       );
     
-    case 'text':
-      // Check if this is the introduction slide (first text slide in the first section)
-      const isIntroduction = 
-        presentationData.sections[0] && 
-        presentationData.sections[0].slides && 
-        presentationData.sections[0].slides.some((s, idx) => s.type === 'text' && idx === 1 && s === slide);
-      // Add markdown bold support (**text**)
-      function renderMarkdownBold(text) {
-        return text.split(/(\*\*[^*]+\*\*)/g).map((part, idx) => {
-          if (/^\*\*[^*]+\*\*$/.test(part)) {
-            return <strong key={idx}>{part.slice(2, -2)}</strong>;
-          }
-          return part;
-        });
+    case 'text': {
+      let contentToRender = slide.content;
+      let aboutContentTypeClass = '';
+
+      if (slide.title === "About") {
+        if (location && location.hash === "#friendsandfamily") {
+          contentToRender = slide.content;
+          aboutContentTypeClass = 'friends-family-content';
+        } else {
+          contentToRender = EVERYONE_ELSE_ABOUT_CONTENT;
+          aboutContentTypeClass = 'everyone-else-content';
+        }
       }
+
+      const baseClassName = "text-slide";
+      const titleSpecificClass = slide.title === "Introduction" ? "introduction" : (slide.title === "About" ? "about-slide" : "");
+      
       return (
-        <div className={`text-slide ${isIntroduction ? 'introduction' : ''}`}>
-          {slide.title && <h1>{slide.title}</h1>}
+        <div className={`${baseClassName} ${titleSpecificClass} ${aboutContentTypeClass}`.trim().replace(/\s+/g, ' ')}>
+          <h1>{slide.title}</h1>
           <div className="content">
-            {slide.content.split('\n').map((paragraph, idx) => (
-              <p key={idx}>{renderMarkdownBold(paragraph)}</p>
-            ))}
+            <ReactMarkdown>{contentToRender}</ReactMarkdown>
           </div>
         </div>
       );
-    
+    }
     case 'toc':
       // Create clickable TOC that matches navigation
       return (
