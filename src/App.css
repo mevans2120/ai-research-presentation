@@ -1609,9 +1609,9 @@ body {
 }
 
 /* First slide (homepage) specific styles */
-.slide-view.first-slide-active {
-  position: relative; /* Keep relative for proper stacking */
-  overflow: hidden; /* Hide overflow on the container */
+.slide-view.first-slide-active,
+.slide-view.first-slide-active .slide-content {
+  background-color: #223061 !important;
 }
 
 /* Add a fixed background element */
@@ -1622,7 +1622,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #4547E0;
+  background-color: #223061;
   z-index: 0;
 }
 
@@ -2589,4 +2589,14 @@ main.slide-content.comparison-slide {
     padding-right: 1rem;
     box-sizing: border-box;
   }
+}
+
+.slide-view.first-slide-active .slide-content.projects-slide {
+  background: #223061 !important;
+}
+
+.slide-view.first-slide-active .projects-slide,
+.slide-view.first-slide-active .projects-slide h1,
+.slide-view.first-slide-active .projects-slide .intro {
+  color: #fff !important;
 } 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import './App.css';
 import ReactMarkdown from 'react-markdown';
 import { initializeGA, trackPageView } from './components/GoogleAnalytics';
@@ -932,42 +932,11 @@ function App() {
     <div className="App">
       <GoogleAnalyticsScript />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to={`/section/${presentationData.sections[0].id}/0`} replace />} />
         <Route path="/section/:sectionId" element={<Section />} />
         <Route path="/section/:sectionId/:slideIndex" element={<SlideView />} />
         <Route path="/section/:sectionId/subsection/:subsectionId/:slideIndex" element={<SlideView />} />
       </Routes>
-    </div>
-  );
-}
-
-// Home Component
-function Home() {
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    // Redirect to the first section
-    if (presentationData.sections.length > 0) {
-      navigate(`/section/${presentationData.sections[0].id}/0`);
-    }
-    // Always scroll window to top on mount, after DOM updates
-    requestAnimationFrame(() => {
-      window.scrollTo(0, 0);
-    });
-  }, [navigate]);
-  
-  // Get the first section's first slide (homepage content)
-  const homepageSlide = presentationData.sections[0]?.slides[0];
-  
-  if (!homepageSlide) {
-    return <div className="loading">Loading presentation...</div>;
-  }
-  
-  return (
-    <div className="homepage-wrapper">
-      <div className="homepage-content">
-        {renderSlide(homepageSlide, undefined, navigate)}
-      </div>
     </div>
   );
 }
@@ -1353,8 +1322,10 @@ function SlideView() {
   return (
     <div className={`slide-view ${isFirstSlide ? 'first-slide-active' : ''} ${isLastSlide ? 'last-slide-active' : ''}`}>
       <header className="header">
-        <div className="logo" onClick={() => navigate('/')}>
-          M<span className="strikethrough-orange">Evans</span> AI <span className="strikethrough-orange">Workboo</span>k
+        <div className="logo" onClick={() => navigate('/')}
+             style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+          <img src="/MEvans.svg" alt="MEvans Logo" style={{ height: '32px', width: '32px', marginRight: 8 }} />
+          MEvans AI Workbook
         </div>
         <button className="menu-toggle" onClick={toggleMenu}>
           {menuOpen ? 'Close' : 'Menu'}
@@ -1510,7 +1481,7 @@ function renderSlide(slide, location, navigate) {
       // Make only the highlighted 'Welcome' text clickable as a link to the About page
       if (isFirstSlide && slide.title === 'Welcome') {
         return (
-          <div className={`cover-slide inverted`}>
+          <div className={`cover-slide inverted`} style={{ backgroundColor: '#223061' }}>
             <a
               href="#about"
               onClick={e => {
@@ -1533,8 +1504,8 @@ function renderSlide(slide, location, navigate) {
                 cursor: 'pointer',
                 marginBottom: '0.5rem',
                 transition: 'background 0.2s',
-                pointerEvents: 'auto', // Force pointer events
-                zIndex: 10000, // Ensure on top
+                pointerEvents: 'auto',
+                zIndex: 10000,
                 position: 'relative'
               }}
               tabIndex={0}
@@ -1547,7 +1518,7 @@ function renderSlide(slide, location, navigate) {
         );
       }
       return (
-        <div className={`cover-slide ${isFirstSlide ? 'inverted' : ''}`}>
+        <div className={`cover-slide ${isFirstSlide ? 'inverted' : ''}`} style={isFirstSlide ? { backgroundColor: '#223061' } : {}}>
           <h1>{slide.title}</h1>
           {slide.subtitle && <h2>{slide.subtitle}</h2>}
         </div>
