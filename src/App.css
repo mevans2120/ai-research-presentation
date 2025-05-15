@@ -279,11 +279,11 @@ body {
   margin-right: 0.5rem;
   color: #020746;
   display: inline-block;
-  transition: transform 0.2s ease;
+  /* transition: transform 0.2s ease; */
 }
 
 .subsection-title.expanded:before {
-  transform: rotate(90deg);
+  /* transform: rotate(90deg); */
 }
 
 .subsection-slides {
@@ -305,7 +305,7 @@ body {
   cursor: pointer;
   font-size: 0.85rem;
   padding: 0.25rem 0;
-  transition: color 0.2s ease;
+  /* transition: color 0.2s ease; */
 }
 
 .subsection-slide-item .slide-link:hover {
@@ -355,7 +355,7 @@ body {
   height: auto;
   min-height: 0;
   position: relative;
-  overflow-y: auto; /* Show scrollbar only when needed */
+  /* overflow-y: auto; */ /* Let the window handle scrolling */
   overflow-x: hidden;
   box-sizing: border-box;
 }
@@ -368,7 +368,7 @@ body {
 .methodology-slide,
 .finding-slide,
 .hypothesis-slide {
-  overflow-y: auto !important;
+  /* overflow-y: auto !important; */
   height: auto !important;
   max-height: none !important;
   padding-bottom: 80px !important;
@@ -381,7 +381,7 @@ body {
   .hypothesis-slide {
     height: auto !important;
     min-height: calc(100vh - var(--header-height) - 60px);
-    overflow-y: auto !important;
+    /* overflow-y: auto !important; */
     overflow-x: hidden !important;
     padding-bottom: 120px !important;
     box-sizing: border-box;
@@ -392,7 +392,7 @@ body {
   .hypothesis-slide .hypothesis-columns {
     flex-direction: column !important;
     height: auto !important;
-    overflow: visible !important;
+    /* overflow: visible !important; */
   }
 
   .slide-content {
@@ -404,7 +404,7 @@ body {
 .vibe-coder-slide .content,
 .thought-experiment-slide .content,
 .blog-format {
-  overflow: visible !important;
+  /* overflow: visible !important; */
 }
 
 /* Allow section covers to maintain full-height appearance */
@@ -420,7 +420,7 @@ body {
   margin: 0;
   width: 100%;
   position: relative; /* Change from fixed to relative */
-  overflow-y: auto; /* Enable scrolling when content overflows */
+  /* overflow-y: auto; */ /* Enable scrolling when content overflows */
 }
 
 /* Headings in section cover slides */
@@ -628,7 +628,7 @@ body {
   display: block;
   width: 100%;
   padding: 0.5rem 0;
-  transition: color 0.2s;
+  /* transition: color 0.2s; */
 }
 
 .toc-slide .toc-link:hover {
@@ -1031,6 +1031,7 @@ body {
   overflow: hidden;
   background-color: #f5f5f5;
   position: relative;
+  height: 220px; /* Fixed height for desktop */
 }
 
 .project-image-container::after {
@@ -1046,7 +1047,7 @@ body {
 
 .project-image {
   width: 100%;
-  aspect-ratio: 16/9;
+  height: 220px; /* Fixed height for desktop */
   background-size: cover;
   background-position: center center;
   border-radius: 8px;
@@ -1370,7 +1371,7 @@ body {
 
 /* When a section-cover slide or the first slide is active, prevent scrolling */
 .slide-view {
-  overflow-y: auto; /* Show scrollbar only when needed */
+  /* overflow-y: auto; */ /* Show scrollbar only when needed */
   height: auto; /* Allow natural height */
 }
 
@@ -1399,7 +1400,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - var(--header-height) - 60px); /* Use min-height */
-  overflow-y: auto !important; /* Enable scrolling when needed */
+  /* overflow-y: auto !important; */ /* Enable scrolling when needed */
 }
 
 /* Regular slide content should be above divider slides */
@@ -1407,7 +1408,7 @@ body {
   position: relative;
   z-index: 5;
   min-height: calc(100vh - var(--header-height) - 60px); /* Use min-height */
-  overflow-y: auto; /* Enable scrolling when needed */
+  /* overflow-y: auto; */ /* Enable scrolling when needed */
 }
 
 /* Side click areas for navigation */
@@ -1636,7 +1637,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  overflow-y: auto; /* Only content scrolls */
+  /* overflow-y: auto; */ /* Only content scrolls */
 }
 
 .slide-view.first-slide-active .projects-slide .projects-grid {
@@ -1655,7 +1656,7 @@ body {
 @media (max-width: 768px) {
   .slide-view.first-slide-active .slide-content {
     padding: 1rem;
-    overflow-y: auto; /* Ensure scrolling on mobile */
+    /* overflow-y: auto; */ /* Ensure scrolling on mobile */
   }
 
   .slide-view.first-slide-active .projects-grid {
@@ -1817,11 +1818,11 @@ body {
   margin-right: 0.5rem;
   color: #020746;
   display: inline-block;
-  transition: transform 0.2s ease;
+  /* transition: transform 0.2s ease; */
 }
 
 .subsection-title.expanded:before {
-  transform: rotate(90deg);
+  /* transform: rotate(90deg); */
 }
 
 .subsection-slides {
@@ -1843,7 +1844,7 @@ body {
   cursor: pointer;
   font-size: 0.85rem;
   padding: 0.25rem 0;
-  transition: color 0.2s ease;
+  /* transition: color 0.2s ease; */
 }
 
 .subsection-slide-item .slide-link:hover {

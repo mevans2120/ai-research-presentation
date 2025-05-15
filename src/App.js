@@ -922,6 +922,11 @@ function App() {
     trackPageView(location.pathname);
   }, [location]);
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div className="App">
       <GoogleAnalyticsScript />
@@ -944,6 +949,10 @@ function Home() {
     if (presentationData.sections.length > 0) {
       navigate(`/section/${presentationData.sections[0].id}/0`);
     }
+    // Always scroll window to top on mount, after DOM updates
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
   }, [navigate]);
   
   // Get the first section's first slide (homepage content)
@@ -975,6 +984,10 @@ function Section() {
     } else {
       navigate('/');
     }
+    // Always scroll window to top on section navigation, after DOM updates
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
   }, [sectionId, navigate]);
   
   return <div className="loading">Loading section...</div>;
@@ -1292,6 +1305,21 @@ function SlideView() {
     };
   }, [handleKeyDown]);
   
+  // Scroll the slide-content container to top on route change
+  useEffect(() => {
+    console.log('[ScrollToTop] Effect triggered:', { sectionId, slideIndex, subsectionId, before: window.scrollY, body: document.body.scrollTop, docEl: document.documentElement.scrollTop });
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+      console.log('[ScrollToTop] After scrollTo(0,0):', {
+        window: window.scrollY,
+        body: document.body.scrollTop,
+        docEl: document.documentElement.scrollTop
+      });
+    });
+  }, [sectionId, slideIndex, subsectionId]);
+  
   if (!currentSection || !currentSlide) {
     // Backup approach to find the slide if state isn't working properly
     const section = presentationData.sections.find(s => s.id === sectionId);
@@ -1438,7 +1466,9 @@ function SlideView() {
       )}
       
       {currentSlide && (
-        <main className={`slide-content ${currentSlide.type}-slide ${currentSlide.type === 'cover' && currentSlide.isHomepage ? 'homepage-content' : ''}`}>
+        <main
+          className={`slide-content ${currentSlide.type}-slide ${currentSlide.type === 'cover' && currentSlide.isHomepage ? 'homepage-content' : ''}`}
+        >
           {renderSlide(currentSlide, location)}
         </main>
       )}
