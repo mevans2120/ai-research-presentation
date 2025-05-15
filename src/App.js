@@ -1290,6 +1290,23 @@ function SlideView() {
     });
   }, [sectionId, slideIndex, subsectionId]);
   
+  // Check if this is the first slide (title slide)
+  const isFirstSlide = 
+    presentationData.sections[0] && 
+    presentationData.sections[0].slides && 
+    presentationData.sections[0].slides[0] === currentSlide;
+  
+  // Always call this hook at the top level
+  useEffect(() => {
+    if (isFirstSlide) {
+      document.body.classList.add('first-slide-active');
+      document.documentElement.classList.add('first-slide-active');
+    } else {
+      document.body.classList.remove('first-slide-active');
+      document.documentElement.classList.remove('first-slide-active');
+    }
+  }, [isFirstSlide]);
+  
   if (!currentSection || !currentSlide) {
     // Backup approach to find the slide if state isn't working properly
     const section = presentationData.sections.find(s => s.id === sectionId);
@@ -1304,12 +1321,6 @@ function SlideView() {
     }
     return <div className="loading">Loading...</div>;
   }
-  
-  // Check if this is the first slide (title slide)
-  const isFirstSlide = 
-    presentationData.sections[0] && 
-    presentationData.sections[0].slides && 
-    presentationData.sections[0].slides[0] === currentSlide;
   
   // Check if this is the last slide of the last section
   const isLastSlide = 

@@ -1608,22 +1608,17 @@ body {
   padding-bottom: 30px;
 }
 
-/* First slide (homepage) specific styles */
+/* Ensure first slide (Welcome) is white and text is dark blue */
 .slide-view.first-slide-active,
-.slide-view.first-slide-active .slide-content {
-  background-color: #223061 !important;
+.slide-view.first-slide-active::before,
+.slide-view.first-slide-active .slide-content,
+.slide-view.first-slide-active .projects-slide {
+  background: #fff;
 }
 
-/* Add a fixed background element */
-.slide-view.first-slide-active::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #223061;
-  z-index: 0;
+.slide-view.first-slide-active .projects-slide h1,
+.slide-view.first-slide-active .projects-slide .intro {
+  color: #223061;
 }
 
 .slide-view.first-slide-active .slide-content {
@@ -2592,11 +2587,22 @@ main.slide-content.comparison-slide {
 }
 
 .slide-view.first-slide-active .slide-content.projects-slide {
-  background: #223061 !important;
+  background: #fff;
 }
 
 .slide-view.first-slide-active .projects-slide,
 .slide-view.first-slide-active .projects-slide h1,
 .slide-view.first-slide-active .projects-slide .intro {
-  color: #fff !important;
+  color: #223061;
+}
+
+body.first-slide-active, html.first-slide-active {
+  background: #fff;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE and Edge */
+}
+
+body.first-slide-active::-webkit-scrollbar,
+html.first-slide-active::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari and Opera */
 } 
