@@ -633,6 +633,7 @@ const presentationData = {
               content: "Using the concept, functional requirements, and task list, we get to work. There's quite a bit of micro-interaction tuning required to make things look and feel right. Below are a few tips and tricks for working with AI during the build phase:",
               bulletPoints: [
                 "Ask AI for help. If you are struggling to get what you want, ask the AI for potential reasons why. Those reasons are often super helpful.",
+                "If AI gives you a technical choice to make and you don't know the answer, I will ask it which one would be considered to be best practice and why.",
                 "The longer a chat thread gets, the worse the AI tends to perform. When I notice performance degrading, I start a new chat and ask the agent to review all work to date: requirements, code, etc.",
                 "Make sure the AI shows its thinking. Ask it to tell you how it plans to implement larger features before you start. The agent will often over-engineer a solution. It's well intentioned, but it can make the app worse.",
                 "Versioning is critical. Commit to Git frequently, as the AI has a short memory and can struggle to revert changes it made.",
@@ -965,7 +966,7 @@ function Home() {
   return (
     <div className="homepage-wrapper">
       <div className="homepage-content">
-        {renderSlide(homepageSlide)}
+        {renderSlide(homepageSlide, undefined, navigate)}
       </div>
     </div>
   );
@@ -1498,7 +1499,7 @@ function SlideView() {
 }
 
 // Helper function to render different slide types
-function renderSlide(slide, location) {
+function renderSlide(slide, location, navigate) {
   switch (slide.type) {
     case 'cover':
       // Check if this is the first slide (title slide)
@@ -1506,7 +1507,45 @@ function renderSlide(slide, location) {
         presentationData.sections[0] && 
         presentationData.sections[0].slides && 
         presentationData.sections[0].slides[0] === slide;
-      
+      // Make only the highlighted 'Welcome' text clickable as a link to the About page
+      if (isFirstSlide && slide.title === 'Welcome') {
+        return (
+          <div className={`cover-slide inverted`}>
+            <a
+              href="#about"
+              onClick={e => {
+                e.preventDefault();
+                const section = presentationData.sections[0];
+                if (section && section.slides[1]) {
+                  navigate(`/section/${section.id}/1`);
+                }
+              }}
+              style={{
+                display: 'inline-block',
+                background: 'rgba(255,255,255,0.5)',
+                color: '#fff',
+                fontWeight: 700,
+                fontSize: '3.5rem',
+                lineHeight: 1.1,
+                padding: '0 0.5em',
+                borderRadius: '6px',
+                textDecoration: 'none',
+                cursor: 'pointer',
+                marginBottom: '0.5rem',
+                transition: 'background 0.2s',
+                pointerEvents: 'auto', // Force pointer events
+                zIndex: 10000, // Ensure on top
+                position: 'relative'
+              }}
+              tabIndex={0}
+              aria-label="Go to About page"
+            >
+              {slide.title}
+            </a>
+            {slide.subtitle && <h2>{slide.subtitle}</h2>}
+          </div>
+        );
+      }
       return (
         <div className={`cover-slide ${isFirstSlide ? 'inverted' : ''}`}>
           <h1>{slide.title}</h1>
