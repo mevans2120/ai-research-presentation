@@ -1031,7 +1031,7 @@ body {
   overflow: hidden;
   background-color: #f5f5f5;
   position: relative;
-  height: 220px; /* Fixed height for desktop */
+  height: 400px; /* Fixed height for desktop */
 }
 
 .project-image-container::after {

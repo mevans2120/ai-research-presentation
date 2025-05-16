@@ -892,7 +892,7 @@ function ProjectsSlide({ slide }) {
                   backgroundSize: 'cover',
                   backgroundPosition: 'top center',
                   width: '100%',
-                  height: '100%'
+                  height: '400px'
                 }}
               ></div>
             </div>
