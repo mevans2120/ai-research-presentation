@@ -307,29 +307,7 @@ const presentationData = {
         {
           type: "thought-experiment",
           title: "Chatphone Concept",
-          content: `<p>While talking with one of the research participants, we got onto the topic of agentic chat becoming a contextual layer between the tools your phone provides and how you access and use those tools.</p>
-
-<p>As someone who designed and built the <a href="https://beforelabs.com/" target="_blank" rel="noopener noreferrer" class="minimal-link">Before Launcher</a>, finding better ways to use our smartphones is a catnip-like obsession for me.</p>
-
-<p>The participant and I, exchanging texts, landed on the idea of a conceptually aware phone… one whose interface changes based on your "mode." While not a new idea by any means, AI seems uniquely suited to help make this a reality.</p>
-
-<p>Diagram 1, at the top of this page, illustrates how this might work. After the ChatPhone onboards onto your primary usage contexts (a fascinating and likely ongoing process in itself), the phone's homescreen would display:</p>
-<ul>
-<li>The primary tools you're likely to use in that mode</li>
-<li>A digest of prioritized information and action based on your behavior and preferences.</li>
-<li>Quick access to agentic chat</li>
-</ul>
-<p>This type of phone could offer several benefits:</p>
-<ul>
-<li>Speed up how quickly you find things on your phone</li>
-<li>Reduce the need for repetitive decision-making (e.g., which delivery app or pizza place to choose)</li>
-<li>Minimize distractions from content or tools best reserved for other contexts</li>
-</ul>
-<p>Of course, using an agent as an intermediary introduces the risk of it missing key or critical content. That's why this concept feels better suited for a time when AI has matured to the point of being more reliable than you are at completing certain tasks.</p>
-
-<p>Also, while I doubt toolmakers like DoorDash, Lyft, Google, Apple, and others would appreciate being further commoditized—since their apps would no longer be the primary way users access the services they offer, they may have less of a choice when they can't distinguish between an AI accessing their app versus a person. It will be interesting to see how this plays out.</p>
-
-<p>I've been using though experiments like this one to get excited about possible innovations in the future, validate how I think and feel about AIs current and future usage. If AI could execute something like the Chatphone Concept, while maintaining my privacy and agency, count me in as a user.</p>`,
+          content: `<p>While talking with one of the research participants, we got onto the topic of agentic chat becoming a contextual layer between the tools your phone provides and how you access and use those tools.</p>\n\n<p>As someone who designed and built the <a href=\"https://play.google.com/store/apps/details?id=com.beforesoft.launcher&hl=en_US\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"minimal-link\">Before Launcher</a>, finding better ways to use our smartphones is a catnip-like obsession for me.</p>\n\n<p>The participant and I, exchanging texts, landed on the idea of a conceptually aware phone… one whose interface changes based on your \"mode.\" While not a new idea by any means, AI seems uniquely suited to help make this a reality.</p>\n\n<p>Diagram 1, at the top of this page, illustrates how this might work. After the ChatPhone onboards onto your primary usage contexts (a fascinating and likely ongoing process in itself), the phone's homescreen would display:</p>\n<ul>\n<li>The primary tools you're likely to use in that mode</li>\n<li>A digest of prioritized information and action based on your behavior and preferences.</li>\n<li>Quick access to agentic chat</li>\n</ul>\n<p>This type of phone could offer several benefits:</p>\n<ul>\n<li>Speed up how quickly you find things on your phone</li>\n<li>Reduce the need for repetitive decision-making (e.g., which delivery app or pizza place to choose)</li>\n<li>Minimize distractions from content or tools best reserved for other contexts</li>\n</ul>\n<p>Of course, using an agent as an intermediary introduces the risk of it missing key or critical content. That's why this concept feels better suited for a time when AI has matured to the point of being more reliable than you are at completing certain tasks.</p>\n\n<p>Also, while I doubt toolmakers like DoorDash, Lyft, Google, Apple, and others would appreciate being further commoditized—since their apps would no longer be the primary way users access the services they offer, they may have less of a choice when they can't distinguish between an AI accessing their app versus a person. It will be interesting to see how this plays out.</p>\n\n<p>I've been using though experiments like this one to get excited about possible innovations in the future, validate how I think and feel about AIs current and future usage. If AI could execute something like the Chatphone Concept, while maintaining my privacy and agency, count me in as a user.</p>`,
           svgContent: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 748">
   <!-- Background - changed to match presentation background -->
   <rect width="1320" height="748" fill="#f8fafc"/>
@@ -379,11 +357,11 @@ const presentationData = {
     </text>
     <text x="42" y="295" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       Alice: We won Widget Corp!
-      <tspan x="42" dy="15" style="text-decoration: underline;">Congratulate in Slack</tspan>
+      <tspan x="42" dy="15" style="text-decoration: underline;">Congratulate the team</tspan>
     </text>
     <text x="42" y="340" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       15 PRs shipped to prod yesterday.
-      <tspan x="42" dy="15" style="text-decoration: underline;">Check Vercel for status</tspan>
+      <tspan x="42" dy="15" style="text-decoration: underline;">Check for status</tspan>
     </text>
     <text x="42" y="385" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       Joe's soccer is on, despite rain.
@@ -447,11 +425,11 @@ const presentationData = {
       <tspan x="42" dy="15" style="text-decoration: underline;">Respond</tspan>
     </text>
     <text x="42" y="395" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
-      Continue on techno song "Nuclear"
+      Continue working on song "Nuclear"
       <tspan x="42" dy="15" style="text-decoration: underline;">Open Ableton Note</tspan>
     </text>
     <text x="42" y="445" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
-      You usually go to bed in about an hour.
+      You usually go to bed in about thirty...
       <tspan x="42" dy="15" style="text-decoration: underline;">Start getting ready</tspan>
     </text>
     <!-- Input Box -->
@@ -498,7 +476,7 @@ const presentationData = {
     <rect x="22" y="220" width="253" height="264" rx="5.5" ry="5.5" fill="#f9f9f9" stroke="#333" stroke-width="1"/>
     <text x="42" y="250" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
       96k from your hotel in Drake Bay
-      <tspan x="42" dy="15">It's now a 2.5 hours drive</tspan>
+      <tspan x="42" dy="15">It's a 2.5 hours drive. Dirt roads...</tspan>
       <tspan x="42" dy="15" style="text-decoration: underline;">Get directions</tspan>
     </text>
     <text x="42" y="310" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
@@ -506,7 +484,7 @@ const presentationData = {
       <tspan x="42" dy="15" style="text-decoration: underline;">Get help with selects</tspan>
     </text>
     <text x="42" y="355" font-family="Helvetica, sans-serif" font-size="13" fill="#333">
-      Mom left you a voicemail yesterday,
+      Mom left you a voicemail
       <tspan x="42" dy="15">yesterday morning.</tspan>
       <tspan x="42" dy="15" style="text-decoration: underline;">Call your mom</tspan>
     </text>
@@ -577,7 +555,7 @@ const presentationData = {
               text: "The Case for Multi-Decade AI Timelines",
               url: "https://epochai.substack.com/p/the-case-for-multi-decade-ai-timelines",
               source: "Epoch AI Substack",
-              description: "A realistic view of AI and its impact timeline, arguing against how quickly full automation will take place. Partial automation will be just as impactful.",
+              description: "A realistic view of AI and its impact timeline, arguing against how quickly full automation will take place. Partial automation will be plenty impactful.",
               imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fepochai.substack.com%2Fapi%2Fv1%2Fpost_preview%2F162161015%2Ftwitter.jpg%3Fversion%3D4"
             }
           ]

@@ -2522,6 +2522,8 @@ main.slide-content.comparison-slide {
 @media (max-width: 768px) {
   .text-slide.about-slide .content {
     column-count: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
