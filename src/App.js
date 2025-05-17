@@ -61,7 +61,7 @@ const presentationData = {
             },
             {
               title: "🔍 Summary",
-              description: "What I have learned from the research, the vibing coding, and what I think the AI future looks like.",
+              description: "What I have learned from the research, the vibe coding, and what I think the AI future looks like.",
               url: "/section/next-steps/0",
               imageUrl: "/whats-next.png"
             }
@@ -253,7 +253,7 @@ const presentationData = {
             },
             {
               type: "finding",
-              title: "Most expect AI to boom, then bust, in tech—but no one knows when.",
+              title: "Most expect AI to boom, then bust, in tech—but no one knows when. Two thought solely 🚀🚀🚀 ",
               points: [
                 "Most everyone believed that AI would unlock a bunch of innovation by being part of new products, and also enabling other digital products to be developed more cheaply",
                 "Most everyone also believed that the teams needed to build these products would be significantly smaller.",
@@ -534,7 +534,7 @@ const presentationData = {
               text: "Dario Amodei on The Urgency of Interpretability",
               url: "https://www.darioamodei.com/post/the-urgency-of-interpretability",
               source: "Dario Amodei (CEO of Anthropic)",
-              description: "Anthropic's CEO argues why understanding AI is important for safety and development.",
+              description: "Anthropic's CEO argues why understanding how AI thinks, while very hard to do, is important for safety and innovation.",
               imageUrl: "https://cdn.prod.website-files.com/67ecbba31246a69e485fdd4b/6814ea84b106e48f4269e93b_og_the-urgency-of-interpretability%20(1).jpg"
             },
             {
