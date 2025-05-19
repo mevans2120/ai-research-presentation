@@ -6,6 +6,7 @@ import { initializeGA, trackPageView } from './components/GoogleAnalytics';
 import GoogleAnalyticsScript from './components/GoogleAnalyticsScript';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { GoogleAnalyticsProvider, useGoogleAnalytics } from './components/GoogleAnalytics'; // Assuming this is the last import before presentationData
+import { Analytics } from '@vercel/analytics/react';
 
 // Initialize Google Analytics with your measurement ID
 // Replace 'G-XXXXXXXXXX' with your actual measurement ID
@@ -915,6 +916,7 @@ function App() {
         <Route path="/section/:sectionId/:slideIndex" element={<SlideView />} />
         <Route path="/section/:sectionId/subsection/:subsectionId/:slideIndex" element={<SlideView />} />
       </Routes>
+      <Analytics />
     </div>
   );
 }
