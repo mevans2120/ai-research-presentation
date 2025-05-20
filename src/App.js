@@ -777,21 +777,17 @@ function useIsMobile() {
 function ProjectsSlide({ slide }) {
   const isMobile = useIsMobile();
   const [expandedCards, setExpandedCards] = useState({});
-  const navigate = useNavigate();
 
   const handleCardClick = (project, idx, e) => {
     if (isMobile) {
       e.preventDefault();
       if (expandedCards[idx]) {
-        if (project.url.startsWith('/')) {
-          navigate(project.url);
-        } else {
-          window.open(project.url, '_blank');
-        }
+        window.open(project.url, project.url.startsWith('/') ? '_self' : '_blank');
       } else {
         setExpandedCards(prev => ({ ...prev, [idx]: true }));
       }
     }
+    // On desktop, let the default link behavior handle it
   };
 
   // External link SVG icon
@@ -836,66 +832,62 @@ function ProjectsSlide({ slide }) {
     </svg>
   );
 
-  const CardContent = (project, idx) => (
-    <div className={`project-card ${isMobile && expandedCards[idx] ? 'expanded' : ''}`}>
-      <div className="project-image-container">
-        <div
-          className="project-image"
-          style={{
-            backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'top center',
-            width: '100%',
-            height: '400px'
-          }}
-        ></div>
-      </div>
-      <div className="project-content">
-        <h3 className="project-title">
-          {project.title}
-        </h3>
-        <div className={`project-details ${isMobile ? 'mobile' : ''}`}>
-          <p className="project-description">
-            {project.description}
-            {!project.url.startsWith('/') && <ExternalLinkIcon />}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="projects-slide">
       <h1>{slide.title}</h1>
       {slide.content && <p className="intro">{slide.content}</p>}
       <div className="projects-grid">
-        {Array.isArray(slide.projects) && slide.projects.map((project, idx) => {
-          if (project.url.startsWith('/')) {
-            return (
+        {Array.isArray(slide.projects) && slide.projects.map((project, idx) => (
+          <div
+            key={idx}
+            className={`project-card ${isMobile && expandedCards[idx] ? 'expanded' : ''}`}
+          >
+            {project.url.startsWith('/') ? (
               <Link
-                key={idx}
                 to={project.url}
-                style={{ textDecoration: 'none', color: 'inherit' }}
+                className="project-image-link"
+                aria-label={`Navigate to ${project.title}`}
                 onClick={(e) => handleCardClick(project, idx, e)}
               >
-                {CardContent(project, idx)}
+                {/* Empty link for click handling */}
               </Link>
-            );
-          } else {
-            return (
+            ) : (
               <a
-                key={idx}
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ textDecoration: 'none', color: 'inherit' }}
+                className="project-image-link"
+                aria-label={`Open ${project.title}`}
                 onClick={(e) => handleCardClick(project, idx, e)}
               >
-                {CardContent(project, idx)}
+                {/* Empty link for click handling */}
               </a>
-            );
-          }
-        })}
+            )}
+            <div className="project-image-container">
+              <div
+                className="project-image"
+                style={{
+                  backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'top center',
+                  width: '100%',
+                  height: '400px'
+                }}
+              ></div>
+            </div>
+            <div className="project-content">
+              <h3 className="project-title">
+                {project.title}
+              </h3>
+              <div className={`project-details ${isMobile ? 'mobile' : ''}`}>
+                <p className="project-description">
+                  {project.description}
+                  {!project.url.startsWith('/') && <ExternalLinkIcon />}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -1551,12 +1543,11 @@ function renderSlide(slide, location, navigate) {
                   );
 
                   return linkTo ? (
-                    <Link 
-                      to={linkTo} 
-                      key={index} 
+                    <Link
+                      to={linkTo}
+                      key={index}
                       style={{ textDecoration: 'none', color: 'inherit' }}
-                      onClick={(e) => {
-                        // Prevent any potential double-tap issues
+                      onClick={e => {
                         e.preventDefault();
                         navigate(linkTo);
                       }}
