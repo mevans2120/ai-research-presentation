@@ -777,18 +777,7 @@ function useIsMobile() {
 function ProjectsSlide({ slide }) {
   const isMobile = useIsMobile();
   const [expandedCards, setExpandedCards] = useState({});
-
-  const handleCardClick = (project, idx, e) => {
-    if (isMobile) {
-      e.preventDefault();
-      if (expandedCards[idx]) {
-        window.open(project.url, project.url.startsWith('/') ? '_self' : '_blank');
-      } else {
-        setExpandedCards(prev => ({ ...prev, [idx]: true }));
-      }
-    }
-    // On desktop, let the default link behavior handle it
-  };
+  const navigate = useNavigate();
 
   // External link SVG icon
   const ExternalLinkIcon = () => (
@@ -837,57 +826,71 @@ function ProjectsSlide({ slide }) {
       <h1>{slide.title}</h1>
       {slide.content && <p className="intro">{slide.content}</p>}
       <div className="projects-grid">
-        {Array.isArray(slide.projects) && slide.projects.map((project, idx) => (
-          <div
-            key={idx}
-            className={`project-card ${isMobile && expandedCards[idx] ? 'expanded' : ''}`}
-          >
-            {project.url.startsWith('/') ? (
+        {Array.isArray(slide.projects) && slide.projects.map((project, idx) => {
+          const cardContent = (
+            <>
+              <div className="project-image-container">
+                <div
+                  className="project-image"
+                  style={{
+                    backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'top center',
+                    width: '100%',
+                    height: '400px'
+                  }}
+                ></div>
+              </div>
+              <div className="project-content">
+                <h3 className="project-title">
+                  {project.title}
+                </h3>
+                <div className={`project-details ${isMobile ? 'mobile' : ''}`}>
+                  <p className="project-description">
+                    {project.description}
+                    {!project.url.startsWith('/') && <ExternalLinkIcon />}
+                  </p>
+                </div>
+              </div>
+            </>
+          );
+
+          if (project.url.startsWith('/')) {
+            // Internal link
+            return (
               <Link
                 to={project.url}
-                className="project-image-link"
-                aria-label={`Navigate to ${project.title}`}
-                onClick={(e) => handleCardClick(project, idx, e)}
+                key={idx}
+                className={`project-card`}
+                style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                onClick={e => {
+                  e.preventDefault();
+                  navigate(project.url);
+                }}
               >
-                {/* Empty link for click handling */}
+                {cardContent}
               </Link>
-            ) : (
+            );
+          } else {
+            // External link
+            return (
               <a
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="project-image-link"
-                aria-label={`Open ${project.title}`}
-                onClick={(e) => handleCardClick(project, idx, e)}
-              >
-                {/* Empty link for click handling */}
-              </a>
-            )}
-            <div className="project-image-container">
-              <div
-                className="project-image"
-                style={{
-                  backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'top center',
-                  width: '100%',
-                  height: '400px'
+                key={idx}
+                className={`project-card`}
+                style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                onClick={e => {
+                  e.preventDefault();
+                  window.open(project.url, '_blank');
                 }}
-              ></div>
-            </div>
-            <div className="project-content">
-              <h3 className="project-title">
-                {project.title}
-              </h3>
-              <div className={`project-details ${isMobile ? 'mobile' : ''}`}>
-                <p className="project-description">
-                  {project.description}
-                  {!project.url.startsWith('/') && <ExternalLinkIcon />}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
+              >
+                {cardContent}
+              </a>
+            );
+          }
+        })}
       </div>
     </div>
   );
