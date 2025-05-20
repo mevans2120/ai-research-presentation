@@ -120,11 +120,11 @@ const presentationData = {
       subsections: [
         {
           id: "present-findings",
-          title: "Findings - Present",
+          title: "Present - Findings",
           slides: [
             {
               type: "section-cover",
-              title: "Findings - Present",
+              title: "Present - Findings",
               subtitle: "",
               isSubsectionCover: true,
               cards: [
@@ -234,11 +234,11 @@ const presentationData = {
         },
         {
           id: "future-findings",
-          title: "Findings - Future",
+          title: "Future - Findings",
           slides: [
             {
               type: "section-cover",
-              title: "Findings - Future",
+              title: "Future - Findings",
               subtitle: "",
               isSubsectionCover: true,
               cards: [
