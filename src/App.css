@@ -155,31 +155,34 @@ body {
 }
 
 .navigation li.active > .section-title {
-  color: var(--nav-color);
+  color: var(--purple-color) !important;
+  font-weight: 700 !important;
 }
 
 .navigation .section-slides {
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  padding-left: 5px !important;
 }
 
-.navigation .section-slides li {
-  padding: 0.5rem 0;
-}
-
-.navigation .section-slides li a,
+.navigation .section-slides li,
 .navigation .section-slides li .slide-link {
-  color: var(--blue-color);
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
+  padding-left: 5px !important;
 }
 
-.navigation .section-slides li.active a,
-.navigation .section-slides li.active .slide-link {
-  color: var(--nav-color);
-  font-weight: 500;
+.navigation .subsections {
+  padding-left: 10px !important;
+}
+
+.navigation .subsection-title {
+  padding-left: 0 !important;
+}
+
+.navigation .subsection-slides {
+  padding-left: 10px !important;
+}
+
+.navigation .subsection-slide-item,
+.navigation .subsection-slide-item .slide-link {
+  padding-left: 5px !important;
 }
 
 /* Scrollbar styling */
@@ -223,7 +226,8 @@ body {
 }
 
 .navigation li.active > .section-title {
-  color: var(--nav-color);
+  color: var(--purple-color) !important;
+  font-weight: 700 !important;
 }
 
 /* Section slides styling */
@@ -2607,4 +2611,23 @@ body.first-slide-active, html.first-slide-active {
 body.first-slide-active::-webkit-scrollbar,
 html.first-slide-active::-webkit-scrollbar {
   display: none;                /* Chrome, Safari and Opera */
+}
+
+.navigation .section-slides li.active a,
+.navigation .section-slides li.active .slide-link,
+.navigation .section-slides li .slide-link[style*='var(--purple-color)'],
+.navigation .subsection-slide-item.active .slide-link,
+.navigation .subsection-slide-item .slide-link[style*='var(--purple-color)'] {
+  color: var(--purple-color) !important;
+  font-weight: 700 !important;
+}
+
+.navigation .section-slides li,
+.navigation .subsection-slide-item {
+  padding-left: 5px !important;
+}
+
+.navigation .subsections,
+.navigation .section-slides {
+  padding-left: 5px !important;
 } 

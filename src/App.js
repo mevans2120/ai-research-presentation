@@ -120,11 +120,11 @@ const presentationData = {
       subsections: [
         {
           id: "present-findings",
-          title: "Present - Findings",
+          title: "Present Findings",
           slides: [
             {
               type: "section-cover",
-              title: "Present - Findings",
+              title: "Present Findings",
               subtitle: "",
               isSubsectionCover: true,
               cards: [
@@ -234,11 +234,11 @@ const presentationData = {
         },
         {
           id: "future-findings",
-          title: "Future - Findings",
+          title: "Future Findings",
           slides: [
             {
               type: "section-cover",
-              title: "Future - Findings",
+              title: "Future Findings",
               subtitle: "",
               isSubsectionCover: true,
               cards: [
@@ -1334,12 +1334,9 @@ function SlideView() {
                 <div 
                   className="section-title" 
                   onClick={() => {
-                    // Toggle expanded section state
                     if (expandedSection === section.id) {
-                      // If this section is already expanded, navigate to it
                       navigate(`/section/${section.id}/0${hash}`);
                     } else {
-                      // Otherwise, expand this section without navigating
                       setExpandedSection(section.id);
                     }
                   }}
@@ -1348,29 +1345,33 @@ function SlideView() {
                 </div>
                 {expandedSection === section.id && (
                   <>
-                    <ul className="section-slides" style={{margin: 0, padding: '0 0 0 1rem', backgroundColor: 'white'}}>
+                    <ul className="section-slides" style={{margin: 0, padding: '0 0 0 1.05rem', backgroundColor: 'white'}}>
                       {section.slides.map((slide, slideIdx) => (
-                        // Skip the first slide (cover) in the navigation
                         slideIdx !== 0 ? (
-                          <li key={slideIdx} className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) && !subsectionId ? 'active' : ''} style={{margin: 0, padding: '0.5rem 0', backgroundColor: 'white'}}>
+                          <li key={slideIdx} 
+                            className={section.id === sectionId && slideIdx === parseInt(slideIndex, 10) && !subsectionId ? 'active' : ''}
+                            style={{margin: 0, padding: '0.5rem 0 0.5rem 5px', backgroundColor: 'white'}}
+                          >
                             <div 
                               className="slide-link"
+                              style={{
+                                backgroundColor: 'white',
+                                color: section.id === sectionId && slideIdx === parseInt(slideIndex, 10) && !subsectionId ? 'var(--purple-color)' : 'var(--blue-color)',
+                                fontWeight: section.id === sectionId && slideIdx === parseInt(slideIndex, 10) && !subsectionId ? 700 : 400
+                              }}
                               onClick={() => {
                                 navigate(`/section/${section.id}/${slideIdx}${hash}`);
-                                setMenuOpen(false); // Always close menu when clicking on a slide
+                                setMenuOpen(false);
                               }}
-                              style={{backgroundColor: 'white'}}
                             >
-                              {slide.title || `Slide ${slideIdx + 1}`}
+                              {slide.title === 'Present - Findings' ? 'Present Findings' : slide.title === 'Future - Findings' ? 'Future Findings' : slide.title}
                             </div>
                           </li>
                         ) : null
                       ))}
                     </ul>
-                    
-                    {/* Display subsections with zero-gap styles */}
                     {section.subsections && section.subsections.length > 0 && (
-                      <div className="subsections" style={{margin: 0, padding: '0 0 0 0.5rem', backgroundColor: 'white'}}>
+                      <div className="subsections" style={{margin: 0, padding: '0 0 0 0.55rem', backgroundColor: 'white'}}>
                         {section.subsections.map((subsection) => (
                           <div key={subsection.id} className="subsection" style={{margin: 0, padding: 0, backgroundColor: 'white'}}>
                             <div 
@@ -1379,30 +1380,31 @@ function SlideView() {
                                 e.stopPropagation();
                                 toggleSubsection(section.id, subsection.id);
                               }}
-                              style={{margin: 0, padding: '0.5rem 0', backgroundColor: 'white'}}
+                              style={{margin: 0, padding: '0.5rem 0 0.5rem 5px', backgroundColor: 'white'}}
                             >
-                              {subsection.title}
+                              {subsection.title === 'Present - Findings' ? 'Present Findings' : subsection.title === 'Future - Findings' ? 'Future Findings' : subsection.title}
                             </div>
                             {isSubsectionExpanded(section.id, subsection.id) && (
                               <ul className="subsection-slides">
                                 {subsection.slides.map((slide, slideIdx) => (
-                                  // Skip the subsection cover slide in the navigation
                                   !slide.isSubsectionCover ? (
                                     <li 
                                       key={slideIdx} 
-                                      className={
-                                        `subsection-slide-item
-                                        ${subsectionId === subsection.id && parseInt(slideIndex, 10) === slideIdx ? 'active' : ''}`
-                                      }
+                                      className={`subsection-slide-item${subsectionId === subsection.id && parseInt(slideIndex, 10) === slideIdx ? ' active' : ''}`}
+                                      style={{paddingLeft: '5px'}}
                                     >
                                       <div 
                                         className="slide-link"
+                                        style={{
+                                          color: subsectionId === subsection.id && parseInt(slideIndex, 10) === slideIdx ? 'var(--purple-color)' : 'var(--dark-gray)',
+                                          fontWeight: subsectionId === subsection.id && parseInt(slideIndex, 10) === slideIdx ? 700 : 400
+                                        }}
                                         onClick={() => {
                                           navigate(`/section/${section.id}/subsection/${subsection.id}/${slideIdx}${hash}`);
                                           setMenuOpen(false);
                                         }}
                                       >
-                                        {slide.title || `Slide ${slideIdx + 1}`}
+                                        {slide.title === 'Present - Findings' ? 'Present Findings' : slide.title === 'Future - Findings' ? 'Future Findings' : slide.title}
                                       </div>
                                     </li>
                                   ) : null
