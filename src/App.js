@@ -1432,7 +1432,7 @@ function SlideView() {
         <main
           className={`slide-content ${currentSlide.type}-slide ${currentSlide.type === 'cover' && currentSlide.isHomepage ? 'homepage-content' : ''}`}
         >
-          {renderSlide(currentSlide, location)}
+          {renderSlide(currentSlide, location, navigate)}
         </main>
       )}
       
@@ -1534,28 +1534,28 @@ function renderSlide(slide, location, navigate) {
                   } else if (section && section.slides[index + 1]) {
                     linkTo = `/section/${section.id}/${index + 1}`;
                   }
-                  
-                  const handleCardClick = (e) => {
-                    if (linkTo) {
-                      e.preventDefault();
-                      navigate(linkTo);
-                    }
-                  };
 
-                  return (
-                    <div 
-                      key={index}
-                      className="section-card"
-                      style={{ cursor: linkTo ? 'pointer' : 'default' }}
-                      onClick={handleCardClick}
-                      onTouchStart={handleCardClick}
-                      role={linkTo ? "link" : "article"}
-                      tabIndex={linkTo ? 0 : -1}
-                    >
+                  const CardContent = (
+                    <div className="section-card" key={index} style={{ cursor: linkTo ? 'pointer' : 'default' }}>
                       <h3>{card.title}</h3>
                       <p>{card.content}</p>
                     </div>
                   );
+
+                  return linkTo ? (
+                    <Link 
+                      to={linkTo} 
+                      key={index} 
+                      style={{ textDecoration: 'none', color: 'inherit' }}
+                      onClick={(e) => {
+                        // Prevent any potential double-tap issues
+                        e.preventDefault();
+                        navigate(linkTo);
+                      }}
+                    >
+                      {CardContent}
+                    </Link>
+                  ) : CardContent;
                 })}
               </div>
             )}
