@@ -507,56 +507,56 @@ const presentationData = {
               url: "https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/",
               icon: "📝",
               source: "Harper's Blog",
-              description: "A detailed walkthrough of how an experienced engineer uses LLMs for code generation, with practical tips and best practices.",
+              description: "A detailed walkthrough of how an experienced engineer uses LLMs for code generation. I've found beginning on how he starts a project to be the most useful.",
               imageUrl: "https://harper.blog/images/social_card_bg_harper_hu_cbdc79f03ddda4b5.png"
             },
             {
               text: "Prompt to Product: How I Build with AI Assistants",
               url: "https://medium.com/@bertelli/prompt-to-product-how-i-build-with-ai-assistants-6055da62c9bb",
               source: "Medium",
-              description: "A designer's perspective on using AI assistants to go from initial idea to finished product without traditional coding knowledge.",
+              description: "A designer's perspective on using AI assistants to go from initial idea to finished product without traditional coding knowledge. The tip on CSS last is golden",
               imageUrl: "https://miro.medium.com/v2/resize:fit:1200/1*c8TxZkxoYbRv4AEVE9QCgQ.png"
             },
             {
               text: "Inside Devin: Scott Wu",
               url: "https://www.lennysnewsletter.com/p/inside-devin-scott-wu",
               source: "Lenny's Newsletter",
-              description: "An in-depth conversation about the future of AI engineering tools and how autonomous agents like Devin are changing software development.",
+              description: "Devin is an autonomous agent that builds software and is actively helping to build and improve itself, with the help of Senior Engineers. Scott Wu, the CEO, goes deep into their process and vision.",
               imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Flenny.substack.com%2Fapi%2Fv1%2Fpost_preview%2F162381125%2Ftwitter.jpg%3Fversion%3D4"
             }
           ]
         },
         {
           type: "links",
-          title: "The AI Future",
+          title: "AI Now & Future",
           content: "One of the least discussed things about AI is about how no one knows how it works (on a case by case basis). If you ask AI for the best roast chicken recipe, we don't know why it would choose one recipe over another.",
           links: [
             {
               text: "Dario Amodei on The Urgency of Interpretability",
               url: "https://www.darioamodei.com/post/the-urgency-of-interpretability",
               source: "Dario Amodei (CEO of Anthropic)",
-              description: "Anthropic's CEO argues why understanding how AI thinks, while very hard to do, is important for safety and innovation.",
+              description: "One of the least discussed aspects of AI is that we don’t know how it makes decisions on a case-by-case basis. Ask it for the best roast chicken recipe, and we can’t explain why it picks one over another. Anthropic’s CEO argues that understanding these choices is crucial.",
               imageUrl: "https://cdn.prod.website-files.com/67ecbba31246a69e485fdd4b/6814ea84b106e48f4269e93b_og_the-urgency-of-interpretability%20(1).jpg"
             },
             {
               text: "The Intelligence Curse",
               url: "https://lukedrago.substack.com/p/the-intelligence-curse#ftnt_ref6",
               source: "Luke Drago's Substack",
-              description: "A frightening but compelling vision of AI in the future through the lens of economics.",
+              description: "What if AI is a resource more akin to something like oil instead of a technology, like computers? A frightening but compelling vision of AI in the future through the lens of economics.",
               imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Flukedrago.substack.com%2Fapi%2Fv1%2Fpost_preview%2F153997408%2Ftwitter.jpg%3Fversion%3D4"
             },
             {
               text: "Ezra Klein's podcast with Biden's AI head",
               url: "https://www.youtube.com/watch?v=Btos-LEYQ30",
               source: "YouTube",
-              description: "A discussion with the Biden administration's AI leadership about policy and the future.",
+              description: "Biden's AI head thinks AI is going to be improving much more quickly than many think. But he doesn't have a good answer for how that will impact us",
               imageUrl: "https://static01.nyt.com/images/2025/03/04/opinion/04eks-buchanan/04eks-buchanan-videoSixteenByNine3000.jpg"
             },
             {
               text: "The Case for Multi-Decade AI Timelines",
               url: "https://epochai.substack.com/p/the-case-for-multi-decade-ai-timelines",
               source: "Epoch AI Substack",
-              description: "A realistic view of AI and its impact timeline, arguing against how quickly full automation will take place. Partial automation will be plenty impactful.",
+              description: "A longer term view of AI and its impact timeline, arguing against how quickly full automation will take place. Partial automation will be plenty impactful.",
               imageUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fepochai.substack.com%2Fapi%2Fv1%2Fpost_preview%2F162161015%2Ftwitter.jpg%3Fversion%3D4"
             }
           ]
@@ -618,6 +618,7 @@ const presentationData = {
                 "Versioning is critical. Commit to Git frequently, as the AI has a short memory and can struggle to revert changes it made.",
                 "Get familiar enough with the code to make copy updates and small tweaks—these are often faster to do yourself.",
                 "Treat the AI like a teammate and provide context for decisions. This tends to improve the quality of its output.",
+                "If your AI agent keeps striking out, don't be afraid to Google the error and see if you can find a solution.",
                 "Plan to optimize micro-interactions—they often need fine-tuning to make the app feel polished, but remind the agent to code with best practices while you do those optimizations."
               ]
             },
