@@ -776,18 +776,22 @@ function useIsMobile() {
 // ProjectsSlide component for the projects slide type
 function ProjectsSlide({ slide }) {
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
   const [expandedCards, setExpandedCards] = useState({});
 
   const handleCardClick = (project, idx, e) => {
     if (isMobile) {
       e.preventDefault();
       if (expandedCards[idx]) {
-        window.open(project.url, project.url.startsWith('/') ? '_self' : '_blank');
+        if (project.url.startsWith('/')) {
+          navigate(project.url);
+        } else {
+          window.open(project.url, '_blank');
+        }
       } else {
         setExpandedCards(prev => ({ ...prev, [idx]: true }));
       }
     }
-    // On desktop, let the default link behavior handle it
   };
 
   // External link SVG icon
@@ -832,62 +836,66 @@ function ProjectsSlide({ slide }) {
     </svg>
   );
 
+  const ProjectCard = ({ project, idx }) => (
+    <div className={`project-card ${isMobile && expandedCards[idx] ? 'expanded' : ''}`}>
+      <div className="project-image-container">
+        <div
+          className="project-image"
+          style={{
+            backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+            width: '100%',
+            height: '400px'
+          }}
+        ></div>
+      </div>
+      <div className="project-content">
+        <h3 className="project-title">
+          {project.title}
+        </h3>
+        <div className={`project-details ${isMobile ? 'mobile' : ''}`}>
+          <p className="project-description">
+            {project.description}
+            {!project.url.startsWith('/') && <ExternalLinkIcon />}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="projects-slide">
       <h1>{slide.title}</h1>
       {slide.content && <p className="intro">{slide.content}</p>}
       <div className="projects-grid">
-        {Array.isArray(slide.projects) && slide.projects.map((project, idx) => (
-          <div
-            key={idx}
-            className={`project-card ${isMobile && expandedCards[idx] ? 'expanded' : ''}`}
-          >
-            {project.url.startsWith('/') ? (
-              <Link
-                to={project.url}
-                className="project-image-link"
-                aria-label={`Navigate to ${project.title}`}
-                onClick={(e) => handleCardClick(project, idx, e)}
-              >
-                {/* Empty link for click handling */}
-              </Link>
-            ) : (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-image-link"
-                aria-label={`Open ${project.title}`}
-                onClick={(e) => handleCardClick(project, idx, e)}
-              >
-                {/* Empty link for click handling */}
-              </a>
-            )}
-            <div className="project-image-container">
-              <div
-                className="project-image"
-                style={{
-                  backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'top center',
-                  width: '100%',
-                  height: '400px'
-                }}
-              ></div>
-            </div>
-            <div className="project-content">
-              <h3 className="project-title">
-                {project.title}
-              </h3>
-              <div className={`project-details ${isMobile ? 'mobile' : ''}`}>
-                <p className="project-description">
-                  {project.description}
-                  {!project.url.startsWith('/') && <ExternalLinkIcon />}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
+        {Array.isArray(slide.projects) && slide.projects.map((project, idx) => {
+          const CardContent = (
+            <ProjectCard key={idx} project={project} idx={idx} />
+          );
+
+          return project.url.startsWith('/') ? (
+            <Link
+              key={idx}
+              to={project.url}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+              onClick={(e) => handleCardClick(project, idx, e)}
+            >
+              {CardContent}
+            </Link>
+          ) : (
+            <a
+              key={idx}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+              onClick={(e) => handleCardClick(project, idx, e)}
+            >
+              {CardContent}
+            </a>
+          );
+        })}
       </div>
     </div>
   );
