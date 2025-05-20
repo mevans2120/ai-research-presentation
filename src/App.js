@@ -776,8 +776,8 @@ function useIsMobile() {
 // ProjectsSlide component for the projects slide type
 function ProjectsSlide({ slide }) {
   const isMobile = useIsMobile();
-  const navigate = useNavigate();
   const [expandedCards, setExpandedCards] = useState({});
+  const navigate = useNavigate();
 
   const handleCardClick = (project, idx, e) => {
     if (isMobile) {
@@ -836,7 +836,7 @@ function ProjectsSlide({ slide }) {
     </svg>
   );
 
-  const ProjectCard = ({ project, idx }) => (
+  const CardContent = (project, idx) => (
     <div className={`project-card ${isMobile && expandedCards[idx] ? 'expanded' : ''}`}>
       <div className="project-image-container">
         <div
@@ -870,31 +870,31 @@ function ProjectsSlide({ slide }) {
       {slide.content && <p className="intro">{slide.content}</p>}
       <div className="projects-grid">
         {Array.isArray(slide.projects) && slide.projects.map((project, idx) => {
-          const CardContent = (
-            <ProjectCard key={idx} project={project} idx={idx} />
-          );
-
-          return project.url.startsWith('/') ? (
-            <Link
-              key={idx}
-              to={project.url}
-              style={{ textDecoration: 'none', color: 'inherit' }}
-              onClick={(e) => handleCardClick(project, idx, e)}
-            >
-              {CardContent}
-            </Link>
-          ) : (
-            <a
-              key={idx}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none', color: 'inherit' }}
-              onClick={(e) => handleCardClick(project, idx, e)}
-            >
-              {CardContent}
-            </a>
-          );
+          if (project.url.startsWith('/')) {
+            return (
+              <Link
+                key={idx}
+                to={project.url}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+                onClick={(e) => handleCardClick(project, idx, e)}
+              >
+                {CardContent(project, idx)}
+              </Link>
+            );
+          } else {
+            return (
+              <a
+                key={idx}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none', color: 'inherit' }}
+                onClick={(e) => handleCardClick(project, idx, e)}
+              >
+                {CardContent(project, idx)}
+              </a>
+            );
+          }
         })}
       </div>
     </div>
