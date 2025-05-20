@@ -528,14 +528,42 @@ const presentationData = {
         },
         {
           type: "links",
-          title: "AI Now & Future",
-          content: "One of the least discussed things about AI is about how no one knows how it works (on a case by case basis). If you ask AI for the best roast chicken recipe, we don't know why it would choose one recipe over another.",
+          title: "AI in Society",
+          content: "Here are some thought-provoking pieces on how AI is affecting our society more broadly:",
+          links: [
+            {
+              text: "Ezra Klein on AI and Education",
+              url: "https://www.nytimes.com/2025/05/13/opinion/ezra-klein-podcast-rebecca-winthrop.html",
+              source: "The New York Times",
+              description: "Another excellent Ezra Klein podcast on AI. This one around its impact on education.",
+              imageUrl: "https://static01.nyt.com/images/2025/05/13/opinion/13eks-winthrop/13eks-winthrop-facebookJumbo.jpg"
+            },
+            {
+              text: "The Understanders: Research on AI Concerns",
+              url: "https://www.theunderstanders.com/p/the-understanders-research-the-concerns",
+              source: "The Understanders",
+              description: "Interesting and informative findings about how people are skeptical (or not) of AI in a variety of different areas. The research was moderated by AI agents as well.",
+              imageUrl: "https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd393aa34-9b0d-4752-842f-12ecab8c1fb7_840x712.webp"
+            },
+            {
+              text: "AI as Therapist: The Rise of Mental Health Chatbots",
+              url: "https://www.nytimes.com/2025/04/15/health/ai-therapist-mental-health.html",
+              source: "The New York Times",
+              description: "I know a couple people who have found AI to be a helpful therapist… I have too many thoughts and feelings about this one to post in blurb.",
+              imageUrl: "https://static01.nyt.com/images/2025/04/15/multimedia/00hs-ai-therapy-gbhj/00hs-ai-therapy-gbhj-facebookJumbo.jpg"
+            }
+          ]
+        },
+        {
+          type: "links",
+          title: "AI in the Future",
+          content: "Here are some interesting pieces on the future of AI, from a variety of viewpoints:",
           links: [
             {
               text: "Dario Amodei on The Urgency of Interpretability",
               url: "https://www.darioamodei.com/post/the-urgency-of-interpretability",
               source: "Dario Amodei (CEO of Anthropic)",
-              description: "One of the least discussed aspects of AI is that we don’t know how it makes decisions on a case-by-case basis. Ask it for the best roast chicken recipe, and we can’t explain why it picks one over another. Anthropic’s CEO argues that understanding these choices is crucial.",
+              description: "One of the least discussed aspects of AI is that we don't know how it makes decisions on a case-by-case basis. Ask it for the best roast chicken recipe, and we can't explain why it picks one over another. Anthropic's CEO argues that understanding these choices is crucial.",
               imageUrl: "https://cdn.prod.website-files.com/67ecbba31246a69e485fdd4b/6814ea84b106e48f4269e93b_og_the-urgency-of-interpretability%20(1).jpg"
             },
             {

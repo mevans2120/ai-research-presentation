@@ -878,8 +878,8 @@ body {
 }
 
 .links-slide .link-image {
-  width: 120px;
-  height: 70px;
+  width: 200px;
+  height: 120px;
   object-fit: cover;
   border-radius: 4px;
 }
