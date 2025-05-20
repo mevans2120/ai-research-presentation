@@ -499,8 +499,8 @@ const presentationData = {
         },
         {
           type: "links",
-          title: "Vibe Coding",
-          content: "Vibe coding is where you ask an agent to build you what you want instead of asking a designer and a developer…",
+          title: "AI in Software",
+          content: "AI is starting to do a lot of the design & development work. Here are some pieces on how:",
           links: [
             {
               text: "My LLM Codegen Workflow (ATM)",
