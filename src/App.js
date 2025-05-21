@@ -30,11 +30,11 @@ This exploration has turned into an ongoing research effort. Through interviews,
 
 // Main presentation data structure
 const presentationData = {
-  title: "MEvans AI Workbook - Welcome",
+  title: "Michael Evans AI Workbook",
   sections: [
     {
       id: "intro",
-      title: "🤗 Welcome",
+      title: "Welcome",
       slides: [
         {
           type: "projects",
@@ -978,6 +978,10 @@ function Section() {
 // Slide View Component
 function SlideView() {
   const { sectionId, slideIndex, subsectionId } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Restore stateful approach
   const [currentSection, setCurrentSection] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(null);
   const [currentSubsection, setCurrentSubsection] = useState(null);
@@ -985,11 +989,51 @@ function SlideView() {
   const [expandedSection, setExpandedSection] = useState(null);
   const [expandedSubsections, setExpandedSubsections] = useState({});
   const [globalSlideInfo, setGlobalSlideInfo] = useState({ current: 0, total: 0 });
-  const navigate = useNavigate();
-  const menuRef = useRef(null);
-  const location = useLocation();
   const hash = location.hash || '';
-  
+  const menuRef = useRef(null);
+
+  // Set current section, subsection, and slide based on params
+  useEffect(() => {
+    const section = presentationData.sections.find(s => s.id === sectionId);
+    if (!section) {
+      setCurrentSection(null);
+      setCurrentSubsection(null);
+      setCurrentSlide(null);
+      navigate('/');
+      return;
+    }
+    if (subsectionId) {
+      const subsection = section.subsections?.find(sub => sub.id === subsectionId);
+      if (subsection) {
+        const slideIdx = parseInt(slideIndex, 10);
+        if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < subsection.slides.length) {
+          setCurrentSection(section);
+          setCurrentSubsection(subsection);
+          setCurrentSlide(subsection.slides[slideIdx]);
+          return;
+        }
+      }
+      setCurrentSection(null);
+      setCurrentSubsection(null);
+      setCurrentSlide(null);
+      navigate('/');
+      return;
+    } else {
+      const slideIdx = parseInt(slideIndex, 10);
+      if (!isNaN(slideIdx) && slideIdx >= 0 && slideIdx < section.slides.length) {
+        setCurrentSection(section);
+        setCurrentSubsection(null);
+        setCurrentSlide(section.slides[slideIdx]);
+        return;
+      }
+      setCurrentSection(null);
+      setCurrentSubsection(null);
+      setCurrentSlide(null);
+      navigate('/');
+      return;
+    }
+  }, [sectionId, subsectionId, slideIndex, navigate]);
+
   // Function to toggle subsection expansion
   const toggleSubsection = (sectionId, subsectionId) => {
     setExpandedSubsections(prev => {
@@ -1156,9 +1200,9 @@ function SlideView() {
     const { section, subsection, slide } = findSlideFromParams();
     
     if (section && slide) {
-      setCurrentSection(section);
+      // setCurrentSection(section); // REMOVE
       setCurrentSubsection(subsection);
-      setCurrentSlide(slide);
+      // setCurrentSlide(slide); // REMOVE
     } else {
       navigate('/');
     }
