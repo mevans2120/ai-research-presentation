@@ -545,12 +545,12 @@ body {
   text-align: left;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.2s, transform 0.1s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section-card:hover {
-  box-shadow: 0 8px 24px rgba(18, 38, 95, 0.18), 0 2px 4px rgba(18, 38, 95, 0.10);
-  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
   z-index: 2;
 }
 
