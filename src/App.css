@@ -2726,12 +2726,36 @@ html.first-slide-active::-webkit-scrollbar {
   letter-spacing: 0.03em;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
+  /* Remove horizontal padding for alignment */
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
 }
 
 .comparison-slide {
   position: relative;
   margin-top: 0;
   padding-top: 0;
+  /* Remove horizontal padding for alignment */
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+}
+
+.comparison-container {
+  /* Remove horizontal padding for alignment */
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.comparison-column {
+  margin-left: 0;
+  box-sizing: border-box;
+  /* Remove horizontal padding for alignment */
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media (max-width: 768px) {
@@ -2739,17 +2763,20 @@ html.first-slide-active::-webkit-scrollbar {
     font-size: 0.8rem;
     margin-top: 0.5rem;
     margin-bottom: 1.2rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    /* Remove horizontal padding for alignment */
+    padding-left: 0;
+    padding-right: 0;
     margin-left: 0;
   }
   .comparison-slide {
     padding-top: 0;
     margin-top: 0;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    /* Remove horizontal padding for alignment */
+    padding-left: 0;
+    padding-right: 0;
   }
   .comparison-container {
+    /* Remove horizontal padding for alignment */
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
@@ -2761,5 +2788,8 @@ html.first-slide-active::-webkit-scrollbar {
     margin-left: 0;
     margin-right: 0;
     box-sizing: border-box;
+    /* Remove horizontal padding for alignment */
+    padding-left: 0;
+    padding-right: 0;
   }
 }
