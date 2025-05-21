@@ -2718,3 +2718,48 @@ html.first-slide-active::-webkit-scrollbar {
   box-shadow: none;
   /* Keep existing padding */
 }
+
+.comparison-label {
+  font-size: 0.75rem;
+  color: var(--blue-color);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-slide {
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  .comparison-label {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 0;
+  }
+  .comparison-slide {
+    padding-top: 0;
+    margin-top: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .comparison-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .comparison-column {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+}

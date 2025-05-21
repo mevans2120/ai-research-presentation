@@ -699,18 +699,18 @@ const presentationData = {
           subtitle: "",
           cards: [
             {
-              title: "Research & Vibe Coding",
+              title: "Research Implications & Building with AI",
               content: "A synthesis of the major takeaways from my research conversations, concept explorations, and hands-on AI product development experiences."
             },
             {
-              title: "AI Future & How I Built this App",
+              title: "AI Future Thoughts & Building this App",
               content: "My thoughts on where AI technology is headed next, how it might change the industry, and what I'm personally excited to explore and build in the near future."
             }
           ]
         },
         {
           type: "comparison",
-          title: "Research & Vibe Coding",
+          title: "Research Implications & Building with AI",
           columns: [
             {
               title: "Research Implications",
@@ -729,7 +729,7 @@ const presentationData = {
               ]
             },
             {
-              title: "What I've learned building with AI",
+              title: "Building with AI",
               points: [
                 {
                   text: "It's pretty fun and magical:",
@@ -749,10 +749,10 @@ const presentationData = {
         },
         {
           type: "comparison",
-          title: "The AI Future & Building this App",
+          title: "AI Future Thoughts & Building this App",
           columns: [
             {
-              title: "How I'm feeling about the future",
+              title: "AI Future Thoughts",
               points: [
                 "I do believe that amazing advances in science, technology and other disciplines will be accomplished by teams using AI.",
                 "I do believe AI is already hurting many kids ability to learn, although this can be mitigated but there is work at a local, state and federal level. Without taking the appropriate steps, this will get worse and will continue.",
@@ -768,7 +768,7 @@ const presentationData = {
               ]
             },
             {
-              title: "How I built this app",
+              title: "Building this App",
               points: [
                 "I started with a keynote outline for a majority of the slides.",
                 "I shared a PDF of the slides with Claude, and asked it to use this content to write a presentation webapp. I also asked for a consistent bottom navigation, and a top navigation.",
@@ -1866,9 +1866,27 @@ function renderSlide(slide, location, navigate) {
       return <ProjectsSlide slide={slide} />;
     
     case 'comparison':
+      // Find the index of this comparison slide within its section for the page number
+      let sectionIndex = 0;
+      let sectionId = null;
+      if (location && location.pathname) {
+        const match = location.pathname.match(/\/section\/([^/]+)/);
+        if (match) sectionId = match[1];
+      }
+      let pageNum = 1;
+      if (sectionId) {
+        const section = presentationData.sections.find(s => s.id === sectionId);
+        if (section) {
+          const comparisonSlides = section.slides.filter(s => s.type === 'comparison');
+          const thisIdx = comparisonSlides.findIndex(s => s === slide);
+          pageNum = thisIdx + 1;
+        }
+      }
+      // Fallback: just use 1
+      const labelText = `Summary - ${pageNum.toString().padStart(2, '0')}`;
       return (
         <div className="comparison-slide">
-          <h1>{slide.title}</h1>
+          <div className="comparison-label">{labelText}</div>
           {slide.description && <p className="description">{slide.description}</p>}
           <div className="comparison-container">
             {slide.columns.map((column, index) => (
