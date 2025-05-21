@@ -39,8 +39,7 @@ const presentationData = {
         {
           type: "projects",
           title: "Welcome",
-          content: "A collection of Michael Evans' research, thoughts, and coding experiments with AI.",
-          isHomepage: true,
+          content: `A collection of <a href="https://www.linkedin.com/in/mevans212/" target="_blank" rel="noopener noreferrer" class="minimal-link">Michael Evans</a>' research, thoughts, and coding experiments with AI.`,          isHomepage: true,
           projects: [
             {
               title: "👥 User Research",
@@ -853,7 +852,11 @@ function ProjectsSlide({ slide }) {
   return (
     <div className="projects-slide">
       <h1>{slide.title}</h1>
-      {slide.content && <p className="intro">{slide.content}</p>}
+      {slide.isHomepage ? (
+        <p className="intro" dangerouslySetInnerHTML={{ __html: slide.content }} />
+      ) : (
+        slide.content && <p className="intro">{slide.content}</p>
+      )}
       <div className="projects-grid">
         {Array.isArray(slide.projects) && slide.projects.map((project, idx) => {
           const cardContent = (
