@@ -545,12 +545,23 @@ body {
   text-align: left;
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.1s;
 }
 
-.section-card h3 {
+.section-card:hover {
+  box-shadow: 0 8px 24px rgba(18, 38, 95, 0.18), 0 2px 4px rgba(18, 38, 95, 0.10);
+  transform: translateY(-4px) scale(1.02);
+  z-index: 2;
+}
+
+.section-card h3,
+.section-card-heading {
   font-size: 1.4rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
+  font-weight: 700;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .section-card p {
@@ -583,6 +594,10 @@ body {
     font-size: 1.1rem;
     padding: 0 1rem;
     margin-top: 1.5rem;
+  }
+  .section-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transform: none;
   }
 }
 
@@ -2632,4 +2647,74 @@ html.first-slide-active::-webkit-scrollbar {
 .navigation .subsections,
 .navigation .section-slides {
   padding-left: 5px !important;
+}
+
+.hypothesis-block {
+  display: flex;
+  align-items: stretch;
+  background: transparent;
+  border-radius: 8px;
+  margin-bottom: 0;
+  box-shadow: none;
+  padding: 0;
+}
+.hypothesis-block .bar {
+  width: 8px;
+  /* Remove border-radius for square ends */
+  border-radius: 0;
+  margin-right: 0.75rem;
+}
+.hypothesis-block.present .bar {
+  background: #12265F;
+}
+.hypothesis-block.future .bar {
+  background: var(--purple-color);
+}
+.hypothesis-block .content {
+  background: transparent;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  color: #111;
+  font-style: normal;
+  flex: 1;
+}
+.hypothesis-slide .present,
+.hypothesis-slide .future {
+  background: transparent;
+  border-left: none;
+  color: #111;
+  font-style: normal;
+  padding: 0;
 } 
+
+.comparison-column.left {
+  /* Left column: dark blue */
+  --comparison-accent: #12265F;
+}
+.comparison-column.right {
+  /* Right column: plum */
+  --comparison-accent: #933181;
+}
+.comparison-column.left h2,
+.comparison-column.right h2 {
+  color: var(--comparison-accent);
+  background: none;
+}
+.comparison-column.left h2,
+.comparison-column.right h2 {
+  border-bottom: 2.4px solid var(--comparison-accent); /* 20% thicker than 2px */
+}
+.comparison-column.left .comparison-points li:before,
+.comparison-column.left .comparison-subpoints li:before {
+  color: #12265F;
+}
+.comparison-column.right .comparison-points li:before,
+.comparison-column.right .comparison-subpoints li:before {
+  color: #933181;
+}
+.comparison-column {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  /* Keep existing padding */
+}

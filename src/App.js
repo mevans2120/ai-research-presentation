@@ -173,7 +173,7 @@ const presentationData = {
             },
             {
               type: "finding",
-              title: "Rise of the single use case / individual applications",
+              title: "Rise of the single use case / individual use applications",
               points: [
                 "Several non-developers in the audience had built single use case applications for personal and business reasons.",
                 "These applications would not have been worth the effort without AI, and solved very specific, often personal, use cases.",
@@ -549,7 +549,7 @@ const presentationData = {
               text: "AI as Therapist: The Rise of Mental Health Chatbots",
               url: "https://www.nytimes.com/2025/04/15/health/ai-therapist-mental-health.html",
               source: "The New York Times",
-              description: "I know a couple people who have found AI to be a helpful therapist… I have too many thoughts and feelings about this one to post in blurb.",
+              description: "AI can be therapuetic, apparently. Makes me feel a little lonely thinking about it.",
               imageUrl: "https://static01.nyt.com/images/2025/04/15/multimedia/00hs-ai-therapy-gbhj/00hs-ai-therapy-gbhj-facebookJumbo.jpg"
             }
           ]
@@ -713,7 +713,7 @@ const presentationData = {
           title: "Research & Vibe Coding",
           columns: [
             {
-              title: "First & third party research takeaways",
+              title: "Research Implications",
               points: [
                 "I'm genuinely excited about the problems we'll be able to solve in both the short and long term.",
                 {
@@ -729,7 +729,7 @@ const presentationData = {
               ]
             },
             {
-              title: "What I learned while Vibe Coding:",
+              title: "What I've learned building with AI",
               points: [
                 {
                   text: "It's pretty fun and magical:",
@@ -749,7 +749,7 @@ const presentationData = {
         },
         {
           type: "comparison",
-          title: "The AI Future & How I Built This",
+          title: "The AI Future & Building this App",
           columns: [
             {
               title: "How I'm feeling about the future",
@@ -1552,6 +1552,7 @@ function renderSlide(slide, location, navigate) {
     case 'section-cover':
       // Make section-cover cards clickable: card 0 -> slide 1, card 1 -> slide 2, etc.
       // To override, add a 'linkTo' property to the card object in the data, e.g. linkTo: '/section/your-section/3'
+      const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
       return (
         <div className={`section-cover-slide ${slide.isSubsectionCover ? 'subsection-cover' : ''}`}>
           <div className="section-cover-content">
@@ -1568,27 +1569,31 @@ function renderSlide(slide, location, navigate) {
                   } else if (section && section.slides[index + 1]) {
                     linkTo = `/section/${section.id}/${index + 1}`;
                   }
-
                   const CardContent = (
-                    <div className="section-card" key={index} style={{ cursor: linkTo ? 'pointer' : 'default' }}>
+                    <div className="section-card" key={index} style={{ cursor: linkTo ? 'pointer' : 'default' }}
+                      onClick={isMobile && linkTo ? (e => { e.preventDefault(); navigate(linkTo); }) : undefined}
+                    >
                       <h3>{card.title}</h3>
                       <p>{card.content}</p>
                     </div>
                   );
-
-                  return linkTo ? (
-                    <Link
-                      to={linkTo}
-                      key={index}
-                      style={{ textDecoration: 'none', color: 'inherit' }}
-                      onClick={e => {
-                        e.preventDefault();
-                        navigate(linkTo);
-                      }}
-                    >
-                      {CardContent}
-                    </Link>
-                  ) : CardContent;
+                  if (!isMobile && linkTo) {
+                    return (
+                      <Link
+                        to={linkTo}
+                        key={index}
+                        style={{ textDecoration: 'none', color: 'inherit' }}
+                        onClick={e => {
+                          e.preventDefault();
+                          navigate(linkTo);
+                        }}
+                      >
+                        {CardContent}
+                      </Link>
+                    );
+                  } else {
+                    return CardContent;
+                  }
                 })}
               </div>
             )}
@@ -1650,15 +1655,23 @@ function renderSlide(slide, location, navigate) {
             <p>{slide.hypothesis}</p>
           </div>
           <div className="hypothesis-columns">
-            <div className="present">
-              {slide.presentHypothesis.split('\n').map((paragraph, idx) => (
-                <p key={`present-${idx}`}>{paragraph}</p>
-              ))}
+            <div className="hypothesis-block present">
+              <div className="bar"></div>
+              <div className="content">
+                <h3 className="section-card-heading">The Present</h3>
+                {slide.presentHypothesis.split('\n').slice(1).map((paragraph, idx) => (
+                  <p key={`present-${idx}`}>{paragraph}</p>
+                ))}
+              </div>
             </div>
-            <div className="future">
-              {slide.futureHypothesis.split('\n').map((paragraph, idx) => (
-                <p key={`future-${idx}`}>{paragraph}</p>
-              ))}
+            <div className="hypothesis-block future">
+              <div className="bar"></div>
+              <div className="content">
+                <h3 className="section-card-heading">The Future</h3>
+                {slide.futureHypothesis.split('\n').slice(1).map((paragraph, idx) => (
+                  <p key={`future-${idx}`}>{paragraph}</p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -1859,7 +1872,7 @@ function renderSlide(slide, location, navigate) {
           {slide.description && <p className="description">{slide.description}</p>}
           <div className="comparison-container">
             {slide.columns.map((column, index) => (
-              <div className="comparison-column" key={index}>
+              <div className={`comparison-column ${index === 0 ? 'left' : 'right'}`} key={index}>
                 <h2>{column.title}</h2>
                 <ul className="comparison-points">
                   {column.points.map((point, pointIndex) => (
