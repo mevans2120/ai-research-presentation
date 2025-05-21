@@ -661,10 +661,10 @@ const presentationData = {
           content: "Here are some of the projects I've created with AI:",
           projects: [
             {
-              title: "D&D Initiative Tracker",
-              description: "I wrote the D&D initiative tracker with my now 11-year-old son, for the campaigns I DM with his friends. This app lets me keep track of who goes next during battles and their health points. It also sorts player characters and non-player characters for easy review. The insanely fast way this app came together inspired this whole project.",
-              url: "https://dungeon-tracker-mevans212.replit.app/",
-              imageUrl: "/dnd-tracker.png"
+              title: "This App",
+              description: "This presentation app is meant to have many different ways to navigate, and is meant for content that works non-linearly. I'm using it to share my research on AI and vibe coding.",
+              url: "https://ai-research-presentation.vercel.app/section/intro/0",
+              imageUrl: "/presentation.png"
             },
             {
               title: "Karuna's Website",
@@ -673,17 +673,32 @@ const presentationData = {
               imageUrl: "/karuna.png"
             },
             {
+              title: "D&D Initiative Tracker",
+              description: "I built the D&D initiative tracker with my 11-year-old son for the campaigns I run with his friends. It tracks turn order, health points, and sorts characters for easy review. The speed it came together inspired this entire project.",
+              url: "https://dungeon-tracker-mevans212.replit.app/",
+              imageUrl: "/dnd-tracker.png"
+            },
+            {
               title: "Voice Activated Kitchen Timer POC",
-              description: "I love cooking and using Alexa's kitchen timer, but I don't want an always-on Amazon device in my home. So I built a voice-activated kitchen timer that works offline. It's a rough proof of concept—and my first vibe coding project. If you've ever cooked with messy hands, you know why voice is the ideal interface.",
+              description: "I love cooking, but didn’t want an always-on Amazon device. So I built an offline, voice-activated kitchen timer—my first vibe coding project. If you’ve cooked with messy hands, you know why voice is ideal.",
               url: "https://voice-timer-2-mevans212.replit.app/",
               imageUrl: "/voice-timer.png"
             },
             {
-              title: "This App",
-              description: "This presentation app is meant to have many different ways to navigate, and is meant for content that works non-linearly. I'm using it to share my research on AI and vibe coding.",
-              url: "https://ai-research-presentation.vercel.app/section/intro/0",
-              imageUrl: "/presentation.png"
-            }
+            title: "Site Synthesizer",
+            description: "An in-progress n8n-based agentic scraper that searches sites by keyword and logs relevant URLs and data into a database. Builing it for job seekers and sales reps. Back-end proof of concept is done and hosted on Railway.",
+            url: "https://dungeon-tracker-mevans212.replit.app/",
+            imageUrl: "/SiteSynthesizer.png",
+            comingSoon: true
+          },
+          {
+          title: "Department of Art",
+          description: "A new project for DOA (the Department of Art production company) based in Portland. The goal is to see how quickly I can build an effective and excellent website for them using AI.",
+          url: "https://dungeon-tracker-mevans212.replit.app/",
+          imageUrl: "/DOA.png",
+          comingSoon: true
+        },
+           
           ]
         }
       ]
@@ -849,6 +864,21 @@ function ProjectsSlide({ slide }) {
     </svg>
   );
 
+  // Mobile tap-to-expand handler
+  const handleCardClick = (idx, project) => {
+    if (isMobile) {
+      if (!expandedCards[idx]) {
+        setExpandedCards({ ...expandedCards, [idx]: true });
+      } else if (!project.comingSoon && project.url) {
+        if (project.url.startsWith('/')) {
+          navigate(project.url);
+        } else {
+          window.open(project.url, '_blank');
+        }
+      }
+    }
+  };
+
   return (
     <div className="projects-slide">
       <h1>{slide.title}</h1>
@@ -861,17 +891,16 @@ function ProjectsSlide({ slide }) {
         {Array.isArray(slide.projects) && slide.projects.map((project, idx) => {
           const cardContent = (
             <>
+              {project.comingSoon && (
+                <div className="coming-soon-ribbon">Coming Soon</div>
+              )}
               <div className="project-image-container">
-                <div
+                <img
                   className="project-image"
-                  style={{
-                    backgroundImage: `url(${project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'top center',
-                    width: '100%',
-                    height: '400px'
-                  }}
-                ></div>
+                  src={project.imageUrl || `https://placehold.co/600x400/f0f0f0/333333?text=${encodeURIComponent(project.title)}`}
+                  alt={project.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+                />
               </div>
               <div className="project-content">
                 <h3 className="project-title">
@@ -880,20 +909,45 @@ function ProjectsSlide({ slide }) {
                 <div className={`project-details ${isMobile ? 'mobile' : ''}`}>
                   <p className="project-description">
                     {project.description}
-                    {!project.url.startsWith('/') && <ExternalLinkIcon />}
+                    {project.url && !project.comingSoon && !project.url.startsWith('/') && <ExternalLinkIcon />}
                   </p>
                 </div>
               </div>
             </>
           );
 
-          if (project.url.startsWith('/')) {
+          // Mobile tap-to-expand logic
+          if (isMobile) {
+            return (
+              <div
+                key={idx}
+                className={`project-card${expandedCards[idx] ? ' expanded' : ''}${project.comingSoon ? ' coming-soon' : ''}`}
+                onClick={() => handleCardClick(idx, project)}
+                style={{ textDecoration: 'none', color: 'inherit', cursor: project.comingSoon ? 'default' : 'pointer' }}
+              >
+                {cardContent}
+              </div>
+            );
+          }
+
+          // Desktop/Non-mobile logic
+          if (project.comingSoon) {
+            // Coming soon card - not clickable
+            return (
+              <div
+                key={idx}
+                className="project-card coming-soon"
+              >
+                {cardContent}
+              </div>
+            );
+          } else if (project.url?.startsWith('/')) {
             // Internal link
             return (
               <Link
                 to={project.url}
                 key={idx}
-                className={`project-card`}
+                className="project-card"
                 style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
                 onClick={e => {
                   e.preventDefault();
@@ -903,7 +957,7 @@ function ProjectsSlide({ slide }) {
                 {cardContent}
               </Link>
             );
-          } else {
+          } else if (project.url) {
             // External link
             return (
               <a
@@ -911,7 +965,7 @@ function ProjectsSlide({ slide }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={idx}
-                className={`project-card`}
+                className="project-card"
                 style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
                 onClick={e => {
                   e.preventDefault();
@@ -920,6 +974,16 @@ function ProjectsSlide({ slide }) {
               >
                 {cardContent}
               </a>
+            );
+          } else {
+            // No link
+            return (
+              <div
+                key={idx}
+                className="project-card"
+              >
+                {cardContent}
+              </div>
             );
           }
         })}

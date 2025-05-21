@@ -987,7 +987,7 @@ body {
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  min-height: 400px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
 }
@@ -1052,7 +1052,7 @@ body {
   overflow: hidden;
   background-color: #f5f5f5;
   position: relative;
-  height: 400px; /* Fixed height for desktop */
+  height: 300px; /* Reverted to original */
 }
 
 .project-image-container::after {
@@ -1062,7 +1062,7 @@ body {
   left: 0;
   right: 0;
   height: 100px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 100%); /* 75% less shadow */
   pointer-events: none;
 }
 
@@ -1075,9 +1075,6 @@ body {
   margin-bottom: 8px;
 }
 
-.project-image:hover {
-  transform: scale(1.05);
-}
 
 .project-content {
   position: absolute;
@@ -1085,7 +1082,7 @@ body {
   left: 0;
   right: 0;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #fff;
   transition: all 0.3s ease;
   transform: translateY(calc(100% - 80px)); /* Show just the title by default */
   max-height: 100%;
@@ -2397,7 +2394,7 @@ main.slide-content.comparison-slide {
 
   .project-card {
     height: auto;
-    min-height: 300px;
+    min-height: 215px;
   }
 
   .project-content {
@@ -2791,5 +2788,44 @@ html.first-slide-active::-webkit-scrollbar {
     /* Remove horizontal padding for alignment */
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+/* Coming Soon Ribbon */
+.coming-soon-ribbon {
+  position: absolute;
+  top: 20px;
+  right: -35px;
+  background: #12265F; /* Dark blue */
+  color: white;
+  padding: 5px 40px;
+  transform: rotate(45deg);
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Non-clickable project card */
+.project-card.coming-soon {
+  cursor: default;
+}
+
+.project-card.coming-soon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-card.coming-soon .project-content {
+  cursor: default;
+}
+
+.project-card.coming-soon:hover .project-content {
+  transform: translateY(0); /* Reveal body copy on hover */
+}
+
+@media (max-width: 768px) {
+  .project-image-container {
+    height: 140px; /* or whatever height you want */
   }
 }
