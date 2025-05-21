@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- Favicon links for light/dark mode -->
+    <link rel="icon" type="image/png" href="/Favicon_Light.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" href="/Favicon_Dark.png" media="(prefers-color-scheme: dark)" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#2563eb" />
     <meta
@@ -21,5 +22,12 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      // Handle dynamic changes to color scheme
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        // The browser will automatically update the favicon based on the media queries
+        // No additional action needed as the media queries handle the swap
+      });
+    </script>
   </body>
 </html> 
