@@ -12,7 +12,7 @@ import { Analytics } from '@vercel/analytics/react';
 // Replace 'G-XXXXXXXXXX' with your actual measurement ID
 initializeGA('G-XXXXXXXXXX');
 
-const EVERYONE_ELSE_ABOUT_CONTENT = `Over the past few months, I've taken time to dig deeply into AI-powered coding tools. I've dug into them as a user, and as a researcher trying to understand their utility and their trajectory. My goal wasn't just to build faster, but to assess whether these tools can meaningfully shift how digital products get designed and shipped—and what that might mean for teams like mine.
+const EVERYONE_ELSE_ABOUT_CONTENT = `Over the past couple months, I've taken time to dig deeply into AI-powered coding tools. I've dug into them as a user, and as a researcher trying to understand their utility and their trajectory. My goal wasn't just to build faster, but to assess whether these tools can meaningfully shift how digital products get designed and shipped—and what that might mean for teams like mine.
 
 Until recently, I hadn't had time to explore AI development tools in depth. I'd been fully focused on launching complex digital systems for a high-profile hospitality experience. But after wrapping up that project, I had the space to experiment…
 
@@ -1362,6 +1362,26 @@ function SlideView() {
       document.documentElement.classList.remove('first-slide-active');
     }
   }, [isFirstSlide]);
+  
+  // Update document title when slide changes (stateful)
+  useEffect(() => {
+    function normalizeTitle(title) {
+      // Remove emojis and trim whitespace
+      return title.replace(/[\u{1F600}-\u{1F6FF}\u{1F300}-\u{1F5FF}\u{1F900}-\u{1F9FF}\u{1FA70}-\u{1FAFF}\u2600-\u26FF\u2700-\u27BF]/gu, '').trim();
+    }
+    if (currentSection && currentSlide) {
+      const slideTitleNorm = normalizeTitle(currentSlide.title);
+      const sectionTitleNorm = normalizeTitle(currentSection.title);
+      const parts = [currentSlide.title];
+      if (slideTitleNorm !== sectionTitleNorm) {
+        parts.push(currentSection.title);
+      }
+      parts.push(presentationData.title);
+      document.title = parts.join(' | ');
+    } else {
+      document.title = presentationData.title;
+    }
+  }, [currentSection, currentSlide]);
   
   if (!currentSection || !currentSlide) {
     // Backup approach to find the slide if state isn't working properly

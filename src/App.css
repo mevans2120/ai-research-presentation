@@ -1363,7 +1363,7 @@ body {
   
   /* Increase tap area size on mobile */
   .side-click-area {
-    width: 12.5%; /* Reduced from 25% to 12.5% (50% reduction) */
+    width: 18.75%; /* Increased by 50% from 12.5% */
   }
   
   /* Stack image and content on mobile */
