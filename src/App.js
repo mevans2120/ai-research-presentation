@@ -39,7 +39,7 @@ const presentationData = {
         {
           type: "projects",
           title: "Welcome",
-          content: "A collection of my research, my thoughts, and my coding experiments with AI.",
+          content: "A collection of Michael Evans' research, thoughts, and coding experiments with AI.",
           isHomepage: true,
           projects: [
             {
@@ -1348,7 +1348,7 @@ function SlideView() {
         <div className="logo" onClick={() => navigate('/')}
              style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
           <img src="/MEvans.svg" alt="MEvans Logo" style={{ height: '32px', width: '32px', marginRight: 8 }} />
-          MEvans AI Workbook
+          AI Workbook
         </div>
         <button className="menu-toggle" onClick={toggleMenu}>
           {menuOpen ? 'Close' : 'Menu'}

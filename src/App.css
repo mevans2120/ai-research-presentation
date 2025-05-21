@@ -2,7 +2,7 @@
 
 :root {
   --blue-color: #12265F;
-  --purple-color: #473399;
+  --purple-color: #933181;
   --primary-color: var(--blue-color);
   --nav-color: var(--blue-color);
   --secondary-color: #4b5563;
@@ -671,7 +671,7 @@ body {
 
 .hypothesis-slide .future {
   background-color: #f0ecff;
-  border-left: 4px solid var(--purple-color);
+  border-left: 4px solid #933181;
 }
 
 .hypothesis-slide .future p {
@@ -798,7 +798,7 @@ body {
   padding: 1rem;
   margin-bottom: 1rem;
   background-color: #f8f9fa;
-  border-left: 3px solid var(--accent-color);
+  border-left: 3px solid #933181;
   font-style: italic;
 }
 
@@ -2313,7 +2313,7 @@ main.slide-content.comparison-slide {
   height: 12px !important;
   border-radius: 50% !important;
   border: none !important;
-  background: rgba(255, 102, 0, 0.25) !important;
+  background: rgba(147, 49, 129, 0.25) !important; /* Changed to new purple with opacity */
   opacity: 1 !important;
   cursor: pointer !important;
   transition: background 0.2s !important;
@@ -2325,17 +2325,17 @@ main.slide-content.comparison-slide {
 }
 
 .section-dot.current {
-  background: #ff6600 !important;
+  background: var(--purple-color) !important;
 }
 
 /* Remove border on focus for a cleaner look */
 .section-dot:focus-visible {
-  outline: 2px solid #ff6600;
+  outline: 2px solid var(--purple-color);
   outline-offset: 2px;
 }
 
 .section-dot:not(.current):hover {
-  background: rgba(255, 102, 0, 0.5) !important;
+  background: rgba(147, 49, 129, 0.5) !important; /* Changed to new purple with opacity */
 }
 
 /* Distribute dots evenly across the nav bar */
