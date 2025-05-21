@@ -665,17 +665,19 @@ body {
 }
 
 .hypothesis-slide .present {
-  background-color: #fdf6f1;
-  border-left: 4px solid #DD4747;
+  background-color: #e7ecfa;
+  border-left: 4px solid #12265F;
+  color: #111;
 }
 
 .hypothesis-slide .future {
   background-color: #f0ecff;
-  border-left: 4px solid #933181;
+  border-left: 4px solid var(--purple-color);
+  color: #111;
 }
 
 .hypothesis-slide .future p {
-  color: var(--purple-color);
+  color: #111;
 }
 
 .hypothesis-slide p {
