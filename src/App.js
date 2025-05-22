@@ -50,7 +50,7 @@ const presentationData = {
             {
               title: "✍️ Concepts & Content",
               description: "A thought experiment \"What if AI was a wrapper over your phone's tools?\" and a collection of interesting articles and podcasts around AI.",
-              url: "/section/chatphone/0",
+              url: "/section/concepts-content/0",
               imageUrl: "/concepts-content.png"
             },
             {
@@ -286,7 +286,7 @@ const presentationData = {
       ]
     },
     {
-      id: "chatphone",
+      id: "concepts-content",
       title: "✍️ Concepts & Content",
       slides: [
         {
