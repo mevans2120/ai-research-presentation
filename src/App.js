@@ -680,7 +680,7 @@ const presentationData = {
             },
             {
               title: "Voice Activated Kitchen Timer POC",
-              description: "I love cooking, but didn’t want an always-on Amazon device. So I built an offline, voice-activated kitchen timer—my first vibe coding project. If you’ve cooked with messy hands, you know why voice is ideal.",
+              description: "I love cooking, but didn't want an always-on Amazon device. So I built an offline, voice-activated kitchen timer—my first vibe coding project. If you've cooked with messy hands, you know why voice is ideal.",
               url: "https://voice-timer-2-mevans212.replit.app/",
               imageUrl: "/voice-timer.png"
             },
@@ -864,8 +864,19 @@ function ProjectsSlide({ slide }) {
     </svg>
   );
 
-  // Mobile tap-to-expand handler
-  const handleCardClick = (idx, project) => {
+  // Separate handlers for homepage and project cards
+  const handleHomepageCardClick = (project) => {
+    if (project.comingSoon) return;
+    if (project.url) {
+      if (project.url.startsWith('/')) {
+        navigate(project.url);
+      } else {
+        window.open(project.url, '_blank');
+      }
+    }
+  };
+
+  const handleProjectCardClick = (idx, project) => {
     if (isMobile) {
       if (!expandedCards[idx]) {
         setExpandedCards({ ...expandedCards, [idx]: true });
@@ -906,7 +917,7 @@ function ProjectsSlide({ slide }) {
                 <h3 className="project-title">
                   {project.title}
                 </h3>
-                <div className={`project-details ${isMobile ? 'mobile' : ''}`}>
+                <div className={`project-details ${isMobile && !slide.isHomepage ? 'mobile' : ''}`}>
                   <p className="project-description">
                     {project.description}
                     {project.url && !project.comingSoon && !project.url.startsWith('/') && <ExternalLinkIcon />}
@@ -916,75 +927,98 @@ function ProjectsSlide({ slide }) {
             </>
           );
 
-          // Mobile tap-to-expand logic
-          if (isMobile) {
+          // Different rendering for homepage vs project cards
+          if (slide.isHomepage) {
+            // Homepage cards - direct navigation
             return (
               <div
                 key={idx}
-                className={`project-card${expandedCards[idx] ? ' expanded' : ''}${project.comingSoon ? ' coming-soon' : ''}`}
-                onClick={() => handleCardClick(idx, project)}
-                style={{ textDecoration: 'none', color: 'inherit', cursor: project.comingSoon ? 'default' : 'pointer' }}
-              >
-                {cardContent}
-              </div>
-            );
-          }
-
-          // Desktop/Non-mobile logic
-          if (project.comingSoon) {
-            // Coming soon card - not clickable
-            return (
-              <div
-                key={idx}
-                className="project-card coming-soon"
-              >
-                {cardContent}
-              </div>
-            );
-          } else if (project.url?.startsWith('/')) {
-            // Internal link
-            return (
-              <Link
-                to={project.url}
-                key={idx}
-                className="project-card"
-                style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
-                onClick={e => {
-                  e.preventDefault();
-                  navigate(project.url);
+                className={`project-card homepage-card${project.comingSoon ? ' coming-soon' : ''}`}
+                onClick={() => handleHomepageCardClick(project)}
+                style={{ 
+                  textDecoration: 'none', 
+                  color: 'inherit', 
+                  cursor: project.comingSoon ? 'default' : 'pointer' 
                 }}
               >
                 {cardContent}
-              </Link>
-            );
-          } else if (project.url) {
-            // External link
-            return (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={idx}
-                className="project-card"
-                style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
-                onClick={e => {
-                  e.preventDefault();
-                  window.open(project.url, '_blank');
-                }}
-              >
-                {cardContent}
-              </a>
+              </div>
             );
           } else {
-            // No link
-            return (
-              <div
-                key={idx}
-                className="project-card"
-              >
-                {cardContent}
-              </div>
-            );
+            // Project cards - expand then navigate on mobile
+            if (isMobile) {
+              return (
+                <div
+                  key={idx}
+                  className={`project-card${expandedCards[idx] ? ' expanded' : ''}${project.comingSoon ? ' coming-soon' : ''}`}
+                  onClick={() => handleProjectCardClick(idx, project)}
+                  style={{ 
+                    textDecoration: 'none', 
+                    color: 'inherit', 
+                    cursor: project.comingSoon ? 'default' : 'pointer' 
+                  }}
+                >
+                  {cardContent}
+                </div>
+              );
+            }
+
+            // Desktop project cards
+            if (project.comingSoon) {
+              return (
+                <div
+                  key={idx}
+                  className="project-card coming-soon"
+                >
+                  {cardContent}
+                </div>
+              );
+            }
+
+            if (project.url) {
+              if (project.url.startsWith('/')) {
+                return (
+                  <Link
+                    to={project.url}
+                    key={idx}
+                    className="project-card"
+                    style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                    onClick={e => {
+                      e.preventDefault();
+                      navigate(project.url);
+                    }}
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              } else {
+                return (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={idx}
+                    className="project-card"
+                    style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                    onClick={e => {
+                      e.preventDefault();
+                      window.open(project.url, '_blank');
+                    }}
+                  >
+                    {cardContent}
+                  </a>
+                );
+              }
+            } else {
+              return (
+                <div
+                  key={idx}
+                  className="project-card"
+                >
+                  {cardContent}
+                </div>
+              );
+            }
           }
         })}
       </div>

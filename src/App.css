@@ -2829,3 +2829,47 @@ html.first-slide-active::-webkit-scrollbar {
     height: 140px; /* or whatever height you want */
   }
 }
+
+/* Homepage specific card styles */
+.slide-view.first-slide-active .project-card.homepage-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slide-view.first-slide-active .project-card.homepage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.slide-view.first-slide-active .project-card.homepage-card::after {
+  display: none; /* Remove tap indicators for homepage cards */
+}
+
+/* Mobile styles for homepage cards */
+@media (max-width: 768px) {
+  .slide-view.first-slide-active .project-card.homepage-card {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slide-view.first-slide-active .project-card.homepage-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Keep project cards mobile behavior */
+  .project-card:not(.homepage-card)::after {
+    content: 'Tap to expand';
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 12px;
+    color: #666;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+
+  .project-card:not(.homepage-card).expanded::after {
+    content: 'Tap to open';
+  }
+}
