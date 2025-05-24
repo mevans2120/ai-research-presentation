@@ -89,7 +89,7 @@ const presentationData = {
             },
             {
               title: "Key Findings",
-              content: "My research revealed that AI has become central to many professionals' workflows, with most participants experiencing moments of awe about its capabilities."
+              content: "My research revealed that AI has become central to many particpants' workflows, with most participants experiencing moments of awe about its capabilities."
             }
           ]
         },
@@ -125,17 +125,8 @@ const presentationData = {
               type: "section-cover",
               title: "Present Findings",
               subtitle: "",
-              isSubsectionCover: true,
-              cards: [
-                {
-                  title: "Current Usage Patterns",
-                  content: "Most participants use AI daily, with over half paying for multiple tools like ChatGPT, Claude, and Gemini. Many have already built products primarily with AI assistance."
-                },
-                {
-                  title: "Industry Impact",
-                  content: "AI is perceived as the most transformational technology in many participants' careers, enabling previously infeasible projects and changing how they approach their work."
-                }
-              ]
+              body: "AI is integrated into the daily workflows for a majority of participants, with many experiencing moments of awe at its transformative capabilities.",
+              isSubsectionCover: true
             },
             {
               type: "finding",
@@ -239,17 +230,8 @@ const presentationData = {
               type: "section-cover",
               title: "Future Findings",
               subtitle: "",
-              isSubsectionCover: true,
-              cards: [
-                {
-                  title: "Work Transformation",
-                  content: "Participants anticipate AI enabling faster innovation but with smaller teams, creating uncertainty about the tech industry's future workforce size."
-                },
-                {
-                  title: "Generational Concerns",
-                  content: "Many worry about how AI will impact future generations, with concerns about learning, employment opportunities, and skill development in an AI-augmented world."
-                }
-              ]
+              body: "While most participants expect AI to drive innovation and short term industry growth, there is uncertaintity and concern about the future.",
+              isSubsectionCover: true
             },
             {
               type: "finding",
@@ -662,7 +644,7 @@ const presentationData = {
           projects: [
             {
               title: "This App",
-              description: "This presentation app is meant to have many different ways to navigate, and is meant for content that works non-linearly. I'm using it to share my research on AI and vibe coding.",
+              description: "This presentation app is meant to support navigation beyond back and forward. I'm using it to share my research on AI and vibe coding.",
               url: "https://ai-research-presentation.vercel.app/section/intro/0",
               imageUrl: "/presentation.png"
             },
@@ -1733,6 +1715,11 @@ function renderSlide(slide, location, navigate) {
           <div className="section-cover-content">
             <h1>{slide.title}</h1>
             {slide.subtitle && <h2>{slide.subtitle}</h2>}
+            {slide.body && (
+              <div className="section-cover-body">
+                {slide.body}
+              </div>
+            )}
             {slide.cards && !slide.isSubsectionCover && (
               <div className="section-cover-cards">
                 {slide.cards.map((card, index) => {

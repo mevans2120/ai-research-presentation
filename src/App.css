@@ -517,6 +517,7 @@ body {
 .section-cover-slide.subsection-cover .section-cover-body {
   color: var(--blue-color);
   opacity: 0.9;
+  margin-top: 0.75rem; /* Reduced from 2rem to bring body text closer to title */
 }
 
 /* Section cover cards layout */
