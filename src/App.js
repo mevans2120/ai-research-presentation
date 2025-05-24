@@ -1973,19 +1973,22 @@ function renderSlide(slide, location, navigate) {
                 // Special handling for 'Develop a Concept' section with image
                 if (section.title === 'Develop a Concept' && section.imageUrl) {
                   return (
-                    <div key={idx} className="section develop-concept-section">
-                      <div className="content develop-concept-content">
-                        {section.content.split('\n').map((paragraph, pIdx) => (
-                          <p key={pIdx}>{paragraph}</p>
-                        ))}
-                      </div>
-                      <div className="concept-image-container">
-                        <div
-                          className="concept-image"
-                          style={{ backgroundImage: `url(${section.imageUrl})` }}
-                          alt="Karuna concept homepage"
-                        ></div>
-                        <div className="concept-caption">{section.caption}</div>
+                    <div key={idx} className="section">
+                      <h2>{section.title}</h2>
+                      <div className="develop-concept-section">
+                        <div className="content develop-concept-content">
+                          {section.content.split('\n').map((paragraph, pIdx) => (
+                            <p key={pIdx}>{paragraph}</p>
+                          ))}
+                        </div>
+                        <div className="concept-image-container">
+                          <div
+                            className="concept-image"
+                            style={{ backgroundImage: `url(${section.imageUrl})` }}
+                            alt="Karuna concept homepage"
+                          ></div>
+                          <div className="concept-caption">{section.caption}</div>
+                        </div>
                       </div>
                     </div>
                   );
