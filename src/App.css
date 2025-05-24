@@ -2246,12 +2246,12 @@ main.slide-content.comparison-slide {
 .slide-controls button {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem; /* Increased from 1.5rem to make arrows larger */
   font-weight: 700; /* Moved from separate .prev-slide, .next-slide rule */
   cursor: pointer;
   color: var(--primary-color);
   padding: 0.5rem 1rem;
-  width: 90px; /* Increased from 60px (50% longer) */
+  width: 90px; /* Reverted back to original */
   text-align: center;
   /* Subtler bold effect for arrows, 1px stroke */
   text-shadow: 1px 0 0 #12265F, 0 1px 0 #12265F; /* Moved from separate rule */
@@ -2368,13 +2368,6 @@ main.slide-content.comparison-slide {
 }
 
 /* Distribute dots evenly across the nav bar */
-.slide-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
 .section-dot-row {
   flex: 1;
   display: flex;
@@ -2382,23 +2375,6 @@ main.slide-content.comparison-slide {
   align-items: center;
   width: 100%;
 }
-
-.slide-view.first-slide-active .slide-controls {
-  background-color: var(--slide-controls-bg) !important;
-  backdrop-filter: blur(var(--slide-controls-blur)) !important;
-  box-shadow: var(--slide-controls-shadow) !important;
-  padding: var(--slide-controls-padding);
-  height: var(--slide-controls-height);
-}
-
-.slide-view.first-slide-active .prev-slide,
-.slide-view.first-slide-active .next-slide {
-  font-size: 1.5rem;
-  font-weight: 700;
-  /* Subtler bold effect for arrows, 1px stroke */
-  text-shadow: 1px 0 0 #12265F, 0 1px 0 #12265F;
-}
-
 /* Mobile styles for projects grid */
 @media (max-width: 768px) {
   /* Reduce slide controls padding on mobile for better space utilization */
@@ -2463,6 +2439,22 @@ main.slide-content.comparison-slide {
   .slide-view.first-slide-active .project-description {
     font-size: 0.9rem;
     line-height: 1.4;
+  }
+  
+  /* Additional homepage project grid mobile styles - overriding the specific styles above */
+  .slide-view.first-slide-active .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .slide-view.first-slide-active .project-card {
+    height: auto !important;
+    min-height: 180px !important;
+  }
+
+  .slide-view.first-slide-active .project-content {
+    padding: 1.25rem !important;
   }
 }
 
