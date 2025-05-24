@@ -1636,9 +1636,19 @@ function SlideView() {
       )}
       
       <div className="slide-controls">
+        {/* Progress bar */}
+        <div className="slide-progress-bar">
+          <div 
+            className="slide-progress-fill" 
+            style={{ 
+              width: `${(globalSlideInfo.current / globalSlideInfo.total) * 100}%` 
+            }}
+          ></div>
+        </div>
+        
         <button className="prev-slide" onClick={goToPrevSlide}>←</button>
-        {/* Dot markers for sections */}
-        <div className="section-dot-row">
+        {/* Dot markers for sections - COMMENTED OUT */}
+        {/* <div className="section-dot-row">
           {presentationData.sections.map((section, idx) => {
             // Determine if this is the current section
             const isCurrent = section.id === sectionId;
@@ -1652,7 +1662,7 @@ function SlideView() {
               />
             );
           })}
-        </div>
+        </div> */}
         <button className="next-slide" onClick={goToNextSlide}>→</button>
       </div>
     </div>

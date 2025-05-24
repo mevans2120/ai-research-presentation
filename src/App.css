@@ -2231,6 +2231,24 @@ main.slide-content.comparison-slide {
   z-index: 9999;
 }
 
+/* Progress bar styling */
+.slide-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px; /* Made half as thick */
+  background-color: rgba(147, 49, 129, 0.2); /* Light plum background */
+  overflow: hidden;
+}
+
+.slide-progress-fill {
+  height: 100%;
+  background-color: var(--purple-color); /* Plum color */
+  transition: width 0.3s ease;
+  transform-origin: left;
+}
+
 .slide-controls button {
   background: none;
   border: none;
