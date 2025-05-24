@@ -49,7 +49,7 @@ const presentationData = {
             },
             {
               title: "✍️ Concepts & Content",
-              description: "A thought experiment \"What if AI was a wrapper over your phone's tools?\" and a collection of interesting articles and podcasts around AI.",
+              description: "A thought experiment \"What if AI was a wrapper over your phone's tools?\" And a collection of interesting articles and podcasts around AI.",
               url: "/section/concepts-content/0",
               imageUrl: "/concepts-content.png"
             },
@@ -85,7 +85,7 @@ const presentationData = {
           cards: [
             {
               title: "Hypothesis & Methodology",
-              content: "AI is a productivity super power for this audience, but they aren't sure where it will be in 5 years. I spoke with 13 colleagues, of various backgrounds & roles."
+              content: "AI is a productivity super power for this audience, but they aren't sure where it will be in 5 years. I spoke with 13 colleagues of various backgrounds & roles."
             },
             {
               title: "Key Findings",
@@ -103,7 +103,7 @@ const presentationData = {
         {
           type: "methodology",
           title: "Methodology & Audience",
-          content: "I spoke with 11 colleagues, including designers, developers, product managers, and other business professionals. Over half were executives, and the rest were relatively senior. Two of the engineers had direct experience working with AI, and one specialized in developing new AI models. The conversations lasted between 15 and 60 minutes, with several follow-ups. They took place over the span of a month",
+          content: "I spoke with 13 colleagues, including designers, developers, product managers, and other business professionals. Over half were executives, and the rest were relatively senior. Two of the engineers had direct experience working with AI, and one specialized in developing new AI models. The conversations lasted between 15 and 60 minutes, with several follow-ups. They took place over the span of a month",
           footnote: "To preserve anonymity and encourage candor, I took notes instead of recording. Some quotes may be slightly abridged or paraphrased.",
           tableData: {
             headers: ["Gender", "Company Type", "Role"],
@@ -194,10 +194,10 @@ const presentationData = {
               type: "finding",
               title: "Several felt a connection with AI, valuing its manner. Though, most found AI over-confident.",
               points: [
-                "Several commented on how the agents mirrors the tone you approach your prompts with, and this led them to engage more deeply and frequently.",
-                "Many commented on how confident AI are in their solution whether they are right or wrong",
+                "Several commented on how the agents mirror the tone you approach your prompts with and this led them to engage more deeply and frequently.",
+                "Many commented on how confident AI are in their solutions whether they are right or wrong",
                 "AI cheered up a couple of the participants, and they used AI to help calm them down.",
-                "AI felt hyperbolic to some, it quickly praised some of the audience members ideas as being excellent or amazing"
+                "AI felt hyperbolic to some. It quickly praised some of the audience members ideas as being excellent or amazing"
               ],
               quotes: [
                 "I've had conversations with Claude about a family member's health issues, and those conversations honestly cheered me up and reduced my anxiety. Claude seemed to really understand where I was coming from. So much better than the Google Search holes I used to go into",
@@ -211,7 +211,7 @@ const presentationData = {
               title: "AI products are typically inexpensive and simple to develop, as AI itself assists in their creation. However, training new AI models is extremely costly.",
               points: [
                 "Developing a user agent that can perform a relatively complex but single use case (moderating a user interview) is only a couple weeks worth of work.",
-                "Training new models is exorbitantly expensive and resource.",
+                "Training new models is exorbitantly expensive and resource intensive.",
                 "In software AI can do it all: make the spec, write the code, and measure for success against the spec."
               ],
               quotes: [
@@ -237,7 +237,7 @@ const presentationData = {
               type: "finding",
               title: "Most expect AI to boom, then bust, in tech—but no one knows when. Two thought solely 🚀🚀🚀 ",
               points: [
-                "Most everyone believed that AI would unlock a bunch of innovation by being part of new products, and also enabling other digital products to be developed more cheaply",
+                "Most everyone believed that AI would unlock innovation by being part of new products and also enabling other digital products to be developed more cheaply",
                 "Most everyone also believed that the teams needed to build these products would be significantly smaller.",
                 "A couple thought that the backlog of potential innovation was vast or innovative, and that the technology industry would by and large support the same number of employees."
               ],
@@ -253,7 +253,7 @@ const presentationData = {
               type: "finding",
               title: "Most worried about AI's impact on the world in the future, though a few felt it was overblown.",
               points: [
-                "Several wondered what their kids would do if AI does all this work goes away",
+                "Several wondered what their kids would do if AI does all the high brain powered work for them",
                 "One person had a teenager who felt AI was ruining their ability to learn.",
                 "A couple thought that it was overblown, AI would be like other much hyped tech and merely be a tool in the toolbox."
               ],
@@ -289,7 +289,7 @@ const presentationData = {
         {
           type: "thought-experiment",
           title: "Chatphone Concept",
-          content: `<p>While talking with one of the research participants, we got onto the topic of agentic chat becoming a contextual layer between the tools your phone provides and how you access and use those tools.</p>\n\n<p>As someone who designed and built the <a href=\"https://play.google.com/store/apps/details?id=com.beforesoft.launcher&hl=en_US\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"minimal-link\">Before Launcher</a>, finding better ways to use our smartphones is a catnip-like obsession for me.</p>\n\n<p>The participant and I, exchanging texts, landed on the idea of a conceptually aware phone… one whose interface changes based on your \"mode.\" While not a new idea by any means, AI seems uniquely suited to help make this a reality.</p>\n\n<p>Diagram 1, at the top of this page, illustrates how this might work. After the ChatPhone onboards onto your primary usage contexts (a fascinating and likely ongoing process in itself), the phone's homescreen would display:</p>\n<ul>\n<li>The primary tools you're likely to use in that mode</li>\n<li>A digest of prioritized information and action based on your behavior and preferences.</li>\n<li>Quick access to agentic chat</li>\n</ul>\n<p>This type of phone could offer several benefits:</p>\n<ul>\n<li>Speed up how quickly you find things on your phone</li>\n<li>Reduce the need for repetitive decision-making (e.g., which delivery app or pizza place to choose)</li>\n<li>Minimize distractions from content or tools best reserved for other contexts</li>\n</ul>\n<p>Of course, using an agent as an intermediary introduces the risk of it missing key or critical content. That's why this concept feels better suited for a time when AI has matured to the point of being more reliable than you are at completing certain tasks.</p>\n\n<p>Also, while I doubt toolmakers like DoorDash, Lyft, Google, Apple, and others would appreciate being further commoditized—since their apps would no longer be the primary way users access the services they offer, they may have less of a choice when they can't distinguish between an AI accessing their app versus a person. It will be interesting to see how this plays out.</p>\n\n<p>I've been using though experiments like this one to get excited about possible innovations in the future, validate how I think and feel about AIs current and future usage. If AI could execute something like the Chatphone Concept, while maintaining my privacy and agency, count me in as a user.</p>`,
+          content: `<p>While talking with one of the research participants, we got onto the topic of agentic chat becoming a contextual layer between the tools your phone provides and how you access and use those tools.</p>\n\n<p>As someone who designed and built the <a href=\"https://play.google.com/store/apps/details?id=com.beforesoft.launcher&hl=en_US\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"minimal-link\">Before Launcher</a>, finding better ways to use our smartphones is a catnip-like obsession for me.</p>\n\n<p>The participant and I, exchanging texts, landed on the idea of a conceptually aware phone… one whose interface changes based on your \"mode.\" While not a new idea by any means, AI seems uniquely suited to help make this a reality.</p>\n\n<p>Diagram 1, at the top of this page, illustrates how this might work. After the ChatPhone onboards onto your primary usage contexts (a fascinating and likely ongoing process in itself), the phone's homescreen would display:</p>\n<ul>\n<li>The primary tools you're likely to use in that mode</li>\n<li>A digest of prioritized information and action based on your behavior and preferences.</li>\n<li>Quick access to agentic chat</li>\n</ul>\n<p>This type of phone could offer several benefits:</p>\n<ul>\n<li>Speed up how quickly you find things on your phone</li>\n<li>Reduce the need for repetitive decision-making (e.g., which delivery app or pizza place to choose)</li>\n<li>Minimize distractions from content or tools best reserved for other contexts</li>\n</ul>\n<p>Of course, using an agent as an intermediary introduces the risk of it missing key or critical content. That's why this concept feels better suited for a time when AI has matured to the point of being more reliable than you are at completing certain tasks.</p>\n\n<p>Also, while I doubt toolmakers like DoorDash, Lyft, Google, Apple, and others would appreciate being further commoditized—since their apps would no longer be the primary way users access the services they offer, they may have less of a choice when they can't distinguish between an AI accessing their app versus a person. It will be interesting to see how this plays out.</p>\n\n<p>I've been using though experiments like this one to get excited about possible innovations in the future, validate how I think and feel about AI's current and future usage. If AI could execute something like the Chatphone Concept, while maintaining my privacy and agency, count me in as a user.</p>`,
           svgContent: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 748">
   <!-- Background - changed to match presentation background -->
   <rect width="1320" height="748" fill="#f8fafc"/>
@@ -488,14 +488,14 @@ const presentationData = {
               url: "https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/",
               icon: "📝",
               source: "Harper's Blog",
-              description: "A detailed walkthrough of how an experienced engineer uses LLMs for code generation. I've found beginning on how he starts a project to be the most useful.",
+              description: "A detailed walkthrough of how an experienced engineer uses LLMs for code generation. I've found his intro detailing how he starts a project to be the most useful.",
               imageUrl: "https://harper.blog/images/social_card_bg_harper_hu_cbdc79f03ddda4b5.png"
             },
             {
               text: "Prompt to Product: How I Build with AI Assistants",
               url: "https://medium.com/@bertelli/prompt-to-product-how-i-build-with-ai-assistants-6055da62c9bb",
               source: "Medium",
-              description: "A designer's perspective on using AI assistants to go from initial idea to finished product without traditional coding knowledge. The tip on CSS last is golden",
+              description: "A designer's perspective on using AI assistants to go from initial idea to finished product without traditional coding knowledge.",
               imageUrl: "https://miro.medium.com/v2/resize:fit:1200/1*c8TxZkxoYbRv4AEVE9QCgQ.png"
             },
             {
@@ -516,7 +516,7 @@ const presentationData = {
               text: "Ezra Klein on AI and Education",
               url: "https://www.nytimes.com/2025/05/13/opinion/ezra-klein-podcast-rebecca-winthrop.html",
               source: "The New York Times",
-              description: "Another excellent Ezra Klein podcast on AI. This one around its impact on education.",
+              description: "Another excellent Ezra Klein podcast on AI. This one concerns its impact on education.",
               imageUrl: "https://static01.nyt.com/images/2025/05/13/opinion/13eks-winthrop/13eks-winthrop-facebookJumbo.jpg"
             },
             {
@@ -538,13 +538,13 @@ const presentationData = {
         {
           type: "links",
           title: "AI in the Future",
-          content: "Here are some interesting pieces on the future of AI, from a variety of viewpoints:",
+          content: "Here are some interesting pieces on the future of AI from a variety of viewpoints:",
           links: [
             {
               text: "Dario Amodei on The Urgency of Interpretability",
               url: "https://www.darioamodei.com/post/the-urgency-of-interpretability",
               source: "Dario Amodei (CEO of Anthropic)",
-              description: "One of the least discussed aspects of AI is that we don't know how it makes decisions on a case-by-case basis. Ask it for the best roast chicken recipe, and we can't explain why it picks one over another. Anthropic's CEO argues that understanding these choices is crucial.",
+              description: "One of the least discussed aspects of AI is that we don't know how it makes decisions on a case-by-case basis. Ask it for the best roast chicken recipe and we can't explain why it picks one over another. Anthropic's CEO argues that understanding these choices is crucial.",
               imageUrl: "https://cdn.prod.website-files.com/67ecbba31246a69e485fdd4b/6814ea84b106e48f4269e93b_og_the-urgency-of-interpretability%20(1).jpg"
             },
             {
@@ -759,8 +759,8 @@ const presentationData = {
                     "<strong>Far:</strong> But, AIs ability to think cross functionally while making decisions based on logic, emotional intelligence, and lived experience seems further out."
                   ]
                 },
-                "I do think that the industry will shrink in size, as a percentage of the workforce, slowly as the industry's output quickly grows.",
-                "I hope we have the leadership at the local, state and federal level that can help us prioritize and make the changes to how we learn, work and play"
+                "I do think that the industry workforce will shrink in size slowly, even as the industry's output quickly grows.",
+                "I hope we have the leadership at the local, state, and federal level that can help us prioritize and make the changes to how we learn, work and play"
               ]
             },
             {
