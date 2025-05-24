@@ -1493,13 +1493,6 @@ body {
   pointer-events: none;
 }
 
-.prev-slide, .next-slide {
-  font-size: 1.5rem;
-  font-weight: 700;
-  /* Subtler bold effect for arrows, 1px stroke */
-  text-shadow: 1px 0 0 #12265F, 0 1px 0 #12265F;
-}
-
 /* Footnotes - positioned fixed directly above navigation */
 .footnotes {
   position: fixed;
@@ -2237,14 +2230,14 @@ main.slide-content.comparison-slide {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px; /* Made half as thick */
+  height: 1.5px; /* Made half as thick */
   background-color: rgba(147, 49, 129, 0.2); /* Light plum background */
   overflow: hidden;
 }
 
 .slide-progress-fill {
   height: 100%;
-  background-color: var(--purple-color); /* Plum color */
+  background-color: rgba(147, 49, 129, 0.50); /* Changed from var(--purple-color) to 75% opacity */
   transition: width 0.3s ease;
   transform-origin: left;
 }
@@ -2253,11 +2246,14 @@ main.slide-content.comparison-slide {
   background: none;
   border: none;
   font-size: 1.5rem;
+  font-weight: 700; /* Moved from separate .prev-slide, .next-slide rule */
   cursor: pointer;
   color: var(--primary-color);
   padding: 0.5rem 1rem;
-  width: 60px;
+  width: 90px; /* Increased from 60px (50% longer) */
   text-align: center;
+  /* Subtler bold effect for arrows, 1px stroke */
+  text-shadow: 1px 0 0 #12265F, 0 1px 0 #12265F; /* Moved from separate rule */
 }
 
 .slide-progress, 
@@ -2404,6 +2400,17 @@ main.slide-content.comparison-slide {
 
 /* Mobile styles for projects grid */
 @media (max-width: 768px) {
+  /* Reduce slide controls padding on mobile for better space utilization */
+  .slide-controls {
+    padding: 1rem 0.1rem; /* Reduced to almost edge-to-edge */
+  }
+  
+  /* Also reduce individual button padding on mobile */
+  .slide-controls button {
+    padding: 0.5rem 0.25rem; /* Reduced from 0.5rem 1rem */
+    width: 70px; /* Slightly smaller width for mobile */
+  }
+  
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -2890,4 +2897,11 @@ html.first-slide-active::-webkit-scrollbar {
   .project-card:not(.homepage-card).expanded::after {
     content: 'Tap to open';
   }
+}
+
+.last-slide-active .next-slide,
+.last-slide-active .right-click {
+  opacity: 0;
+  cursor: default;
+  pointer-events: none;
 }
