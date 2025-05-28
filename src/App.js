@@ -48,7 +48,7 @@ const presentationData = {
               imageUrl: "/user-research.png"
             },
             {
-              title: "✍️ Concepts & Content",
+              title: "✍️ Concept & Content",
               description: "A thought experiment \"What if AI was a wrapper over your phone's tools?\" And a collection of interesting articles and podcasts around AI.",
               url: "/section/concepts-content/0",
               imageUrl: "/concepts-content.png"
@@ -269,11 +269,11 @@ const presentationData = {
     },
     {
       id: "concepts-content",
-      title: "✍️ Concepts & Content",
+      title: "✍️ Concept & Content",
       slides: [
         {
           type: "section-cover",
-          title: "✍️ Concepts & Content",
+          title: "✍️ Concept & Content",
           subtitle: "",
           cards: [
             {
@@ -587,7 +587,7 @@ const presentationData = {
             },
             {
               title: "Project Showcase",
-              content: "A collection of applications I've built primarily using AI assistance, including a D&D initiative tracker, voice-activated kitchen timer, and a website for my mom's shamanic healing practice."
+              content: "A collection of applications I've built primarily using AI assistance, including a D&D initiative tracker, voice-activated kitchen timer, and a website for a shamanic healer."
             }
           ]
         },
@@ -598,11 +598,11 @@ const presentationData = {
           sections: [
             {
               title: "Elevator Pitch",
-              content: "The first thing I do with any idea is write the product's elevator pitch. This is more for me than for the AI, as it helps ensure the high-level requirements come next. For my mom's website, I wanted to create a \"clean, modern, and usable site that clearly sets expectations, presents the offering, and still feels uniquely Karuna.\""
+              content: "The first thing I do with any idea is write the product's elevator pitch. This is more for me than for the AI, as it helps ensure the high-level requirements come next. For Karuna's Shamanic Healing website, she wanted to create a clean, modern, and usable site that clearly sets expectations, presents the offering, and still feels uniquely her (full disclosure: Karuna is my mom)." 
             },
             {
               title: "High Level Requirements & AI Interview",
-              content: "Once the elevator pitch is complete, then I write the top level requirements. For my mom's website, this is what I wrote:\n\n\"We are going to create the requirements and specifications for my mom's website. She is a shaman who works out of a yurt in Eugene Oregon. Her old existing website is at Karunagatton.com.  There should be a homepage, an offerings page, a get in touch page, a drum circle page and an about karuna page. You should ask me all the questions you need to create the requirements and specifications. We don't need to worry about any technical requirements right now.\"\n\nThe AI agent then wrote me the following questions:",
+              content: "Once the elevator pitch is complete, then I write the top level requirements. For Karuna's website, this is what I wrote:\n\n\"We are going to create the requirements and specifications for Karuna's website. She is a shaman who works out of a yurt in Eugene Oregon. Her old existing website is at Karunagatton.com. There should be a homepage, an offerings page, a get in touch page, a drum circle page and an about karuna page. You should ask me all the questions you need to create the requirements and specifications. We don't need to worry about any technical requirements right now.\"\n\nThe AI agent then wrote me the following questions:",
               collapsible: `**General Questions About Karuna's Website**\n\n1. **What's the primary goal of the website?**\n\n   * Attract new clients?\n\n   * Provide information to existing clients?\n\n   * Promote events like drum circles?\n\n   * Something else?\n\n2. **Who is the target audience?**\n\n   * Local Eugene community?\n\n   * People new to shamanic work?\n\n   * Existing spiritual seekers?\n\n   * A particular age group, gender, or cultural background?\n\n3. **What tone and aesthetic should the site have?**\n\n   * Earthy and grounded?\n\n   * Mystical and ethereal?\n\n   * Minimal and modern?\n\n   * Vintage, nature-inspired, colorful?\n\n4. **Are there any existing branding elements we need to use?**\n\n   * Logo, color scheme, fonts, imagery?\n\n   * Or is this a fresh start?\n\n---\n\n### **Page-Specific Questions**\n\n#### **1.** \n\n#### **Homepage**\n\n* What message should the homepage communicate immediately?\n\n* Should it include:\n\n  * A photo of Karuna or the yurt?\n\n  * A brief welcome message?\n\n  * Highlights from other pages (e.g., a teaser for the offerings or drum circles)?\n\n  * Testimonials or quotes?\n\n* Do you want a call-to-action? (e.g., "Book a Session," "Join the Circle," "Learn More")\n\n#### **2.** \n\n#### **Offerings Page**\n\n* What types of offerings does Karuna provide? (e.g., one-on-one healing sessions, energy work, spiritual guidance, retreats?)\n\n* For each offering:\n\n  * What's it called?\n\n  * What does it involve?\n\n  * How long is a session?\n\n  * What's the price?\n\n  * Are sessions virtual, in-person, or both?\n\n* Should people be able to book from this page?\n\n#### **3.** \n\n#### **Drum Circle Page**\n\n* Are the drum circles recurring or one-off events?\n\n* Are they open to the public or invite-only?\n\n* What's the typical structure or vibe?\n\n* Should there be a calendar or RSVP function?\n\n* Would you want photos, recordings, or testimonials from past circles?\n\n#### **4.** \n\n#### **Get in Touch Page**\n\n* What's the preferred method of contact? (Email, form, phone, social media?)\n\n* Should it include a physical location (e.g., directions to the yurt)?\n\n* Do you want to include a contact form with specific fields?\n\n* Is there a newsletter or mailing list people can sign up for?\n\n#### **5.** \n\n#### **About Karuna Page**\n\n* What should visitors know about her background, training, lineage, or philosophy?\n\n* Should this be written in her voice ("Hi, I'm Karuna…") or in third person?\n\n* Do you want to include personal photos or images from her work?"`
             },
             {
@@ -612,7 +612,7 @@ const presentationData = {
             },
             {
               title: "Develop a Concept",
-              content: "Before getting too deep into the details, I work with the AI to develop a product concept... Usually focusing on the most important element first. For my mom's website, it was the homepage. For this presentation, it was the structure, layout, and navigation. Sharing examples and other artifacts is always helpful during the concepting phase. I refine the concept with the AI until I'm happy with it, and then we dive into the details.",
+              content: "Before getting too deep into the details, I work with the AI to develop a product concept... Usually focusing on the most important element first. For Karuna's website, it was the homepage. For this presentation, it was the structure, layout, and navigation. Sharing examples and other artifacts is always helpful during the concepting phase. I refine the concept with the AI until I'm happy with it, and then we dive into the details.",
               imageUrl: "/karuna.png",
               caption: "Karuna's concept started with the home page"
             },
@@ -650,7 +650,7 @@ const presentationData = {
             },
             {
               title: "Karuna's Website",
-              description: "My mom is a shaman who offers spiritual healing, as you can see from the site. It's been a pleasure working with her and the AI on this project. Note: the site is still a work in progress, with some css refactoring needed",
+              description: "Karuna is a shaman who offers spiritual healing. Karuna wanted a site that was clean, and modern but was still mystical and unique. Note: the site is still a work in progress, with some css refactoring needed",
               url: "https://karuna-chi.vercel.app/",
               imageUrl: "/karuna.png"
             },
