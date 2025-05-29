@@ -22,6 +22,7 @@
   --slide-controls-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07);
   --slide-controls-padding: 1rem 2rem;
   --slide-controls-height: 60px;
+  --border-color: #ccc;
 }
 
 * {
@@ -1275,23 +1276,34 @@ body {
 
 .vibe-coder-slide .collapsible {
   margin: 1rem 0;
-  border: 1px solid var(--light-gray);
-  border-radius: 5px;
-  background-color: #fafafa;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: white;
+  overflow: hidden;
 }
 
 .vibe-coder-slide .collapsible-header {
-  padding: 0.75rem 1rem;
+  background: var(--light-gray);
+  padding: 1rem;
   cursor: pointer;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
+  font-weight: 600;
+  color: var(--primary-color);
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: background 0.2s ease;
+  display: block;
+  margin: 0;
   user-select: none;
 }
 
+.vibe-coder-slide .collapsible-header:hover {
+  background: var(--border-color);
+}
+
 .vibe-coder-slide .collapsible-content {
-  padding: 0 40px 1.5rem 40px;
-  overflow: hidden;
+  padding: 1rem;
+  background: white;
 }
 
 .vibe-coder-slide .collapsible-content p {
@@ -2897,4 +2909,217 @@ html.first-slide-active::-webkit-scrollbar {
   opacity: 0;
   cursor: default;
   pointer-events: none;
+}
+
+/* Vibe Coder Slide table styling - same as methodology tables */
+.vibe-coder-slide .methodology-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+.vibe-coder-slide .methodology-table th {
+  background-color: var(--purple-color);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.vibe-coder-slide .methodology-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.vibe-coder-slide .methodology-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.vibe-coder-slide .table-container {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* Code collapsible header styling - make it look like code */
+.vibe-coder-slide .code-collapsible-header {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  border: none;
+  margin: 0;
+  transition: background-color 0.2s ease;
+}
+
+.vibe-coder-slide .code-collapsible-header:hover {
+  background-color: #2d2d30;
+}
+
+.vibe-coder-slide .code-collapsible {
+  margin: 1rem 0;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.vibe-coder-slide .code-collapsible[open] .code-collapsible-header {
+  border-radius: 8px 8px 0 0;
+}
+
+.vibe-coder-slide .code-collapsible:not([open]) .code-collapsible-header {
+  border-radius: 8px;
+}
+
+/* Code Collapsible */
+.vibe-coder-slide .code-collapsible {
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vibe-coder-slide .code-collapsible-header {
+  background: var(--light-gray);
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary-color);
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: background 0.2s ease;
+  margin: 0;
+}
+
+.vibe-coder-slide .code-collapsible-header:hover {
+  background: var(--border-color);
+}
+
+.vibe-coder-slide .code-collapsible[open] .code-collapsible-header {
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 8px 8px 0 0;
+}
+
+.vibe-coder-slide .code-collapsible:not([open]) .code-collapsible-header {
+  border-radius: 8px;
+}
+
+/* Remove margins from syntax highlighter inside collapsible */
+.vibe-coder-slide .code-collapsible pre {
+  margin: 0;
+}
+
+.vibe-coder-slide .code-collapsible .token {
+  font-size: inherit;
+}
+
+/* Chat History Styles */
+.vibe-coder-slide .chat-history {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.vibe-coder-slide .chat-message {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.vibe-coder-slide .chat-message:last-child {
+  border-bottom: none;
+}
+
+.vibe-coder-slide .chat-message.user {
+  background-color: #f8fafc;
+}
+
+.vibe-coder-slide .chat-message.assistant {
+  background-color: #fefefe;
+}
+
+.vibe-coder-slide .chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.vibe-coder-slide .chat-author {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.vibe-coder-slide .chat-timestamp {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+  opacity: 0.7;
+}
+
+.vibe-coder-slide .chat-content {
+  padding: 0.5rem 1.5rem 1.5rem;
+  line-height: 1.6;
+}
+
+.vibe-coder-slide .chat-content p {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.vibe-coder-slide .chat-content p:last-child {
+  margin-bottom: 0;
+}
+
+.vibe-coder-slide .chat-content ul,
+.vibe-coder-slide .chat-content ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.vibe-coder-slide .chat-content li {
+  margin-bottom: 0.5rem;
+}
+
+.vibe-coder-slide .chat-content strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.vibe-coder-slide .chat-content code {
+  background-color: var(--light-gray);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+}
+
+/* Mobile responsive chat */
+@media (max-width: 768px) {
+  .vibe-coder-slide .chat-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 1rem 1rem 0.5rem;
+  }
+  
+  .vibe-coder-slide .chat-content {
+    padding: 0.5rem 1rem 1rem;
+  }
+  
+  .vibe-coder-slide .chat-content ul,
+  .vibe-coder-slide .chat-content ol {
+    margin-left: 1rem;
+  }
 }
