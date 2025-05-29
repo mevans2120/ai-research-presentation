@@ -1469,8 +1469,8 @@ body {
             },
             {
               title: "Karuna's Website",
-              description: "Karuna is a shaman who offers spiritual healing. Karuna wanted a site that was clean, and modern but was still mystical and unique. Note: the site is still a work in progress, with some css refactoring needed",
-              url: "https://karuna-chi.vercel.app/",
+              description: "Karuna is a shaman who offers spiritual healing. Karuna wanted a site that was clean, and modern but was still mystical and unique.",
+              url: "https://www.karunagatton.com",
               imageUrl: "/karuna.png"
             },
             {
