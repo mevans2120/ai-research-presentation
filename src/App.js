@@ -1482,7 +1482,7 @@ body {
             {
               title: "Voice Activated Kitchen Timer POC",
               description: "I love cooking, but didn't want an always-on Amazon device. So I built an offline, voice-activated kitchen timer—my first vibe coding project. If you've cooked with messy hands, you know why voice is ideal.",
-              url: "https://voice-timer-2-mevans212.replit.app/",
+              url: "https://voice-timer-sand.vercel.app/",
               imageUrl: "/voice-timer.png"
             },
             {
