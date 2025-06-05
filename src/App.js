@@ -1476,7 +1476,7 @@ body {
             {
               title: "D&D Initiative Tracker",
               description: "I built the D&D initiative tracker with my 11-year-old son for the campaigns I run with his friends. It tracks turn order, health points, and sorts characters for easy review. The speed it came together inspired this entire project.",
-              url: "https://dungeon-tracker-mevans212.replit.app/",
+              url: "https://dungeon-tracker.vercel.app/",
               imageUrl: "/dnd-tracker.png"
             },
             {
