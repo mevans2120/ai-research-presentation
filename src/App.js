@@ -1420,7 +1420,7 @@ body {
             },
             {
               title: "AI Collaboration Example",
-              content: "Clear, complete, and concise writing, along with examples, context for why the request is being made, and an opportunity for the agent to ask questions, is how I’ve had the most success. Below is the actual conversation where we built the \"Technical Architecture & Code Samples\" section you just saw above.\n\nWhat I find fascinating is how the process is similar to traditional development collaboration: clarifying requirements, asking follow-up questions, iterating on implementation. But, the AI needs to have things more structured, and you need a bit of patience. While the AI asks smart questions, and suggests improvements, there will be more back and forth when actually implementing the feature. \n\nThis back-and-forth shows a good way to get started building a new feature.",
+              content: "Clear, complete, and concise writing, along with examples, context for why the request is being made, and an opportunity for the agent to ask questions, is how I've had the most success. Below is the actual conversation where we built the \"Technical Architecture & Code Samples\" section you just saw above.\n\nWhat I find fascinating is how the process is similar to traditional development collaboration: clarifying requirements, asking follow-up questions, iterating on implementation. But, the AI needs to have things more structured, and you need a bit of patience. While the AI asks smart questions, and suggests improvements, there will be more back and forth when actually implementing the feature. \n\nThis back-and-forth shows a good way to get started building a new feature.",
               chatHistory: [
                 {
                   type: "user",
@@ -2602,6 +2602,9 @@ function renderSlide(slide, location, navigate) {
       return (
         <div className={`${baseClassName} ${titleSpecificClass} ${aboutContentTypeClass}`.trim().replace(/\s+/g, ' ')}>
           <h1>{slide.title}</h1>
+          {slide.title === "About" && (
+            <div className="date">May 15th, 2025</div>
+          )}
           <div className="content">
             <ReactMarkdown>{contentToRender}</ReactMarkdown>
           </div>

@@ -2083,8 +2083,16 @@ body, html, .navigation {
 /* Text Slide */
 .text-slide h1 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: var(--primary-color);
+}
+
+.text-slide .date {
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+  text-align: left;
+  font-style: italic;
 }
 
 .text-slide .content {
