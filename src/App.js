@@ -1487,10 +1487,10 @@ body {
             },
             {
             title: "Site Synthesizer",
-            description: "An in-progress n8n-based agentic scraper that searches sites by keyword and logs relevant URLs and data into a database. Builing it for job seekers and sales reps. Back-end proof of concept is done and hosted on Railway.",
-            url: "https://dungeon-tracker-mevans212.replit.app/",
+            description: "An in-progress agentic app that scrapes sites and pursues multiple questions while performing research, filtering results for relevance",
+            url: "https://research-agent-sable.vercel.app/",
             imageUrl: "/SiteSynthesizer.png",
-            comingSoon: true
+          
           },
           {
           title: "Department of Art",
