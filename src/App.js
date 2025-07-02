@@ -1486,10 +1486,10 @@ body {
               imageUrl: "/voice-timer.png"
             },
             {
-            title: "Site Synthesizer",
+            title: "AI Research Agent",
             description: "An in-progress agentic app that scrapes sites and pursues multiple questions while performing research, filtering results for relevance",
             url: "https://research-agent-sable.vercel.app/",
-            imageUrl: "/SiteSynthesizer.png",
+            imageUrl: "/AI_Research_Agent.png",
           
           },
           {
