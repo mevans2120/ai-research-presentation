@@ -594,7 +594,7 @@ const presentationData = {
         {
           type: "vibe-coder",
           title: "My Vibe Coding Workflow",
-          content: "As an experienced product manager who is fairly technical…but not much of a coder… Learning to vibe code has been a (mostly) joyful experience. Going from 0 to 1 on my own has been incredibly empowering. It's allowed me to use my strengths in defining functional and technical requirements, wireframing, giving design direction, and refining micro-interactions. That said, there have also been some frustrating moments. Below, I describe my current workflow and share a few tips and tricks.",
+          content: "## Update - September 1st, 2025\n\nFor the past few months, I've been using a different technical workflow for my agentic engineering projects. I've been using [Claude Code](https://www.anthropic.com/claude-code), [Loveable](https://lovable.dev), and [Roo Code](https://roocode.com/) to design and develop product MVPs. Each new project includes a [memory bank](https://github.com/GreatScottyMac/roo-code-memory-bank) for the AI agent to preserve context. Loveable helps me design concepts and new features, Claude Code serves as the engineering workhorse, and Roo Code provides the most pleasant way to fix bugs. If you are interested in learning more please [send me a shout](mailto:mevans212@gmail.com).\n\n&nbsp;\n\n## Introduction\n\nAs an experienced product manager who is fairly technical…but not much of a coder… Learning to vibe code has been a (mostly) joyful experience. Going from 0 to 1 on my own has been incredibly empowering. It's allowed me to use my strengths in defining functional and technical requirements, wireframing, giving design direction, and refining micro-interactions. That said, there have also been some frustrating moments. Below, I describe my current workflow and share a few tips and tricks.",
           sections: [
             {
               title: "Elevator Pitch",
@@ -953,7 +953,9 @@ function renderSlide(slide, location, navigate) {
       return (
         <div className="vibe-coder-slide">
           <h1>{slide.title}</h1>
-          <p className="intro">{slide.content}</p>
+          <div className="intro"><ReactMarkdown components={{
+            a: ({node, ...props}) => <a className="minimal-link" {...props} />
+          }}>{slide.content}</ReactMarkdown></div>
           {slide.sections && (
             <div className="sections">
               {slide.sections.map((section, idx) => (
@@ -2785,7 +2787,9 @@ function renderSlide(slide, location, navigate) {
             <img src="/cursor-screenshot.png" alt="Screenshot of Cursor IDE" className="hero-image" />
           </div>
           <div className="image-caption">Inception: Image of me asking cursor to add this image, as the hero image to this page</div>
-          <p className="intro">{slide.content || ''}</p>
+          <div className="intro"><ReactMarkdown components={{
+            a: ({node, ...props}) => <a className="minimal-link" {...props} />
+          }}>{slide.content || ''}</ReactMarkdown></div>
           {slide.sections && (
             <div className="sections">
               {slide.sections.map((section, idx) => {
